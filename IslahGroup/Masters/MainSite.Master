@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="IslahGroup.Masters.MainSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Islah Group</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../Content/bootstrap.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../Content/froala_blocks.css"/>
+    <script src="../Scripts/bootstrap.js"></script>
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <asp:ContentPlaceHolder ID="Head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .fdb-block { border-bottom: solid 1px #EEE; }
+    </style>
+</head>
+<body runat="server">
+<header>
+    <div class="container">
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="#">
+                <img src="../Images/islah_logo.png" height="30" alt="image">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav3">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+
+                <a class="btn btn-empty ml-md-3" href="./login.html">Login</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</form>
+<footer class="fdb-block footer-large">
+    <div class="container">
+        <div class="row align-items-top text-center">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-sm-left">
+                <h3>
+                    <strong>Group 1</strong>
+                </h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="https://www.froala.com">Home</a>
+                    <a class="nav-link" href="https://www.froala.com">Features</a>
+                    <a class="nav-link" href="https://www.froala.com">Pricing</a>
+                    <a class="nav-link" href="https://www.froala.com">Team</a>
+                    <a class="nav-link" href="https://www.froala.com">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5 mt-sm-0 text-sm-left">
+                <h3>
+                    <strong>Group 2</strong>
+                </h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="https://www.froala.com">Privacy Policy</a>
+                    <a class="nav-link" href="https://www.froala.com">Terms</a>
+                    <a class="nav-link" href="https://www.froala.com">FAQ</a>
+                    <a class="nav-link" href="https://www.froala.com">Support</a>
+                </nav>
+            </div>
+
+            <div class="col-12 col-md-4 col-lg-3 text-md-left mt-5 mt-md-0">
+                <h3>
+                    <strong>About Us</strong>
+                </h3>
+                <p>
+                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                    blind texts.
+                </p>
+            </div>
+
+            <div class="col-12 col-lg-2 ml-auto text-lg-left mt-4 mt-lg-0">
+                <h3>
+                    <strong>Follow Us</strong>
+                </h3>
+                <p class="text-h3">
+                    <a href="https://www.froala.com">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>&nbsp;&nbsp;
+                    <a href="https://www.froala.com">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>&nbsp;&nbsp;
+                    <a href="https://www.froala.com">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>&nbsp;&nbsp;
+                    <a href="https://www.froala.com">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                    </a>&nbsp;&nbsp;
+                    <a href="https://www.froala.com">
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col text-center">
+                &copy; 2017 Froala. All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
