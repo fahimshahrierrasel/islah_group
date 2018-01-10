@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/MainSite.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="IslahGroup.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <title>Islah Group | Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
