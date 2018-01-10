@@ -16,17 +16,17 @@
                         </div>
                         <div class="row">
                             <div class="col mt-4">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <asp:TextBox ID="email" type="text" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <asp:TextBox ID="password" type="password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <button class="btn" type="button">Submit</button>
+                                <asp:Button ID="submit" CssClass="btn" type="button" runat="server" Text="Submit"/>
                             </div>
                         </div>
                     </div>
