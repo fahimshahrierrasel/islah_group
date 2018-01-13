@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IslahGroup.DotNot.DataAccessLayer
+namespace IslahGroup.DotNet.DataAccessLayer
 {
     public class MemberData
     {
