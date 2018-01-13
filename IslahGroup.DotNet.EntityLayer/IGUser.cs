@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IslahGroup.DotNet.EntityLayer
 {
-    public class Member
+    class IGUser
     {
     }
 }
