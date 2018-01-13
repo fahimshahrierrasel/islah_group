@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslahGroup", "IslahGroup\IslahGroup.csproj", "{4BD9DFE6-EBCB-4D5B-9212-D7616893761D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslahGroup.DotNet.BusinessLogicLayer", "IslahGroup.DotNet.BusinessLogicLayer\IslahGroup.DotNet.BusinessLogicLayer.csproj", "{FAA70930-439E-44E2-BF0A-E398CBEE342F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslahGroup.DotNot.DataAccessLayer", "IslahGroup.DotNot.DataAccessLayer\IslahGroup.DotNot.DataAccessLayer.csproj", "{8E6E1650-B89D-48A7-8465-CEA70BD54D10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4BD9DFE6-EBCB-4D5B-9212-D7616893761D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BD9DFE6-EBCB-4D5B-9212-D7616893761D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BD9DFE6-EBCB-4D5B-9212-D7616893761D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA70930-439E-44E2-BF0A-E398CBEE342F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA70930-439E-44E2-BF0A-E398CBEE342F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA70930-439E-44E2-BF0A-E398CBEE342F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA70930-439E-44E2-BF0A-E398CBEE342F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6E1650-B89D-48A7-8465-CEA70BD54D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6E1650-B89D-48A7-8465-CEA70BD54D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6E1650-B89D-48A7-8465-CEA70BD54D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6E1650-B89D-48A7-8465-CEA70BD54D10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

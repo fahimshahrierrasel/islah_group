@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IslahGroup.DotNet.BusinessLogicLayer
+namespace IslahGroup.DotNot.DataAccessLayer
 {
-    public class MemberLogic
+    public class MemberData
     {
     }
 }
