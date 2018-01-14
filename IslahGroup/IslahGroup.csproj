@@ -264,6 +264,16 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IslahGroup.DotNet.BusinessLogicLayer\IslahGroup.DotNet.BusinessLogicLayer.csproj">
+      <Project>{faa70930-439e-44e2-bf0a-e398cbee342f}</Project>
+      <Name>IslahGroup.DotNet.BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IslahGroup.DotNet.EntityLayer\IslahGroup.DotNet.EntityLayer.csproj">
+      <Project>{F327ABE5-2B2F-4341-BBF2-4943D2750F8F}</Project>
+      <Name>IslahGroup.DotNet.EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

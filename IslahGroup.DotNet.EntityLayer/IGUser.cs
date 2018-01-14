@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IslahGroup.DotNet.EntityLayer
+﻿namespace IslahGroup.DotNet.EntityLayer
 {
-    class IGUser
+    public class IGUser
     {
+        public int UserId { get; set; }
+        public string AName { get; set; }
+        public string Email { get; set; }
+        public string AUsername { get; set; }
+        public string Apassword { get; set; }
+        public string UserType { get; set; } 
     }
 }

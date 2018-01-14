@@ -12,21 +12,22 @@
                             <div class="col">
                                 <h1>Log In</h1>
                                 <p class="text-h3">Right at the coast of the Semantics, a large language ocean. A small river named Duden.</p>
+                                <asp:Label ID="ResultLabel" runat="server" Text="Status"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col mt-4">
-                                <asp:TextBox ID="email" type="text" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <asp:TextBox ID="password" type="password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <asp:Button ID="submit" CssClass="btn" type="button" runat="server" Text="Submit"/>
+                                <asp:Button ID="ButtonSubmit" CssClass="btn" type="button" runat="server" Text="Submit" OnClick="ButtonSubmit_Click"/>
                             </div>
                         </div>
                     </div>

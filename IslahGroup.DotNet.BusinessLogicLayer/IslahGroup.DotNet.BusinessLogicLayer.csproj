@@ -43,5 +43,15 @@
     <Compile Include="MemberLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IslahGroup.DotNet.EntityLayer\IslahGroup.DotNet.EntityLayer.csproj">
+      <Project>{f327abe5-2b2f-4341-bbf2-4943d2750f8f}</Project>
+      <Name>IslahGroup.DotNet.EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IslahGroup.DotNot.DataAccessLayer\IslahGroup.DotNet.DataAccessLayer.csproj">
+      <Project>{8e6e1650-b89d-48a7-8465-cea70bd54d10}</Project>
+      <Name>IslahGroup.DotNet.DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
