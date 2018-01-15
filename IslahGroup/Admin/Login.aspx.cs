@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI.WebControls;
 using IslahGroup.DotNet.BusinessLogicLayer;
 using IslahGroup.DotNet.EntityLayer;
 
@@ -16,23 +17,36 @@ namespace IslahGroup.Views
             string username = TextboxUsername.Text;
             string password = TextPassword.Text;
 
-            MemberLogic ml = new MemberLogic();
-            IGUser currentUser = ml.LoginToTheSystem(username, password);
-            if (currentUser != null)
+            if(String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
             {
-                ResultLabel.Text = "Login Successful!";
-
-                Session["UserId"] = currentUser.UserId;
-                Session["AName"] = currentUser.AName;
-                Session["AUsername"] = currentUser.AUsername;
-                Session["UserType"] = currentUser.UserType;
-                Response.Redirect("Dashboard.aspx");
+                ShowWarningWith("Username/Password cann't be empty");
             }
-            else
+            else { 
+                MemberLogic ml = new MemberLogic();
+                IGUser currentUser = ml.LoginToTheSystem(username, password);
+                if (currentUser != null)
+                {
+                    Session["UserId"] = currentUser.UserId;
+                    Session["AName"] = currentUser.AName;
+                    Session["AUsername"] = currentUser.AUsername;
+                    Session["UserType"] = currentUser.UserType;
+                    Response.Redirect("Dashboard.aspx");
+                }
+                else
+                {
+                    ShowWarningWith("Your credential is not correct!!");
+                }
+            }
+        }
+
+        private void ShowWarningWith(String message)
+        {
+            PanelLoginMessage.CssClass = PanelLoginMessage.CssClass.Replace("d-none", "");
+            Label label = new Label
             {
-                ResultLabel.Text = "Login Unsuccessful!";
-            }
-
+                Text = message
+            };
+            PanelLoginMessage.Controls.Add(label);
         }
     }
 }

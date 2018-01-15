@@ -13,13 +13,13 @@ namespace IslahGroup.Views {
     public partial class Login {
         
         /// <summary>
-        /// ResultLabel control.
+        /// PanelLoginMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ResultLabel;
+        protected global::System.Web.UI.WebControls.Panel PanelLoginMessage;
         
         /// <summary>
         /// TextboxUsername control.
