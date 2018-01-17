@@ -17,6 +17,17 @@
     <link href="../Content/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="../Content/sb-admin/sb-admin.css" rel="stylesheet">
+    <script type="text/javascript">
+        function LogoutSessionClear() {
+            PageMethods.LogoutAndSessionClear();
+        }
+        function Success() {
+            console.log("Logout Success");
+        }
+        function Failure() {
+            console.log("Logout Failure");
+        }
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -267,9 +278,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <form runat="server">
-                            <asp:Button ID="ButtonLogout" type="button" CssClass="btn btn-primary" runat="server" Text="Logout" OnClick="ButtonLogout_Click"></asp:Button>
-                        </form>
+                        <a class="btn btn-primary" href="Logout.aspx">Logout</a>
                     </div>
                 </div>
             </div>

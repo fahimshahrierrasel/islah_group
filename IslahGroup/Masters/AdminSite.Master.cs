@@ -14,11 +14,5 @@ namespace IslahGroup.Masters
             else
                 LabelUserName.Text = Session["AName"].ToString();
         }
-
-        protected void ButtonLogout_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Response.Redirect("Login.aspx");
-        }
     }
 }
