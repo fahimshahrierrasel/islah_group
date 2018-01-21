@@ -22,7 +22,7 @@ namespace IslahGroup.Views
                 ShowWarningWith("Username/Password cann't be empty");
             }
             else { 
-                MemberLogic ml = new MemberLogic();
+                IGUserLogic ml = new IGUserLogic();
                 IGUser currentUser = ml.LoginToTheSystem(username, password);
                 if (currentUser != null)
                 {

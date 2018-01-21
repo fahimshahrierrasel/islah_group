@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace IslahGroup.DotNet.DataAccessLayer
 {
-    public class MemberData
+    public class IGUserData
     {
         public IGUser GetUserInformation(SqlParameter[] parameters)
         {

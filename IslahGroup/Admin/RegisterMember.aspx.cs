@@ -50,25 +50,6 @@ namespace IslahGroup.Admin
             string memberImageUpload="";
             string nomineeImageUpload="";
 
-            UploadImage();
-
-        }
-
-        private void UploadImage()
-        {
-            if (MemberImageUpload.HasFile)
-            {
-                string fileName = Path.GetFileName(MemberImageUpload.PostedFile.FileName);
-                MemberImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/MemberPhoto/") + fileName);
-                Response.Redirect(Request.Url.AbsoluteUri);
-            }
-
-            if(NomineeImageUpload.HasFile)
-            {
-                string fileName = Path.GetFileName(NomineeImageUpload.PostedFile.FileName);
-                NomineeImageUpload.PostedFile.SaveAs(Server.MapPath("~/Images/NomineePhoto/") + fileName);
-                Response.Redirect(Request.Url.AbsoluteUri);
-            }
         }
     }
 }
