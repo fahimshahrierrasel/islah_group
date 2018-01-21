@@ -11,7 +11,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public IGUser GetUserInformation(SqlParameter[] parameters)
         {
             IGUser user = null;
-            string connectionString = @"Server=WINDOWSPROGRAMM\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;";
+            string connectionString = @"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand
             {
