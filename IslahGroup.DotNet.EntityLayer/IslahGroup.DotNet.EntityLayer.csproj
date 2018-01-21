@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IGUser.cs" />
     <Compile Include="Member.cs" />
+    <Compile Include="Nominee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
