@@ -1,6 +1,6 @@
 ﻿using IslahGroup.DotNet.EntityLayer;
+using IslahGroup.DotNot.DataAccessLayer;
 using System;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -11,22 +11,17 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public IGUser GetUserInformation(SqlParameter[] parameters)
         {
             IGUser user = null;
-            string connectionString = @"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand
-            {
-                CommandText = "GetUserInformation",
-                CommandType = CommandType.StoredProcedure,
-                Connection = connection
-            };
+            DBConn dBConn = new DBConn();
 
-            command.Parameters.AddRange(parameters);
+            dBConn.Cmd.CommandText = "GetUserInformation";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
 
             DataTable userTable = new DataTable();
             try
             {
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
+                dBConn.Open();
+                SqlDataReader reader = dBConn.Cmd.ExecuteReader();
                 userTable.Load(reader);
                 if (userTable.Rows.Count == 1)
                 {
@@ -45,13 +40,13 @@ namespace IslahGroup.DotNet.DataAccessLayer
                     user = null;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine(e.Message);
+                throw;
             }
             finally
             {
-                connection.Close();
+                dBConn.Close();
             }
 
             return user;
