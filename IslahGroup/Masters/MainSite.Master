@@ -5,108 +5,124 @@
 <html>
 <head runat="server">
     <link rel="icon" href="../Images/favicon.ico">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
-    <link rel="stylesheet" href="../Content/bootstrap.css"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="../Content/froala_blocks.css"/>
+    <link rel="stylesheet" href="../Content/bootstrap.css" />
+    <link rel="stylesheet" href="../Content/froala_blocks.css" />
+    <link rel="stylesheet" href="../Content/animate.min.css" />
+    <link rel="stylesheet" href="../Content/cssanimation.min.css" />
+    <link rel="stylesheet" href="../Content/magnific-popup.css" />
+    <link rel="stylesheet" href="../Content/mixitup.css" />
+    <link rel="stylesheet" href="../Content/style.css" />
+
     <script src="../Scripts/bootstrap.js"></script>
     <script src="../Scripts/jquery-3.0.0.js"></script>
+
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
+
     <style>
-        .fdb-block { border-bottom: solid 1px #EEE; }
+        .fdb-block {
+            border-bottom: solid 1px #EEE;
+        }
     </style>
 </head>
 <body runat="server">
-<header>
-    <div class="container">
-        <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#">
-                <img src="../Images/islah_logo.png" height="30" alt="image">
-            </a>
+    <header class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-md">
+                <a class="navbar-brand" href="#">
+                    <img src="../Images/islah_logo.png" height="30" alt="image">
+                </a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3"
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3"
                     aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav3">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                <div class="collapse navbar-collapse" id="navbarNav3">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#about-us">About Us</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#industry-verticals">Industry Verticals</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#our-services">Our Services</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#companies">Companies</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#industries">Our Industries</a>
+                        </li>
+                        <li class="nav-item page-scroll">
+                            <a class="nav-link" href="#location">Location</a>
+                        </li>
+                    </ul>
+
+                    <a class="btn btn-empty ml-md-3" href="../Admin/Login.aspx">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer class="fdb-block footer-large">
+        <div class="container">
+            <div class="row align-items-top text-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-sm-left">
+                    <h3>
+                        <strong>Group 1</strong>
+                    </h3>
+                    <nav class="nav flex-column">
                         <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Companies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
+                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">Team</a>
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </nav>
+                </div>
 
-                <a class="btn btn-empty ml-md-3" href="../Admin/Login.aspx">Login</a>
-            </div>
-        </nav>
-    </div>
-</header>
-<form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-</form>
-<footer class="fdb-block footer-large">
-    <div class="container">
-        <div class="row align-items-top text-center">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-sm-left">
-                <h3>
-                    <strong>Group 1</strong>
-                </h3>
-                <nav class="nav flex-column">
-                    <a class="nav-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link" href="#">Team</a>
-                    <a class="nav-link" href="#">Contact Us</a>
-                </nav>
-            </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5 mt-sm-0 text-sm-left">
+                    <h3>
+                        <strong>Group 2</strong>
+                    </h3>
+                    <nav class="nav flex-column">
+                        <a class="nav-link" href="#">Privacy Policy</a>
+                        <a class="nav-link" href="#">Terms</a>
+                        <a class="nav-link" href="#">FAQ</a>
+                        <a class="nav-link" href="#">Support</a>
+                    </nav>
+                </div>
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-5 mt-sm-0 text-sm-left">
-                <h3>
-                    <strong>Group 2</strong>
-                </h3>
-                <nav class="nav flex-column">
-                    <a class="nav-link" href="#">Privacy Policy</a>
-                    <a class="nav-link" href="#">Terms</a>
-                    <a class="nav-link" href="#">FAQ</a>
-                    <a class="nav-link" href="#">Support</a>
-                </nav>
-            </div>
-
-            <div class="col-12 col-md-4 col-lg-3 text-md-left mt-5 mt-md-0">
-                <h3>
-                    <strong>About Us</strong>
-                </h3>
-                <p>
-                    Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                <div class="col-12 col-md-4 col-lg-3 text-md-left mt-5 mt-md-0">
+                    <h3>
+                        <strong>About Us</strong>
+                    </h3>
+                    <p>
+                        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
                     blind texts.
-                </p>
-            </div>
+                    </p>
+                </div>
 
-            <div class="col-12 col-lg-2 ml-auto text-lg-left mt-4 mt-lg-0">
-                <h3>
-                    <strong>Follow Us</strong>
-                </h3>
-                <p class="text-h3">
-                    <a href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>&nbsp;&nbsp;
+                <div class="col-12 col-lg-2 ml-auto text-lg-left mt-4 mt-lg-0">
+                    <h3>
+                        <strong>Follow Us</strong>
+                    </h3>
+                    <p class="text-h3">
+                        <a href="#">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>&nbsp;&nbsp;
                     <a href="#">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                     </a>&nbsp;&nbsp;
@@ -119,17 +135,28 @@
                     <a href="#">
                         <i class="fa fa-google" aria-hidden="true"></i>
                     </a>
-                </p>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col text-center">
+                    &copy; <% Response.Write(DateTime.Today.Year); %> Islah Group. All Rights Reserved
+                </div>
             </div>
         </div>
-
-        <div class="row mt-3">
-            <div class="col text-center">
-                &copy; <% Response.Write(DateTime.Today.Year); %> Islah Group. All Rights Reserved
-            </div>
-        </div>
-    </div>
-</footer>
-
+    </footer>
+    <script type="text/javascript" src="../Scripts/scrolly.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-easing/jquery.easing.js"></script>
+    <script type="text/javascript" src="../Scripts/index-scripts.js"></script>
+    <script type="text/javascript" src="../Scripts/scrolly.min.js"> </script>
+    <script type="text/javascript" src="../Scripts/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="../Scripts/plugins.js"></script>
+    <script type="text/javascript" src="../Scripts/main.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
