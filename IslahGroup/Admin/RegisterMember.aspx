@@ -55,6 +55,14 @@
                     <h4>Personal Information:</h4>
                     <br />
                     <div class="form-group">
+                        <label for="RegistrationDate">Registration Date</label>
+                        <asp:TextBox ID="RegistrationDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="ShareNo">Share No</label>
+                        <asp:TextBox ID="ShareNo" CssClass="form-control" type="text" placeholder="Share No" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
                         <label for="NidNo">National Identification Number (NID)</label>
                         <asp:TextBox ID="NidNo" CssClass="form-control" type="text" placeholder="NID No" runat="server"></asp:TextBox>
                     </div>

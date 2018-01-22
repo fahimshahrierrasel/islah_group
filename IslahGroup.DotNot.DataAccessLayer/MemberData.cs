@@ -2,9 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace IslahGroup.DotNot.DataAccessLayer
+namespace IslahGroup.DotNet.DataAccessLayer
 {
-    class MemberData : IDatabaseAccessable
+    public class MemberData : IDatabaseAccessable
     {
         public bool Delete(SqlParameter[] parameters)
         {
@@ -24,7 +24,7 @@ namespace IslahGroup.DotNot.DataAccessLayer
             dBConn.Cmd.Parameters.AddRange(parameters);
 
             dBConn.Open();
-            dBConn.Cmd.ExecuteReader();
+            dBConn.Cmd.ExecuteNonQuery();
             dBConn.Close();
 
             return true;

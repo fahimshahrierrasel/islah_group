@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using IslahGroup.DotNet.BusinessLogicLayer;
 
 namespace IslahGroup.Admin
 {
@@ -18,6 +15,8 @@ namespace IslahGroup.Admin
         protected void FormSubmit_Click(object sender, EventArgs e)
         {
             // Member Personal Info
+            string registrationDate = RegistrationDate.Text;
+            string shareNo = ShareNo.Text;
             string nidNo = NidNo.Text;
             string fullName = FullName.Text;
             string fatherName = FatherName.Text;
@@ -33,6 +32,7 @@ namespace IslahGroup.Admin
             string bloodGroup = BloodGroup.Text;
             string mobileNo = MobileNo.Text;
             string email = Email.Text;
+            
             // Nominee's Info
             string nomineeNidNo = NomineeNidNo.Text;
             string nomineeName = NomineeName.Text;
@@ -50,6 +50,50 @@ namespace IslahGroup.Admin
             string memberImageUpload="";
             string nomineeImageUpload="";
 
+            MemberLogic memberLogic = new MemberLogic();
+
+            Dictionary<string, string> memberInformation = new Dictionary<string, string>
+            {
+                { "ShareNo", shareNo },
+                { "NID", nidNo },
+                { "FullName", fullName },
+                { "FatherName", fatherName },
+                { "MotherName", motherName },
+                { "HusbWifeName", husbWifeName },
+                { "PresentAddress", presentAddress },
+                { "ParmanentAddress", parmanentAddress },
+                { "DateOfBirth", dob },
+                { "Education", education },
+                { "Profession", profession },
+                { "Nationality", nationality },
+                { "Gender", gender },
+                { "BloodGroup", bloodGroup },
+                { "MobileNo", mobileNo },
+                { "Email", email },
+                { "ImageUrl", "" },
+                { "RegistrationDate", registrationDate },
+                { "IntroducerName", introducerName },
+                { "Introducers_ShareNo", introducerShareNo },
+                { "NomineeNidNo", nomineeNidNo },
+                { "NomineeName", nomineeName },
+                { "NomineeFatherHusbandName", nomineeFatherHusbandName },
+                { "NomineeMotherName", nomineeMotherName },
+                { "NomineeAddress", nomineeAddress },
+                { "NomineeDateOfBirth", nomineeDob },
+                { "NomineeRelation", nomineeRelation },
+                { "NomineeProfession", nomineeProfession },
+                { "NomineeMobileNo", nomineeMobileNo },
+                { "NomineeImageUrl", "" }
+            };
+
+            try
+            {
+                memberLogic.RegisterNewMember(memberInformation);
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            } 
         }
     }
 }

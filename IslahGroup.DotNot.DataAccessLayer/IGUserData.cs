@@ -1,8 +1,7 @@
-﻿using IslahGroup.DotNet.EntityLayer;
-using IslahGroup.DotNot.DataAccessLayer;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using IslahGroup.DotNet.EntityLayer;
 
 namespace IslahGroup.DotNet.DataAccessLayer
 {

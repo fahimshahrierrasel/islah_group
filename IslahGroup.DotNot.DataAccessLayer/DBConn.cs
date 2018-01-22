@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace IslahGroup.DotNot.DataAccessLayer
+namespace IslahGroup.DotNet.DataAccessLayer
 {
     class DBConn
     {
