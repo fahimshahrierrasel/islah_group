@@ -47,8 +47,8 @@ namespace IslahGroup.Admin
             string introducerName = IntroducerName.Text;
             string introducerShareNo = IntroducerShareNo.Text;
             // Photo url
-            string memberImageUpload="";
-            string nomineeImageUpload="";
+            //string memberImageUpload="";
+            //string nomineeImageUpload="";
 
             MemberLogic memberLogic = new MemberLogic();
 
@@ -88,11 +88,14 @@ namespace IslahGroup.Admin
 
             try
             {
-                memberLogic.RegisterNewMember(memberInformation);
+                if(memberLogic.RegisterNewMember(memberInformation))
+                {
+                    Response.Redirect("~/Admin/Members.aspx");
+                }
             }
-            catch(SqlException ex)
+            catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw ex;
             } 
         }
     }

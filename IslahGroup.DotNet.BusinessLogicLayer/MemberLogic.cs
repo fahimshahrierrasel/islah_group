@@ -7,7 +7,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
 {
     public class MemberLogic
     {
-        public void RegisterNewMember(Dictionary<string, string> memberInformation)
+        public bool RegisterNewMember(Dictionary<string, string> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
             parameters[0] = new SqlParameter("ShareNo", memberInformation["ShareNo"]);
@@ -42,7 +42,11 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[29] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
 
             MemberData data = new MemberData();
-            data.Insert(parameters);
+            if (data.Insert(parameters))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

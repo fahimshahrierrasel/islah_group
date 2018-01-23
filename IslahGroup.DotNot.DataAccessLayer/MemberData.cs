@@ -19,7 +19,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "InserMember";
+            dBConn.Cmd.CommandText = "InsertMember";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
