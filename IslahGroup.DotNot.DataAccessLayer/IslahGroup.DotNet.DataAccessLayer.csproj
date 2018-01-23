@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabaseAccessable.cs" />
+    <Compile Include="DBConn.cs" />
+    <Compile Include="IGUserData.cs" />
     <Compile Include="MemberData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IslahGroup.DotNet.EntityLayer\IslahGroup.DotNet.EntityLayer.csproj">
