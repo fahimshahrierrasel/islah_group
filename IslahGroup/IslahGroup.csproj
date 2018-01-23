@@ -134,6 +134,7 @@
     <Content Include="Scripts\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.min.js" />
+    <None Include="Properties\PublishProfiles\IslahGroup.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
