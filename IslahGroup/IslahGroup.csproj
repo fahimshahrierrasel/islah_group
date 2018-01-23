@@ -72,13 +72,25 @@
     <Content Include="Admin\Logout.aspx" />
     <Content Include="Admin\Members.aspx" />
     <Content Include="Admin\RegisterMember.aspx" />
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\cssanimation.min.css" />
+    <Content Include="Content\magnific-popup.css" />
+    <Content Include="Content\mixitup.css" />
     <Content Include="Content\sb-admin\sb-admin.css" />
     <Content Include="Content\sb-admin\sb-admin.min.css" />
     <Content Include="Content\datatables\dataTables.bootstrap4.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\style.css" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\landing_page\boss.png" />
+    <Content Include="Images\landing_page\donate.png" />
+    <Content Include="Images\landing_page\hospital.png" />
+    <Content Include="Images\landing_page\map.png" />
+    <Content Include="Images\landing_page\mosque.png" />
+    <Content Include="Images\landing_page\shop.png" />
     <Content Include="Masters\MainSite.Master" />
     <Content Include="Masters\AdminSite.Master" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -115,8 +127,6 @@
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <None Include="packages.config" />
-    <Content Include="Scripts\chart.js\Chart.bundle.js" />
-    <Content Include="Scripts\chart.js\Chart.bundle.min.js" />
     <Content Include="Scripts\chart.js\Chart.js" />
     <Content Include="Scripts\chart.js\Chart.min.js" />
     <Content Include="Scripts\datatables\dataTables.bootstrap4.css" />
@@ -124,8 +134,6 @@
     <Content Include="Scripts\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -134,43 +142,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\froala_blocks.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\islah_logo.png" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
@@ -180,25 +159,10 @@
     <Content Include="Scripts\sb-admin\sb-admin-datatables.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin.js" />
     <Content Include="Scripts\sb-admin\sb-admin.min.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\Dashboard.aspx.cs">
@@ -265,9 +229,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
