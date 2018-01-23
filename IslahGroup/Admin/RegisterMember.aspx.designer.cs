@@ -22,6 +22,24 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm regForm;
         
         /// <summary>
+        /// RegistrationDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RegistrationDate;
+        
+        /// <summary>
+        /// ShareNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ShareNo;
+        
+        /// <summary>
         /// NidNo control.
         /// </summary>
         /// <remarks>
@@ -184,13 +202,13 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.TextBox NomineeFatherHusbandName;
         
         /// <summary>
-        /// NOmineeMotherName control.
+        /// NomineeMotherName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NOmineeMotherName;
+        protected global::System.Web.UI.WebControls.TextBox NomineeMotherName;
         
         /// <summary>
         /// NomineeAddress control.
@@ -220,13 +238,13 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.TextBox NomineeRelation;
         
         /// <summary>
-        /// TextBox1 control.
+        /// NomineeProfession control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox NomineeProfession;
         
         /// <summary>
         /// NomineeMobileNo control.

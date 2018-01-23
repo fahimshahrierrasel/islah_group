@@ -46,8 +46,6 @@
             }
     </style>
 
-
-
     <div class="card card-register mx-auto mt-5 mb-5">
         <div class="card-header">Register New Member</div>
         <div class="card-block">
@@ -56,6 +54,14 @@
                 <div class="tab">
                     <h4>Personal Information:</h4>
                     <br />
+                    <div class="form-group">
+                        <label for="RegistrationDate">Registration Date</label>
+                        <asp:TextBox ID="RegistrationDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="ShareNo">Share No</label>
+                        <asp:TextBox ID="ShareNo" CssClass="form-control" type="text" placeholder="Share No" runat="server"></asp:TextBox>
+                    </div>
                     <div class="form-group">
                         <label for="NidNo">National Identification Number (NID)</label>
                         <asp:TextBox ID="NidNo" CssClass="form-control" type="text" placeholder="NID No" runat="server"></asp:TextBox>
@@ -162,8 +168,8 @@
                         <asp:TextBox ID="NomineeFatherHusbandName" CssClass="form-control" type="text" placeholder="Father/Husband Name" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <label for="NOmineeMotherName">Mother Name</label>
-                        <asp:TextBox ID="NOmineeMotherName" CssClass="form-control" type="text" placeholder="Mother Name" runat="server"></asp:TextBox>
+                        <label for="NomineeMotherName">Mother Name</label>
+                        <asp:TextBox ID="NomineeMotherName" CssClass="form-control" type="text" placeholder="Mother Name" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="NomineeAddress">Nominee's Address</label>
@@ -185,7 +191,7 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <label for="NomineeProfession">Profession</label>
-                                <asp:TextBox ID="TextBox1" CssClass="form-control" type="text" placeholder="Profession" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="NomineeProfession" CssClass="form-control" type="text" placeholder="Profession" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-md-6">
                                 <label for="NomineeMobileNo">Mobile No</label>
@@ -223,7 +229,7 @@
                     <div style="float: right;">
                         <button class="btn btn-primary" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button class="btn btn-success" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                        <asp:Button ID="FormSubmit" runat="server" CssClass="btn btn-danger d-none" Text="Submit" />
+                        <asp:Button ID="FormSubmit" runat="server" CssClass="btn btn-danger d-none" Text="Submit" OnClick="FormSubmit_Click" />
                     </div>
                 </div>
 
