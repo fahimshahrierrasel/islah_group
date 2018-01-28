@@ -1,38 +1,103 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/MainSite.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="IslahGroup.Views.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="IslahGroup.Admin.Login" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <title>Islah Group | Login</title>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section class="fdb-block" style="background-image: linear-gradient(27deg, #4d919b 0%, #85da75 100%)">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left">
-                    <div class="fdb-box">
-                        <div class="row">
-                            <div class="col">
-                                <h1>Log In</h1>
-                                <asp:Panel ID="PanelLoginMessage" CssClass="alert alert-warning d-none" runat="server" role="alert"></asp:Panel>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col mt-4">
-                                <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server" required></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col">
-                                <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server" required></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col">
-                                <asp:Button ID="ButtonSubmit" CssClass="btn" type="button" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
-                            </div>
-                        </div>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Login | Islah Group</title>
+    <link rel="stylesheet" href="../Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../Content/sb-admin/sb-admin.css" />
+    <link rel="stylesheet" href="../Content/day-night.css" />
+    <style>
+        .login-btn {
+            width: 100%;
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 25rem;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <div id="Clouds">
+        <div class="Cloud Background1"></div>
+        <div class="Cloud Background2"></div>
+        <div class="Cloud Background1"></div>
+        <div class="Cloud Background2"></div>
+        <div class="Cloud Background1"></div>
+        <div class="Cloud Background2"></div>
+        <div class="Cloud Background2"></div>
+        <div class="Cloud Background1"></div>
+        <div class="Cloud Background2"></div>
+        <div class="Cloud Background2"></div>
+    </div>
+
+    <div class="night">
+        <div class="stars">
+            <div id='star1'></div>
+            <div id='star2'></div>
+            <div id='star3'></div>
+        </div>
+        <div class="citynight1"></div>
+        <div class="citynight2"></div>
+        <div class="content">
+            <a class="dayopen" data-target="day">
+                <i class="fa fa-moon-o"></i>
+            </a>
+        </div>
+    </div>
+
+    <div id="day" class="day" style="display: none;">
+        <div class="cityday1"></div>
+        <div class="cityday2"></div>
+        <div class="content">
+            <a class="dayclose">
+                <i class="fa fa-sun-o"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card card-login centered">
+            <div class="card-header text-dark">Login</div>
+            <div class="card-body">
+                <form id="form1" runat="server">
+                    <img src="../Images/islah_logo.png" class="mx-auto d-block" alt="Islah Logo" style="height: 100px" />
+                    <div class="form-group mt-2">
+                        <label for="TextboxUsername" class="text-dark">Email address</label>
+                        <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server" required></asp:TextBox>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="TextPassword" class="text-dark">Password</label>
+                        <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server" required></asp:TextBox>
+                    </div>
+                    <asp:Button ID="ButtonSubmit" CssClass="btn btn-primary login-btn" type="button" runat="server" Text="Submit" />
+                </form>
             </div>
         </div>
-    </section>
-</asp:Content>
+    </div>
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/jquery-easing/jquery.easing.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $('.dayopen').on('click', function (e) {
+                var href, target; e.preventDefault();
+                target = $(this).data('target');
+                href = "#" + target;
+                $("#" + target).fadeIn().addClass('activeday');
+                return $(document).scrollTop(0);
+            });
+            return $('.dayclose').on('click', function (e) {
+                e.preventDefault();
+                return $('.activeday').fadeOut().removeClass('activeday');
+            });
+        })
+    </script>
+</body>
+</html>
