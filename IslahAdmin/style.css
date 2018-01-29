@@ -1,0 +1,469 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Islah Group 
+    Template URI: http://islahgroup.com
+    Description: This is html5 template for islah group of compaines
+    Author: Islah Group
+    Author URI: http://islahgroup.com
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS INDEX
+    ===================
+	
+    1. Theme Default CSS (body, link color, section etc)
+
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+html, body {height: 100%;}
+.floatleft {float:left}
+.floatright {float:right}
+.alignleft {float:left;margin-right:15px;margin-bottom: 15px}
+.alignright {float:right;margin-left:15px;margin-bottom: 15px}
+.aligncenter {display:block;margin:0 auto 15px}
+a:focus {outline:0px solid}
+img {max-width:100%;height:auto}
+.fix {overflow:hidden}
+p {margin:0 0 15px;}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+}
+a {transition: all 0.3s ease 0s;text-decoration:none;}
+a:hover {
+  color: #ec4445;
+  text-decoration: none;
+}
+a:active, a:hover {
+  outline: 0 none;
+}
+ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+.clear{clear:both}
+body {
+    color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.pad-30{padding:30px 0}
+.ptb-60{padding:60px 0}
+.ptb-65{padding:65px 0}
+.border-color{border-bottom:1px solid #ddd}
+.mt-30{margin-top:30px;}
+.pb-65 {
+  padding-bottom: 65px;
+}
+.mb-30{margin-bottom: 30px;}
+.mb-20{margin-bottom: 20px;}
+/************
+parallax
+*************/
+.parallax {
+background-image: url(img/parallex/aboutus.png);
+    /* Set a specific height */
+    height: auto; 
+    width: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*******
+preloader
+*********/
+/*******************
+    header top bar
+*******************/
+header{}
+.top-bar{
+    background: #ffffff;
+    border-bottom: 3px solid #01B5E2;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.ttfw{text-transform: uppercase;}
+/************
+slider
+**************/
+.slider-area{border-bottom: 3px solid #E94492;}
+.slider-active .owl-nav div{
+    background: #01B5E2 none repeat scroll 0 0;
+    color: #ffffff;
+    font-size: 60px;
+    height: 70px;
+    line-height: 60px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 60px;
+}
+.slider-active .owl-nav div:hover{background: #ffffff;color: #000000;}
+.slider-active .owl-nav div.owl-next{
+    left: auto;
+    right: 20px;
+}
+.slider-active .owl-dots{
+    bottom: 15px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+.slider-active .owl-dot{
+    background: #01B5E2 none repeat scroll 0 0;
+    border-radius: 50%;
+    display: inline-block;
+    height: 15px;
+    margin: 0 2px;
+    width: 15px;
+}
+.slider-active .owl-dot.active{
+    background: #ffffff none repeat scroll 0 0;
+}
+/*******************
+service
+********************/
+.service-area {
+    padding: 40px 0 45px 0;
+}
+.icon-and-text{
+    padding: 5px 0 0 5px;
+    border: 1px solid #e3e3e3;
+}
+.icon-and-text a {
+    font-weight: 400;
+    font-size: 15px;
+    color: #4a4a4a;
+    padding: 0px 20px;
+    text-transform: uppercase;
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+}
+.box-area{
+    position: relative;
+    transform: scale(0.9);
+}
+.box-area:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffee10;
+}
+.box-area:before{
+    position: absolute;
+    content: "";
+    border: 1px solid #e3e3e3;
+    top: 0;
+    right: 5px;
+    bottom: 4px;
+    left: 0px;
+    z-index: -1;
+}
+.icon-and-text a i{
+    position: relative;
+    padding-right: 15px;
+    margin: 30px 15px 27px 0;
+    font-size: 26px;
+    color: #9E9E9E;
+    transition: all 300ms;
+    float: left;
+}
+.icon-and-text:hover a i.fa-reply{
+    animation: 1s linear 0s normal none infinite running spinAround;
+}
+.icon-and-text:hover a i{
+    color: #b18ade;
+}
+.icon-and-text a i:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    background-color: #e3e3e3;
+    width: 1px;
+    height: 21px;
+}
+/*********************
+about us
+**********************/
+.heading-title{
+    text-align: center;
+}
+.heading-title h4{
+    color: #2b2b2b;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    font-size: 26px;
+}
+.content p {
+    font-size: 14px;
+    color: #747474;
+}
+.team-member {
+    padding: 70px 0;
+}
+.our-team {
+    text-align: center;
+    background: #fff;
+}
+.member {
+    padding: 20px 0;
+}
+.member h4{
+    font-size: 14px;
+  color: #383838;
+  text-transform: uppercase;
+  margin: 0px 0px 12px;
+}
+.member h6{
+    font-size: 13px;
+    padding-top: 1px;
+    font-family: "Open Sans";
+    color: #9c9c9c;
+}
+.social a{} 
+.social a i{
+    display: inline-block;
+    font-size: 16px;
+    color: #dadada;
+    padding: 5px 7px;
+}
+.social a i:hover{
+    color: #b18ade;
+} 
+/****************
+board of directores
+*****************/
+.bod{height: 50%;}
+.bod_slider-active .owl-nav div{
+    color: #01B5E2;
+    font-size: 80px;
+    height: 80px;
+    line-height: 80px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    width: 60px;
+}
+.bod_slider-active .owl-nav div.owl-next{
+    left: auto;
+    right: 80px;
+}
+hr{
+    margin: 20px auto;
+    width: 200px;
+    position: relative;
+    background-color: #ccc;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+hr:before{
+        width: 100px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "";
+    background-color: #0077ed;
+    height: 2px;
+}
+.carousel-title{
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+/****************
+board of directores slider
+*****************/
+figure.card {
+  color: #fff;
+  position: relative;
+  float: left;
+  margin: 10px 1%;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 310px;
+  width: 100%;
+  text-align: center;
+}
+figure.card * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+figure.card img {
+  opacity: 1;
+  max-width: 100%;
+  border: 10px solid #000000;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+figure.card figcaption {
+  bottom: 0;
+  width: 60%;
+  right: 0;
+  position: absolute;
+  background: #000000;
+  padding: 20px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  box-shadow: 0 0px 10px -10px #000000;
+}
+figure.card figcaption h2,
+figure.card figcaption p {
+  margin: 0;
+  color: #ffffff;
+}
+figure.card figcaption h2 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+figure.card figcaption h2 span {
+  font-weight: 800;
+}
+figure.card figcaption p {
+  font-size: 0.9em;
+  font-weight: 500;
+  opacity: 0.65;
+}
+figure.card a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+figure.card.blue figcaption {
+  background: #1b557a;
+}
+figure.card.blue img {
+  border: 10px solid #1b557a;
+}
+figure.card.red figcaption {
+  background: #81261d;
+}
+figure.card.red img {
+  border: 10px solid #81261d;
+}
+figure.card.yellow figcaption {
+  background: #a85913;
+}
+figure.card.yellow img {
+  border: 10px solid #a85913;
+}
+figure.card:hover figcaption,
+figure.card.hover figcaption {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 15px -15px #000000;
+}
+figure.card:hover.blue img,
+figure.card.hover.blue img {
+  border: 10px solid #2980b9;
+}
+figure.card:hover.red img,
+figure.card.hover.red img {
+  border: 10px solid #c0392b;
+}
+figure.card:hover.yellow img,
+figure.card.hover.yellow img {
+  border: 10px solid #e67e22;
+}
+/*************
+footer
+*************/
+.footer-bg{background:#252525;border-top: 5px solid #0077ED;}
+.footer-widget{}
+.footer-widget p {
+  color: #ddd;
+  margin-top: 20px;
+}
+.social-icon{}
+.social-icon a {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #ddd;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  width: 35px;
+}
+.footer-title {
+  color: #0077ED;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.footer-menu{}
+.footer-menu li {
+  margin-bottom: 12px;
+}
+.footer-menu li a {
+  color: #ddd;
+  font-weight: 300;
+}
+.footer-contact{}
+.footer-contact li {
+  margin-bottom: 15px;
+}
+.footer-contact li i {
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #ddd;
+  float: left;
+  height: 35px;
+  line-height: 35px;
+  margin-right: 15px;
+  text-align: center;
+  width: 35px;
+}
+.footer-contact li span {
+  color: #ddd;
+  font-weight: 400;
+}
+.copyright-area{background: #0077ED;}
+.copyright > p {
+  color: #ddd;
+  margin: 0;
+}
+.aboutus{}
