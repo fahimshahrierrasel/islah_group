@@ -1,9 +1,13 @@
-﻿using System;
-using System.Web.UI.WebControls;
-using IslahGroup.DotNet.BusinessLogicLayer;
+﻿using IslahGroup.DotNet.BusinessLogicLayer;
 using IslahGroup.DotNet.EntityLayer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace IslahGroup.Views
+namespace IslahGroup.Admin
 {
     public partial class Login : System.Web.UI.Page
     {
@@ -17,13 +21,22 @@ namespace IslahGroup.Views
             string username = TextboxUsername.Text;
             string password = TextPassword.Text;
 
-            if(String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
             {
                 ShowWarningWith("Username/Password cann't be empty");
             }
-            else { 
+            else
+            {
                 IGUserLogic ml = new IGUserLogic();
-                IGUser currentUser = ml.LoginToTheSystem(username, password);
+                IGUser currentUser = null;
+                try
+                {
+                    currentUser = ml.LoginToTheSystem(username, password);
+                }catch(Exception ex)
+                {
+                    ShowWarningWith(ex.Message);
+                }
+                
                 if (currentUser != null)
                 {
                     Session["UserId"] = currentUser.UserId;
@@ -38,6 +51,7 @@ namespace IslahGroup.Views
                 }
             }
         }
+
 
         private void ShowWarningWith(String message)
         {

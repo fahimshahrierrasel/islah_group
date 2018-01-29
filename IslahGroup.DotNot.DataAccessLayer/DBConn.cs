@@ -14,7 +14,8 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public DBConn()
         {
             Cmd = new SqlCommand();
-            _connection = new SqlConnection(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true");
+            //_connection = new SqlConnection(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf; Database=islahgro_admin;User Instance=true;");
+            _connection = new SqlConnection(@"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;");
             Cmd.Connection = _connection;
         }
 
