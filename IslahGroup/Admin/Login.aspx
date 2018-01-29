@@ -7,7 +7,6 @@
     <title>Login | Islah Group</title>
     <link rel="stylesheet" href="../Content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../Content/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../Content/sb-admin/sb-admin.css" />
     <link rel="stylesheet" href="../Content/day-night.css" />
     <style>
         .login-btn {
@@ -76,7 +75,13 @@
                         <label for="TextPassword" class="text-dark">Password</label>
                         <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server" required></asp:TextBox>
                     </div>
-                    <asp:Button ID="ButtonSubmit" CssClass="btn btn-primary login-btn" type="button" runat="server" Text="Submit" />
+                    <asp:Button ID="ButtonSubmit" CssClass="btn btn-primary login-btn" type="button" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
+                    <asp:Panel ID="PanelLoginMessage" CssClass="alert alert-warning alert-dismissible fade show text-dark mt-4 d-none" runat="server">
+                        <strong>Warning!</strong><br />
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </asp:Panel>
                 </form>
             </div>
         </div>
