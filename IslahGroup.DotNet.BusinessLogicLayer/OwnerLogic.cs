@@ -5,9 +5,9 @@ using IslahGroup.DotNet.DataAccessLayer;
 
 namespace IslahGroup.DotNet.BusinessLogicLayer
 {
-    public class MemberLogic
+    public class OwnerLogic
     {
-        public bool RegisterNewMember(Dictionary<string, string> memberInformation)
+        public bool RegisterNewOwner(Dictionary<string, string> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
             parameters[0] = new SqlParameter("ShareNo", memberInformation["ShareNo"]);
@@ -41,7 +41,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[28] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
             parameters[29] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
 
-            MemberData data = new MemberData();
+            OwnerData data = new OwnerData();
             if (data.Insert(parameters))
             {
                 return true;

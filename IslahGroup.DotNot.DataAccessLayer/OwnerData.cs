@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace IslahGroup.DotNet.DataAccessLayer
 {
-    public class MemberData : IDatabaseAccessable
+    public class OwnerData : IDatabaseAccessable
     {
         public bool Delete(SqlParameter[] parameters)
         {

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="Members.aspx.cs" Inherits="IslahGroup.Admin.Members" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="Owners.aspx.cs" Inherits="IslahGroup.Admin.Owners" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -9,18 +9,18 @@
             <li class="breadcrumb-item">
                 <a href="Dashboard.aspx">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Members</li>
+            <li class="breadcrumb-item active">Owners</li>
         </ol>
         <div class="mb-3">
-            <a class="btn btn-primary" href="../Admin/RegisterMember.aspx">
+            <a class="btn btn-primary" href="../Admin/RegisterOwner.aspx">
                 <i class="fa fa-fw fa-plus"></i>
-                <span class="nav-link-text">Register Member</span>
+                <span class="nav-link-text">Register Owner</span>
             </a>
         </div>
         <!-- Members DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i>All Memeber
+                <i class="fa fa-table"></i>All Owners
             </div>
             <div class="card-body">
                 <div class="table-responsive">

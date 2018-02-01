@@ -10,7 +10,7 @@
 namespace IslahGroup.Admin {
     
     
-    public partial class RegisterMember {
+    public partial class RegisterOwner {
         
         /// <summary>
         /// regForm control.

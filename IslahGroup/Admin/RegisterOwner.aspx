@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="RegisterMember.aspx.cs" Inherits="IslahGroup.Admin.RegisterMember" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="RegisterOwner.aspx.cs" Inherits="IslahGroup.Admin.RegisterOwner" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -47,7 +47,7 @@
     </style>
 
     <div class="card card-register mx-auto mt-5 mb-5">
-        <div class="card-header">Register New Member</div>
+        <div class="card-header">Register New Owner</div>
         <div class="card-block">
             <form id="regForm" action="#" runat="server">
                 <!-- One "tab" for each step in the form: -->

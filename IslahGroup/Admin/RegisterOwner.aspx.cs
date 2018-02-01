@@ -5,7 +5,7 @@ using IslahGroup.DotNet.BusinessLogicLayer;
 
 namespace IslahGroup.Admin
 {
-    public partial class RegisterMember : System.Web.UI.Page
+    public partial class RegisterOwner : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,7 +50,7 @@ namespace IslahGroup.Admin
             //string memberImageUpload="";
             //string nomineeImageUpload="";
 
-            MemberLogic memberLogic = new MemberLogic();
+            OwnerLogic memberLogic = new OwnerLogic();
 
             Dictionary<string, string> memberInformation = new Dictionary<string, string>
             {
@@ -88,9 +88,9 @@ namespace IslahGroup.Admin
 
             try
             {
-                if(memberLogic.RegisterNewMember(memberInformation))
+                if(memberLogic.RegisterNewOwner(memberInformation))
                 {
-                    Response.Redirect("~/Admin/Members.aspx");
+                    Response.Redirect("~/Admin/Owners.aspx");
                 }
             }
             catch(Exception ex)
