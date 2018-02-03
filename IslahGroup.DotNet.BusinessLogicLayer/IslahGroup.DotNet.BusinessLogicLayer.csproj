@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IGUserLogic.cs" />
-    <Compile Include="MemberLogic.cs" />
+    <Compile Include="OwnerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

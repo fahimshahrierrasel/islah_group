@@ -5,7 +5,7 @@ using IslahGroup.DotNet.BusinessLogicLayer;
 
 namespace IslahGroup.Admin
 {
-    public partial class RegisterMember : System.Web.UI.Page
+    public partial class RegisterOwner : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace IslahGroup.Admin
             string bloodGroup = BloodGroup.Text;
             string mobileNo = MobileNo.Text;
             string email = Email.Text;
-            
+
             // Nominee's Info
             string nomineeNidNo = NomineeNidNo.Text;
             string nomineeName = NomineeName.Text;
@@ -44,13 +44,13 @@ namespace IslahGroup.Admin
             string nomineeProfession = NomineeProfession.Text;
             string nomineeMobileNo = NomineeMobileNo.Text;
             // Introducer's Info
-            string introducerName = IntroducerName.Text;
-            string introducerShareNo = IntroducerShareNo.Text;
+            //string introducerName = IntroducerName.Text;
+            //string introducerShareNo = IntroducerShareNo.Text;
             // Photo url
             //string memberImageUpload="";
             //string nomineeImageUpload="";
 
-            MemberLogic memberLogic = new MemberLogic();
+            OwnerLogic memberLogic = new OwnerLogic();
 
             Dictionary<string, string> memberInformation = new Dictionary<string, string>
             {
@@ -72,8 +72,6 @@ namespace IslahGroup.Admin
                 { "Email", email },
                 { "ImageUrl", "" },
                 { "RegistrationDate", registrationDate },
-                { "IntroducerName", introducerName },
-                { "Introducers_ShareNo", introducerShareNo },
                 { "NomineeNidNo", nomineeNidNo },
                 { "NomineeName", nomineeName },
                 { "NomineeFatherHusbandName", nomineeFatherHusbandName },
@@ -86,17 +84,25 @@ namespace IslahGroup.Admin
                 { "NomineeImageUrl", "" }
             };
 
+            Response.Write("<script>console.log('Member Not Add');</script>");
+
             try
             {
-                if(memberLogic.RegisterNewMember(memberInformation))
+                if (memberLogic.RegisterNewOwner(memberInformation))
                 {
-                    Response.Redirect("~/Admin/Members.aspx");
+                    Response.Redirect("~/Admin/Owners.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Member Not Add');</script>");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
-            } 
+            }
         }
+
     }
 }

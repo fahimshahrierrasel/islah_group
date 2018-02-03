@@ -71,8 +71,8 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
-    <Content Include="Admin\Members.aspx" />
-    <Content Include="Admin\RegisterMember.aspx" />
+    <Content Include="Admin\Owners.aspx" />
+    <Content Include="Admin\RegisterOwner.aspx" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\cssanimation.min.css" />
@@ -131,6 +131,7 @@
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-datatables.js" />
@@ -163,19 +164,19 @@
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Members.aspx.cs">
-      <DependentUpon>Members.aspx</DependentUpon>
+    <Compile Include="Admin\Owners.aspx.cs">
+      <DependentUpon>Owners.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Members.aspx.designer.cs">
-      <DependentUpon>Members.aspx</DependentUpon>
+    <Compile Include="Admin\Owners.aspx.designer.cs">
+      <DependentUpon>Owners.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\RegisterMember.aspx.cs">
-      <DependentUpon>RegisterMember.aspx</DependentUpon>
+    <Compile Include="Admin\RegisterOwner.aspx.cs">
+      <DependentUpon>RegisterOwner.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\RegisterMember.aspx.designer.cs">
-      <DependentUpon>RegisterMember.aspx</DependentUpon>
+    <Compile Include="Admin\RegisterOwner.aspx.designer.cs">
+      <DependentUpon>RegisterOwner.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

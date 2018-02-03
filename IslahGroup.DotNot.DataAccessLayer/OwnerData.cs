@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace IslahGroup.DotNet.DataAccessLayer
 {
-    public class MemberData : IDatabaseAccessable
+    public class OwnerData : IDatabaseAccessable
     {
         public bool Delete(SqlParameter[] parameters)
         {
@@ -19,7 +19,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "InsertMember";
+            dBConn.Cmd.CommandText = "InsertOwner";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
