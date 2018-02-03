@@ -71,16 +71,40 @@ body {
 .ptb-65{padding:65px 0}
 .border-color{border-bottom:1px solid #ddd}
 .mt-30{margin-top:30px;}
-.pb-65 {
-  padding-bottom: 65px;
-}
+.pb-65{padding-bottom: 65px;}
+.ptb-30{padding: 30px 0;}
+.pb-10{padding-bottom: 10px;}
 .mb-30{margin-bottom: 30px;}
 .mb-20{margin-bottom: 20px;}
 /************
 parallax
 *************/
 .parallax {
-background-image: url(img/parallex/aboutus.png);
+background-image: url(img/parallex/6.jpg);
+    /* Set a specific height */
+    height: auto; 
+    width: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax1 {
+background-image: url(img/parallex/bg.jpg);
+    /* Set a specific height */
+    height: auto; 
+    width: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax2 {
+background-image: url(img/parallex/3.jpg);
     /* Set a specific height */
     height: auto; 
     width: auto;
@@ -151,6 +175,7 @@ service
 ********************/
 .service-area {
     padding: 40px 0 45px 0;
+    border-bottom: 3px solid #ABCB59;
 }
 .icon-and-text{
     padding: 5px 0 0 5px;
@@ -171,7 +196,7 @@ service
     transform: scale(0.9);
 }
 .box-area:hover{
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0 0 15px #ffee10;
 }
 .box-area:before{
@@ -281,7 +306,7 @@ board of directores
 }
 hr{
     margin: 20px auto;
-    width: 200px;
+    width: 300px;
     position: relative;
     background-color: #ccc;
     height: 2px;
@@ -289,7 +314,7 @@ hr{
     border-top: 1px solid #eee;
 }
 hr:before{
-        width: 100px;
+    width: 100px;
     margin: 0 auto;
     display: block;
     position: absolute;
@@ -466,4 +491,65 @@ footer
   color: #ddd;
   margin: 0;
 }
-.aboutus{}
+/******************
+about us main page
+*******************/
+.aboutus{border-bottom: 3px solid #}
+.aboutus h1{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+.cardwrapper{margin: 50px;}
+.cardwrapper>img{
+  height: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cardcontentcontainer{
+  width: 800px;
+  height: 200px;
+  background: #FBB911;
+  padding: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cardcontentcontainer>h2{
+  font-size: 1.3em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.cardcontentcontainer>p{
+  font-size: .95em;
+  line-height: 1.5;
+  color: #757575;
+}
+/****************
+map area main page
+*****************/
+.map-area h1{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+.company-area{border-bottom: 3px solid #FBB911;}
+.company-area h1{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+.industry-area{}
+.industry-area h1{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
