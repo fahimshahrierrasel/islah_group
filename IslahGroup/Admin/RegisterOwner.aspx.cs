@@ -32,7 +32,7 @@ namespace IslahGroup.Admin
             string bloodGroup = BloodGroup.Text;
             string mobileNo = MobileNo.Text;
             string email = Email.Text;
-            
+
             // Nominee's Info
             string nomineeNidNo = NomineeNidNo.Text;
             string nomineeName = NomineeName.Text;
@@ -44,8 +44,8 @@ namespace IslahGroup.Admin
             string nomineeProfession = NomineeProfession.Text;
             string nomineeMobileNo = NomineeMobileNo.Text;
             // Introducer's Info
-            string introducerName = IntroducerName.Text;
-            string introducerShareNo = IntroducerShareNo.Text;
+            //string introducerName = IntroducerName.Text;
+            //string introducerShareNo = IntroducerShareNo.Text;
             // Photo url
             //string memberImageUpload="";
             //string nomineeImageUpload="";
@@ -72,8 +72,6 @@ namespace IslahGroup.Admin
                 { "Email", email },
                 { "ImageUrl", "" },
                 { "RegistrationDate", registrationDate },
-                { "IntroducerName", introducerName },
-                { "Introducers_ShareNo", introducerShareNo },
                 { "NomineeNidNo", nomineeNidNo },
                 { "NomineeName", nomineeName },
                 { "NomineeFatherHusbandName", nomineeFatherHusbandName },
@@ -86,17 +84,25 @@ namespace IslahGroup.Admin
                 { "NomineeImageUrl", "" }
             };
 
+            Response.Write("<script>console.log('Member Not Add');</script>");
+
             try
             {
-                if(memberLogic.RegisterNewOwner(memberInformation))
+                if (memberLogic.RegisterNewOwner(memberInformation))
                 {
-                    Response.Redirect("~/Admin/Owners.aspx");
+                    Response.Redirect("~/Admin/Owners.aspx", false);
+                    Context.ApplicationInstance.CompleteRequest();
+                }
+                else
+                {
+                    Response.Write("<script>alert('Member Not Add');</script>");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
-            } 
+            }
         }
+
     }
 }

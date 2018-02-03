@@ -28,18 +28,16 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[15] = new SqlParameter("Email", memberInformation["Email"]);
             parameters[16] = new SqlParameter("ImageUrl", memberInformation["ImageUrl"]);
             parameters[17] = new SqlParameter("RegistrationDate", DateTime.Parse(memberInformation["RegistrationDate"]));
-            parameters[18] = new SqlParameter("IntroducerName", memberInformation["IntroducerName"]);
-            parameters[19] = new SqlParameter("Introducers_ShareNo", memberInformation["Introducers_ShareNo"]);
-            parameters[20] = new SqlParameter("NomineeNidNo", memberInformation["NomineeNidNo"]);
-            parameters[21] = new SqlParameter("NomineeName", memberInformation["NomineeName"]);
-            parameters[22] = new SqlParameter("NomineeFatherHusbandName", memberInformation["NomineeFatherHusbandName"]);
-            parameters[23] = new SqlParameter("NomineeMotherName", memberInformation["NomineeMotherName"]);
-            parameters[24] = new SqlParameter("NomineeAddress", memberInformation["NomineeAddress"]);
-            parameters[25] = new SqlParameter("NomineeDateOfBirth", DateTime.Parse(memberInformation["NomineeDateOfBirth"]));
-            parameters[26] = new SqlParameter("NomineeRelation", memberInformation["NomineeRelation"]);
-            parameters[27] = new SqlParameter("NomineeProfession", memberInformation["NomineeProfession"]);
-            parameters[28] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
-            parameters[29] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
+            parameters[18] = new SqlParameter("NomineeNidNo", memberInformation["NomineeNidNo"]);
+            parameters[19] = new SqlParameter("NomineeName", memberInformation["NomineeName"]);
+            parameters[20] = new SqlParameter("NomineeFatherHusbandName", memberInformation["NomineeFatherHusbandName"]);
+            parameters[21] = new SqlParameter("NomineeMotherName", memberInformation["NomineeMotherName"]);
+            parameters[22] = new SqlParameter("NomineeAddress", memberInformation["NomineeAddress"]);
+            parameters[23] = new SqlParameter("NomineeDateOfBirth", DateTime.Parse(memberInformation["NomineeDateOfBirth"]));
+            parameters[24] = new SqlParameter("NomineeRelation", memberInformation["NomineeRelation"]);
+            parameters[25] = new SqlParameter("NomineeProfession", memberInformation["NomineeProfession"]);
+            parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
+            parameters[27] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
 
             OwnerData data = new OwnerData();
             if (data.Insert(parameters))

@@ -56,7 +56,8 @@ INSERT INTO IGMember
 	MobileNo,
 	Email,
 	ImageUrl,
-	RegistrationDate 
+	RegistrationDate,
+	MemberType
 ) 
 VALUES
 (
@@ -78,7 +79,19 @@ VALUES
 	@MobileNo,
 	@Email,
 	@ImageUrl ,
-	@RegistrationDate 
+	@RegistrationDate,
+	'Owner'
+)
+
+INSERT INTO MemberAmount
+(
+	Amount,
+	IGMember_MemberId
+)
+VALUES
+(
+	0.00,
+	@Member_Id
 )
 
 INSERT INTO Nominee
