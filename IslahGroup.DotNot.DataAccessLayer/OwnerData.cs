@@ -13,7 +13,27 @@ namespace IslahGroup.DotNet.DataAccessLayer
 
         public DataTable GetAllData()
         {
-            throw new NotImplementedException();
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "GetMembers";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable memberTable = new DataTable();
+            memberTable.Load(reader);
+            return memberTable;
+        }
+
+        public DataTable GetAMember(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "GetAMember";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable memberTable = new DataTable();
+            memberTable.Load(reader);
+            return memberTable;
         }
 
         public bool Insert(SqlParameter[] parameters)

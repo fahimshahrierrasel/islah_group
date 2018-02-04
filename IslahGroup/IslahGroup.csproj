@@ -71,6 +71,7 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\MemberDetails.aspx" />
     <Content Include="Admin\Owners.aspx" />
     <Content Include="Admin\RegisterOwner.aspx" />
     <Content Include="Content\animate.min.css" />
@@ -87,6 +88,7 @@
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\style.css" />
+    <Content Include="Images\admin_page\boy.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\landing_page\boss.png" />
     <Content Include="Images\landing_page\donate.png" />
@@ -131,7 +133,6 @@
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
-    <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-datatables.js" />
@@ -163,6 +164,13 @@
     </Compile>
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberDetails.aspx.cs">
+      <DependentUpon>MemberDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberDetails.aspx.designer.cs">
+      <DependentUpon>MemberDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Owners.aspx.cs">
       <DependentUpon>Owners.aspx</DependentUpon>
@@ -219,6 +227,10 @@
     <ProjectReference Include="..\IslahGroup.DotNet.EntityLayer\IslahGroup.DotNet.EntityLayer.csproj">
       <Project>{F327ABE5-2B2F-4341-BBF2-4943D2750F8F}</Project>
       <Name>IslahGroup.DotNet.EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IslahGroup.DotNot.DataAccessLayer\IslahGroup.DotNet.DataAccessLayer.csproj">
+      <Project>{8E6E1650-B89D-48A7-8465-CEA70BD54D10}</Project>
+      <Name>IslahGroup.DotNet.DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
