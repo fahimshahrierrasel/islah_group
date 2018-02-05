@@ -1,6 +1,6 @@
 CREATE PROCEDURE GetAMember
 (
-	@Memeber_Id Int
+	@Member_Id Int
 )
 AS
 BEGIN
@@ -23,6 +23,23 @@ BEGIN
 		  ,Email
 		  ,ImageUrl
 		  ,RegistrationDate
-	  FROM IGMember
-	  WHERE MemberId = @Memeber_Id;
+		  ,MemberType
+		  ,Nominee.NomineeId
+		  ,Nominee.NomineeNidNo
+		  ,Nominee.NomineeName
+		  ,Nominee.NomineeFatherHusbandName
+		  ,Nominee.NomineeMotherName
+		  ,Nominee.NomineeAddress
+		  ,Nominee.NomineeDateOfBirth
+		  ,Nominee.NomineeRelation
+		  ,Nominee.NomineeProfession
+		  ,Nominee.NomineeMobileNo
+		  ,Nominee.NomineeImageUrl
+		  ,MemberAmount.MemAmountId
+		  ,MemberAmount.Amount
+	  FROM IGMember, Nominee, MemberAmount
+	  WHERE MemberId = @Member_Id
+	  AND Nominee.IGMember_MemberId = @Member_Id
+	  AND MemberAmount.IGMember_MemberId = @Member_Id;
 END
+GO
