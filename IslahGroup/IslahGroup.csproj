@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Expenditure.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
     <Content Include="Admin\MemberDetails.aspx" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Expenditure.aspx.cs">
+      <DependentUpon>Expenditure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Expenditure.aspx.designer.cs">
+      <DependentUpon>Expenditure.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
