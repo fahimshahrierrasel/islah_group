@@ -70,10 +70,12 @@
   <ItemGroup>
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Expenditure.aspx" />
+    <Content Include="Admin\Investors.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
     <Content Include="Admin\MemberDetails.aspx" />
     <Content Include="Admin\Owners.aspx" />
+    <Content Include="Admin\RegisterInvestor.aspx" />
     <Content Include="Admin\RegisterOwner.aspx" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -159,6 +161,13 @@
     <Compile Include="Admin\Expenditure.aspx.designer.cs">
       <DependentUpon>Expenditure.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Investors.aspx.cs">
+      <DependentUpon>Investors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Investors.aspx.designer.cs">
+      <DependentUpon>Investors.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,6 +195,13 @@
     </Compile>
     <Compile Include="Admin\Owners.aspx.designer.cs">
       <DependentUpon>Owners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegisterInvestor.aspx.cs">
+      <DependentUpon>RegisterInvestor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisterInvestor.aspx.designer.cs">
+      <DependentUpon>RegisterInvestor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\RegisterOwner.aspx.cs">
       <DependentUpon>RegisterOwner.aspx</DependentUpon>
