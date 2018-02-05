@@ -14,8 +14,11 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public DBConn()
         {
             Cmd = new SqlCommand();
+            // Hosting Server Information
             //_connection = new SqlConnection(@"data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf; Database=islahgro_admin;User Instance=true;");
-            _connection = new SqlConnection(@"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;");
+            // Fahim's Desktop Server
+            //_connection = new SqlConnection(@"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;");
+            _connection = new SqlConnection(@"Server=tcp:treebricksdev.database.windows.net,1433;Initial Catalog=IslahGroup;Persist Security Info=False;User ID=fahimshahrierrasel;Password=fahim1@treebricks;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             Cmd.Connection = _connection;
         }
 

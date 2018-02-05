@@ -6,7 +6,7 @@ CREATE PROCEDURE GetUserInformation
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT UserId, AName, Email, AUsername, APassword, UserType.Type AS UserType
-	FROM IGUser, UserType
-	WHERE IGUser.UserType_TypeID = UserType.TypeID AND AUsername = @Username AND APassword = @Password
+	SELECT UserId, AName, Email, AUsername, APassword, UserType_UsrType AS UserType
+	FROM IGUser
+	WHERE AUsername = @Username AND APassword = @Password
 END
