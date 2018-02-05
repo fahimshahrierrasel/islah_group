@@ -33,6 +33,7 @@ namespace IslahGroup.Admin
         private void PopulateFields()
         {
             DataRow dr = memberInfo.Rows[0];
+            Page.Title = dr["FullName"].ToString();
             LabelMemberName.Text = dr["FullName"].ToString();
             LabelFullName.Text = dr["FullName"].ToString();
             LabelNID.Text = dr["NID"].ToString();
@@ -59,6 +60,11 @@ namespace IslahGroup.Admin
             LabelNomineeRelation.Text = dr["NomineeRelation"].ToString();
             LabelNomineeProfession.Text = dr["NomineeProfession"].ToString();
             LabelNomineeMobileNo.Text = dr["NomineeMobileNo"].ToString();
+        }
+
+        protected void ButtonAddODeposit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

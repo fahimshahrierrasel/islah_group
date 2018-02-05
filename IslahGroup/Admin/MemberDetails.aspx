@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="MemberDetails.aspx.cs" Inherits="IslahGroup.Admin.MemberDetails" %>
+﻿<%@ Page Title="Owner Details" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="MemberDetails.aspx.cs" Inherits="IslahGroup.Admin.MemberDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 200px;
+            width: 210px;
         }
     </style>
 </asp:Content>
@@ -189,7 +189,86 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        Owners Deposits
+                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal">
+                            <i class="fa fa-fw fa-plus"></i>Add
+
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Note</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <asp:Repeater ID="RepeaterOwnerDeposits" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%# Eval("DipositDate") %></a></td>
+                                                <td><%# Eval("Amount") %></td>
+                                                <td><%# Eval("Note") %></td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addDepositModal" tabindex="-1" role="dialog" aria-labelledby="addDepositModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addDepositModalTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
+                            <asp:TextBox ID="TextBoxDAmount" CssClass="form-control" runat="server" placeholder="Amount"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="TextBoxDDate" class="col-form-label">Date:</label>
+                            <asp:TextBox ID="TextBoxDDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <asp:Button ID="ButtonAddODeposit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddODeposit_Click" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script>
+        $(document).ready(function () {
+            $('#add_modal').click(function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
 </asp:Content>
