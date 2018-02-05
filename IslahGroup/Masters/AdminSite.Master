@@ -35,16 +35,22 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Owners">
                     <a class="nav-link" href="../Admin/Owners.aspx">
                         <i class="fa fa-fw fa-users"></i>
                         <span class="nav-link-text">Owners</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Expenditures">
                     <a class="nav-link" href="../Admin/Expenditure.aspx">
                         <i class="fa fa-fw fa-file-text"></i>
-                        <span class="nav-link-text">Expenditure</span>
+                        <span class="nav-link-text">Expenditures</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Investors">
+                    <a class="nav-link" href="../Admin/Investors.aspx">
+                        <i class="fa fa-fw fa-address-book"></i>
+                        <span class="nav-link-text">Investors</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
