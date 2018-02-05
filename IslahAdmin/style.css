@@ -508,6 +508,9 @@ about us main page
   display: inline-block;
   vertical-align: middle;
 }
+.cardwrapper>img{
+  float:left;
+}
 .cardcontentcontainer{
   width: 800px;
   height: 200px;
@@ -547,6 +550,20 @@ map area main page
 }
 .industry-area{}
 .industry-area h1{
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+  text-align: center;
+}
+.form-area{
+padding: 40px 0 45px 0;
+}
+.person{padding:0 20px;}
+/*********************
+video gallery
+******************/
+.ig_i1 h1{
   font-size: 50px;
   font-weight: 600;
   margin-bottom: 20px;

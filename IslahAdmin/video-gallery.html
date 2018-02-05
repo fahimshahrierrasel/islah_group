@@ -33,6 +33,76 @@
         <link rel="stylesheet" href="css/owl.theme.default.min.css">-->
         <!--vendor modernizer js-->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <style type="text/css">
+        .ig_i5{
+            position: relative;
+        }
+        .ig_i6{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right:0;
+            background-color: rgba(0, 0, 0, 0.48);
+            color: white;
+            font-size: 16px;
+            opacity: 0;
+            -webkit-transition: opacity 0.2s ease-in-out;
+            -moz-transition: opacity 0.2s ease-in-out;
+            -o-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .ig_i7{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .ig_i4 img{
+            width: 100%;
+            display: block;
+        }
+        .ig_i9{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -32px;
+            margin-top: -28px;
+            -webkit-transition: transform 0.2s ease-in-out;
+            -moz-transition: transform 0.2s ease-in-out;
+            -o-transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
+            font-size: 60px;
+        }
+        .blueimp-gallery>.indicator>li {
+            width: 40px !important;
+            height: 30px !important;
+            border-radius: 1px !important;
+            background-size: auto 100% !important;
+            opacity: 0.8!important;
+        }
+        .blueimp-gallery>.next, .blueimp-gallery>.prev {
+            width: 70px !important;
+            height: 70px !important;
+            line-height: 60px !important;
+            border-radius: 50% !important;
+            text-indent: 3px !important;
+        }
+        .blueimp-gallery>.prev {
+            text-indent: -3px !important;
+        }
+        .blueimp-gallery>.slides>.slide>.video-content>a {
+            margin: -47px auto 0 !important;
+            background-size: 110px !important;
+        }
+        .blueimp-gallery>.close {
+            font-size: 60px !important;
+            top: 35px !important;
+            font-weight: normal !important;
+        }
+        .ig_i10 img{
+            display: block;
+        }
+        </style>
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -56,7 +126,7 @@
                                             <a class="nav-link ttfw" href="index.html">Home <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle ttfw" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="nav-link dropdown-toggle ttfw" href="aboutus.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             About Us
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -127,16 +197,16 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link ttfw" href="#">Contact</a>
+                                            <a class="nav-link ttfw" href="contact.html">Contact</a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle ttfw" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Media
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item ttfw" href="#">Image</a>
+                                                <a class="dropdown-item ttfw" href="image-gallery.html">Images</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item ttfw" href="#">Gallery</a>
+                                                <a class="dropdown-item ttfw" href="video-gallery.html">Videos</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -158,117 +228,111 @@
             </div>
         </div>
         <!--slider area ends-->
-<!-- The container for the list of example images -->
-<!--<div id="links" class="links">
-    <a href="img/gallery/1.png"><img src="img/gallery/1.png"></a>
-    <a href="img/gallery/1.png"><img src="img/gallery/1.png"></a>
-    <a href="img/gallery/1.png"><img src="img/gallery/1.png"></a>
-    <a href="img/gallery/1.png"><img src="img/gallery/1.png"></a>
-    <a href="img/gallery/1.png"><img src="img/gallery/1.png"></a>
-</div>-->
-
-<!-- Page Content -->
-<div class="parallax1">
-    <div class="container">
-        <h1 class="my-4 text-center text-lg-center">Image Gallery</h1><hr></hr>
-        <div class="row text-center text-lg-left links"  id="links">
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
+        <div class="container ig_i3">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev show">‹</a>
+                <a class="next show">›</a>
+                <a class="close show">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator show"></ol>
             </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ig_i2">
+                        <div class="ig_i1">
+                            <h1>VIDEO GALLERY</h1><hr></hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=Vz8AQsnFxGw&ab_channel=MercifulServant"
+                               data-youtube="Vz8AQsnFxGw&ab_channel=MercifulServant" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <a href="https://www.youtube.com/watch?v=Vz8AQsnFxGw&ab_channel=MercifulServant"><h4>Caption1</h4></a>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=E5ln4uR4TwQ"
+                               data-youtube="E5ln4uR4TwQ" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <h4>Caption2</h4>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=onXpKXbnbE0"
+                               data-youtube="onXpKXbnbE0" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <h4>Caption3</h4>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=onXpKXbnbE0"
+                               data-youtube="onXpKXbnbE0" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <h4>Caption4</h4>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=onXpKXbnbE0"
+                               data-youtube="onXpKXbnbE0" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <h4>Caption5</h4>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <div class="thumbnail ig_i4">
+                            <a class="ig_i10" href="https://www.youtube.com/watch?v=onXpKXbnbE0"
+                               data-youtube="onXpKXbnbE0" type="text/html"
+                               poster="img/gallery/1.png" title="">
+                                <img src="img/gallery/1.png" alt="...">
+                            </a>
+                            <div class="caption">
+                                <h4>Caption6</h4>
+                                <p>loreum ipsum dollar set amet corodor lite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- /.container -->
 </div>
-    
-    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <!-- The placeholder for the description label: -->
-    <p class="description"></p>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
+
         <!--footer starts-->
         <footer class="footer-bg">
             <div class="footer-top-area pad-30 border-color">
@@ -354,12 +418,49 @@
         <script src="js/jquery-ui.js"></script>
         <script src="js/owl.carousel.js"></script>
         <script src="js/blueimp-gallery.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
         <script src="js/blueimp-gallery-indicator.js"></script>
         <script src="js/blueimp-gallery-fullscreen.js"></script>
         <script src="js/jquery.blueimp-gallery.js"></script>
         <script src="js/blueimp-helper.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/blueimp-gallery-video.js"></script>
+        <script src="js/blueimp-gallery-youtube.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        $('.ig_i4').click(function (event) {
+            event = event || window.event;
+            var link = $('.ig_i4').index(this),
+                    options = {
+                        index: link,
+                        event: event,
+                        youTubeClickToPlay: false
+                    },
+                    links = $('.ig_i4 .ig_i10').toArray();
+            blueimp.Gallery(links, options);
+        });
+        $('.ig_i4').on({'mouseenter':function(){
+            if($(this).find('.ig_i5').length==0){
+                $(this).find('img').wrap("<div class='ig_i5'></div>");
+                if($(this).find('a').attr('type')=='img'){
+                    $(this).find('.ig_i5').append("<div class='ig_i6'><div class='ig_i7'><i class=\"fa fa-search ig_i9\" aria-hidden=\"true\"></i></div></div>");
+                }else{
+                    $(this).find('.ig_i5').append("<div class='ig_i6'><div class='ig_i7'><i class=\"fa fa-youtube-play ig_i9\" aria-hidden=\"true\"></i></div></div>");
+                }
+                var el=$(this);
+                setTimeout(function(){
+                    el.find('.ig_i6').css('opacity','1');
+                    el.find('.ig_i9').css('transform','scale(1.1)');
+                },1);
+            }
+        }});
+        $('.ig_i4').on('mouseleave',function(){
+            $(this).find('img').unwrap();
+            $(this).find('.ig_i6').remove();
+        });
+    });
+        </script>
         <!--<script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

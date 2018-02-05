@@ -46,14 +46,14 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
-                                <a class="navbar-brand" href="#"><img src="img/logo/2.png" width="100" height="100" alt=""></a>
+                                <a class="navbar-brand" href="index.html"><img src="img/logo/2.png" width="100" height="100" alt=""></a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-auto">
                                         <li class="nav-item active">
-                                            <a class="nav-link ttfw" href="#">Home <span class="sr-only">(current)</span></a>
+                                            <a class="nav-link ttfw" href="index.html">Home <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle ttfw" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -127,16 +127,16 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link ttfw" href="#">Contact</a>
+                                            <a class="nav-link ttfw" href="contact.html">Contact</a>
                                         </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle ttfw" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Media
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item ttfw" href="#">Image</a>
+                                                <a class="dropdown-item ttfw" href="image-gallery.html">Images</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item ttfw" href="#">Gallery</a>
+                                                <a class="dropdown-item ttfw" href="video-gallery.html">Videos</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -149,7 +149,39 @@
             </div>
         </header>
         <!--header area ends-->
-        
+        <!--form area-->
+        <div class="form-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Full Name</label>
+                            <input type="text" class="form-control" id="exampleInputname" aria-describedby="namehelp" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Phone Number</label>
+                            <input type="text" class="form-control" id="exampleInputPhoneNumber" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Subject</label>
+                            <input type="text" class="form-control" id="exampleInputSubject" aria-describedby="subjectHelp" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Your Message</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--footer starts-->
         <footer class="footer-bg">
             <div class="footer-top-area pad-30 border-color">
@@ -241,6 +273,8 @@
         <script src="js/blueimp-helper.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/blueimp-gallery-video.js"></script>
+        <script src="js/blueimp-gallery-youtube.js"></script>
         <!--<script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
