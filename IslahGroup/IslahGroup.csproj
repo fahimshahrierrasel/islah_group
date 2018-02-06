@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Expenditure.aspx" />
     <Content Include="Admin\Investors.aspx" />
@@ -77,13 +78,24 @@
     <Content Include="Admin\Owners.aspx" />
     <Content Include="Admin\RegisterInvestor.aspx" />
     <Content Include="Admin\RegisterOwner.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\blueimp-gallery-indicator.css" />
+    <Content Include="Content\blueimp-gallery.css" />
+    <Content Include="Content\blueimp-gallery.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\cssanimation.min.css" />
     <Content Include="Content\day-night.css" />
-    <Content Include="Content\froala_blocks.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\mixitup.css" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Content\owl.carousel.min.css" />
+    <Content Include="Content\owl.theme.default.css" />
+    <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\sb-admin\sb-admin.css" />
     <Content Include="Content\sb-admin\sb-admin.min.css" />
     <Content Include="Content\datatables\dataTables.bootstrap4.css" />
@@ -91,6 +103,7 @@
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\style.css" />
+    <Content Include="ImageGallery.aspx" />
     <Content Include="Images\admin_page\boy.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\landing_page\boss.png" />
@@ -108,6 +121,13 @@
     <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
     <None Include="packages.config" />
     <Content Include="RegisterMember.aspx" />
+    <Content Include="Scripts\blueimp-gallery-fullscreen.js" />
+    <Content Include="Scripts\blueimp-gallery-indicator.js" />
+    <Content Include="Scripts\blueimp-gallery-video.js" />
+    <Content Include="Scripts\blueimp-gallery-youtube.js" />
+    <Content Include="Scripts\blueimp-gallery.js" />
+    <Content Include="Scripts\blueimp-gallery.min.js" />
+    <Content Include="Scripts\blueimp-helper.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\chart.js\Chart.js" />
@@ -137,6 +157,14 @@
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.blueimp-gallery.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-3.5.0.min.js" />
+    <Content Include="Scripts\owl.carousel.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-datatables.js" />
@@ -145,9 +173,17 @@
     <Content Include="Scripts\sb-admin\sb-admin.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="VideoGallery.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +247,13 @@
     <Compile Include="Admin\RegisterOwner.aspx.designer.cs">
       <DependentUpon>RegisterOwner.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +263,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery.aspx.cs">
+      <DependentUpon>ImageGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImageGallery.aspx.designer.cs">
+      <DependentUpon>ImageGallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Masters\AdminSite.Master.cs">
       <DependentUpon>AdminSite.Master</DependentUpon>
@@ -242,6 +292,13 @@
     </Compile>
     <Compile Include="RegisterMember.aspx.designer.cs">
       <DependentUpon>RegisterMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoGallery.aspx.cs">
+      <DependentUpon>VideoGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoGallery.aspx.designer.cs">
+      <DependentUpon>VideoGallery.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
