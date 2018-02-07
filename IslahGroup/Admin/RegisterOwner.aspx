@@ -8,6 +8,7 @@
         <div class="card-header">Register New Owner</div>
         <div class="card-block p-3">
             <form id="regForm" action="#" runat="server">
+                <h3>Owner's Information</h3>
                 <div class="form-group">
                     <label for="RegistrationDate">Registration Date</label>
                     <asp:TextBox ID="RegistrationDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
@@ -104,6 +105,8 @@
                         </div>
                     </div>
                 </div>
+                <hr />
+                <h3>Nominee's Information</h3>
                 <div class="form-group">
                     <label for="NomineeNidNo">National Identification Number (NID)</label>
                     <asp:TextBox ID="NomineeNidNo" CssClass="form-control" type="text" placeholder="NID No" runat="server"></asp:TextBox>
@@ -148,16 +151,8 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="IntroducerName">Introducer Name</label>
-                    <asp:TextBox ID="IntroducerName" CssClass="form-control" type="text" placeholder="Introducer Name" runat="server"></asp:TextBox>
-                </div>
-                <div class="form-group">
-                    <label for="IntroducerShareNo">Share No</label>
-                    <asp:TextBox ID="IntroducerShareNo" CssClass="form-control" TextMode="Search" placeholder="Share No" runat="server"></asp:TextBox>
-                </div>
-
+                <hr />
+                <h3>Photos</h3>
                 <div class="form-group">
                     <label for="MemberImageUpload">Member's Photo</label>
                     <asp:FileUpload ID="MemberImageUpload" CssClass="form-control-file" runat="server" />

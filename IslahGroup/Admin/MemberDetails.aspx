@@ -171,7 +171,8 @@
                             <tr>
                                 <td class="auto-style1">Email</td>
                                 <td>
-                                    <a href="mailto:<%=memberInfo.Rows[0]["Email"]%>"><%=memberInfo.Rows[0]["Email"]%></a>
+                                    <%--<a href="mailto:<%=memberInfo.Rows[0]["Email"]%>"><%=memberInfo.Rows[0]["Email"]%></a>--%>
+                                    <asp:HyperLink ID="HyperLinkEmail" runat="server"></asp:HyperLink>
                                 </td>
                             </tr>
                         </table>

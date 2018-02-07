@@ -9,6 +9,7 @@
                 <div class="card-header">Member Registration</div>
                 <div class="card-block p-3">
                     <form id="regForm" action="#" runat="server">
+                        <h3>Your Information</h3>
                         <div class="form-group">
                             <label for="NidNo">National Identification Number (NID)</label>
                             <asp:TextBox ID="NidNo" CssClass="form-control" type="text" placeholder="NID No" runat="server"></asp:TextBox>
@@ -97,6 +98,8 @@
                                 </div>
                             </div>
                         </div>
+                        <hr />
+                        <h3>Nominee's Information</h3>
                         <div class="form-group">
                             <label for="NomineeNidNo">National Identification Number (NID)</label>
                             <asp:TextBox ID="NomineeNidNo" CssClass="form-control" type="text" placeholder="NID No" runat="server"></asp:TextBox>
@@ -141,7 +144,8 @@
                                 </div>
                             </div>
                         </div>
-
+                        <hr />
+                        <h3>Introducer's Information</h3>
                         <div class="form-group">
                             <label for="IntroducerName">Introducer Name</label>
                             <asp:TextBox ID="IntroducerName" CssClass="form-control" type="text" placeholder="Introducer Name" runat="server"></asp:TextBox>
@@ -150,7 +154,8 @@
                             <label for="IntroducerShareNo">Share No</label>
                             <asp:TextBox ID="IntroducerShareNo" CssClass="form-control" TextMode="Search" placeholder="Share No" runat="server"></asp:TextBox>
                         </div>
-
+                        <hr />
+                        <h3>Photos</h3>
                         <div class="form-group">
                             <label for="MemberImageUpload">Member's Photo</label>
                             <asp:FileUpload ID="MemberImageUpload" CssClass="form-control-file" runat="server" />
@@ -159,7 +164,7 @@
                             <label for="NomineeImageUpload">Nominee's Image</label>
                             <asp:FileUpload ID="NomineeImageUpload" CssClass="form-control-file" runat="server" />
                         </div>
-                        <asp:Button ID="FormSubmit" runat="server" CssClass="btn btn-primary float-right" Text="Submit" />
+                        <asp:Button ID="FormSubmit" runat="server" CssClass="btn btn-primary float-right" Text="Submit" OnClick="FormSubmit_Click"/>
                     </form>
                 </div>
             </div>
