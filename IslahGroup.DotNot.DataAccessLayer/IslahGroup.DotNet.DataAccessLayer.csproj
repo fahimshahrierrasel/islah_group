@@ -43,6 +43,7 @@
     <Compile Include="IDatabaseAccessable.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="IGUserData.cs" />
+    <Compile Include="MemberData.cs" />
     <Compile Include="OwnerData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

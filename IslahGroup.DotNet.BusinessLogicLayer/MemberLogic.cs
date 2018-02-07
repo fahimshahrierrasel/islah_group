@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using IslahGroup.DotNet.DataAccessLayer;
 
 namespace IslahGroup.DotNet.BusinessLogicLayer
 {
-    public class OwnerLogic
+    public class MemberLogic
     {
-        public bool RegisterNewOwner(Dictionary<string, string> memberInformation)
+
+        public bool RegisterNewMember(Dictionary<string, string> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
             parameters[0] = new SqlParameter("ShareNo", memberInformation["ShareNo"]);
@@ -40,30 +40,12 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
             parameters[27] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
 
-            OwnerData data = new OwnerData();
+            MemberData data = new MemberData();
             if (data.Insert(parameters))
             {
                 return true;
             }
             return false;
-        }
-
-        public DataTable GetOwner(Dictionary<string, int> memberInformation)
-        {
-            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
-            parameters[0] = new SqlParameter("Member_Id", memberInformation["Member_Id"]);
-            DataTable ownerData = new DataTable();
-            OwnerData data = new OwnerData();
-            ownerData = data.GetAMember(parameters);
-            return ownerData;
-        }
-
-        public DataTable GetAllOwner()
-        {
-            DataTable ownersData = new DataTable();
-            OwnerData data = new OwnerData();
-            ownersData = data.GetAllData();
-            return ownersData;
         }
     }
 }

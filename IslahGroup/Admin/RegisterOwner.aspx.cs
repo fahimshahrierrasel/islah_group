@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using IslahGroup.DotNet.BusinessLogicLayer;
 
 namespace IslahGroup.Admin
@@ -9,7 +10,6 @@ namespace IslahGroup.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void FormSubmit_Click(object sender, EventArgs e)
@@ -47,8 +47,24 @@ namespace IslahGroup.Admin
             //string introducerName = IntroducerName.Text;
             //string introducerShareNo = IntroducerShareNo.Text;
             // Photo url
-            //string memberImageUpload="";
-            //string nomineeImageUpload="";
+            string memberImageUploadPath = "";
+            string nomineeImageUploadPath = "";
+            string memberImageFolder = Server.MapPath(@"~/Upload/Images/Owners/");
+            string nomineeImageFolder = Server.MapPath(@"~/Upload/Images/Nominees/");
+
+            if (MemberImageUpload.HasFile)
+            {
+                string fileExtension = Path.GetExtension(MemberImageUpload.PostedFile.FileName);
+                memberImageUploadPath = memberImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
+                MemberImageUpload.SaveAs(memberImageUploadPath);
+            }
+
+            if (NomineeImageUpload.HasFile)
+            {
+                string fileExtension = Path.GetExtension(NomineeImageUpload.PostedFile.FileName);
+                nomineeImageUploadPath = nomineeImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
+                NomineeImageUpload.SaveAs(nomineeImageUploadPath);
+            }
 
             OwnerLogic memberLogic = new OwnerLogic();
 
@@ -70,7 +86,7 @@ namespace IslahGroup.Admin
                 { "BloodGroup", bloodGroup },
                 { "MobileNo", mobileNo },
                 { "Email", email },
-                { "ImageUrl", "" },
+                { "ImageUrl", memberImageUploadPath },
                 { "RegistrationDate", registrationDate },
                 { "NomineeNidNo", nomineeNidNo },
                 { "NomineeName", nomineeName },
@@ -81,7 +97,7 @@ namespace IslahGroup.Admin
                 { "NomineeRelation", nomineeRelation },
                 { "NomineeProfession", nomineeProfession },
                 { "NomineeMobileNo", nomineeMobileNo },
-                { "NomineeImageUrl", "" }
+                { "NomineeImageUrl", nomineeImageUploadPath }
             };
 
             Response.Write("<script>console.log('Member Not Add');</script>");
