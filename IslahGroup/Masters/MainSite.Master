@@ -112,34 +112,22 @@
                             <ul class="footer-contact">
                                 <li>
                                     <i class="fa fa-map-marker"></i>
-                                    <span>Your Road Number, Your Area or Street Name, Your City Name</span>
+                                    <p>475/C, Khilgoan, Dhaka-1219.</p>
                                 </li>
                                 <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    <span>Your Road Number, Your Area or Street Name, Your City Name</span>
+                                    <i class="fa fa-mobile"></i>
+                                    <p>01634-786786</p>
                                 </li>
                                 <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    <span>Your Road Number, Your Area or Street Name, Your City Name</span>
-                                </li>
-                                <li>
-                                    <i class="fa fa-map-marker"></i>
-                                    <span>Your Road Number, Your Area or Street Name, Your City Name</span>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <p>info@islahshop.com</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright-area pad-30">
-            <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright">
-                            <p>Copyright IslahGroupBD All rights reserved.</p>
-                        </div>
-                    </div>
+                    <small class="text-white">Copyright © Islah Group <% Response.Write(DateTime.Now.Year); %></small>
                 </div>
             </div>
         </div>

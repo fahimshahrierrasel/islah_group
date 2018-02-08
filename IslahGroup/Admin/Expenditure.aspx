@@ -103,27 +103,27 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="TextBoxDDate" class="col-form-label">Date:</label>
-                                <asp:TextBox ID="TextBoxEDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxEDate" CssClass="form-control" TextMode="Date" runat="server" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label for="TextBoxEInfo" class="col-form-label">Information:</label>
-                                <asp:TextBox ID="TextBoxEInfo" CssClass="form-control" TextMode="MultiLine" runat="server" placeholder="Short Information of expenditure"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxEInfo" CssClass="form-control" TextMode="MultiLine" runat="server" placeholder="Short Information of expenditure" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <label for="DropDownListEType" class="col-form-label">Expenditure Type:</label>
-                                <asp:DropDownList ID="DropDownListEType" runat="server">
+                                <asp:DropDownList ID="DropDownListEType" runat="server" required="required">
                                     <asp:ListItem>Invest</asp:ListItem>
                                     <asp:ListItem>Earn</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                             <div class="form-group">
                                 <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
-                                <asp:TextBox ID="TextBoxEAmount" CssClass="form-control" runat="server" placeholder="Amount"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxEAmount" CssClass="form-control" runat="server" onkeypress="return isNumberKey(event)" placeholder="Amount" required="required"></asp:TextBox>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <asp:Button ID="ButtonAddODeposit" CssClass="btn btn-primary" runat="server" Text="Submit" />
+                            <asp:Button ID="ButtonAddODeposit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddODeposit_Click" />
                         </div>
                     </form>
                 </div>
@@ -132,4 +132,12 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script>
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode != 46 && (charCode < 48 || charCode > 57)))
+                return false;
+            return true;
+        }
+    </script>
 </asp:Content>

@@ -13,5 +13,13 @@ namespace IslahGroup.Admin
         {
 
         }
+
+        protected void ButtonAddODeposit_Click(object sender, EventArgs e)
+        {
+            string eDate = TextBoxEDate.Text;
+            string eNote = TextBoxEInfo.Text;
+            string eType = DropDownListEType.Text;
+            string amount = TextBoxEAmount.Text;
+        }
     }
 }

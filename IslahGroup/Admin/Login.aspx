@@ -68,12 +68,12 @@
                 <form id="form1" runat="server">
                     <img src="../Images/islah_logo.png" class="mx-auto d-block" alt="Islah Logo" style="height: 100px" />
                     <div class="form-group mt-2">
-                        <label for="TextboxUsername" class="text-dark">Email address</label>
-                        <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server" required></asp:TextBox>
+                        <label for="TextboxUsername" class="text-dark">Username</label>
+                        <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="TextPassword" class="text-dark">Password</label>
-                        <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server" required></asp:TextBox>
+                        <asp:TextBox ID="TextPassword" type="password" CssClass="form-control" placeholder="Password" runat="server"></asp:TextBox>
                     </div>
                     <asp:Button ID="ButtonSubmit" CssClass="btn btn-primary login-btn" type="button" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                     <asp:Panel ID="PanelLoginMessage" CssClass="alert alert-warning alert-dismissible fade show text-dark mt-4 d-none" runat="server">
@@ -92,7 +92,8 @@
     <script>
         jQuery(document).ready(function () {
             $('.dayopen').on('click', function (e) {
-                var href, target; e.preventDefault();
+                var href, target;
+                e.preventDefault();
                 target = $(this).data('target');
                 href = "#" + target;
                 $("#" + target).fadeIn().addClass('activeday');

@@ -1,10 +1,6 @@
 ﻿using IslahGroup.DotNet.BusinessLogicLayer;
 using IslahGroup.DotNet.EntityLayer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
@@ -13,7 +9,6 @@ namespace IslahGroup.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
@@ -32,11 +27,12 @@ namespace IslahGroup.Admin
                 try
                 {
                     currentUser = ml.LoginToTheSystem(username, password);
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     ShowWarningWith(ex.Message);
                 }
-                
+
                 if (currentUser != null)
                 {
                     Session["UserId"] = currentUser.UserId;
@@ -51,7 +47,6 @@ namespace IslahGroup.Admin
                 }
             }
         }
-
 
         private void ShowWarningWith(String message)
         {
