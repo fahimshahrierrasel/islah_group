@@ -19,7 +19,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[5] = new SqlParameter("HusbWifeName", memberInformation["HusbWifeName"]);
             parameters[6] = new SqlParameter("PresentAddress", memberInformation["PresentAddress"]);
             parameters[7] = new SqlParameter("ParmanentAddress", memberInformation["ParmanentAddress"]);
-            parameters[8] = new SqlParameter("DateOfBirth", DateTime.Parse(memberInformation["DateOfBirth"]));
+            parameters[8] = new SqlParameter("DateOfBirth", DateTime.Parse(memberInformation["DateOfBirth"]).Date);
             parameters[9] = new SqlParameter("Education", memberInformation["Education"]);
             parameters[10] = new SqlParameter("Profession", memberInformation["Profession"]);
             parameters[11] = new SqlParameter("Nationality", memberInformation["Nationality"]);
@@ -28,13 +28,13 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[14] = new SqlParameter("MobileNo", memberInformation["MobileNo"]);
             parameters[15] = new SqlParameter("Email", memberInformation["Email"]);
             parameters[16] = new SqlParameter("ImageUrl", memberInformation["ImageUrl"]);
-            parameters[17] = new SqlParameter("RegistrationDate", DateTime.Parse(memberInformation["RegistrationDate"]));
+            parameters[17] = new SqlParameter("RegistrationDate", DateTime.Parse(memberInformation["RegistrationDate"]).Date);
             parameters[18] = new SqlParameter("NomineeNidNo", memberInformation["NomineeNidNo"]);
             parameters[19] = new SqlParameter("NomineeName", memberInformation["NomineeName"]);
             parameters[20] = new SqlParameter("NomineeFatherHusbandName", memberInformation["NomineeFatherHusbandName"]);
             parameters[21] = new SqlParameter("NomineeMotherName", memberInformation["NomineeMotherName"]);
             parameters[22] = new SqlParameter("NomineeAddress", memberInformation["NomineeAddress"]);
-            parameters[23] = new SqlParameter("NomineeDateOfBirth", DateTime.Parse(memberInformation["NomineeDateOfBirth"]));
+            parameters[23] = new SqlParameter("NomineeDateOfBirth", DateTime.Parse(memberInformation["NomineeDateOfBirth"]).Date);
             parameters[24] = new SqlParameter("NomineeRelation", memberInformation["NomineeRelation"]);
             parameters[25] = new SqlParameter("NomineeProfession", memberInformation["NomineeProfession"]);
             parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
