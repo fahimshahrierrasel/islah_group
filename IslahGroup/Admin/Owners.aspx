@@ -46,7 +46,7 @@
                                 <ItemTemplate>
                                     <tr>
                                         <td><a href="MemberDetails.aspx?MemId=<%# Eval("MemberId") %>"><%# Eval("FullName") %></a></td>
-                                        <td><%# Eval("DateOfBirth") %></td>
+                                        <td><%# Eval("DateOfBirth", "{0:d}") %></td>
                                         <td><%# Eval("MobileNo") %></td>
                                         <td><%# Eval("Amount") %></td>
                                     </tr>

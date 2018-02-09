@@ -50,6 +50,20 @@ namespace IslahGroup.DotNet.DataAccessLayer
             return true;
         }
 
+        public bool InsertDeposit(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "InsertDeposit";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+
+            return true;
+        }
+
         public bool Update(SqlParameter[] parameters)
         {
             throw new NotImplementedException();

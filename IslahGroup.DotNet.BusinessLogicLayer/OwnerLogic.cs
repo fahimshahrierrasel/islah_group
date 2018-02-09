@@ -65,5 +65,16 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             ownersData = data.GetAllData();
             return ownersData;
         }
+
+        public bool AddDeposit(Dictionary<string, string> depositInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[depositInformation.Count];
+            parameters[0] = new SqlParameter("DepositDate", depositInformation["DepositDate"]);
+            parameters[1] = new SqlParameter("Amount", depositInformation["Amount"]);
+            parameters[2] = new SqlParameter("Note", depositInformation["Note"]);
+            parameters[3] = new SqlParameter("MemberId", depositInformation["MemberId"]);
+            parameters[4] = new SqlParameter("UserId", depositInformation["UserId"]);
+            return true;
+        }
     }
 }

@@ -2,20 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
 {
     public partial class MemberDetails : System.Web.UI.Page
     {
         public DataTable memberInfo;
+        private int memberId;
         protected void Page_Load(object sender, EventArgs e)
         {
             memberInfo = new DataTable();
-            int memberId = Convert.ToInt32(Request.QueryString["MemId"]);
+            memberId = Convert.ToInt32(Request.QueryString["MemId"]);
             LoadOwner(memberId);
             PopulateFields();
         }
@@ -44,21 +42,21 @@ namespace IslahGroup.Admin
                 LabelHusbWifeName.Text = dr["HusbWifeName"].ToString();
                 LabelPresentAddress.Text = dr["PresentAddress"].ToString();
                 LabelParmanentAddress.Text = dr["ParmanentAddress"].ToString();
-                LabelDOB.Text = dr["DateOfBirth"].ToString();
+                LabelDOB.Text = DateTime.Parse(dr["DateOfBirth"].ToString()).Date.ToString();
                 LabelEducation.Text = dr["Education"].ToString();
                 LabelNationality.Text = dr["Nationality"].ToString();
                 LabelGender.Text = dr["Gender"].ToString();
                 LabelBloodGroup.Text = dr["BloodGroup"].ToString();
                 LabelMobileNo.Text = dr["MobileNo"].ToString();
 
-                LabelRegistrationDate.Text = dr["RegistrationDate"].ToString();
+                LabelRegistrationDate.Text = DateTime.Parse(dr["RegistrationDate"].ToString()).Date.ToString();
                 LabelAmount.Text = dr["Amount"].ToString();
                 LabelNomineeNID.Text = dr["NomineeNidNo"].ToString();
                 LabelNomineeName.Text = dr["NomineeName"].ToString();
                 LabelNomineeFatherHusbandName.Text = dr["NomineeFatherHusbandName"].ToString();
                 LabelNomineeMotherName.Text = dr["NomineeMotherName"].ToString();
                 LabelNomineeAddress.Text = dr["NomineeAddress"].ToString();
-                LabelNomineeDOB.Text = dr["NomineeDateOfBirth"].ToString();
+                LabelNomineeDOB.Text = DateTime.Parse(dr["NomineeDateOfBirth"].ToString()).Date.ToString();
                 LabelNomineeRelation.Text = dr["NomineeRelation"].ToString();
                 LabelNomineeProfession.Text = dr["NomineeProfession"].ToString();
                 LabelNomineeMobileNo.Text = dr["NomineeMobileNo"].ToString();
@@ -69,7 +67,20 @@ namespace IslahGroup.Admin
 
         protected void ButtonAddODeposit_Click(object sender, EventArgs e)
         {
+            string depositAmount = TextBoxDAmount.Text;
+            string depositDate = TextBoxDDate.Text;
+            string depositNote = TextBoxDNote.Text;
+            string userId = Session["UserId"].ToString();
 
+
+            Dictionary<string, string> memberInformation = new Dictionary<string, string>
+            {
+                { "DepositDate", depositAmount},
+                { "Amount", depositAmount },
+                { "Note", depositNote },
+                { "UserId", userId },
+                { "MemberId", memberId.ToString() }
+            };
         }
     }
 }

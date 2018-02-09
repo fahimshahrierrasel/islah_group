@@ -171,7 +171,6 @@
                             <tr>
                                 <td class="auto-style1">Email</td>
                                 <td>
-                                    <%--<a href="mailto:<%=memberInfo.Rows[0]["Email"]%>"><%=memberInfo.Rows[0]["Email"]%></a>--%>
                                     <asp:HyperLink ID="HyperLinkEmail" runat="server"></asp:HyperLink>
                                 </td>
                             </tr>
@@ -240,7 +239,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addDepositModalTitle">Modal title</h5>
+                        <h5 class="modal-title" id="addDepositModalTitle">Add Expenditure</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -248,11 +247,15 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
-                            <asp:TextBox ID="TextBoxDAmount" CssClass="form-control" runat="server" placeholder="Amount"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxDAmount" CssClass="form-control" runat="server" placeholder="Amount" required="required"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label for="TextBoxDDate" class="col-form-label">Date:</label>
-                            <asp:TextBox ID="TextBoxDDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxDDate" CssClass="form-control" TextMode="Date" runat="server" required="required"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="TextBoxDNote" class="col-form-label">Note:</label>
+                            <asp:TextBox ID="TextBoxDNote" CssClass="form-control" runat="server" placeholder="Note" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
                     <div class="modal-footer">
