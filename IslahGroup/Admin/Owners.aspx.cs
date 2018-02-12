@@ -23,7 +23,7 @@ namespace IslahGroup.Admin
         private void PopulateUserTable()
         {
             userDataTable.Clear();
-            userDataTable = od.GetAllOwner();
+            userDataTable = od.GetAllOwners();
             Repeater1.DataSource = userDataTable;
             Repeater1.DataBind();
         }

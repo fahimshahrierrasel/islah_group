@@ -12,7 +12,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
             IGUser user = null;
             DBConn dBConn = new DBConn();
 
-            dBConn.Cmd.CommandText = "GetUserInformation";
+            dBConn.Cmd.CommandText = "SP_GetSingleUser";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 

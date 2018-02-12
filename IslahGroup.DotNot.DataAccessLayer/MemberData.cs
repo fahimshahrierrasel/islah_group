@@ -11,7 +11,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
             throw new NotImplementedException();
         }
 
-        public DataTable GetAllData()
+        public DataTable GetAllMembers()
         {
             DBConn dBConn = new DBConn();
             dBConn.Cmd.CommandText = "GetMembers";

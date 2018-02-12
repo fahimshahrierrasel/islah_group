@@ -10,7 +10,7 @@
 namespace IslahGroup.Admin {
     
     
-    public partial class MemberDetails {
+    public partial class InvestorDetails {
         
         /// <summary>
         /// ProfileForm control.
@@ -29,24 +29,6 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelMemberName;
-        
-        /// <summary>
-        /// ImageMember control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageMember;
-        
-        /// <summary>
-        /// ImageNominee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImageNominee;
         
         /// <summary>
         /// LabelNID control.
@@ -175,105 +157,6 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelRegistrationDate;
         
         /// <summary>
-        /// LabelNomineeNID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeNID;
-        
-        /// <summary>
-        /// LabelNomineeName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeName;
-        
-        /// <summary>
-        /// LabelNomineeFatherHusbandName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeFatherHusbandName;
-        
-        /// <summary>
-        /// LabelNomineeMotherName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeMotherName;
-        
-        /// <summary>
-        /// LabelNomineeAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeAddress;
-        
-        /// <summary>
-        /// LabelNomineeDOB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeDOB;
-        
-        /// <summary>
-        /// LabelNomineeRelation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeRelation;
-        
-        /// <summary>
-        /// LabelNomineeProfession control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeProfession;
-        
-        /// <summary>
-        /// LabelNomineeMobileNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNomineeMobileNo;
-        
-        /// <summary>
-        /// LabelMobileNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMobileNo;
-        
-        /// <summary>
-        /// HyperLinkEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkEmail;
-        
-        /// <summary>
         /// LabelAmount control.
         /// </summary>
         /// <remarks>
@@ -317,6 +200,15 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxDDate;
+        
+        /// <summary>
+        /// DropDownListInvestType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListInvestType;
         
         /// <summary>
         /// TextBoxDNote control.

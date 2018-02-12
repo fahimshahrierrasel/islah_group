@@ -8,6 +8,5 @@ namespace IslahGroup.DotNet.DataAccessLayer
         bool Insert(SqlParameter[] parameters);
         bool Update(SqlParameter[] parameters);
         bool Delete(SqlParameter[] parameters);
-        DataTable GetAllData();
     }
 }

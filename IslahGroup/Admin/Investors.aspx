@@ -61,28 +61,25 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>FullName</th>
-                                <th>Type</th>
-                                <th>Amount</th>
-                                <th>Note</th>
+                                <th>Full Name</th>
+                                <th>Mobile No</th>
+                                <th>Total Invest</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Date</th>
-                                <th>Type</th>
-                                <th>Amount</th>
-                                <th>Note</th>
+                                <th>Full Name</th>
+                                <th>Mobile No</th>
+                                <th>Total Invest</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <asp:Repeater ID="RepeaterOwnerDeposits" runat="server">
+                            <asp:Repeater ID="RepeaterAllInvestors" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%# Eval("InvFullName") %></a></td>
-                                        <td><%# Eval("InvAmount") %></td>
-                                        <td><%# Eval("ExpnAmount") %></td>
-                                        <td><%# Eval("ExpnNote") %></td>
+                                        <td><%# Eval("FullName") %></a></td>
+                                        <td><%# Eval("MobileNo") %></td>
+                                        <td><%# Eval("TotalInvest") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>

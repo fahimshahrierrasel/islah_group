@@ -8,6 +8,12 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
 {
     public class OwnerLogic
     {
+        private OwnerData ownerData;
+
+        public OwnerLogic()
+        {
+            ownerData = new OwnerData();
+        }
         public bool RegisterNewOwner(Dictionary<string, string> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
@@ -40,41 +46,48 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
             parameters[27] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
 
-            OwnerData data = new OwnerData();
-            if (data.Insert(parameters))
+            if (ownerData.Insert(parameters))
             {
                 return true;
             }
             return false;
         }
 
-        public DataTable GetOwner(Dictionary<string, int> memberInformation)
+        public DataTable GetSingleOwner(Dictionary<string, int> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
-            parameters[0] = new SqlParameter("Member_Id", memberInformation["Member_Id"]);
-            DataTable ownerData = new DataTable();
-            OwnerData data = new OwnerData();
-            ownerData = data.GetAMember(parameters);
-            return ownerData;
+            parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
+            DataTable singleOwnerTable = new DataTable();
+            singleOwnerTable = ownerData.GetSingleMember(parameters);
+            return singleOwnerTable;
         }
 
-        public DataTable GetAllOwner()
+        public DataTable GetAllOwners()
         {
-            DataTable ownersData = new DataTable();
-            OwnerData data = new OwnerData();
-            ownersData = data.GetAllData();
-            return ownersData;
+            DataTable allOwnerTable = new DataTable();
+            allOwnerTable = ownerData.GetAllMembers();
+            return allOwnerTable;
         }
 
         public bool AddDeposit(Dictionary<string, string> depositInformation)
         {
             SqlParameter[] parameters = new SqlParameter[depositInformation.Count];
-            parameters[0] = new SqlParameter("DepositDate", depositInformation["DepositDate"]);
+            parameters[0] = new SqlParameter("DepositDate", DateTime.Parse(depositInformation["DepositDate"]).Date);
             parameters[1] = new SqlParameter("Amount", depositInformation["Amount"]);
             parameters[2] = new SqlParameter("Note", depositInformation["Note"]);
             parameters[3] = new SqlParameter("MemberId", depositInformation["MemberId"]);
             parameters[4] = new SqlParameter("UserId", depositInformation["UserId"]);
+            ownerData.InsertNewDeposit(parameters);
             return true;
+        }
+
+        public DataTable GetOwnerDeposits(Dictionary<string, int> memberInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
+            parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
+            DataTable singleOwnerTable = new DataTable();
+            singleOwnerTable = ownerData.GetMemberDeposits(parameters);
+            return singleOwnerTable;
         }
     }
 }

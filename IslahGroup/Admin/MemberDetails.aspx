@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 210px;
+            width: 200px;
+        }
+        .no_underline {
+            text-decoration: none;
         }
     </style>
 </asp:Content>
@@ -15,19 +18,42 @@
                     <asp:Label ID="LabelMemberName" runat="server" Text="Jon Doe"></asp:Label></h1>
             </div>
         </div>
-        <div class="row m-4">
+        <div class="row m-2">
             <div class="col-md-3">
-                <asp:Image ID="ImageMember" Width="300px" ImageUrl="~/Images/admin_page/boy.png" runat="server" />
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <a class="no_underline" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Member's Photo
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <asp:Image ID="ImageMember" Width="300px" ImageUrl="~/Images/admin_page/boy.png" runat="server" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <a class="no_underline collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Nominee's Photo
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <asp:Image ID="ImageNominee" Width="300px" ImageUrl="~/Images/landing_page/boss.png" runat="server" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
                 <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs" id="nav-tab-info" role="tablist">
                         <a class="nav-item nav-link active" id="nav-personal-tab" data-toggle="tab" href="#nav-personal" role="tab" aria-controls="nav-personal" aria-selected="true">Personal</a>
                         <a class="nav-item nav-link" id="nav-nominee-tab" data-toggle="tab" href="#nav-nominee" role="tab" aria-controls="nav-nominee" aria-selected="false">Nominee</a>
                         <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
                     </div>
                 </nav>
-                <div class="tab-content" id="nav-tabContent">
+                <div class="tab-content" id="nav-tabInfoContent">
                     <div class="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-tab">
                         <table class="w-100 p-3">
                             <tr>
@@ -187,6 +213,14 @@
                         </h5>
                     </div>
                 </div>
+                <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+                    <div class="card-header">Profit</div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <asp:Label ID="Label1" runat="server" Text="123,534.00"></asp:Label>
+                        </h5>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -220,7 +254,7 @@
                                     <asp:Repeater ID="RepeaterOwnerDeposits" runat="server">
                                         <ItemTemplate>
                                             <tr>
-                                                <td><%# Eval("DipositDate") %></a></td>
+                                                <td><%# Eval("DepositDate", "{0:d}") %></a></td>
                                                 <td><%# Eval("Amount") %></td>
                                                 <td><%# Eval("Note") %></td>
                                             </tr>

@@ -11,10 +11,10 @@ namespace IslahGroup.DotNet.DataAccessLayer
             throw new NotImplementedException();
         }
 
-        public DataTable GetAllData()
+        public DataTable GetAllMembers()
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "GetMembers";
+            dBConn.Cmd.CommandText = "SP_GetAllMembers";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Open();
             SqlDataReader reader = dBConn.Cmd.ExecuteReader();
@@ -23,10 +23,10 @@ namespace IslahGroup.DotNet.DataAccessLayer
             return memberTable;
         }
 
-        public DataTable GetAMember(SqlParameter[] parameters)
+        public DataTable GetSingleMember(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "GetAMember";
+            dBConn.Cmd.CommandText = "SP_GetSingleMember";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
             dBConn.Open();
@@ -39,7 +39,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "InsertOwner";
+            dBConn.Cmd.CommandText = "SP_InsertNewOwner";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
@@ -50,10 +50,10 @@ namespace IslahGroup.DotNet.DataAccessLayer
             return true;
         }
 
-        public bool InsertDeposit(SqlParameter[] parameters)
+        public bool InsertNewDeposit(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "InsertDeposit";
+            dBConn.Cmd.CommandText = "SP_InsertNewDeposit";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
@@ -62,6 +62,19 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dBConn.Close();
 
             return true;
+        }
+
+        public DataTable GetMemberDeposits(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetMemberDeposits";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable memberTable = new DataTable();
+            memberTable.Load(reader);
+            return memberTable;
         }
 
         public bool Update(SqlParameter[] parameters)

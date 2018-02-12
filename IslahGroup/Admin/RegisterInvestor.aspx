@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card card-register mx-auto mt-5 mb-5">
-        <div class="card-header">Register New Owner</div>
+        <div class="card-header">Register New Investor</div>
         <div class="card-block p-3">
             <form id="regForm" action="#" runat="server">
                 <div class="form-group">
