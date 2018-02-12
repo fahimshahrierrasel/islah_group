@@ -7,8 +7,8 @@
     <ProjectGuid>{8E6E1650-B89D-48A7-8465-CEA70BD54D10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IslahGroup.DotNot.DataAccessLayer</RootNamespace>
-    <AssemblyName>IslahGroup.DotNot.DataAccessLayer</AssemblyName>
+    <RootNamespace>IslahGroup.DotNet.DataAccessLayer</RootNamespace>
+    <AssemblyName>IslahGroup.DotNet.DataAccessLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpenditureData.cs" />
     <Compile Include="IDatabaseAccessable.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="IGUserData.cs" />

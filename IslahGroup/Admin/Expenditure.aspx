@@ -48,7 +48,7 @@
 
         <div class="row">
             <div class="col m-3">
-                <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#addDepositModal">Add Expenditure</button>
+                <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#addExpenditureModal">Add Expenditure</button>
             </div>
         </div>
 
@@ -73,10 +73,10 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <asp:Repeater ID="RepeaterOwnerDeposits" runat="server">
+                            <asp:Repeater ID="RepeaterExpenditures" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%# Eval("ExpnDate") %></a></td>
+                                        <td><%# Eval("ExpnDate", "{0:d}") %></a></td>
                                         <td><%# Eval("ExpnType") %></td>
                                         <td><%# Eval("ExpnAmount") %></td>
                                         <td><%# Eval("ExpnNote") %></td>
@@ -90,11 +90,11 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="addDepositModal" tabindex="-1" role="dialog" aria-labelledby="addDepositModalTitle" aria-hidden="true">
+        <div class="modal fade" id="addExpenditureModal" tabindex="-1" role="dialog" aria-labelledby="addExpenditureModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addDepositModalTitle">New Expenditure</h5>
+                        <h5 class="modal-title" id="addExpenditureModalTitle">New Expenditure</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -102,7 +102,7 @@
                     <form runat="server">
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="TextBoxDDate" class="col-form-label">Date:</label>
+                                <label for="TextBoxEDate" class="col-form-label">Date:</label>
                                 <asp:TextBox ID="TextBoxEDate" CssClass="form-control" TextMode="Date" runat="server" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
@@ -111,19 +111,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="DropDownListEType" class="col-form-label">Expenditure Type:</label>
-                                <asp:DropDownList ID="DropDownListEType" runat="server" required="required">
-                                    <asp:ListItem>Invest</asp:ListItem>
-                                    <asp:ListItem>Earn</asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:DropDownList ID="DropDownListEType" runat="server" required="required" DataTextField="Type" DataValueField="Type"></asp:DropDownList>
                             </div>
                             <div class="form-group">
-                                <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
+                                <label for="TextBoxEAmount" class="col-form-label">Amount:</label>
                                 <asp:TextBox ID="TextBoxEAmount" CssClass="form-control" runat="server" onkeypress="return isNumberKey(event)" placeholder="Amount" required="required"></asp:TextBox>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <asp:Button ID="ButtonAddODeposit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddODeposit_Click" />
+                            <asp:Button ID="ButtonAddExpenditure" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddExpenditure_Click" />
                         </div>
                     </form>
                 </div>

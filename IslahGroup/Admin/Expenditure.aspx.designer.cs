@@ -40,13 +40,13 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelTotalEarn;
         
         /// <summary>
-        /// RepeaterOwnerDeposits control.
+        /// RepeaterExpenditures control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterOwnerDeposits;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterExpenditures;
         
         /// <summary>
         /// TextBoxEDate control.
@@ -85,12 +85,12 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxEAmount;
         
         /// <summary>
-        /// ButtonAddODeposit control.
+        /// ButtonAddExpenditure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddODeposit;
+        protected global::System.Web.UI.WebControls.Button ButtonAddExpenditure;
     }
 }

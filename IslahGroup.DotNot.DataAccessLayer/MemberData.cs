@@ -14,7 +14,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public DataTable GetAllMembers()
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "GetMembers";
+            dBConn.Cmd.CommandText = "SP_GetAllMembers";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Open();
             SqlDataReader reader = dBConn.Cmd.ExecuteReader();
@@ -26,7 +26,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "InsertOwner";
+            dBConn.Cmd.CommandText = "SP_InsertNewOwner";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
