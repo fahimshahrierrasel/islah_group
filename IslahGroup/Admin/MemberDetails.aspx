@@ -28,7 +28,7 @@
                         </div>
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
-                                <asp:Image ID="ImageMember" Width="300px" ImageUrl="~/Images/admin_page/boy.png" runat="server" />
+                                <asp:Image ID="ImageMember" CssClass="img-thumbnail" ImageUrl="~/Images/admin_page/boy.png" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
-                                <asp:Image ID="ImageNominee" Width="300px" ImageUrl="~/Images/landing_page/boss.png" runat="server" />
+                                <asp:Image ID="ImageNominee" CssClass="img-thumbnail" ImageUrl="~/Images/landing_page/boss.png" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                     <div class="card-header">Profit</div>
                     <div class="card-body">
                         <h5 class="card-title">
-                            <asp:Label ID="Label1" runat="server" Text="123,534.00"></asp:Label>
+                            <asp:Label ID="LabelProfit" runat="server" Text="123,534.00"></asp:Label>
                         </h5>
                     </div>
                 </div>

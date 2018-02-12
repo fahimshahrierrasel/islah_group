@@ -66,6 +66,7 @@ namespace IslahGroup.Admin
                 LabelMobileNo.Text = dr["MobileNo"].ToString();
                 LabelRegistrationDate.Text = DateTime.Parse(dr["RegistrationDate"].ToString()).Date.ToString();
                 LabelAmount.Text = dr["Amount"].ToString();
+                LabelProfit.Text = dr["Profit"].ToString();
                 LabelNomineeNID.Text = dr["NomineeNidNo"].ToString();
                 LabelNomineeName.Text = dr["NomineeName"].ToString();
                 LabelNomineeFatherHusbandName.Text = dr["NomineeFatherHusbandName"].ToString();

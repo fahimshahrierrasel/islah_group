@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
 using IslahGroup.DotNet.BusinessLogicLayer;
 
@@ -43,26 +42,21 @@ namespace IslahGroup.Admin
             string nomineeRelation = NomineeRelation.Text;
             string nomineeProfession = NomineeProfession.Text;
             string nomineeMobileNo = NomineeMobileNo.Text;
-            // Introducer's Info
-            //string introducerName = IntroducerName.Text;
-            //string introducerShareNo = IntroducerShareNo.Text;
-            // Photo url
+
             string memberImageUploadPath = "";
             string nomineeImageUploadPath = "";
-            string memberImageFolder = Server.MapPath(@"~/Upload/Images/Owners/");
-            string nomineeImageFolder = Server.MapPath(@"~/Upload/Images/Nominees/");
 
             if (MemberImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(MemberImageUpload.PostedFile.FileName);
-                memberImageUploadPath = memberImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
+                memberImageUploadPath = Server.MapPath(@"~/Upload/Images/Owners/" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension);
                 MemberImageUpload.SaveAs(memberImageUploadPath);
             }
 
             if (NomineeImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(NomineeImageUpload.PostedFile.FileName);
-                nomineeImageUploadPath = nomineeImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
+                nomineeImageUploadPath = Server.MapPath(@"~/Upload/Images/Nominees/" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension);
                 NomineeImageUpload.SaveAs(nomineeImageUploadPath);
             }
 
