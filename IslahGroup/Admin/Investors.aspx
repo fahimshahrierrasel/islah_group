@@ -47,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div class="col m-3">
+            <div class="col m-3" id="RegisterInvestorBtn" runat="server">
                 <a class="btn btn-primary" href="../Admin/RegisterInvestor.aspx">
                     <i class="fa fa-fw fa-plus"></i>
                     <span class="nav-link-text">Register Investor</span>

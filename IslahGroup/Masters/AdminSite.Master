@@ -35,12 +35,13 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Owners">
+                <li class="nav-item" id="Owners" data-toggle="tooltip" runat="server" data-placement="right" title="Owners">
                     <a class="nav-link" href="../Admin/Owners.aspx">
                         <i class="fa fa-fw fa-users"></i>
                         <span class="nav-link-text">Owners</span>
                     </a>
                 </li>
+                
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Expenditures">
                     <a class="nav-link" href="../Admin/Expenditure.aspx">
                         <i class="fa fa-fw fa-file-text"></i>

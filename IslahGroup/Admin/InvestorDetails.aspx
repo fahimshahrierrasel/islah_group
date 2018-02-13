@@ -115,9 +115,8 @@
                 <div class="card">
                     <div class="card-header">
                         Owners Deposits
-                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal">
+                        <button class="btn btn-primary float-right" id="add_modal" runat="server" data-toggle="modal" data-target="#addDepositModal">
                             <i class="fa fa-fw fa-plus"></i>Add
-
                         </button>
                     </div>
                     <div class="card-body">

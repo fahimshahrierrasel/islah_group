@@ -48,7 +48,7 @@
 
         <div class="row">
             <div class="col m-3">
-                <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#addExpenditureModal">Add Expenditure</button>
+                <button type="button" id="AddExpenditureBtn" runat="server" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#addExpenditureModal">Add Expenditure</button>
             </div>
         </div>
 

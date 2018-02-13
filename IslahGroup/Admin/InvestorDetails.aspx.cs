@@ -11,7 +11,19 @@ namespace IslahGroup.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ControlAuthorization();
+        }
 
+        public void ControlAuthorization()
+        {
+            if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
+            {
+                add_modal.Visible = true;
+            }
+            else
+            {
+                add_modal.Visible = false;
+            }
         }
     }
 }

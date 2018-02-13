@@ -21,9 +21,22 @@ namespace IslahGroup.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ControlAuthorization();
             if (!IsPostBack)
             {
                 PopulateInvestorTable();
+            }
+        }
+
+        public void ControlAuthorization()
+        {
+            if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
+            {
+                RegisterInvestorBtn.Visible = true;
+            }
+            else
+            {
+                RegisterInvestorBtn.Visible = false;
             }
         }
         private void PopulateInvestorTable()

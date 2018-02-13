@@ -21,6 +21,7 @@ namespace IslahGroup.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+            ControlAuthorization();
             if(!IsPostBack)
             {
                 PopulateExpnType();
@@ -28,6 +29,19 @@ namespace IslahGroup.Admin
             PopulateExpenditureTable();
             PopulateInfo();
         }
+
+        public void ControlAuthorization()
+        {
+            if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
+            {
+                AddExpenditureBtn.Visible = true;
+            }
+            else
+            {
+                AddExpenditureBtn.Visible = false;
+            }
+        }
+
         public void PopulateExpenditureTable()
         {
             expenditureTable.Clear();
