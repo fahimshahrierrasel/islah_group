@@ -7,6 +7,7 @@ namespace IslahGroup.Admin
 {
     public partial class RegisterOwner : System.Web.UI.Page
     {
+        enum PhotoType { Member, Nominee};
         protected void Page_Load(object sender, EventArgs e)
         {
         }
@@ -46,17 +47,20 @@ namespace IslahGroup.Admin
             string memberImageUploadPath = "";
             string nomineeImageUploadPath = "";
 
+
             if (MemberImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(MemberImageUpload.PostedFile.FileName);
-                memberImageUploadPath = Server.MapPath(@"~/Upload/Images/Owners/" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension);
+                memberImageUploadPath = Server.MapPath(@"~/Upload/Images/Owners/" + ImageName(fullName,PhotoType.Member) + fileExtension);
+                RemoveFileIfExists(memberImageUploadPath);
                 MemberImageUpload.SaveAs(memberImageUploadPath);
             }
 
             if (NomineeImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(NomineeImageUpload.PostedFile.FileName);
-                nomineeImageUploadPath = Server.MapPath(@"~/Upload/Images/Nominees/" + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension);
+                nomineeImageUploadPath = Server.MapPath(@"~/Upload/Images/Nominees/" + ImageName(fullName, PhotoType.Nominee) + fileExtension);
+                RemoveFileIfExists(nomineeImageUploadPath);
                 NomineeImageUpload.SaveAs(nomineeImageUploadPath);
             }
 
@@ -111,6 +115,28 @@ namespace IslahGroup.Admin
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private string ImageName(string name, PhotoType photoType)
+        {
+            string newName = name.Replace(" ", String.Empty)
+                    .Replace(".", String.Empty)
+                    .Replace("-", String.Empty)
+                    .Replace(",", String.Empty)
+                    .ToLower();
+            if(photoType == PhotoType.Nominee)
+            {
+                newName = newName + "_nominee";
+            }
+            return newName;
+        }
+
+        private void RemoveFileIfExists(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
             }
         }
 
