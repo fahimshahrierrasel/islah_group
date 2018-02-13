@@ -11,7 +11,6 @@ namespace IslahGroup.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-
         protected void FormSubmit_Click(object sender, EventArgs e)
         {
             // Member Personal Info
@@ -32,6 +31,7 @@ namespace IslahGroup.Admin
             string bloodGroup = BloodGroup.Text;
             string mobileNo = MobileNo.Text;
             string email = Email.Text;
+            string designation = TextBoxDesignation.Text;
 
             // Nominee's Info
             string nomineeNidNo = NomineeNidNo.Text;
@@ -46,7 +46,6 @@ namespace IslahGroup.Admin
 
             string memberImageUploadPath = "";
             string nomineeImageUploadPath = "";
-
 
             if (MemberImageUpload.HasFile)
             {
@@ -84,6 +83,7 @@ namespace IslahGroup.Admin
                 { "BloodGroup", bloodGroup },
                 { "MobileNo", mobileNo },
                 { "Email", email },
+                { "Designation", designation },
                 { "ImageUrl", memberImageUploadPath },
                 { "RegistrationDate", registrationDate },
                 { "NomineeNidNo", nomineeNidNo },
@@ -95,7 +95,8 @@ namespace IslahGroup.Admin
                 { "NomineeRelation", nomineeRelation },
                 { "NomineeProfession", nomineeProfession },
                 { "NomineeMobileNo", nomineeMobileNo },
-                { "NomineeImageUrl", nomineeImageUploadPath }
+                { "NomineeImageUrl", nomineeImageUploadPath },
+                { "UsernameAndPassword", NameWithoutSymbol(fullName) }
             };
 
             Response.Write("<script>console.log('Member Not Add');</script>");
@@ -132,6 +133,15 @@ namespace IslahGroup.Admin
             return newName;
         }
 
+        private string NameWithoutSymbol(string name)
+        {
+            return name.Replace(" ", String.Empty)
+                    .Replace(".", String.Empty)
+                    .Replace("-", String.Empty)
+                    .Replace(",", String.Empty)
+                    .ToLower();
+        }
+
         private void RemoveFileIfExists(string filePath)
         {
             if (File.Exists(filePath))
@@ -139,6 +149,5 @@ namespace IslahGroup.Admin
                 File.Delete(filePath);
             }
         }
-
     }
 }

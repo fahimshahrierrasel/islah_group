@@ -106,6 +106,10 @@
                     </div>
                 </div>
                 <hr />
+                <div class="form-group">
+                    <label for="TextBoxDesignation">Designation</label>
+                    <asp:TextBox ID="TextBoxDesignation" CssClass="form-control" placeholder="Owner Designnation" Text="Owner" runat="server"></asp:TextBox>
+                </div>
                 <h3>Nominee's Information</h3>
                 <div class="form-group">
                     <label for="NomineeNidNo">National Identification Number (NID)</label>

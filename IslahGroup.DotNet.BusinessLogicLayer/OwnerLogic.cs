@@ -45,7 +45,8 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[25] = new SqlParameter("NomineeProfession", memberInformation["NomineeProfession"]);
             parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
             parameters[27] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
-
+            parameters[28] = new SqlParameter("Designation", memberInformation["Designation"]);
+            parameters[29] = new SqlParameter("UsernameAndPassword", memberInformation["UsernameAndPassword"]);
             if (ownerData.Insert(parameters))
             {
                 return true;
