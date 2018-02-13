@@ -54,7 +54,7 @@
                     <label for="TextBoxInvMobileNo" class="col-form-label">Mobile No:</label>
                     <asp:TextBox ID="TextBoxInvMobileNo" CssClass="form-control" runat="server" placeholder="Investor Mobile No"></asp:TextBox>
                 </div>
-                <asp:Button ID="ButtonAddInvestor" CssClass="btn btn-primary float-right" runat="server" Text="Register" />
+                <asp:Button ID="ButtonAddInvestor" CssClass="btn btn-primary float-right" runat="server" Text="Register" OnClick="ButtonAddInvestor_Click" />
             </form>
         </div>
     </div>

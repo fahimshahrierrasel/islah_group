@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
@@ -31,7 +28,6 @@ namespace IslahGroup.Admin
             PopulateExpenditureTable();
             PopulateInfo();
         }
-
         public void PopulateExpenditureTable()
         {
             expenditureTable.Clear();
@@ -39,7 +35,6 @@ namespace IslahGroup.Admin
             RepeaterExpenditures.DataSource = expenditureTable;
             RepeaterExpenditures.DataBind();
         }
-
         public void PopulateExpnType()
         {
             expnTypeTable.Clear();
@@ -50,16 +45,14 @@ namespace IslahGroup.Admin
                 DropDownListEType.Items.Add(new ListItem(type, type));
             }
         }
-
         public void PopulateInfo()
         {
             expnInfo.Clear();
             expnInfo = expenditureLogic.ExpenditureInfo();
 
-            LabelTotalEarn.Text = expnInfo.Rows[0][1].ToString() == null ? "0.00": expnInfo.Rows[0][1].ToString();
-            LabelTotalInvestment.Text = expnInfo.Rows[1][1].ToString() == null ? "0.00" : expnInfo.Rows[1][1].ToString();
+            LabelTotalEarn.Text = expnInfo.Rows[0][1].ToString() ?? "0.00";
+            LabelTotalInvestment.Text = expnInfo.Rows[1][1].ToString() ?? "0.00";
         }
-
         protected void ButtonAddExpenditure_Click(object sender, EventArgs e)
         {
             string eDate = TextBoxEDate.Text;
@@ -75,14 +68,11 @@ namespace IslahGroup.Admin
                 { "ExpnType", eType },
                 { "UserId", userId }
             };
-
-            
+   
             if(expenditureLogic.NewExpenditure(expnDict))
             {
                 Response.Redirect(Request.RawUrl);
             }
         }
-
-
     }
 }

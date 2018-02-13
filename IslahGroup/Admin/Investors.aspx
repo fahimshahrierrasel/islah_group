@@ -77,9 +77,9 @@
                             <asp:Repeater ID="RepeaterAllInvestors" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%# Eval("FullName") %></a></td>
-                                        <td><%# Eval("MobileNo") %></td>
-                                        <td><%# Eval("TotalInvest") %></td>
+                                        <td><a href="InvestorDetails.aspx?InvId=<%# Eval("InvId") %>"><%# Eval("InvFullName") %></a></td>
+                                        <td><%# Eval("InvMobileNo") %></td>
+                                        <td><%# Eval("InvInvest") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
