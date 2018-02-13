@@ -1,0 +1,389 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Islah Payroll System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet"> 
+        <!--all css here-->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <!--all min.css here-->
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+        <!--vendor modernizer js-->
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+		<header>
+			<div class="top-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="top-bar">
+								<nav class="navbar navbar-expand-lg navbar-light bg-light">
+									<a class="navbar-brand" href="#">PAYROLL SYSTEM</a>
+									<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<ul class="navbar-nav mr-auto">
+											<li class="nav-item">
+												<a class="nav-link" href="#"><i class="fa fa-home"></i></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#"><i class="fa fa-cog"></i></a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#"><i class="fa fa-list-ul"></i></a>
+											</li>
+										</ul>
+										<h6 class="pad-10 color-white">Monday 12February 2018</h6>
+										<h6 class="pad-10 color-white">12:01AM</h6>
+										<form class="form-inline my-2 my-lg-0">
+											<button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOGOUT</button>
+										</form>
+									</div>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="main-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="main-content-left border border-primary">
+							<div class="main-content-left-top">
+								<h4>EMPLOYEE INFORMATION</h4>
+								<form>
+									<div class="input-group input-group-sm mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">NAME</span>
+										</div>
+										<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+									</div>
+									<div class="input-group input-group-sm mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">CODE</span>
+										</div>
+										<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+									</div>
+								</form>
+								<div class="input-group input-group-sm mb-2 date" data-provide="datepicker">
+									<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">FROM</span>
+										</div>
+									<input type="text" class="form-control">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-th"></span>
+									</div>
+								</div>
+								<div class="input-group input-group-sm mb-2 date" data-provide="datepicker">
+								<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">TO</span>
+										</div>
+									<input type="text" class="form-control">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-th"></span>
+									</div>
+								</div>
+							</div>
+							<table class="table">
+								<thead class="bg-primary">
+									<tr>
+										<th scope="col">
+											<button type="button" class="btn btn-success">SAVE</button>
+											<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg">SHOW INFO</button>
+										</th>
+									</tr>
+								</thead>
+							</table>
+							<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="myLargeModalLabel">EMPLOYEE INFO</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="col-sm-12">
+														<table class="table">
+															<thead class="bg-danger">
+																<tr>
+																	<th scope="col">NAME</th>
+																	<th scope="col">CODE</th>
+																	<th scope="col">Address</th>
+																	<th scope="col">TOTAL WORKING DAY</th>
+																	<th scope="col"></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>MR.X</td>
+																	<td>AK47</td>
+																	<td>street name, city, zip code</td>
+																	<td>25</td>
+																	<td><button type="button" class="btn btn-success">EDIT</button></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="main-content-middle border border-primary">
+							<div class="main-content-middle-top">
+								<h4>INCOME</h4>
+								<form>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">WORK DAYS</span>
+												</div>
+												<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">BASIC RATE</span>
+												</div>
+												<input type="text" id="disabledInput" value="185.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">TOTAL</span>
+												</div>
+												<input type="text" id="disabledInput" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="main-content-middle-bottom">
+								<h4>OVERTIME hrs./day</h4>
+								<form>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">REG. OVT.</span>
+											</div>
+											<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">SUN. OVT.</span>
+											</div>
+											<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">HOL. PAY</span>
+											</div>
+											<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">REG. OVT.</span>
+											</div>
+											<input type="text" id="disabledInput" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">SUN. OVT.</span>
+												</div>
+											<input type="text" id="disabledInput" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">HOL. PAY</span>
+												</div>
+											<input type="text" id="disabledInput" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">ALLOWANCE</span>
+												</div>
+												<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">INCENTIVES</span>
+												</div>
+												<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="row">
+												<div class="col-lg-6">
+													<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6">
+													<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6">
+													<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">GROSS</span>
+												</div>
+												<input type="text" id="disabledInput" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="main-content-right border border-primary">
+							<div class="main-content-right-top">
+								<h4>DEDUCTIONS</h4>
+								<form>
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">SSS/MCR</span>
+											</div>
+											<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="input-group input-group-sm mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="inputGroup-sizing-sm">W/TAX</span>
+											</div>
+											<input type="text" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">SSS LOAN</span>
+												</div>
+												<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="input-group input-group-sm mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="inputGroup-sizing-sm">LATES</span>
+												</div>
+												<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+											</div>
+											<div class="row">
+												<div class="col-lg-6">
+													<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-6">
+													<input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+												<div class="col-lg-6">
+													<input type="text" value="0.00" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+												</div>
+											</div>
+										</div>	
+									</div>
+									<div class="input-group input-group-sm3 mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">TOTAL DEDUCTIONS</span>
+										</div>
+										<input type="text" id="disabledInput" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+									</div>
+								</form>
+							</div>
+							<div class="main-content-right-bottom">
+								<form>
+									<div class="input-group input-group-sm mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="inputGroup-sizing-sm">NET INCOME</span>
+										</div>
+										<input type="text" id="disabledInput" class="form-control" value="0.00" aria-label="Large" aria-describedby="inputGroup-sizing-sm" disabled>
+									</div>
+								</form>
+							</div>
+							<table class="table">
+								<thead class="bg-primary">
+									<tr>
+										<th scope="col">
+											<button type="button" class="btn btn-success">SAVE</button>
+											<button type="button" class="btn btn-warning">CANCEL</button>
+											<button type="button" class="btn btn-danger">EXIT</button>
+										</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="copyright">
+							@copyright islahgroup bangladesh 2017
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+        
+        <!--all js here-->
+        <script src="js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fontawesome.min.js"></script>
+		<script src="js/bootstrap-datepicker.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    </body>
+</html>

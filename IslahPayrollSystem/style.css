@@ -1,0 +1,116 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Islah Group 
+    Template URI: http://islahgroup.com
+    Description: This is html5 template for islah group of compaines
+    Author: Islah Group
+    Author URI: http://islahgroup.com
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+    
+    CSS INDEX
+    ===================
+	
+    1. Theme Default CSS (body, link color, section etc)
+
+-----------------------------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+html, body {height: 100%;}
+.floatleft {float:left}
+.floatright {float:right}
+.alignleft {float:left;margin-right:15px;margin-bottom: 15px}
+.alignright {float:right;margin-left:15px;margin-bottom: 15px}
+.aligncenter {display:block;margin:0 auto 15px}
+a:focus {outline:0px solid}
+img {max-width:100%;height:auto}
+.fix {overflow:hidden}
+p {margin:0 0 15px;}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+}
+a {transition: all 0.3s ease 0s;text-decoration:none;}
+a:hover {
+  color: #ec4445;
+  text-decoration: none;
+}
+a:active, a:hover {
+  outline: 0 none;
+}
+ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+.clear{clear:both}
+body {
+    color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  line-height: 18px;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.ScrollStyle
+{
+	float:left;
+	width:100%;
+	overflow-y: auto;
+	height: 300px;
+}
+.ScrollStyleimg
+{
+	float:left;
+	width:100%;
+	overflow-y: auto;
+	height: 450px;
+}
+.pad-10{padding:10px;}
+/********************
+header area
+********************/
+.top-area{}
+.top-bar{}
+/*****************
+main content
+*****************/
+.main-content{padding:20px;}
+.main-content-left{
+	background:#9abfec;
+	width: 100%;
+	height: 500px;
+}
+.main-content-left-top{
+	background:#a498d6;
+}
+.main-content-middle{
+	background:#56949e;
+	width: 100%;
+	height: 500px;
+}
+.main-content-middle-top{}
+.main-content-middle-bottom{}
+.main-content-right{
+	background:#4ba993;
+	width: 100%;
+	height: 500px;
+}
+.main-content-right-top{}
+.main-content-right-bottom{}
+footer{}
+.copyright{text-align:center;}
