@@ -20,28 +20,25 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Date of Birth</th>
-                                <th>Mobile No</th>
-                                <th>Amount</th>
+                                <th>Membership ID</th>
+                                <th>Full Name</th>
+                                <th>Registration Date</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Date of Birth</th>
-                                <th>Mobile No</th>
-                                <th>Amount</th>
+                                <th>Membership ID</th>
+                                <th>Full Name</th>
+                                <th>Registration Date</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <asp:Repeater ID="Repeater1" runat="server">
+                            <asp:Repeater ID="RepeaterMemberRequests" runat="server">
                                 <ItemTemplate>
                                     <tr>
-                                        <td><a href="OwnerDetails.aspx?MemId=<%# Eval("MemberId") %>"><%# Eval("FullName") %></a></td>
-                                        <td><%# Eval("DateOfBirth", "{0:d}") %></td>
-                                        <td><%# Eval("MobileNo") %></td>
-                                        <td><%# Eval("Amount") %></td>
+                                        <td><a href="MemberDetails.aspx?MemId=<%# Eval("MemberId") %>"><%# Eval("MembershipId") %></a></td>
+                                        <td><%# Eval("FullName") %></td>
+                                        <td><%# Eval("RegistrationDate", "{0:d}") %></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
