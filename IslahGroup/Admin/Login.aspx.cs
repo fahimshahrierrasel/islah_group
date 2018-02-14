@@ -1,6 +1,7 @@
 ﻿using IslahGroup.DotNet.BusinessLogicLayer;
 using IslahGroup.DotNet.EntityLayer;
 using System;
+using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
@@ -13,12 +14,18 @@ namespace IslahGroup.Admin
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            string username = TextboxUsername.Text;
+            string email = TextboxEmail.Text;
             string password = TextPassword.Text;
 
-            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+            Dictionary<string, string> userInformation = new Dictionary<string, string>()
             {
-                ShowWarningWith("Username/Password cann't be empty");
+                { "Email", email },
+                { "Password", password }
+            };
+
+            if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password))
+            {
+                ShowWarningWith("Email/Password cann't be empty");
             }
             else
             {
@@ -26,7 +33,7 @@ namespace IslahGroup.Admin
                 IGUser currentUser = null;
                 try
                 {
-                    currentUser = ml.LoginToTheSystem(username, password);
+                    currentUser = ml.LoginToTheSystem(userInformation);
                 }
                 catch (Exception ex)
                 {

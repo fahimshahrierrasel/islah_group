@@ -68,8 +68,8 @@
                 <form id="form1" runat="server">
                     <img src="../Images/islah_logo.png" class="mx-auto d-block" alt="Islah Logo" style="height: 100px" />
                     <div class="form-group mt-2">
-                        <label for="TextboxUsername" class="text-dark">Username</label>
-                        <asp:TextBox ID="TextboxUsername" type="text" CssClass="form-control" placeholder="Username" runat="server"></asp:TextBox>
+                        <label for="TextboxEmail" class="text-dark">Email</label>
+                        <asp:TextBox ID="TextboxEmail" type="text" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="TextPassword" class="text-dark">Password</label>
