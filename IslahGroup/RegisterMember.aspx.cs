@@ -69,6 +69,7 @@ namespace IslahGroup
             Dictionary<string, string> memberInformation = new Dictionary<string, string>
             {
                 { "NID", nidNo },
+                { "ShareNo", "1" },
                 { "FullName", fullName },
                 { "FatherName", fatherName },
                 { "MotherName", motherName },
@@ -84,6 +85,7 @@ namespace IslahGroup
                 { "MobileNo", mobileNo },
                 { "Email", email },
                 { "Designation", "Member" },
+                { "RegistrationDate",  DateTime.Now.Date.ToString()},
                 { "ImageUrl", memberImageUploadPath },
                 { "NomineeNidNo", nomineeNidNo },
                 { "NomineeName", nomineeName },
@@ -102,7 +104,7 @@ namespace IslahGroup
             {
                 if (memberLogic.RegisterNewMember(memberInformation))
                 {
-                    Response.Redirect("~/Admin/Owners.aspx", false);
+                    Response.Redirect("Default.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 else

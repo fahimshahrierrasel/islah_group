@@ -9,6 +9,6 @@ SELECT
 FROM dbo.IGMember
 INNER JOIN dbo.MemberStatus
   ON IGMember.MemberId = MemberStatus.IGMember_MemberId
-WHERE MemberStatus.Status = @Status
+WHERE MemberStatus.Status = @Status AND IGMember.MemberType = 'Member';
 END
 GO

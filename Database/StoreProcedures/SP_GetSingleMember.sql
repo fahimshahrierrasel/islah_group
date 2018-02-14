@@ -37,6 +37,8 @@ SELECT
  ,Nominee.NomineeProfession
  ,Nominee.NomineeMobileNo
  ,Nominee.NomineeImageUrl
+ ,MemberAmount.Amount
+ ,MemberAmount.Profit
  ,Intorducer.IntroMembershipId
  ,MemberStatus.Status
 FROM IGMember

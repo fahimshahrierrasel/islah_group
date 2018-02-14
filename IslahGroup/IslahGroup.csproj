@@ -75,6 +75,7 @@
     <Content Include="Admin\Investors.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\MemberDetails.aspx" />
     <Content Include="Admin\MemberHalts.aspx" />
     <Content Include="Admin\MemberRequests.aspx" />
     <Content Include="Admin\OwnerDetails.aspx" />
@@ -229,6 +230,13 @@
     </Compile>
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberDetails.aspx.cs">
+      <DependentUpon>MemberDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberDetails.aspx.designer.cs">
+      <DependentUpon>MemberDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\MemberHalts.aspx.cs">
       <DependentUpon>MemberHalts.aspx</DependentUpon>

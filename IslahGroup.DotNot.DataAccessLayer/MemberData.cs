@@ -14,7 +14,7 @@ namespace IslahGroup.DotNet.DataAccessLayer
         public DataTable GetAllMembersByStatus(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "SP_GetAllMembersByStatus";
+            dBConn.Cmd.CommandText = "SP_GetAllMemberByStatus";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
             dBConn.Open();

@@ -54,7 +54,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             return false;
         }
 
-        public DataTable GetAllMemberByActiveStatus(Dictionary<string, int> filterInformation)
+        public DataTable GetAllMemberByActiveStatus(Dictionary<string, string> filterInformation)
         {
             SqlParameter[] parameters = new SqlParameter[filterInformation.Count];
             parameters[0] = new SqlParameter("Status", filterInformation["Status"]);
