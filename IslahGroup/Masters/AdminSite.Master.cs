@@ -23,6 +23,7 @@ namespace IslahGroup.Masters
             {
                 OwnersMenu.Visible = false;
                 MemberMenu.Visible = false;
+                DashboardLink.HRef = "../Admin/OwnerDashboard.aspx";
             }
             
 

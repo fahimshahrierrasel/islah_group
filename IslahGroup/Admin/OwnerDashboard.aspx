@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Owner Details" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="OwnerDetails.aspx.cs" Inherits="IslahGroup.Admin.OwnerDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="OwnerDashboard.aspx.cs" Inherits="IslahGroup.Admin.OwnerDashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
@@ -11,11 +11,11 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="ProfileForm" runat="server">
         <div class="container">
             <h1>
-                <asp:Label ID="LabelMemberName" runat="server" Text="Jon Doe"></asp:Label></h1>
+              <asp:Label ID="LabelMemberName" runat="server" Text="Jon Doe"></asp:Label></h1>
         </div>
         <div class="row m-2">
             <div class="col-md-3">
@@ -203,6 +203,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-3">
                 <div class="card text-white bg-info mb-3" style="max-width: 15rem;">
                     <div class="card-header">Membership Id</div>
@@ -220,7 +221,7 @@
                         </h5>
                     </div>
                 </div>
-                <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+                <div class="card text-white bg-success mb-3" id="ProfitCard" runat="server" style="max-width: 15rem;">
                     <div class="card-header">Profit</div>
                     <div class="card-body">
                         <h5 class="card-title">
@@ -228,17 +229,19 @@
                         </h5>
                     </div>
                 </div>
+                <div class="card text-white bg-danger mb-3" id="WarningCard" runat="server" style="max-width: 15rem;">
+                    <div class="card-header">Warning</div>
+                    <div class="card-body">
+                        <p class="card-text">Please, Hurry up and deposit you share so that you can get you profit!!</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="container">
-                <div class="card">
+                <div class="card m-1">
                     <div class="card-header">
                         Owners Deposits
-                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal">
-                            <i class="fa fa-fw fa-plus"></i>Add
-
-                        </button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -274,46 +277,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="addDepositModal" tabindex="-1" role="dialog" aria-labelledby="addDepositModalTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addDepositModalTitle">Add Expenditure</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
-                            <asp:TextBox ID="TextBoxDAmount" CssClass="form-control" runat="server" placeholder="Amount" required="required"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="TextBoxDDate" class="col-form-label">Date:</label>
-                            <asp:TextBox ID="TextBoxDDate" CssClass="form-control" TextMode="Date" runat="server" required="required"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="TextBoxDNote" class="col-form-label">Note:</label>
-                            <asp:TextBox ID="TextBoxDNote" CssClass="form-control" runat="server" placeholder="Note" TextMode="MultiLine"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <asp:Button ID="ButtonAddODeposit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddODeposit_Click" />
-                    </div>
-                </div>
-            </div>
-        </div>
     </form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <script>
-        $(document).ready(function () {
-            $('#add_modal').click(function (e) {
-                e.preventDefault();
-            });
-        });
-    </script>
 </asp:Content>

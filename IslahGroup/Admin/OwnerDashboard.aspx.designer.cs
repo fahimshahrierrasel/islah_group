@@ -10,7 +10,7 @@
 namespace IslahGroup.Admin {
     
     
-    public partial class OwnerDetails {
+    public partial class OwnerDashboard {
         
         /// <summary>
         /// ProfileForm control.
@@ -292,6 +292,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAmount;
         
         /// <summary>
+        /// ProfitCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProfitCard;
+        
+        /// <summary>
         /// LabelProfit control.
         /// </summary>
         /// <remarks>
@@ -301,6 +310,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelProfit;
         
         /// <summary>
+        /// WarningCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl WarningCard;
+        
+        /// <summary>
         /// RepeaterOwnerDeposits control.
         /// </summary>
         /// <remarks>
@@ -308,41 +326,5 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater RepeaterOwnerDeposits;
-        
-        /// <summary>
-        /// TextBoxDAmount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDAmount;
-        
-        /// <summary>
-        /// TextBoxDDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDDate;
-        
-        /// <summary>
-        /// TextBoxDNote control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDNote;
-        
-        /// <summary>
-        /// ButtonAddODeposit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddODeposit;
     }
 }

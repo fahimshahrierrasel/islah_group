@@ -52,5 +52,18 @@ namespace IslahGroup.DotNet.DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        public DataTable GetSingleOwnerByEmail(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetSingleOwnerByEmail";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable memberTable = new DataTable();
+            memberTable.Load(reader);
+            return memberTable;
+        }
     }
 }

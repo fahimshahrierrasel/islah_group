@@ -45,8 +45,16 @@ namespace IslahGroup.Admin
                     Session["UserId"] = currentUser.UserId;
                     Session["AName"] = currentUser.AName;
                     Session["AUsername"] = currentUser.AUsername;
+                    Session["Email"] = currentUser.Email;
                     Session["UserType"] = currentUser.UserType;
-                    Response.Redirect("Dashboard.aspx");
+                    if(currentUser.UserType == "Owner")
+                    {
+                        Response.Redirect("OwnerDashboard.aspx");
+                    }
+                    else if(currentUser.UserType == "Admin")
+                    {
+                        Response.Redirect("Dashboard.aspx");
+                    }
                 }
                 else
                 {

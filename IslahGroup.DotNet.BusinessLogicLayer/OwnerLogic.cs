@@ -54,6 +54,15 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             return false;
         }
 
+        public DataTable GetSingleOwnerByEmail(Dictionary<string, string> memberInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
+            parameters[0] = new SqlParameter("Email", memberInformation["Email"]);
+            DataTable singleOwnerTable = new DataTable();
+            singleOwnerTable = ownerData.GetSingleOwnerByEmail(parameters);
+            return singleOwnerTable;
+        }
+
         public DataTable GetSingleOwner(Dictionary<string, int> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];

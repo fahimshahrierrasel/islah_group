@@ -78,6 +78,7 @@
     <Content Include="Admin\MemberDetails.aspx" />
     <Content Include="Admin\MemberHalts.aspx" />
     <Content Include="Admin\MemberRequests.aspx" />
+    <Content Include="Admin\OwnerDashboard.aspx" />
     <Content Include="Admin\OwnerDetails.aspx" />
     <Content Include="Admin\Members.aspx" />
     <Content Include="Admin\Owners.aspx" />
@@ -251,6 +252,13 @@
     </Compile>
     <Compile Include="Admin\MemberRequests.aspx.designer.cs">
       <DependentUpon>MemberRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OwnerDashboard.aspx.cs">
+      <DependentUpon>OwnerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OwnerDashboard.aspx.designer.cs">
+      <DependentUpon>OwnerDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OwnerDetails.aspx.cs">
       <DependentUpon>OwnerDetails.aspx</DependentUpon>
