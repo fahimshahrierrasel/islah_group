@@ -1,10 +1,11 @@
-﻿<%@ Page Title="Owner Details" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="MemberDetails.aspx.cs" Inherits="IslahGroup.Admin.MemberDetails" %>
+﻿<%@ Page Title="Owner Details" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="OwnerDetails.aspx.cs" Inherits="IslahGroup.Admin.OwnerDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .auto-style1 {
             width: 200px;
         }
+
         .no_underline {
             text-decoration: none;
         }
@@ -12,10 +13,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="ProfileForm" runat="server">
-        <div class="row">
-            <div class="container">
-                <h1>
-                    <asp:Label ID="LabelMemberName" runat="server" Text="Jon Doe"></asp:Label></h1>
+        <div class="container">
+            <div class="row ml-1 mr-1">
+                <div class="col-md-8">
+                    <h1>
+                        <asp:Label ID="LabelMemberName" runat="server" Text="Jon Doe"></asp:Label></h1>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        <asp:Label ID="LabelMemberShipId" runat="server" Text="MEMXXX"></asp:Label></h3>
+                </div>
             </div>
         </div>
         <div class="row m-2">

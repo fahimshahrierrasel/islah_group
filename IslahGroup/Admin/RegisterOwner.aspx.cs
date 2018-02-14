@@ -63,7 +63,7 @@ namespace IslahGroup.Admin
                 NomineeImageUpload.SaveAs(nomineeImageUploadPath);
             }
 
-            OwnerLogic memberLogic = new OwnerLogic();
+            OwnerLogic ownerLogic = new OwnerLogic();
 
             Dictionary<string, string> memberInformation = new Dictionary<string, string>
             {
@@ -98,12 +98,11 @@ namespace IslahGroup.Admin
                 { "NomineeImageUrl", nomineeImageUploadPath },
                 { "UsernameAndPassword", NameWithoutSymbol(fullName) }
             };
-
-            Response.Write("<script>console.log('Member Not Add');</script>");
+            
 
             try
             {
-                if (memberLogic.RegisterNewOwner(memberInformation))
+                if (ownerLogic.RegisterNewOwner(memberInformation))
                 {
                     Response.Redirect("~/Admin/Owners.aspx", false);
                     Context.ApplicationInstance.CompleteRequest();

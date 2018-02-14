@@ -147,12 +147,8 @@
                         <hr />
                         <h3>Introducer's Information</h3>
                         <div class="form-group">
-                            <label for="IntroducerName">Introducer Name</label>
-                            <asp:TextBox ID="IntroducerName" CssClass="form-control" type="text" placeholder="Introducer Name" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="IntroducerShareNo">Share No</label>
-                            <asp:TextBox ID="IntroducerShareNo" CssClass="form-control" TextMode="Search" placeholder="Share No" runat="server"></asp:TextBox>
+                            <label for="IntroducerMembershipId">Introducer Membership Id</label>
+                            <asp:TextBox ID="IntroducerMembershipId" CssClass="form-control" type="text" placeholder="Introducer Membership Id" runat="server"></asp:TextBox>
                         </div>
                         <hr />
                         <h3>Photos</h3>

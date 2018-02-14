@@ -59,36 +59,17 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
             parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
             DataTable singleOwnerTable = new DataTable();
-            singleOwnerTable = ownerData.GetSingleMember(parameters);
+            singleOwnerTable = ownerData.GetSingleOwner(parameters);
             return singleOwnerTable;
         }
 
         public DataTable GetAllOwners()
         {
             DataTable allOwnerTable = new DataTable();
-            allOwnerTable = ownerData.GetAllMembers();
+            allOwnerTable = ownerData.GetAllOwners();
             return allOwnerTable;
         }
 
-        public bool AddDeposit(Dictionary<string, string> depositInformation)
-        {
-            SqlParameter[] parameters = new SqlParameter[depositInformation.Count];
-            parameters[0] = new SqlParameter("DepositDate", DateTime.Parse(depositInformation["DepositDate"]).Date);
-            parameters[1] = new SqlParameter("Amount", depositInformation["Amount"]);
-            parameters[2] = new SqlParameter("Note", depositInformation["Note"]);
-            parameters[3] = new SqlParameter("MemberId", depositInformation["MemberId"]);
-            parameters[4] = new SqlParameter("UserId", depositInformation["UserId"]);
-            ownerData.InsertNewDeposit(parameters);
-            return true;
-        }
-
-        public DataTable GetOwnerDeposits(Dictionary<string, int> memberInformation)
-        {
-            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
-            parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
-            DataTable singleOwnerTable = new DataTable();
-            singleOwnerTable = ownerData.GetMemberDeposits(parameters);
-            return singleOwnerTable;
-        }
+        
     }
 }

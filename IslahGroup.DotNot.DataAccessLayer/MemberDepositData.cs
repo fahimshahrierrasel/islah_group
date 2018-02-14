@@ -4,44 +4,16 @@ using System.Data.SqlClient;
 
 namespace IslahGroup.DotNet.DataAccessLayer
 {
-    public class MemberData : IDatabaseAccessable
+    public class MemberDepositData : IDatabaseAccessable
     {
         public bool Delete(SqlParameter[] parameters)
         {
             throw new NotImplementedException();
         }
-
-        public DataTable GetAllMembersByStatus(SqlParameter[] parameters)
-        {
-            DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "SP_GetAllMembersByStatus";
-            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
-            dBConn.Cmd.Parameters.AddRange(parameters);
-
-            dBConn.Open();
-            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
-            DataTable dataTable = new DataTable();
-            dataTable.Load(reader);
-            return dataTable;
-        }
-
-        public DataTable GetSingleMember(SqlParameter[] parameters)
-        {
-            DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "SP_GetSingleMember";
-            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
-            dBConn.Cmd.Parameters.AddRange(parameters);
-            dBConn.Open();
-            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
-            DataTable memberTable = new DataTable();
-            memberTable.Load(reader);
-            return memberTable;
-        }
-
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
-            dBConn.Cmd.CommandText = "SP_InsertNewMember";
+            dBConn.Cmd.CommandText = "SP_InsertNewDeposit";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
 
@@ -51,7 +23,18 @@ namespace IslahGroup.DotNet.DataAccessLayer
 
             return true;
         }
-
+        public DataTable GetMemberDeposits(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetMemberDeposits";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable memberTable = new DataTable();
+            memberTable.Load(reader);
+            return memberTable;
+        }
         public bool Update(SqlParameter[] parameters)
         {
             throw new NotImplementedException();

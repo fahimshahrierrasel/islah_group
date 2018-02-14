@@ -75,7 +75,8 @@
     <Content Include="Admin\Investors.aspx" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Logout.aspx" />
-    <Content Include="Admin\MemberDetails.aspx" />
+    <Content Include="Admin\OwnerDetails.aspx" />
+    <Content Include="Admin\Members.aspx" />
     <Content Include="Admin\Owners.aspx" />
     <Content Include="Admin\RegisterInvestor.aspx" />
     <Content Include="Admin\RegisterOwner.aspx" />
@@ -227,12 +228,19 @@
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MemberDetails.aspx.cs">
-      <DependentUpon>MemberDetails.aspx</DependentUpon>
+    <Compile Include="Admin\OwnerDetails.aspx.cs">
+      <DependentUpon>OwnerDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\MemberDetails.aspx.designer.cs">
-      <DependentUpon>MemberDetails.aspx</DependentUpon>
+    <Compile Include="Admin\OwnerDetails.aspx.designer.cs">
+      <DependentUpon>OwnerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Members.aspx.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Members.aspx.designer.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Owners.aspx.cs">
       <DependentUpon>Owners.aspx</DependentUpon>

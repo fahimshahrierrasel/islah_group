@@ -6,15 +6,17 @@ using System.Web.UI;
 
 namespace IslahGroup.Admin
 {
-    public partial class MemberDetails : System.Web.UI.Page
+    public partial class OwnerDetails : System.Web.UI.Page
     {
-        private OwnerLogic ol;
+        private OwnerLogic ownerLogic;
+        private MemberDepositLogic memberDepositLogic;
         public DataTable memberInfo;
         public DataTable depositInfo;
         private int memberId;
-        public MemberDetails()
+        public OwnerDetails()
         {
-            ol = new OwnerLogic();
+            ownerLogic = new OwnerLogic();
+            memberDepositLogic = new MemberDepositLogic();
             memberInfo = new DataTable();
             depositInfo = new DataTable();
         }
@@ -32,14 +34,14 @@ namespace IslahGroup.Admin
                 { "MemberId", memberId }
             };
             
-            memberInfo = ol.GetSingleOwner(memberInformation);
+            memberInfo = ownerLogic.GetSingleOwner(memberInformation);
             PopulateMemberDeposits(memberInformation);
         }
 
         private void PopulateMemberDeposits(Dictionary<string, int> memberInformation)
         {
             depositInfo.Clear();
-            depositInfo = ol.GetOwnerDeposits(memberInformation);
+            depositInfo = memberDepositLogic.GetMemberDeposits(memberInformation);
             RepeaterOwnerDeposits.DataSource = depositInfo;
             RepeaterOwnerDeposits.DataBind();
         }
@@ -51,6 +53,7 @@ namespace IslahGroup.Admin
                 DataRow dr = memberInfo.Rows[0];
                 Page.Title = dr["FullName"].ToString();
                 LabelMemberName.Text = dr["FullName"].ToString();
+                LabelMemberShipId.Text = dr["MembershipId"].ToString();
                 LabelFullName.Text = dr["FullName"].ToString();
                 LabelNID.Text = dr["NID"].ToString();
                 LabelFatherName.Text = dr["FatherName"].ToString();
@@ -98,7 +101,7 @@ namespace IslahGroup.Admin
                 { "UserId", userId },
                 { "MemberId", memberId.ToString() }
             };
-            ol.AddDeposit(memberDepositInfo);
+            memberDepositLogic.AddDeposit(memberDepositInfo);
             Response.Redirect(Page.Request.RawUrl);
         }
     }

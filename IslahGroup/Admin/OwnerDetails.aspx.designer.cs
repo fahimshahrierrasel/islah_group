@@ -10,7 +10,7 @@
 namespace IslahGroup.Admin {
     
     
-    public partial class MemberDetails {
+    public partial class OwnerDetails {
         
         /// <summary>
         /// ProfileForm control.
@@ -29,6 +29,15 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelMemberName;
+        
+        /// <summary>
+        /// LabelMemberShipId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMemberShipId;
         
         /// <summary>
         /// ImageMember control.

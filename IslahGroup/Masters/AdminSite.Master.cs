@@ -16,11 +16,13 @@ namespace IslahGroup.Masters
 
             if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
             {
-                Owners.Visible = true;
+                OwnersMenu.Visible = true;
+                MemberMenu.Visible = true;
             }
             else
             {
-                Owners.Visible = false;
+                OwnersMenu.Visible = false;
+                MemberMenu.Visible = false;
             }
             
 

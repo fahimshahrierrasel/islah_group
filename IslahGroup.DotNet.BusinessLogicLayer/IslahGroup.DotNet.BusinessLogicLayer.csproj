@@ -43,6 +43,7 @@
     <Compile Include="ExpenditureLogic.cs" />
     <Compile Include="IGUserLogic.cs" />
     <Compile Include="InvestorLogic.cs" />
+    <Compile Include="MemberDepositLogic.cs" />
     <Compile Include="MemberLogic.cs" />
     <Compile Include="OwnerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

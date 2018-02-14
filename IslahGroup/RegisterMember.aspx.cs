@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using IslahGroup.DotNet.BusinessLogicLayer;
 
 namespace IslahGroup
@@ -47,7 +43,7 @@ namespace IslahGroup
             string nomineeMobileNo = NomineeMobileNo.Text;
             // Introducer's Info
             //string introducerName = IntroducerName.Text;
-            //string introducerShareNo = IntroducerShareNo.Text;
+            string introducerMembershipId = IntroducerMembershipId.Text;
             // Photo url
             string memberImageUploadPath = "";
             string nomineeImageUploadPath = "";
@@ -87,6 +83,7 @@ namespace IslahGroup
                 { "BloodGroup", bloodGroup },
                 { "MobileNo", mobileNo },
                 { "Email", email },
+                { "Designation", "Member" },
                 { "ImageUrl", memberImageUploadPath },
                 { "NomineeNidNo", nomineeNidNo },
                 { "NomineeName", nomineeName },
@@ -97,10 +94,9 @@ namespace IslahGroup
                 { "NomineeRelation", nomineeRelation },
                 { "NomineeProfession", nomineeProfession },
                 { "NomineeMobileNo", nomineeMobileNo },
-                { "NomineeImageUrl", nomineeImageUploadPath }
+                { "NomineeImageUrl", nomineeImageUploadPath },
+                { "IntroducerMembershipId", introducerMembershipId }
             };
-
-            Response.Write("<script>console.log('Member Not Add');</script>");
 
             try
             {

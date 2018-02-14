@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using IslahGroup.DotNet.DataAccessLayer;
 
@@ -7,7 +8,11 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
 {
     public class MemberLogic
     {
-
+        MemberData memberData;
+        public MemberLogic()
+        {
+            memberData = new MemberData();
+        }
         public bool RegisterNewMember(Dictionary<string, string> memberInformation)
         {
             SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
@@ -39,13 +44,32 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[25] = new SqlParameter("NomineeProfession", memberInformation["NomineeProfession"]);
             parameters[26] = new SqlParameter("NomineeMobileNo", memberInformation["NomineeMobileNo"]);
             parameters[27] = new SqlParameter("NomineeImageUrl", memberInformation["NomineeImageUrl"]);
+            parameters[28] = new SqlParameter("Designation", memberInformation["Designation"]);
+            parameters[29] = new SqlParameter("IntroMembershipId", memberInformation["IntroducerMembershipId"]);
 
-            MemberData data = new MemberData();
-            if (data.Insert(parameters))
+            if (memberData.Insert(parameters))
             {
                 return true;
             }
             return false;
+        }
+
+        public DataTable GetAllMemberByActiveStatus(Dictionary<string, int> filterInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[filterInformation.Count];
+            parameters[0] = new SqlParameter("Status", filterInformation["Status"]);
+            DataTable membersTable = new DataTable();
+            membersTable = memberData.GetAllMembersByStatus(parameters);
+            return membersTable;
+        }
+
+        public DataTable GetSingleMember(Dictionary<string, int> memberInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
+            parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
+            DataTable singleOwnerTable = new DataTable();
+            singleOwnerTable = memberData.GetSingleMember(parameters);
+            return singleOwnerTable;
         }
     }
 }

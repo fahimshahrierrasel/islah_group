@@ -1,26 +1,21 @@
-﻿<%@ Page Title="Owners" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="Owners.aspx.cs" Inherits="IslahGroup.Admin.Owners" %>
+﻿<%@ Page Title="Members" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="Members.aspx.cs" Inherits="IslahGroup.Admin.Members" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container-fluid">
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="Dashboard.aspx">Dashboard</a>
+                <a>Members</a>
             </li>
-            <li class="breadcrumb-item active">Owners</li>
+            <li class="breadcrumb-item active">Member Lists</li>
         </ol>
-        <div class="mb-3">
-            <a class="btn btn-primary" href="../Admin/RegisterOwner.aspx">
-                <i class="fa fa-fw fa-plus"></i>
-                <span class="nav-link-text">Register Owner</span>
-            </a>
-        </div>
         <!-- Members DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i>All Owners
+                <i class="fa fa-table"></i> Member Lists
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -58,4 +53,7 @@
             </div>
         </div>
     </div>
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
