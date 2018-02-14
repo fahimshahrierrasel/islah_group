@@ -7,6 +7,7 @@ namespace IslahGroup
 {
     public partial class RegisterMember : System.Web.UI.Page
     {
+        enum PhotoType { Member, Nominee };
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -41,27 +42,26 @@ namespace IslahGroup
             string nomineeRelation = NomineeRelation.Text;
             string nomineeProfession = NomineeProfession.Text;
             string nomineeMobileNo = NomineeMobileNo.Text;
+
             // Introducer's Info
-            //string introducerName = IntroducerName.Text;
             string introducerMembershipId = IntroducerMembershipId.Text;
+
             // Photo url
             string memberImageUploadPath = "";
             string nomineeImageUploadPath = "";
-            string memberImageFolder = Server.MapPath(@"~/Upload/Images/Members/");
-            string nomineeImageFolder = Server.MapPath(@"~/Upload/Images/Nominees/");
 
             if (MemberImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(MemberImageUpload.PostedFile.FileName);
-                memberImageUploadPath = memberImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
-                MemberImageUpload.SaveAs(memberImageUploadPath);
+                memberImageUploadPath = @"~/Upload/Images/Members/" + ImageName(fullName, mobileNo, PhotoType.Member) + fileExtension;
+                MemberImageUpload.SaveAs(Server.MapPath(memberImageUploadPath));
             }
 
             if (NomineeImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(NomineeImageUpload.PostedFile.FileName);
-                nomineeImageUploadPath = nomineeImageFolder + DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") + fileExtension;
-                NomineeImageUpload.SaveAs(nomineeImageUploadPath);
+                nomineeImageUploadPath = @"~/Upload/Images/Nominees/" + ImageName(fullName, mobileNo, PhotoType.Nominee) + fileExtension;
+                NomineeImageUpload.SaveAs(Server.MapPath(nomineeImageUploadPath));
             }
 
             MemberLogic memberLogic = new MemberLogic();
@@ -114,6 +114,24 @@ namespace IslahGroup
             {
                 throw ex;
             }
+        }
+        private string ImageName(string name, string mobileNo, PhotoType photoType)
+        {
+            string newName = NameWithoutSymbol(name) + mobileNo.Substring(mobileNo.Length - 6);
+            if (photoType == PhotoType.Nominee)
+            {
+                newName = newName + "_nominee";
+            }
+            return newName;
+        }
+
+        private string NameWithoutSymbol(string name)
+        {
+            return name.Replace(" ", String.Empty)
+                    .Replace(".", String.Empty)
+                    .Replace("-", String.Empty)
+                    .Replace(",", String.Empty)
+                    .ToLower();
         }
     }
 }

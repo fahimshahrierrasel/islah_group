@@ -17,7 +17,6 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dBConn.Cmd.CommandText = "SP_GetAllMembersByStatus";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
-
             dBConn.Open();
             SqlDataReader reader = dBConn.Cmd.ExecuteReader();
             DataTable dataTable = new DataTable();
@@ -44,11 +43,9 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dBConn.Cmd.CommandText = "SP_InsertNewMember";
             dBConn.Cmd.CommandType = CommandType.StoredProcedure;
             dBConn.Cmd.Parameters.AddRange(parameters);
-
             dBConn.Open();
             dBConn.Cmd.ExecuteNonQuery();
             dBConn.Close();
-
             return true;
         }
 
