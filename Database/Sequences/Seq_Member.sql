@@ -1,0 +1,6 @@
+﻿CREATE SEQUENCE dbo.Seq_Member
+  AS int
+  START WITH 1
+  NO CYCLE
+  CACHE 
+GO

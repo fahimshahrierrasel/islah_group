@@ -1,0 +1,11 @@
+﻿ALTER FUNCTION dbo.udf_GetUniqueId
+(
+	@Prefix VARCHAR(5),
+  @Id INT
+)
+RETURNS VARCHAR(17)
+AS BEGIN
+	RETURN @Prefix+CONVERT(VARCHAR(12), @id);
+END
+
+GO

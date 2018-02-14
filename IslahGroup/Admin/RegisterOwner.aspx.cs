@@ -50,17 +50,17 @@ namespace IslahGroup.Admin
             if (MemberImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(MemberImageUpload.PostedFile.FileName);
-                memberImageUploadPath = Server.MapPath(@"~/Upload/Images/Owners/" + ImageName(fullName,PhotoType.Member) + fileExtension);
+                memberImageUploadPath = @"~/Upload/Images/Owners/" + ImageName(fullName, mobileNo, PhotoType.Member) + fileExtension;
                 RemoveFileIfExists(memberImageUploadPath);
-                MemberImageUpload.SaveAs(memberImageUploadPath);
+                MemberImageUpload.SaveAs(Server.MapPath(memberImageUploadPath));
             }
 
             if (NomineeImageUpload.HasFile)
             {
                 string fileExtension = Path.GetExtension(NomineeImageUpload.PostedFile.FileName);
-                nomineeImageUploadPath = Server.MapPath(@"~/Upload/Images/Nominees/" + ImageName(fullName, PhotoType.Nominee) + fileExtension);
+                nomineeImageUploadPath = @"~/Upload/Images/Nominees/" + ImageName(fullName, mobileNo, PhotoType.Nominee) + fileExtension;
                 RemoveFileIfExists(nomineeImageUploadPath);
-                NomineeImageUpload.SaveAs(nomineeImageUploadPath);
+                NomineeImageUpload.SaveAs(Server.MapPath(nomineeImageUploadPath));
             }
 
             OwnerLogic ownerLogic = new OwnerLogic();
@@ -118,13 +118,9 @@ namespace IslahGroup.Admin
             }
         }
 
-        private string ImageName(string name, PhotoType photoType)
+        private string ImageName(string name, string mobileNo, PhotoType photoType)
         {
-            string newName = name.Replace(" ", String.Empty)
-                    .Replace(".", String.Empty)
-                    .Replace("-", String.Empty)
-                    .Replace(",", String.Empty)
-                    .ToLower();
+            string newName = NameWithoutSymbol(name) + mobileNo.Substring(mobileNo.Length - 6);
             if(photoType == PhotoType.Nominee)
             {
                 newName = newName + "_nominee";
