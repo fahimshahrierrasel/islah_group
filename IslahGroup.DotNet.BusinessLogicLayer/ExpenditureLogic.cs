@@ -46,7 +46,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             return types;
         }
 
-        public CapitalSummery ExpenditureDashboardInfo()
+        public CapitalSummery ExpenditureInfo()
         {
             DataTable expenditureInfo = new DataTable();
             DataTable capitalInfo = new DataTable();

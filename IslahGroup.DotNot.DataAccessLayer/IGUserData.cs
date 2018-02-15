@@ -22,5 +22,29 @@ namespace IslahGroup.DotNet.DataAccessLayer
 
             return userTable;
         }
+
+        public DataTable GetUserTypes()
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetUserTypes";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
+
+        public DataTable GetAllUser()
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetAllIGUser";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
     }
 }

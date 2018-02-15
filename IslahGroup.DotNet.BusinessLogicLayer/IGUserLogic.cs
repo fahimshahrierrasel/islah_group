@@ -35,11 +35,20 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
                 };
             }
             else
-            {
                 user = null;
-            }
-
             return user;
+        }
+        public DataTable GetAllIGUser()
+        {
+            DataTable users = new DataTable();
+            users = iGUserData.GetAllUser();
+            return users;
+        }
+        public DataTable GetUserTypes()
+        {
+            DataTable userTypes = new DataTable();
+            userTypes = iGUserData.GetUserTypes();
+            return userTypes;
         }
     }
 }

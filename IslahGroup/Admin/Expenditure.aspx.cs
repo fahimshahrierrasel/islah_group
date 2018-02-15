@@ -60,7 +60,7 @@ namespace IslahGroup.Admin
         }
         public void PopulateInfo()
         {
-            CapitalSummery capitalSummery = expenditureLogic.ExpenditureDashboardInfo();
+            CapitalSummery capitalSummery = expenditureLogic.ExpenditureInfo();
             LabelCurrentCapital.Text = capitalSummery.CurrentCapital;
             LabelTotalEarn.Text = capitalSummery.TotalEarn;
             LabelTotalInvestment.Text = capitalSummery.TotalInvest;

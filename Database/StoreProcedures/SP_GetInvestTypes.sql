@@ -1,0 +1,8 @@
+﻿ALTER PROCEDURE dbo.SP_GetInvestTypes
+AS
+BEGIN
+SELECT
+  Type
+FROM InvestType;
+END
+GO
