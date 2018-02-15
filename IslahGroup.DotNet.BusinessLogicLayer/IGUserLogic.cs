@@ -16,7 +16,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
         }
         public IGUser LoginToTheSystem(Dictionary<string, string> userInformation)
         {
-            SqlParameter[] parameters = new SqlParameter[2];
+            SqlParameter[] parameters = new SqlParameter[userInformation.Count];
             parameters[0] = new SqlParameter("Email", userInformation["Email"]);
             parameters[1] = new SqlParameter("Password", userInformation["Password"]);
             DataTable userTable = iGUserData.GetLoginInfo(parameters);
@@ -37,6 +37,26 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             else
                 user = null;
             return user;
+        }
+        public bool RegisterNewIGUser(Dictionary<string, string> newUser)
+        {
+            SqlParameter[] parameters = new SqlParameter[newUser.Count];
+            parameters[0] = new SqlParameter("Name", newUser["Name"]);
+            parameters[1] = new SqlParameter("Username", newUser["Username"]);
+            parameters[2] = new SqlParameter("Email", newUser["Email"]);
+            parameters[3] = new SqlParameter("Password", newUser["Password"]);
+            parameters[4] = new SqlParameter("Type", newUser["Type"]);
+
+            iGUserData.RegisterNewIGUser(parameters);
+            return true;
+        }
+        public bool AddNewUserType(Dictionary<string, string> newType)
+        {
+            SqlParameter[] parameters = new SqlParameter[newType.Count];
+            parameters[0] = new SqlParameter("Type", newType["Type"]);
+
+            iGUserData.AddNewUserType(parameters);
+            return true;
         }
         public DataTable GetAllIGUser()
         {

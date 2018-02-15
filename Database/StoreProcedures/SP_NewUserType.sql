@@ -1,0 +1,9 @@
+﻿CREATE PROCEDURE SP_NewUserType
+(
+  @Type VARCHAR(20)
+)
+AS
+BEGIN
+  INSERT UserType (UsrType) VALUES (@Type);
+END
+GO

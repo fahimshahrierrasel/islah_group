@@ -14,7 +14,7 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-user-list" role="tabpanel" aria-labelledby="nav-user-list-tab">
-                <button class="btn btn-primary btn-lg m-3">New User</button>
+                <button class="btn btn-primary btn-lg m-3" data-toggle="modal" data-target="#addUserModal" id="Button1">New User</button>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
                         <thead>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-user-type" role="tabpanel" aria-labelledby="nav-user-type-tab">
-                <button class="btn btn-lg btn-primary m-3">New User Type</button>
+                <button class="btn btn-lg btn-primary m-3" data-toggle="modal" data-target="#addUserTypeModal" id="Button2">New User Type</button>
                 <div class="table-responsive">
                     <table class="table table-bordered  table-dark table-striped" id="dataTable2" width="100%" cellspacing="0">
                         <thead>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-expn-type" role="tabpanel" aria-labelledby="nav-expn-type-tab">
-                <button class="btn btn-primary btn-lg m-3">New Expenditure Type</button>
+                <button class="btn btn-primary btn-lg m-3" data-toggle="modal" data-target="#addExpnTypeModal">New Expenditure Type</button>
                 <div class="table-responsive">
                     <table class="table table-bordered  table-dark table-striped" id="dataTable3" width="100%" cellspacing="0">
                         <thead>
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-invs-type" role="tabpanel" aria-labelledby="nav-invs-type-tab">
-                <button class="btn btn-primary btn-lg m-3">New Invest Type</button>
+                <button class="btn btn-primary btn-lg m-3" data-toggle="modal" data-target="#addInvestTypeModal">New Invest Type</button>
                 <div class="table-responsive">
                     <table class="table table-bordered  table-dark table-striped" id="dataTable4" width="100%" cellspacing="0">
                         <thead>
@@ -105,6 +105,120 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalTitle">Add New User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="TextBoxFullName" class="col-form-label">Full Name:</label>
+                        <asp:TextBox ID="TextBoxFullName" CssClass="form-control" runat="server" placeholder="Full Name"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="TextBoxUsername" class="col-form-label">Username:</label>
+                        <asp:TextBox ID="TextBoxUsername" CssClass="form-control" runat="server" placeholder="Username"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="TextBoxEmail" class="col-form-label">Email:</label>
+                        <asp:TextBox ID="TextBoxEmail" CssClass="form-control" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="TextBoxPass" class="col-form-label">Password:</label>
+                        <asp:TextBox ID="TextBoxPass" CssClass="form-control" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="TextBoxConfPass" class="col-form-label">Confirm Password:</label>
+                        <asp:TextBox ID="TextBoxConfPass" CssClass="form-control" runat="server" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <label for="DropDownListUserType" class="col-form-label">User Type:</label>
+                        <asp:DropDownList ID="DropDownListUserType" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <asp:Button ID="ButtonAddNewUser" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddNewUser_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addUserTypeModal" tabindex="-1" role="dialog" aria-labelledby="addUserTypeModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserTypeModalTitle">Add User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="TextBoxUserType" class="col-form-label">User Type:</label>
+                        <asp:TextBox ID="TextBoxUserType" CssClass="form-control" runat="server" placeholder="User Type"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <asp:Button ID="ButtonAddUserType" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddUserType_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addExpnTypeModal" tabindex="-1" role="dialog" aria-labelledby="addExpnTypeModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addExpnTypeModalTitle">Add Expenditure Type</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="TextBoxExpnType" class="col-form-label">Expenditure Type:</label>
+                        <asp:TextBox ID="TextBoxExpnType" CssClass="form-control" runat="server" placeholder="Expenditure Type"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <asp:Button ID="ButtonAddExpnType" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddExpnType_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addInvestTypeModal" tabindex="-1" role="dialog" aria-labelledby="addInvestTypeModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addInvestTypeModalTitle">Add Invest Type</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="TextBoxInvestType" class="col-form-label">Invset Type:</label>
+                        <asp:TextBox ID="TextBoxInvestType" CssClass="form-control" runat="server" placeholder="Invest Type"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <asp:Button ID="ButtonAddInvestType" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="ButtonAddInvestType_Click" />
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <script>

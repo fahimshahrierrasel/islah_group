@@ -44,6 +44,7 @@
     <Compile Include="IDatabaseAccessable.cs" />
     <Compile Include="DBConn.cs" />
     <Compile Include="IGUserData.cs" />
+    <Compile Include="InvestData.cs" />
     <Compile Include="InvestorData.cs" />
     <Compile Include="MemberData.cs" />
     <Compile Include="MemberDepositData.cs" />

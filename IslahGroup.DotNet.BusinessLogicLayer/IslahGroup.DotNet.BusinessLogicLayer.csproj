@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ExpenditureLogic.cs" />
     <Compile Include="IGUserLogic.cs" />
+    <Compile Include="InvestLogic.cs" />
     <Compile Include="InvestorLogic.cs" />
     <Compile Include="MemberDepositLogic.cs" />
     <Compile Include="MemberLogic.cs" />

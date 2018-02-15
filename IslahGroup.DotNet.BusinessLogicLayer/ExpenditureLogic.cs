@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using IslahGroup.DotNet.DataAccessLayer;
 using IslahGroup.DotNet.EntityLayer;
 
@@ -32,20 +29,25 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
                 return true;
             return false;
         }
+        public bool NewExpenditureType(Dictionary<string, string> types)
+        {
+            SqlParameter[] parameters = new SqlParameter[types.Count];
+            parameters[0] = new SqlParameter("Type", types["Type"]);
+            expenditureData.AddNewExpnditureType(parameters);
+            return true;
+        }
         public DataTable AllExpenditure()
         {
             DataTable allExpenditureTable = new DataTable();
             allExpenditureTable = expenditureData.GetAllExpenditures();
             return allExpenditureTable;
         }
-
         public DataTable ExpenditureTypes()
         {
             DataTable types = new DataTable();
             types = expenditureData.GetExpenditureTypes();
             return types;
         }
-
         public CapitalSummery ExpenditureInfo()
         {
             DataTable expenditureInfo = new DataTable();

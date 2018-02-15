@@ -76,5 +76,17 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dataTable.Load(reader);
             return dataTable;
         }
+
+        public void AddNewExpnditureType(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_NewExpenditureType";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+        }
     }
 }
