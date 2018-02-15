@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard.cs" />
     <Compile Include="IGUser.cs" />
     <Compile Include="Introducer.cs" />
     <Compile Include="Member.cs" />

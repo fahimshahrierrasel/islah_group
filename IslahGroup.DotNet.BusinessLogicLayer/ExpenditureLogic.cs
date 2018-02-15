@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IslahGroup.DotNet.DataAccessLayer;
+using IslahGroup.DotNet.EntityLayer;
 
 namespace IslahGroup.DotNet.BusinessLogicLayer
 {
@@ -45,11 +46,30 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             return types;
         }
 
-        public DataTable ExpenditureInfo()
+        public CapitalSummery ExpenditureDashboardInfo()
         {
-            DataTable info = new DataTable();
-            info = expenditureData.GetExpenditureInfo();
-            return info;
+            DataTable expenditureInfo = new DataTable();
+            DataTable capitalInfo = new DataTable();
+            expenditureInfo = expenditureData.GetExpenditureInfo();
+            capitalInfo = expenditureData.GetCurrentCapital();
+
+            CapitalSummery capitalSummery = new CapitalSummery()
+            {
+                CurrentCapital = "0.00",
+                TotalEarn = "0.00",
+                TotalInvest = "0.00"
+            };
+
+            if(expenditureInfo.Rows.Count > 0)
+            {
+                capitalSummery.TotalEarn = expenditureInfo.Rows[0]["Total"].ToString();
+                capitalSummery.TotalInvest = expenditureInfo.Rows[1]["Total"].ToString();
+            }
+            if(capitalInfo.Rows.Count > 0)
+            {
+                capitalSummery.CurrentCapital = capitalInfo.Rows[0]["CurrentAmount"].ToString();
+            }
+            return capitalSummery;
         }
     }
 }

@@ -14,7 +14,7 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-money"></i>
                         </div>
-                        <asp:Label ID="LabelCurrentCapital" runat="server" Text="12345.00"></asp:Label>
+                        <asp:Label ID="LabelCurrentCapital" runat="server" Text="0.00"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-list"></i>
                         </div>
-                        <asp:Label ID="LabelTotalInvestment" runat="server" Text="12345.00"></asp:Label>
+                        <asp:Label ID="LabelTotalInvestment" runat="server" Text="0.00"></asp:Label>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-shopping-cart"></i>
                         </div>
-                        <asp:Label ID="LabelTotalEarn" runat="server" Text="12345.00"></asp:Label>
+                        <asp:Label ID="LabelTotalEarn" runat="server" Text="0.00"></asp:Label>
                     </div>
                 </div>
             </div>

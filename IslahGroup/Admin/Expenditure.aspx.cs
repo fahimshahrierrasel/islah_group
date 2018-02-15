@@ -1,4 +1,5 @@
 ﻿using IslahGroup.DotNet.BusinessLogicLayer;
+using IslahGroup.DotNet.EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,18 +12,16 @@ namespace IslahGroup.Admin
         ExpenditureLogic expenditureLogic;
         DataTable expenditureTable;
         DataTable expnTypeTable;
-        DataTable expnInfo;
         public Expenditure()
         {
             expenditureLogic = new ExpenditureLogic();
             expenditureTable = new DataTable();
             expnTypeTable = new DataTable();
-            expnInfo = new DataTable();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             ControlAuthorization();
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 PopulateExpnType();
             }
@@ -61,11 +60,10 @@ namespace IslahGroup.Admin
         }
         public void PopulateInfo()
         {
-            expnInfo.Clear();
-            expnInfo = expenditureLogic.ExpenditureInfo();
-
-            LabelTotalEarn.Text = expnInfo.Rows[0][1].ToString() ?? "0.00";
-            LabelTotalInvestment.Text = expnInfo.Rows[1][1].ToString() ?? "0.00";
+            CapitalSummery capitalSummery = expenditureLogic.ExpenditureDashboardInfo();
+            LabelCurrentCapital.Text = capitalSummery.CurrentCapital;
+            LabelTotalEarn.Text = capitalSummery.TotalEarn;
+            LabelTotalInvestment.Text = capitalSummery.TotalInvest;
         }
         protected void ButtonAddExpenditure_Click(object sender, EventArgs e)
         {
@@ -82,8 +80,8 @@ namespace IslahGroup.Admin
                 { "ExpnType", eType },
                 { "UserId", userId }
             };
-   
-            if(expenditureLogic.NewExpenditure(expnDict))
+
+            if (expenditureLogic.NewExpenditure(expnDict))
             {
                 Response.Redirect(Request.RawUrl);
             }

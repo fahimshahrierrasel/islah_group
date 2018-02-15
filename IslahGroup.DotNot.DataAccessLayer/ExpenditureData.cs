@@ -65,5 +65,16 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dataTable.Load(reader);
             return dataTable;
         }
+        public DataTable GetCurrentCapital()
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetCurrentCapital";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
     }
 }
