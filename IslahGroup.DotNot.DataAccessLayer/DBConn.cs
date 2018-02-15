@@ -15,10 +15,10 @@ namespace IslahGroup.DotNet.DataAccessLayer
         {
             Cmd = new SqlCommand();
             // Hosting Server Information
-            //_connection = new SqlConnection(@"Data Source=localhost;Integrated Security=False; Database=islahgro_admin; User ID=fahimshahrier; Password=asdfahim25711");
+            _connection = new SqlConnection(@"Data Source=localhost;Integrated Security=False; Database=islahgro_admin; User ID=fahimshahrier; Password=asdfahim25711");
             // Fahim's Desktop Server
             //_connection = new SqlConnection(@"Server=DESKTOP-GBBLD7C\SQLEXPRESS;Database=IslahGroup;Trusted_Connection=True;");
-            _connection = new SqlConnection(@"Server=tcp:treebricksdev.database.windows.net,1433;Initial Catalog=IslahGroup;Persist Security Info=False;User ID=fahimshahrierrasel;Password=fahim1@treebricks;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            //_connection = new SqlConnection(@"Server=tcp:treebricksdev.database.windows.net,1433;Initial Catalog=IslahGroup;Persist Security Info=False;User ID=fahimshahrierrasel;Password=fahim1@treebricks;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             Cmd.Connection = _connection;
         }
 
