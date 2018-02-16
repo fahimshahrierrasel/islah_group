@@ -24,10 +24,6 @@ namespace IslahGroup.Admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Form1.Visible = false;
-            Form2.Visible = false;
-            Form3.Visible = false;
-            Form4.Visible = false;
             PopulateUserTable();
             PopulateUserTypeTable();
             PopulateExpnTypeTable();

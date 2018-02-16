@@ -62,10 +62,10 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
                 TotalInvest = "0.00"
             };
 
-            if(expenditureInfo.Rows.Count > 0)
+            if(expenditureInfo.Rows.Count == 2)
             {
-                capitalSummery.TotalEarn = expenditureInfo.Rows[0]["Total"].ToString();
-                capitalSummery.TotalInvest = expenditureInfo.Rows[1]["Total"].ToString();
+                capitalSummery.TotalEarn = expenditureInfo.Rows[0]["Total"].ToString() ?? "0.00";
+                capitalSummery.TotalInvest = expenditureInfo.Rows[1]["Total"].ToString() ?? "0.00";
             }
             if(capitalInfo.Rows.Count > 0)
             {
