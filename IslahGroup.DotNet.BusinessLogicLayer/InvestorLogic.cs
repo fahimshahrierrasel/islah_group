@@ -15,7 +15,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             investorData = new InvestorData();
         }
 
-        public void RegisterNewInvestor(Dictionary<string, string> investorInfo)
+        public bool RegisterNewInvestor(Dictionary<string, string> investorInfo)
         {
             SqlParameter[] parameters = new SqlParameter[investorInfo.Count];
             parameters[0] = new SqlParameter("InvNID", investorInfo["InvNID"]);
@@ -31,7 +31,10 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             parameters[10] = new SqlParameter("InvMobileNo", investorInfo["InvMobileNo"]);
             parameters[11] = new SqlParameter("UserId", investorInfo["UserId"]);
 
-            investorData.Insert(parameters);
+            if (investorData.Insert(parameters))
+                return true;
+            else
+                return false;
         }
 
         public DataTable GetSingleInvestor(Dictionary<string, int> memberInformation)

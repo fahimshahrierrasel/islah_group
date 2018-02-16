@@ -1,10 +1,6 @@
 ﻿using IslahGroup.DotNet.BusinessLogicLayer;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
 {
@@ -52,7 +48,8 @@ namespace IslahGroup.Admin
                 { "UserId", userId }
             };
 
-            investorLogic.RegisterNewInvestor(investorInfo);
+            if (investorLogic.RegisterNewInvestor(investorInfo))
+                Response.Redirect("Investors.aspx");
         }
     }
 }
