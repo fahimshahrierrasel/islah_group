@@ -62,14 +62,14 @@
     </div>
 
     <div class="container">
-        <div class="card card-login centered">
+        <div class="card card-login text-dark centered">
             <div class="card-header text-dark">Login</div>
             <div class="card-body">
                 <form id="form1" runat="server">
                     <img src="../Images/islah_logo.png" class="mx-auto d-block" alt="Islah Logo" style="height: 100px" />
                     <div class="form-group mt-2">
                         <label for="TextboxEmail" class="text-dark">Email</label>
-                        <asp:TextBox ID="TextboxEmail" type="text" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextboxEmail" type="email" CssClass="form-control" placeholder="Email" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label for="TextPassword" class="text-dark">Password</label>
@@ -89,8 +89,37 @@
     <script src="../Scripts/jquery-3.0.0.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
     <script src="../Scripts/jquery-easing/jquery.easing.js"></script>
+    <script src="../Scripts/jquery.validate.js"></script>
     <script>
         jQuery(document).ready(function () {
+            $('#form1').validate({
+                rules: {
+                    TextboxEmail: {
+                        required: true,
+                        email: true
+                    },
+                    TextPassword: {
+                        required: true
+                    }
+                },
+                messages: {
+                    TextboxEmail: "You must enter your email!!",
+                    TextPassword: "You must put your password!!"
+                },
+                errorElement: "div",
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("invalid-feedback");
+                    error.insertAfter(element);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                }
+            });
+
             $('.dayopen').on('click', function (e) {
                 var href, target;
                 e.preventDefault();
@@ -103,7 +132,7 @@
                 e.preventDefault();
                 return $('.activeday').fadeOut().removeClass('activeday');
             });
-        })
+        });
     </script>
 </body>
 </html>
