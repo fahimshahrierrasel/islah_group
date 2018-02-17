@@ -13,13 +13,13 @@ namespace IslahGroup.Admin {
     public partial class RegisterOwner {
         
         /// <summary>
-        /// regForm control.
+        /// regform control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm regForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm regform;
         
         /// <summary>
         /// RegistrationDate control.

@@ -7,7 +7,7 @@
     <div class="card card-register mx-auto mt-5 mb-5">
         <div class="card-header">Register New Owner</div>
         <div class="card-block p-3">
-            <form id="regForm" action="#" runat="server">
+            <form id="regform" runat="server">
                 <h3>Owner's Information</h3>
                 <div class="form-group">
                     <label for="RegistrationDate">Registration Date</label>
@@ -174,112 +174,111 @@
     <script src="../Scripts/jquery.validate.js"></script>
     <script>
         jQuery(document).ready(function () {
-            $('#regForm').validate({
+            $('#regform').validate({
                 rules: {
-                    <%=RegistrationDate.ClientID%>: {
+                    <%=RegistrationDate.UniqueID%>: {
                         required: true,
                         date: true
                     },
-                    <%=ShareNo.ClientID%>: {
+                    <%=ShareNo.UniqueID%>: {
                         required: true,
                         digits: true
                     },
-                    <%=NidNo.ClientID%>: {
+                    <%=NidNo.UniqueID%>: {
                         required: true,
                         digits: true
                     },
-                    <%=FullName.ClientID%>: {
+                    <%=FullName.UniqueID%>: {
                         required: true
                     },
-                    <%=FatherName.ClientID%>: {
+                    <%=FatherName.UniqueID%>: {
                         required: true
                     },
-                    <%=MotherName.ClientID%>: {
+                    <%=MotherName.UniqueID%>: {
                         required: true
                     },
                     <%=HusbWifeName.ClientID%>: {
                         required: true
                     },
-                    PresentAddress.ClientID%>: {
+                    <%=PresentAddress.UniqueID%>: {
                         required: true
                     },
-                    <%=ParmanentAddress.ClientID%>: {
+                    <%=ParmanentAddress.UniqueID%>: {
                         required: true
                     },
-                    <%=DateOfBirth.ClientID%>: {
+                    <%=DateOfBirth.UniqueID%>: {
                         required: true,
                         date: true
                     },
-                    <%=Education.ClientID%>: {
+                    <%=Education.UniqueID%>: {
                         required: true
                     },
-                    <%=Profession.ClientID%>: {
+                    <%=Profession.UniqueID%>: {
                         required: true
                     },
-                    <%=Nationality.ClientID%>: {
+                    <%=Nationality.UniqueID%>: {
                         required: true
                     },
-                    <%=Gender.ClientID%>: {
+                    <%=Gender.UniqueID%>: {
                         required: true
                     },
-                    <%=BloodGroup.ClientID%>: {
+                    <%=BloodGroup.UniqueID%>: {
                         required: true
                     },
-                    <%=MobileNo.ClientID%>: {
+                    <%=MobileNo.UniqueID%>: {
                         required: true,
                         digits: true,
                         maxlength: 12,
                         minlength: 11
                     },
-                    <%=Email.ClientID%>: {
+                    <%=Email.UniqueID%>: {
                         required: true,
                         email: true
                     },
-                    <%=TextBoxDesignation.ClientID%>: {
+                    <%=TextBoxDesignation.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeNidNo.ClientID%>: {
+                    <%=NomineeNidNo.UniqueID%>: {
                         required: true,
                         digits: true
                     },
-                    <%=NomineeName.ClientID%>: {
+                    <%=NomineeName.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeFatherHusbandName.ClientID%>: {
+                    <%=NomineeFatherHusbandName.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeMotherName.ClientID%>: {
+                    <%=NomineeMotherName.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeAddress.ClientID%>: {
+                    <%=NomineeAddress.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeDateOfBirth.ClientID%>: {
+                    <%=NomineeDateOfBirth.UniqueID%>: {
                         required: true,
                         date: true
                     },
-                    <%=NomineeRelation.ClientID%>: {
+                    <%=NomineeRelation.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeProfession.ClientID%>: {
+                    <%=NomineeProfession.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeMobileNo.ClientID%>: {
+                    <%=NomineeMobileNo.UniqueID%>: {
                         required: true,
                         digits: true,
                         maxlength: 12,
                         minlength: 11
                     },
-                    <%=MemberImageUpload.ClientID%>: {
+                    <%=MemberImageUpload.UniqueID%>: {
                         required: true
                     },
-                    <%=NomineeImageUpload.ClientID%>: {
+                    <%=NomineeImageUpload.UniqueID%>: {
                         required: true
                     }
                 },
                 errorElement: "div",
                 errorPlacement: function (error, element) {
-                    // Add the `help-block` class to the error element
                     error.addClass("invalid-feedback");
                     error.insertAfter(element);
                 },
