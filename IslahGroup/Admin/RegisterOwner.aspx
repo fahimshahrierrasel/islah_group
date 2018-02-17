@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="ShareNo">Share No</label>
-                    <asp:TextBox ID="ShareNo" CssClass="form-control" type="text" placeholder="Share No" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="ShareNo" CssClass="form-control" type="text" placeholder="Share No" runat="server" Text="1"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <label for="NidNo">National Identification Number (NID)</label>
@@ -171,4 +171,125 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script src="../Scripts/jquery.validate.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $('#regForm').validate({
+                rules: {
+                    <%=RegistrationDate.ClientID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=ShareNo.ClientID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=NidNo.ClientID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=FullName.ClientID%>: {
+                        required: true
+                    },
+                    <%=FatherName.ClientID%>: {
+                        required: true
+                    },
+                    <%=MotherName.ClientID%>: {
+                        required: true
+                    },
+                    <%=HusbWifeName.ClientID%>: {
+                        required: true
+                    },
+                    PresentAddress.ClientID%>: {
+                        required: true
+                    },
+                    <%=ParmanentAddress.ClientID%>: {
+                        required: true
+                    },
+                    <%=DateOfBirth.ClientID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=Education.ClientID%>: {
+                        required: true
+                    },
+                    <%=Profession.ClientID%>: {
+                        required: true
+                    },
+                    <%=Nationality.ClientID%>: {
+                        required: true
+                    },
+                    <%=Gender.ClientID%>: {
+                        required: true
+                    },
+                    <%=BloodGroup.ClientID%>: {
+                        required: true
+                    },
+                    <%=MobileNo.ClientID%>: {
+                        required: true,
+                        digits: true,
+                        maxlength: 12,
+                        minlength: 11
+                    },
+                    <%=Email.ClientID%>: {
+                        required: true,
+                        email: true
+                    },
+                    <%=TextBoxDesignation.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeNidNo.ClientID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=NomineeName.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeFatherHusbandName.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeMotherName.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeAddress.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeDateOfBirth.ClientID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=NomineeRelation.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeProfession.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeMobileNo.ClientID%>: {
+                        required: true,
+                        digits: true,
+                        maxlength: 12,
+                        minlength: 11
+                    },
+                    <%=MemberImageUpload.ClientID%>: {
+                        required: true
+                    },
+                    <%=NomineeImageUpload.ClientID%>: {
+                        required: true
+                    }
+                },
+                errorElement: "div",
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("invalid-feedback");
+                    error.insertAfter(element);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                }
+            });
+        });
+    </script>
 </asp:Content>

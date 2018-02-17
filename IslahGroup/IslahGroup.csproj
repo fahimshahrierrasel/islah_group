@@ -145,6 +145,7 @@
     <Content Include="Scripts\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.js" />
     <Content Include="Scripts\form-js\jquery.backstretch.min.js" />
+    <None Include="Properties\PublishProfiles\IslahGroup - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\IslahGroup.pubxml" />
     <Content Include="Scripts\bootstrap.js.map" />
     <None Include="Web.Debug.config">
@@ -177,6 +178,7 @@
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\plugins.js" />
+    <Content Include="Scripts\RegisterOwnerValidation.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.js" />
     <Content Include="Scripts\sb-admin\sb-admin-charts.min.js" />
     <Content Include="Scripts\sb-admin\sb-admin-datatables.js" />
