@@ -48,13 +48,15 @@ namespace IslahGroup.Admin
                     { "Password", password },
                     { "Type", userType }
                 };
-                iGUserLogic.RegisterNewIGUser(newUser);
+                if (iGUserLogic.RegisterNewIGUser(newUser))
+                {
+                    Response.Redirect("Management.aspx");
+                }
             }
             else
             {
                 Response.Write("<script>alert('Password and Confirm Password is not matched!!');</script>");
             }
-            Response.Write("<script>console.log('Button Clicked');</script>");
         }
         public void PopulateUserTypeDL()
         {
