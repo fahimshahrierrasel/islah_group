@@ -6,7 +6,7 @@
     <div class="card card-register mx-auto mt-5 mb-5">
         <div class="card-header">Register New Investor</div>
         <div class="card-block p-3">
-            <form id="regForm" action="#" runat="server">
+            <form id="regForm" runat="server">
                 <div class="form-group">
                     <label for="TextBoxInvNID" class="col-form-label">NID:</label>
                     <asp:TextBox ID="TextBoxInvNID" CssClass="form-control" runat="server" placeholder="Investor NID"></asp:TextBox>
@@ -60,4 +60,62 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script src="../Scripts/jquery.validate.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $('#regForm').validate({
+                rules: {
+                    <%=TextBoxInvNID.UniqueID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=TextBoxInvFullName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxInvFatherName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxInvMotherName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxInvHusbWifeName.ClientID%>: {
+                        required: true
+                    },
+                    <%=TextBoxPresentAddress.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxParmanentAddress.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxInvDOB.UniqueID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=TextBoxProfession.UniqueID%>: {
+                        required: true
+                    },
+                    <%=DropDownListInvGender.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxInvMobileNo.UniqueID%>: {
+                        required: true,
+                        digits: true,
+                        maxlength: 12,
+                        minlength: 11
+                    }
+                },
+                errorElement: "div",
+                errorPlacement: function (error, element) {
+                    error.addClass("invalid-feedback");
+                    error.insertAfter(element);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                }
+            });
+        });
+    </script>
 </asp:Content>
