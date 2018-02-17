@@ -167,3 +167,117 @@
         </div>
     </div>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script src="../Scripts/jquery.validate.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            $('#regForm').validate({
+                rules: {
+                    <%=NidNo.UniqueID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=FullName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=FatherName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=MotherName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=HusbWifeName.ClientID%>: {
+                        required: true
+                    },
+                    <%=PresentAddress.UniqueID%>: {
+                        required: true
+                    },
+                    <%=ParmanentAddress.UniqueID%>: {
+                        required: true
+                    },
+                    <%=DateOfBirth.UniqueID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=Education.UniqueID%>: {
+                        required: true
+                    },
+                    <%=Profession.UniqueID%>: {
+                        required: true
+                    },
+                    <%=Nationality.UniqueID%>: {
+                        required: true
+                    },
+                    <%=Gender.UniqueID%>: {
+                        required: true
+                    },
+                    <%=BloodGroup.UniqueID%>: {
+                        required: true
+                    },
+                    <%=MobileNo.UniqueID%>: {
+                        required: true,
+                        digits: true,
+                        maxlength: 12,
+                        minlength: 11
+                    },
+                    <%=Email.UniqueID%>: {
+                        required: true,
+                        email: true
+                    },
+                    <%=IntroducerMembershipId.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeNidNo.UniqueID%>: {
+                        required: true,
+                        digits: true
+                    },
+                    <%=NomineeName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeFatherHusbandName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeMotherName.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeAddress.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeDateOfBirth.UniqueID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=NomineeRelation.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeProfession.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeMobileNo.UniqueID%>: {
+                        required: true,
+                        digits: true,
+                        maxlength: 12,
+                        minlength: 11
+                    },
+                    <%=MemberImageUpload.UniqueID%>: {
+                        required: true
+                    },
+                    <%=NomineeImageUpload.UniqueID%>: {
+                        required: true
+                    }
+                },
+                errorElement: "div",
+                errorPlacement: function (error, element) {
+                    error.addClass("invalid-feedback");
+                    error.insertAfter(element);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-invalid").removeClass("is-valid");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).addClass("is-valid").removeClass("is-invalid");
+                }
+            });
+        });
+    </script>
+</asp:Content>
