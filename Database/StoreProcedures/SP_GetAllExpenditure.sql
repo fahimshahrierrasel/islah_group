@@ -2,7 +2,8 @@
 AS
 BEGIN
 SELECT
-  ExpnDate
+  ExpnId
+ ,ExpnDate
  ,ExpnNote
  ,ExpnAmount
  ,ExpenType_Type AS ExpnType

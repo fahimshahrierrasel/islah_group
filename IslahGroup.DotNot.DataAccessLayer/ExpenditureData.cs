@@ -42,6 +42,18 @@ namespace IslahGroup.DotNet.DataAccessLayer
             return dataTable;
         }
 
+        public DataTable GetAExpenditure(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetAExpenditure";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
         public DataTable GetExpenditureTypes()
         {
             DBConn dBConn = new DBConn();
@@ -76,7 +88,6 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dataTable.Load(reader);
             return dataTable;
         }
-
         public void AddNewExpnditureType(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
@@ -87,6 +98,19 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dBConn.Open();
             dBConn.Cmd.ExecuteNonQuery();
             dBConn.Close();
+        }
+        public bool UpdateAExpenditure(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_UpdateExpenditure";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+
+            return true;
         }
     }
 }

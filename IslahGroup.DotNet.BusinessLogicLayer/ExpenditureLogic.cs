@@ -29,6 +29,19 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
                 return true;
             return false;
         }
+        public bool UpdateAExpenditure(Dictionary<string, string> expenditure)
+        {
+            SqlParameter[] parameters = new SqlParameter[expenditure.Count];
+
+            parameters[0] = new SqlParameter("ExpnId", expenditure["ExpnId"]);
+            parameters[1] = new SqlParameter("ExpnNote", expenditure["ExpnNote"]);
+            parameters[2] = new SqlParameter("ExpnAmount", double.Parse(expenditure["ExpnAmount"]));
+            parameters[3] = new SqlParameter("ExpnType", expenditure["ExpnType"]);
+
+            if (expenditureData.UpdateAExpenditure(parameters))
+                return true;
+            return false;
+        }
         public bool NewExpenditureType(Dictionary<string, string> types)
         {
             SqlParameter[] parameters = new SqlParameter[types.Count];
@@ -41,6 +54,14 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             DataTable allExpenditureTable = new DataTable();
             allExpenditureTable = expenditureData.GetAllExpenditures();
             return allExpenditureTable;
+        }
+        public DataTable GetAExpenditure(Dictionary<string, int> expenInfo)
+        {
+            SqlParameter[] parameters = new SqlParameter[expenInfo.Count];
+            parameters[0] = new SqlParameter("ExpnId", expenInfo["ExpnId"]);
+            DataTable expnTable = new DataTable();
+            expnTable = expenditureData.GetAExpenditure(parameters);
+            return expnTable;
         }
         public DataTable ExpenditureTypes()
         {

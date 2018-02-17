@@ -62,6 +62,7 @@
                                 <th>Type</th>
                                 <th>Amount</th>
                                 <th>Note</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -70,6 +71,7 @@
                                 <th>Type</th>
                                 <th>Amount</th>
                                 <th>Note</th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -80,6 +82,7 @@
                                         <td><%# Eval("ExpnType") %></td>
                                         <td><%# Eval("ExpnAmount") %></td>
                                         <td><%# Eval("ExpnNote") %></td>
+                                        <td class="text-center"><a href="UpdateExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteExpenditure.aspx?ExpnId=<%# Eval("ExpnType") %>" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>
@@ -129,7 +132,40 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script src="../Scripts/jquery.validate.js"></script>
     <script>
+        jQuery(document).ready(function () {
+            $('#formexpn').validate({
+                rules: {
+                    <%=TextBoxEDate.UniqueID%>: {
+                    required: true,
+                    date: true
+                },
+                    <%=TextBoxEInfo.UniqueID%>: {
+                        required: true
+                    },
+                    <%=DropDownListEType.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxEAmount.UniqueID%>: {
+                        required: true,
+                        number: true
+                    }
+                },
+            errorElement: "div",
+            errorPlacement: function (error, element) {
+                error.addClass("invalid-feedback");
+                error.insertAfter(element);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
+            });
+
+        });
         function isNumberKey(evt) {
             var charCode = (evt.which) ? evt.which : event.keyCode
             if (charCode > 31 && (charCode != 46 && (charCode < 48 || charCode > 57)))
