@@ -42,6 +42,16 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
                 return true;
             return false;
         }
+        public bool DeleteAExpenditure(Dictionary<string, int> expenditure)
+        {
+            SqlParameter[] parameters = new SqlParameter[expenditure.Count];
+
+            parameters[0] = new SqlParameter("ExpnId", expenditure["ExpnId"]);
+
+            if (expenditureData.DeleteAExpenditure(parameters))
+                return true;
+            return false;
+        }
         public bool NewExpenditureType(Dictionary<string, string> types)
         {
             SqlParameter[] parameters = new SqlParameter[types.Count];

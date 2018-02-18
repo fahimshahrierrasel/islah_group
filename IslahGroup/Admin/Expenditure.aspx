@@ -82,7 +82,7 @@
                                         <td><%# Eval("ExpnType") %></td>
                                         <td><%# Eval("ExpnAmount") %></td>
                                         <td><%# Eval("ExpnNote") %></td>
-                                        <td class="text-center"><a href="UpdateExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteExpenditure.aspx?ExpnId=<%# Eval("ExpnType") %>" class="btn btn-danger">Delete</a></td>
+                                        <td class="text-center"><a href="UpdateExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>

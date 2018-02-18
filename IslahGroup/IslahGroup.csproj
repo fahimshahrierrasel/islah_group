@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\DeleteExpenditure.aspx" />
     <Content Include="Admin\Expenditure.aspx" />
     <Content Include="Admin\InvestorDetails.aspx" />
     <Content Include="Admin\Investors.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteExpenditure.aspx.cs">
+      <DependentUpon>DeleteExpenditure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteExpenditure.aspx.designer.cs">
+      <DependentUpon>DeleteExpenditure.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Expenditure.aspx.cs">
       <DependentUpon>Expenditure.aspx</DependentUpon>
