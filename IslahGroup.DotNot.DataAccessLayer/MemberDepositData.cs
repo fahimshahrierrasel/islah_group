@@ -35,9 +35,30 @@ namespace IslahGroup.DotNet.DataAccessLayer
             memberTable.Load(reader);
             return memberTable;
         }
+        public DataTable GetADeposit(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetADeposit";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable depositTable = new DataTable();
+            depositTable.Load(reader);
+            return depositTable;
+        }
         public bool Update(SqlParameter[] parameters)
         {
-            throw new NotImplementedException();
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_UpdateDeposit";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+
+            return true;
         }
     }
 }

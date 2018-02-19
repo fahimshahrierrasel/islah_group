@@ -12,7 +12,7 @@ namespace IslahGroup.Admin
         private MemberDepositLogic memberDepositLogic;
         public DataTable memberInfo;
         public DataTable depositInfo;
-        private int memberId;
+        public int memberId;
         public OwnerDetails()
         {
             ownerLogic = new OwnerLogic();
@@ -61,13 +61,13 @@ namespace IslahGroup.Admin
                 LabelHusbWifeName.Text = dr["HusbWifeName"].ToString();
                 LabelPresentAddress.Text = dr["PresentAddress"].ToString();
                 LabelParmanentAddress.Text = dr["ParmanentAddress"].ToString();
-                LabelDOB.Text = DateTime.Parse(dr["DateOfBirth"].ToString()).Date.ToString();
+                LabelDOB.Text = DateTime.Parse(dr["DateOfBirth"].ToString()).Date.ToString("MMMM dd, yyyy");
                 LabelEducation.Text = dr["Education"].ToString();
                 LabelNationality.Text = dr["Nationality"].ToString();
                 LabelGender.Text = dr["Gender"].ToString();
                 LabelBloodGroup.Text = dr["BloodGroup"].ToString();
                 LabelMobileNo.Text = dr["MobileNo"].ToString();
-                LabelRegistrationDate.Text = DateTime.Parse(dr["RegistrationDate"].ToString()).Date.ToString();
+                LabelRegistrationDate.Text = DateTime.Parse(dr["RegistrationDate"].ToString()).Date.ToString("MMMM dd, yyyy");
                 LabelAmount.Text = dr["Amount"].ToString();
                 LabelProfit.Text = dr["Profit"].ToString();
                 LabelNomineeNID.Text = dr["NomineeNidNo"].ToString();
@@ -75,7 +75,7 @@ namespace IslahGroup.Admin
                 LabelNomineeFatherHusbandName.Text = dr["NomineeFatherHusbandName"].ToString();
                 LabelNomineeMotherName.Text = dr["NomineeMotherName"].ToString();
                 LabelNomineeAddress.Text = dr["NomineeAddress"].ToString();
-                LabelNomineeDOB.Text = DateTime.Parse(dr["NomineeDateOfBirth"].ToString()).Date.ToString();
+                LabelNomineeDOB.Text = DateTime.Parse(dr["NomineeDateOfBirth"].ToString()).Date.ToString("MMMM dd, yyyy");
                 LabelNomineeRelation.Text = dr["NomineeRelation"].ToString();
                 LabelNomineeProfession.Text = dr["NomineeProfession"].ToString();
                 LabelNomineeMobileNo.Text = dr["NomineeMobileNo"].ToString();

@@ -13,15 +13,6 @@ namespace IslahGroup.Admin {
     public partial class OwnerDetails {
         
         /// <summary>
-        /// ProfileForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
-        
-        /// <summary>
         /// LabelMemberName control.
         /// </summary>
         /// <remarks>
@@ -308,6 +299,15 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater RepeaterOwnerDeposits;
+        
+        /// <summary>
+        /// DepositForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm DepositForm;
         
         /// <summary>
         /// TextBoxDAmount control.
