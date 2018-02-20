@@ -88,7 +88,7 @@
     </div>
     <div class="row">
         <div class="container">
-            <div class="card">
+            <div class="card m-1">
                 <div class="card-header">
                     Investor Invests
                         <button class="btn btn-primary float-right" id="add_modal" runat="server" data-toggle="modal" data-target="#addInvestModal">
@@ -102,6 +102,8 @@
                                 <tr>
                                     <th>Date</th>
                                     <th>Amount</th>
+                                    <th>Profit</th>
+                                    <th>Type</th>
                                     <th>Note</th>
                                     <th>Action</th>
                                 </tr>
@@ -110,6 +112,8 @@
                                 <tr>
                                     <th>Date</th>
                                     <th>Amount</th>
+                                    <th>Profit</th>
+                                    <th>Type</th>
                                     <th>Note</th>
                                     <th>Action</th>
                                 </tr>
@@ -120,8 +124,10 @@
                                         <tr>
                                             <td><%# Eval("InvestDate", "{0:d}") %></a></td>
                                             <td><%# Eval("Amount") %></td>
+                                            <td><%# Eval("Profit") %></td>
+                                            <td><%# Eval("Type") %></td>
                                             <td><%# Eval("Note") %></td>
-                                            <td><a class="btn btn-warning m-1">Update</a><a class="btn btn-danger m-1">Delete</a></td>
+                                            <td class="text-center"><a class="btn btn-warning mr-1" href="UpdateInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Update</a><a class="btn btn-danger m-1" href="UpdateInvest.aspx?InvsId=<%# Eval("InvestId") %>">Delete</a></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
@@ -162,7 +168,7 @@
                             <asp:DropDownList ID="DropDownListInvestType" CssClass="form-control" runat="server"></asp:DropDownList>
                         </div>
                         <div class="form-group">
-                            <label for="TextBoxDNote" class="col-form-label">Note:</label>
+                            <label for="TextBoxINote" class="col-form-label">Note:</label>
                             <asp:TextBox ID="TextBoxINote" CssClass="form-control" runat="server" placeholder="Note" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
@@ -177,10 +183,44 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <script>
-        $(document).ready(function () {
-            $('#add_modal').click(function (e) {
-                e.preventDefault();
+        jQuery(document).ready(function () {
+            $('#formexpn').validate({
+                rules: {
+                    <%=TextBoxIDate.UniqueID%>: {
+                    required: true,
+                    date: true
+                },
+                    <%=TextBoxINote.UniqueID%>: {
+                        required: true
+                    },
+                    <%=DropDownListInvestType.UniqueID%>: {
+                        required: true
+                    },
+                    <%=TextBoxIAmount.UniqueID%>: {
+                        required: true,
+                        number: true
+                    },
+                    <%=TextBoxIProfit.UniqueID%>: {
+                        required: true,
+                        number: true
+                    }
+                },
+            errorElement: "div",
+            errorPlacement: function (error, element) {
+                error.addClass("invalid-feedback");
+                error.insertAfter(element);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
             });
+        $('#add_modal').click(function (e) {
+            e.preventDefault();
+        });
+
         });
     </script>
 </asp:Content>

@@ -89,6 +89,7 @@
     <Content Include="Admin\RegisterOwner.aspx" />
     <Content Include="Admin\UpdateDeposit.aspx" />
     <Content Include="Admin\UpdateExpenditure.aspx" />
+    <Content Include="Admin\UpdateInvest.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
@@ -342,6 +343,13 @@
     </Compile>
     <Compile Include="Admin\UpdateExpenditure.aspx.designer.cs">
       <DependentUpon>UpdateExpenditure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateInvest.aspx.cs">
+      <DependentUpon>UpdateInvest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateInvest.aspx.designer.cs">
+      <DependentUpon>UpdateInvest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

@@ -8,21 +8,24 @@ namespace IslahGroup.Admin
 {
     public partial class InvestorDetails : System.Web.UI.Page
     {
-        int investorId;
+        public int investorId;
         InvestLogic investLogic;
         InvestorLogic investorLogic;
         DataTable investorInfo;
         DataTable investTable;
         DataTable investTypeTable;
-        protected void Page_Load(object sender, EventArgs e)
+        public InvestorDetails()
         {
-            ControlAuthorization();
-            investorId = Convert.ToInt32(Request.QueryString["InvId"]);
             investLogic = new InvestLogic();
             investorLogic = new InvestorLogic();
             investorInfo = new DataTable();
             investTable = new DataTable();
             investTypeTable = new DataTable();
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            ControlAuthorization();
+            investorId = Convert.ToInt32(Request.QueryString["InvId"]);
             LoadInvestor(investorId);
             PopulateInvestorInformation();
             PopulateInvestType();

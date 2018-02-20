@@ -40,6 +40,19 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dataTable.Load(reader);
             return dataTable;
         }
+        public DataTable GetAInvest(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_GetInvestById";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            SqlDataReader reader = dBConn.Cmd.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            return dataTable;
+        }
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();

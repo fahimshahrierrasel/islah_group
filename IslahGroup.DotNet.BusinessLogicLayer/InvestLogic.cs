@@ -37,6 +37,14 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             investsTable = investData.GetInvestsByInvestor(parameters);
             return investsTable;
         }
+        public DataTable GetAInvest(Dictionary<string, int> investor)
+        {
+            SqlParameter[] parameters = new SqlParameter[investor.Count];
+            parameters[0] = new SqlParameter("InvestId", investor["InvestId"]);
+            DataTable investsTable = new DataTable();
+            investsTable = investData.GetAInvest(parameters);
+            return investsTable;
+        }
         public bool InsertNewInvest(Dictionary<string, string> invest)
         {
             SqlParameter[] parameters = new SqlParameter[invest.Count];
