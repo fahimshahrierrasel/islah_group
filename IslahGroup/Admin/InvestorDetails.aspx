@@ -111,13 +111,14 @@
                                     <th>Date</th>
                                     <th>Amount</th>
                                     <th>Note</th>
+                                    <th>Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <asp:Repeater ID="RepeaterInvestorInvests" runat="server">
                                     <ItemTemplate>
                                         <tr>
-                                            <td><%# Eval("InvestDate") %></a></td>
+                                            <td><%# Eval("InvestDate", "{0:d}") %></a></td>
                                             <td><%# Eval("Amount") %></td>
                                             <td><%# Eval("Note") %></td>
                                             <td><a class="btn btn-warning m-1">Update</a><a class="btn btn-danger m-1">Delete</a></td>
@@ -145,16 +146,20 @@
                 <form id="ProfileForm" runat="server">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="TextBoxDAmount-name" class="col-form-label">Amount:</label>
-                            <asp:TextBox ID="TextBoxIAmount" CssClass="form-control" runat="server" placeholder="Amount" required="required"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <label for="TextBoxDDate" class="col-form-label">Date:</label>
+                            <label for="TextBoxIDate" class="col-form-label">Date:</label>
                             <asp:TextBox ID="TextBoxIDate" CssClass="form-control" TextMode="Date" runat="server" required="required"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <label for="TextBoxDNote" class="col-form-label">Type:</label>
-                            <asp:DropDownList ID="DropDownListInvestType" runat="server"></asp:DropDownList>
+                            <label for="TextBoxIAmount" class="col-form-label">Amount:</label>
+                            <asp:TextBox ID="TextBoxIAmount" CssClass="form-control" runat="server" placeholder="Amount" required="required"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="TextBoxIProfit" class="col-form-label">Profit(%):</label>
+                            <asp:TextBox ID="TextBoxIProfit" CssClass="form-control" runat="server" placeholder="Profit(%)" required="required"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <label for="DropDownListInvestType" class="col-form-label">Type:</label>
+                            <asp:DropDownList ID="DropDownListInvestType" CssClass="form-control" runat="server"></asp:DropDownList>
                         </div>
                         <div class="form-group">
                             <label for="TextBoxDNote" class="col-form-label">Note:</label>

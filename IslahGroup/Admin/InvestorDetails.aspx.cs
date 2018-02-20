@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Web.UI.WebControls;
 
 namespace IslahGroup.Admin
 {
@@ -12,6 +13,7 @@ namespace IslahGroup.Admin
         InvestorLogic investorLogic;
         DataTable investorInfo;
         DataTable investTable;
+        DataTable investTypeTable;
         protected void Page_Load(object sender, EventArgs e)
         {
             ControlAuthorization();
@@ -20,8 +22,10 @@ namespace IslahGroup.Admin
             investorLogic = new InvestorLogic();
             investorInfo = new DataTable();
             investTable = new DataTable();
+            investTypeTable = new DataTable();
             LoadInvestor(investorId);
             PopulateInvestorInformation();
+            PopulateInvestType();
         }
         public void ControlAuthorization()
         {
@@ -44,6 +48,16 @@ namespace IslahGroup.Admin
 
             this.investorInfo = investorLogic.GetSingleInvestor(investorInformation);
             PopulateInvestorInvests(investorInformation);
+        }
+        public void PopulateInvestType()
+        {
+            investTypeTable.Clear();
+            investTypeTable = investLogic.GetInvestType();
+            foreach (DataRow item in investTypeTable.Rows)
+            {
+                string type = item["Type"].ToString();
+                DropDownListInvestType.Items.Add(new ListItem(type, type));
+            }
         }
         private void PopulateInvestorInvests(Dictionary<string, int> investorInformation)
         {
@@ -75,7 +89,25 @@ namespace IslahGroup.Admin
         }
         protected void ButtonAddInvest_Click(object sender, EventArgs e)
         {
+            string amount = TextBoxIAmount.Text;
+            string date = TextBoxIDate.Text;
+            string type = DropDownListInvestType.Text;
+            string note = TextBoxINote.Text;
+            string profit = TextBoxIProfit.Text;
+            string userId = Session["UserId"].ToString();
+            Dictionary<string, string> invest = new Dictionary<string, string>()
+            {
+                { "InvestorId", investorId.ToString() },
+                { "UserId", userId },
+                { "InvestDate", date },
+                { "Amount", amount },
+                { "Profit", profit },
+                { "Note", note },
+                { "Type", type }
+            };
 
+            investLogic.InsertNewInvest(invest);
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

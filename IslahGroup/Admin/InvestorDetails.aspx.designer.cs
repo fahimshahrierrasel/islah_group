@@ -157,6 +157,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
         
         /// <summary>
+        /// TextBoxIDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIDate;
+        
+        /// <summary>
         /// TextBoxIAmount control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.TextBox TextBoxIAmount;
         
         /// <summary>
-        /// TextBoxIDate control.
+        /// TextBoxIProfit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIDate;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIProfit;
         
         /// <summary>
         /// DropDownListInvestType control.
