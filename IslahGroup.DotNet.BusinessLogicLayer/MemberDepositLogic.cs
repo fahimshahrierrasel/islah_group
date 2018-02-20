@@ -54,5 +54,16 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             else
                 return false;
         }
+        public bool DeleteDeposit(Dictionary<string, int> depositInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[depositInformation.Count];
+            parameters[0] = new SqlParameter("MemberId", depositInformation["MemberId"]);
+            parameters[1] = new SqlParameter("DepositId", depositInformation["DepositId"]);
+
+            if (memberDepositData.Delete(parameters))
+                return true;
+            else
+                return false;
+        }
     }
 }

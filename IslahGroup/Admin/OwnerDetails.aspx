@@ -271,7 +271,7 @@
                                             <td><%# Eval("DepositDate", "{0:d}") %></a></td>
                                             <td><%# Eval("Amount") %></td>
                                             <td><%# Eval("Note") %></td>
-                                            <td class="text-center"><a href="UpdateDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteDeposit.aspx?ExpnId=<%# memberId %>" class="btn btn-danger">Delete</a></td>
+                                            <td class="text-center"><a href="UpdateDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId")%>" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
