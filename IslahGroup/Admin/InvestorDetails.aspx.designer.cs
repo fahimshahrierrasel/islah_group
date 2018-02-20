@@ -13,22 +13,13 @@ namespace IslahGroup.Admin {
     public partial class InvestorDetails {
         
         /// <summary>
-        /// ProfileForm control.
+        /// LabelInvestorName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
-        
-        /// <summary>
-        /// LabelMemberName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMemberName;
+        protected global::System.Web.UI.WebControls.Label LabelInvestorName;
         
         /// <summary>
         /// LabelNID control.
@@ -112,24 +103,6 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelGender;
         
         /// <summary>
-        /// LabelNationality control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelNationality;
-        
-        /// <summary>
-        /// LabelEducation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEducation;
-        
-        /// <summary>
         /// LabelProfession control.
         /// </summary>
         /// <remarks>
@@ -139,22 +112,13 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelProfession;
         
         /// <summary>
-        /// LabelBloodGroup control.
+        /// LabelMobileNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelBloodGroup;
-        
-        /// <summary>
-        /// LabelRegistrationDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRegistrationDate;
+        protected global::System.Web.UI.WebControls.Label LabelMobileNo;
         
         /// <summary>
         /// LabelAmount control.
@@ -166,15 +130,6 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAmount;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// add_modal control.
         /// </summary>
         /// <remarks>
@@ -184,31 +139,40 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlButton add_modal;
         
         /// <summary>
-        /// RepeaterOwnerDeposits control.
+        /// RepeaterInvestorInvests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterOwnerDeposits;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterInvestorInvests;
         
         /// <summary>
-        /// TextBoxDAmount control.
+        /// ProfileForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDAmount;
+        protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
         
         /// <summary>
-        /// TextBoxDDate control.
+        /// TextBoxIAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDDate;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIAmount;
+        
+        /// <summary>
+        /// TextBoxIDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxIDate;
         
         /// <summary>
         /// DropDownListInvestType control.
@@ -220,21 +184,21 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListInvestType;
         
         /// <summary>
-        /// TextBoxDNote control.
+        /// TextBoxINote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDNote;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxINote;
         
         /// <summary>
-        /// ButtonAddODeposit control.
+        /// ButtonAddInvest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAddODeposit;
+        protected global::System.Web.UI.WebControls.Button ButtonAddInvest;
     }
 }
