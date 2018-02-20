@@ -72,6 +72,7 @@
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\DeleteDeposit.aspx" />
     <Content Include="Admin\DeleteExpenditure.aspx" />
+    <Content Include="Admin\DeleteInvest.aspx" />
     <Content Include="Admin\Expenditure.aspx" />
     <Content Include="Admin\InvestorDetails.aspx" />
     <Content Include="Admin\Investors.aspx" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="Admin\DeleteExpenditure.aspx.designer.cs">
       <DependentUpon>DeleteExpenditure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteInvest.aspx.cs">
+      <DependentUpon>DeleteInvest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteInvest.aspx.designer.cs">
+      <DependentUpon>DeleteInvest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Expenditure.aspx.cs">
       <DependentUpon>Expenditure.aspx</DependentUpon>

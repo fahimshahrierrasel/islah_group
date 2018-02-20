@@ -127,7 +127,7 @@
                                             <td><%# Eval("Profit") %></td>
                                             <td><%# Eval("Type") %></td>
                                             <td><%# Eval("Note") %></td>
-                                            <td class="text-center"><a class="btn btn-warning mr-1" href="UpdateInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Update</a><a class="btn btn-danger m-1" href="UpdateInvest.aspx?InvsId=<%# Eval("InvestId") %>">Delete</a></td>
+                                            <td class="text-center"><a class="btn btn-warning mr-1" href="UpdateInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Update</a><a class="btn btn-danger m-1" href="DeleteInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Delete</a></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>
