@@ -1,0 +1,11 @@
+﻿CREATE PROCEDURE SP_DeleteUser
+(
+  @UserId INT
+)
+AS
+BEGIN
+
+  DELETE FROM IGUser WHERE UserId = @UserId;
+
+END
+GO

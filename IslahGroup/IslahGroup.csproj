@@ -86,6 +86,8 @@
     <Content Include="Admin\OwnerDetails.aspx" />
     <Content Include="Admin\Members.aspx" />
     <Content Include="Admin\Owners.aspx" />
+    <Content Include="Admin\ChangePassword.aspx" />
+    <Content Include="Admin\Profile.aspx" />
     <Content Include="Admin\RegisterInvestor.aspx" />
     <Content Include="Admin\RegisterOwner.aspx" />
     <Content Include="Admin\UpdateDeposit.aspx" />
@@ -330,6 +332,20 @@
     </Compile>
     <Compile Include="Admin\Owners.aspx.designer.cs">
       <DependentUpon>Owners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\RegisterInvestor.aspx.cs">
       <DependentUpon>RegisterInvestor.aspx</DependentUpon>

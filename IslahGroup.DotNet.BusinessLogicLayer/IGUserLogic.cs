@@ -50,6 +50,42 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             iGUserData.RegisterNewIGUser(parameters);
             return true;
         }
+        public bool UpdateIGUser(Dictionary<string, string> updateUser)
+        {
+            SqlParameter[] parameters = new SqlParameter[updateUser.Count];
+            parameters[0] = new SqlParameter("Name", updateUser["Name"]);
+            parameters[1] = new SqlParameter("Username", updateUser["Username"]);
+            parameters[2] = new SqlParameter("Email", updateUser["Email"]);
+            parameters[3] = new SqlParameter("Password", updateUser["Password"]);
+            parameters[4] = new SqlParameter("Type", updateUser["Type"]);
+            parameters[5] = new SqlParameter("UserId", updateUser["UserId"]);
+
+            if (iGUserData.UpdateIGUser(parameters))
+                return true;
+            else
+                return false;
+        }
+        public bool ChangePassword(Dictionary<string, string> updateUser)
+        {
+            SqlParameter[] parameters = new SqlParameter[updateUser.Count];
+            parameters[0] = new SqlParameter("Password", updateUser["Password"]);
+            parameters[1] = new SqlParameter("UserId", updateUser["UserId"]);
+
+            if (iGUserData.ChangePassword(parameters))
+                return true;
+            else
+                return false;
+        }
+        public bool DeleteIGUser(Dictionary<string, string> deleteUser)
+        {
+            SqlParameter[] parameters = new SqlParameter[deleteUser.Count];
+            parameters[0] = new SqlParameter("UserId", deleteUser["UserId"]);
+
+            if (iGUserData.DeleteIGUser(parameters))
+                return true;
+            else
+                return false;
+        }
         public bool AddNewUserType(Dictionary<string, string> newType)
         {
             SqlParameter[] parameters = new SqlParameter[newType.Count];
@@ -62,6 +98,14 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
         {
             DataTable users = new DataTable();
             users = iGUserData.GetAllUser();
+            return users;
+        }
+        public DataTable GetSingleUserById(Dictionary<string, int> user)
+        {
+            SqlParameter[] parameters = new SqlParameter[user.Count];
+            parameters[0] = new SqlParameter("UserId", user["UserId"]);
+            DataTable users = new DataTable();
+            users = iGUserData.GetSingleUserById(parameters);
             return users;
         }
         public DataTable GetUserTypes()
