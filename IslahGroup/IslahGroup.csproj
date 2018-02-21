@@ -512,6 +512,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\Images\ImageGallery\" />
     <Folder Include="Upload\Images\Members\" />
     <Folder Include="Upload\Images\Nominees\" />
     <Folder Include="Upload\Images\Owners\" />

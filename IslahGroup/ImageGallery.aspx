@@ -4,100 +4,21 @@
     <link rel="stylesheet" href="Content/blueimp-gallery.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="slider-area">
-        <div class="slider-active owl-carousel">
-            <img src="https://placeimg.com/640/480/any">
-            <img src="https://placeimg.com/640/480/any">
-            <img src="https://placeimg.com/640/480/any">
-        </div>
-    </div>
     <!-- Page Content -->
     <div class="parallax1">
         <div class="container">
             <h1 class="my-4 text-center text-lg-center">Image Gallery</h1>
             <hr></hr>
             <div class="row text-center text-lg-left links" id="links">
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/nature" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="https://placeimg.com/640/480/any" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="img/gallery/1.png" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="img/gallery/1.png" alt="">
-                    </a>
-                </div>
-
+                <asp:Repeater ID="RepeaterAllImages" runat="server">
+                    <ItemTemplate>
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <a href='<%# Eval("ImageUrl") %>' class="d-block mb-4 h-100">
+                                <asp:Image CssClass="img-fluid img-thumbnail" Width="200px" ImageUrl='<%# Eval("ImageUrl") %>' runat="server" />
+                            </a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
         </div>
         <!-- /.container -->

@@ -63,7 +63,7 @@
 
     <div class="container">
         <div class="card card-login text-dark centered">
-            <div class="card-header text-dark">Login</div>
+            <div class="card-header text-dark">Islah Group CMS Login</div>
             <div class="card-body">
                 <form id="form1" runat="server">
                     <img src="../Images/islah_logo.png" class="mx-auto d-block" alt="Islah Logo" style="height: 100px" />
