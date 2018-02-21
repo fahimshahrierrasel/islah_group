@@ -23,7 +23,7 @@
                                 <td><%# Eval("Username") %></td>
                                 <td><%# Eval("Email") %></td>
                                 <td><%# Eval("Type") %></td>
-                                <td class="text-center"><a class="btn btn-warning m-1">Update</a><a class="btn btn-danger">Delete</a></td>
+                                <td class="text-center"><a href="UpdateUser.aspx?UID=<%# Eval("UserId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteUser.aspx?UID=<%# Eval("UserId") %>" class="btn btn-danger">Delete</a></td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>

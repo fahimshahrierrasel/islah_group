@@ -93,6 +93,7 @@
     <Content Include="Admin\UpdateDeposit.aspx" />
     <Content Include="Admin\UpdateExpenditure.aspx" />
     <Content Include="Admin\UpdateInvest.aspx" />
+    <Content Include="Admin\UpdateUser.aspx" />
     <Content Include="CMS\Carousel.aspx" />
     <Content Include="CMS\Default.aspx" />
     <Content Include="CMS\Images.aspx" />
@@ -381,6 +382,13 @@
     </Compile>
     <Compile Include="Admin\UpdateInvest.aspx.designer.cs">
       <DependentUpon>UpdateInvest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="CMS\Carousel.aspx.cs">
       <DependentUpon>Carousel.aspx</DependentUpon>

@@ -53,7 +53,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
         public bool UpdateIGUser(Dictionary<string, string> updateUser)
         {
             SqlParameter[] parameters = new SqlParameter[updateUser.Count];
-            parameters[0] = new SqlParameter("Name", updateUser["Name"]);
+            parameters[0] = new SqlParameter("FullName", updateUser["FullName"]);
             parameters[1] = new SqlParameter("Username", updateUser["Username"]);
             parameters[2] = new SqlParameter("Email", updateUser["Email"]);
             parameters[3] = new SqlParameter("Password", updateUser["Password"]);
