@@ -11,7 +11,12 @@ namespace IslahGroup.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["AUsername"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
 
+            LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
         }
     }
 }

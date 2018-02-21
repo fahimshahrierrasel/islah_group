@@ -31,51 +31,15 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                    <a class="nav-link" id="DashboardLink" runat="server" href="../Admin/Dashboard.aspx">
+                    <a class="nav-link" id="DashboardLink" runat="server" href="../CMS/Default.aspx">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" id="OwnersMenu" data-toggle="tooltip" runat="server" data-placement="right" title="Owners">
-                    <a class="nav-link" href="../Admin/Owners.aspx">
+                    <a class="nav-link" href="../CMS/Default.aspx">
                         <i class="fa fa-fw fa-users"></i>
                         <span class="nav-link-text">Owners</span>
-                    </a>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Expenditures">
-                    <a class="nav-link" href="../Admin/Expenditure.aspx">
-                        <i class="fa fa-fw fa-file-text"></i>
-                        <span class="nav-link-text">Expenditures</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Investors">
-                    <a class="nav-link" href="../Admin/Investors.aspx">
-                        <i class="fa fa-fw fa-address-book"></i>
-                        <span class="nav-link-text">Investors</span>
-                    </a>
-                </li>
-                <li class="nav-item" id="MemberMenu" runat="server" data-toggle="tooltip" data-placement="right" title="Members">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-address-book"></i>
-                        <span class="nav-link-text">Members</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents">
-                        <li>
-                            <a href="../Admin/Members.aspx">Members List</a>
-                        </li>
-                        <li>
-                            <a href="../Admin/MemberRequests.aspx">Member Requests</a>
-                        </li>
-                        <li>
-                            <a href="../Admin/MemberHalts.aspx">Member Halts</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Investors">
-                    <a class="nav-link" href="../Admin/Management.aspx">
-                        <i class="fa fa-fw fa-cogs"></i>
-                        <span class="nav-link-text">Management</span>
                     </a>
                 </li>
             </ul>
