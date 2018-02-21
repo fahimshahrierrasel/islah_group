@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMSData.cs" />
     <Compile Include="ExpenditureData.cs" />
     <Compile Include="IDatabaseAccessable.cs" />
     <Compile Include="DBConn.cs" />

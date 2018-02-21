@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../Content/owl.carousel.css">
     <link rel="stylesheet" href="../Content/responsive.css">
     <link rel="stylesheet" href="../Content/owl.theme.default.css">
-    <link rel="stylesheet" href="../Content/blueimp-gallery.css">
+    
     <link rel="stylesheet" href="../Content/style.css">
 
     <asp:ContentPlaceHolder ID="Head" runat="server">
@@ -137,7 +137,6 @@
     <script src="../Scripts/jquery-3.0.0.js"></script>
     <script src="../Scripts/jquery-ui.js"></script>
     <script src="../Scripts/owl.carousel.js"></script>
-    <script src="../Scripts/blueimp-gallery.js"></script>
     <script src="../Scripts/blueimp-gallery-video.js"></script>
     <script src="../Scripts/blueimp-gallery-youtube.js"></script>
     <script type="text/javascript" src="../Scripts/plugins.js"></script>

@@ -20,7 +20,8 @@
                             </span>
                             <span style="float: right; width: 80%;">
                                 <p style="float: right; display: block; padding-left: 10px;">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam.adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam.</p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam.adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliquaUt enim adminim veniam.
+                                </p>
                             </span>
                         </div>
                     </div>
@@ -37,147 +38,26 @@
                     <div class="col-md-12">
                         <div class="heading-title">
                             <h4>Meet Our Managing Directores</h4>
-                            <hr/>
+                            <hr />
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
+                    <asp:Repeater ID="RepeaterOwners" runat="server">
+                        <ItemTemplate>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="our-team">
+                                    <div class="image">
+                                        <asp:Image ImageUrl='<%# Eval("ImageUrl") %>' AlternateText='<%# Eval("FullName") %>' runat="server"/>
+                                    </div>
+                                    <div class="member">
+                                        <h4><%# Eval("FullName") %></h4>
+                                        <h6><%# Eval("Designation") %></h6>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team last">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team last">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="our-team last">
-                            <div class="image">
-                                <img src="https://placeimg.com/640/480/any" alt="">
-                            </div>
-                            <div class="member">
-                                <h4>Name</h4>
-                                <h6>Designation</h6>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
         </div>
