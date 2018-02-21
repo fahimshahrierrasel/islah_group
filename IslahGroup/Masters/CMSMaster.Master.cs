@@ -10,15 +10,17 @@ namespace IslahGroup.Masters
             {
                 Response.Redirect("Login.aspx");
             }
+
+            LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
+
+            if (Session["UserType"].ToString().Equals("Admin") || Session["UserType"].ToString().Equals("Director") || Session["UserType"].ToString().Equals("CMSAdmin"))
+            {
+                
+            }
             else
             {
-                LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
-
-                if (Session["UserType"].ToString() != "Admin" || Session["UserType"].ToString() != "Director" || Session["UserType"].ToString() != "CMSAdmin")
-                {
-                    Response.Write("<script>alert('You have no authorization in this area!!')</script>");
-                    Response.Redirect("../Default.aspx");
-                }
+                Response.Write("<script>alert('You have no authorization in this area!!')</script>");
+                Response.Redirect("../Default.aspx");
             }
 
         }

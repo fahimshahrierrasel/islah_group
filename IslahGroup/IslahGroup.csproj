@@ -91,9 +91,12 @@
     <Content Include="Admin\UpdateDeposit.aspx" />
     <Content Include="Admin\UpdateExpenditure.aspx" />
     <Content Include="Admin\UpdateInvest.aspx" />
+    <Content Include="CMS\Carousel.aspx" />
     <Content Include="CMS\Default.aspx" />
+    <Content Include="CMS\Images.aspx" />
     <Content Include="CMS\Login.aspx" />
     <Content Include="CMS\Logout.aspx" />
+    <Content Include="CMS\Videos.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
@@ -363,12 +366,26 @@
     <Compile Include="Admin\UpdateInvest.aspx.designer.cs">
       <DependentUpon>UpdateInvest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CMS\Carousel.aspx.cs">
+      <DependentUpon>Carousel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Carousel.aspx.designer.cs">
+      <DependentUpon>Carousel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CMS\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CMS\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Images.aspx.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Images.aspx.designer.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
     </Compile>
     <Compile Include="CMS\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -383,6 +400,13 @@
     </Compile>
     <Compile Include="CMS\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CMS\Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CMS\Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

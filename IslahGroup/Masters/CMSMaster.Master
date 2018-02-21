@@ -36,10 +36,22 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" id="OwnersMenu" data-toggle="tooltip" runat="server" data-placement="right" title="Owners">
-                    <a class="nav-link" href="../CMS/Default.aspx">
+                <li class="nav-item" id="Li2" data-toggle="tooltip" runat="server" data-placement="right" title="Carousel">
+                    <a class="nav-link" href="../CMS/Carousel.aspx">
                         <i class="fa fa-fw fa-users"></i>
-                        <span class="nav-link-text">Owners</span>
+                        <span class="nav-link-text">Carousel</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="OwnersMenu" data-toggle="tooltip" runat="server" data-placement="right" title="Images">
+                    <a class="nav-link" href="../CMS/Images.aspx">
+                        <i class="fa fa-fw fa-users"></i>
+                        <span class="nav-link-text">Images</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="Li1" data-toggle="tooltip" runat="server" data-placement="right" title="Videos">
+                    <a class="nav-link" href="../CMS/Videos.aspx">
+                        <i class="fa fa-fw fa-users"></i>
+                        <span class="nav-link-text">Videos</span>
                     </a>
                 </li>
             </ul>
