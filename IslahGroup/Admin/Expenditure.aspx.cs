@@ -34,10 +34,14 @@ namespace IslahGroup.Admin
             if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
             {
                 AddExpenditureBtn.Visible = true;
+                ActionHead.Visible = true;
+                ActionFoot.Visible = true;
             }
             else
             {
                 AddExpenditureBtn.Visible = false;
+                ActionHead.Visible = false;
+                ActionFoot.Visible = false;
             }
         }
 

@@ -105,7 +105,7 @@
                                     <th>Profit</th>
                                     <th>Type</th>
                                     <th>Note</th>
-                                    <th>Action</th>
+                                    <th id="ActionHead" runat="server">Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -115,7 +115,7 @@
                                     <th>Profit</th>
                                     <th>Type</th>
                                     <th>Note</th>
-                                    <th>Action</th>
+                                    <th id="ActionFoot" runat="server">Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -127,7 +127,7 @@
                                             <td><%# Eval("Profit") %></td>
                                             <td><%# Eval("Type") %></td>
                                             <td><%# Eval("Note") %></td>
-                                            <td class="text-center"><a class="btn btn-warning mr-1" href="UpdateInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Update</a><a class="btn btn-danger m-1" href="DeleteInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Delete</a></td>
+                                            <td runat="server" visible='<%#Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director" %>' class="text-center"><a class="btn btn-warning mr-1" href="UpdateInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Update</a><a class="btn btn-danger m-1" href="DeleteInvest.aspx?InvrId=<%# investorId %>&InvsId=<%# Eval("InvestId") %>">Delete</a></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>

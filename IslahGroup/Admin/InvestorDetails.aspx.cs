@@ -35,10 +35,14 @@ namespace IslahGroup.Admin
             if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
             {
                 add_modal.Visible = true;
+                ActionHead.Visible = true;
+                ActionFoot.Visible = true;
             }
             else
             {
                 add_modal.Visible = false;
+                ActionHead.Visible = false;
+                ActionFoot.Visible = false;
             }
         }
         private void LoadInvestor(int investorId)

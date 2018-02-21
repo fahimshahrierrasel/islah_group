@@ -62,7 +62,7 @@
                                 <th>Type</th>
                                 <th>Amount</th>
                                 <th>Note</th>
-                                <th>Action</th>
+                                <th id="ActionHead" runat="server">Action</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -71,7 +71,7 @@
                                 <th>Type</th>
                                 <th>Amount</th>
                                 <th>Note</th>
-                                <th>Action</th>
+                                <th id="ActionFoot" runat="server">Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -82,7 +82,7 @@
                                         <td><%# Eval("ExpnType") %></td>
                                         <td><%# Eval("ExpnAmount") %></td>
                                         <td><%# Eval("ExpnNote") %></td>
-                                        <td class="text-center"><a href="UpdateExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-danger">Delete</a></td>
+                                        <td runat="server" visible='<%#Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director" %>' class="text-center"><a href="UpdateExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteExpenditure.aspx?ExpnId=<%# Eval("ExpnId") %>" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 </ItemTemplate>
                             </asp:Repeater>

@@ -11,26 +11,26 @@ namespace IslahGroup.Masters
             {
                 Response.Redirect("Login.aspx");
             }
+
+            LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
+
+            if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
+            {
+                OwnersMenu.Visible = true;
+                MemberMenu.Visible = true;
+                ManagementMenu.Visible = true;
+            }
+            else if (Session["UserType"].ToString() == "Owner")
+            {
+                OwnersMenu.Visible = false;
+                MemberMenu.Visible = false;
+                ManagementMenu.Visible = false;
+                DashboardLink.HRef = "../Admin/OwnerDashboard.aspx";
+            }
             else
             {
-                LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
-
-                if (Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "Director")
-                {
-                    OwnersMenu.Visible = true;
-                    MemberMenu.Visible = true;
-                }
-                else if (Session["UserType"].ToString() == "Member")
-                {
-                    OwnersMenu.Visible = false;
-                    MemberMenu.Visible = false;
-                    DashboardLink.HRef = "../Admin/OwnerDashboard.aspx";
-                }
-                else
-                {
-                    Response.Write("<script>alert('You have no authorization in this area!!')</script>");
-                    Response.Redirect("../Default.aspx");
-                }
+                Response.Write("<script>alert('You have no authorization in this area!!');" +
+                                        "window.history.go(-1);</script>");
             }
         }
     }

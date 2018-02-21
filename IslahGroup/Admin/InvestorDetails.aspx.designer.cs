@@ -139,6 +139,24 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlButton add_modal;
         
         /// <summary>
+        /// ActionHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell ActionHead;
+        
+        /// <summary>
+        /// ActionFoot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell ActionFoot;
+        
+        /// <summary>
         /// RepeaterInvestorInvests control.
         /// </summary>
         /// <remarks>

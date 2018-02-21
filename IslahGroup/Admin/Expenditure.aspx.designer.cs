@@ -49,6 +49,24 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlButton AddExpenditureBtn;
         
         /// <summary>
+        /// ActionHead control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell ActionHead;
+        
+        /// <summary>
+        /// ActionFoot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell ActionFoot;
+        
+        /// <summary>
         /// RepeaterExpenditures control.
         /// </summary>
         /// <remarks>
