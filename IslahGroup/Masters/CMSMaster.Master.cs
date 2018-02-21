@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace IslahGroup.Masters
 {
@@ -15,8 +10,17 @@ namespace IslahGroup.Masters
             {
                 Response.Redirect("Login.aspx");
             }
+            else
+            {
+                LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
 
-            LabelUserName.Text = Session["AName"].ToString() + "(" + Session["UserType"] + ")";
+                if (Session["UserType"].ToString() != "Admin" || Session["UserType"].ToString() != "Director" || Session["UserType"].ToString() != "CMSAdmin")
+                {
+                    Response.Write("<script>alert('You have no authorization in this area!!')</script>");
+                    Response.Redirect("../Default.aspx");
+                }
+            }
+
         }
     }
 }
