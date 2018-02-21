@@ -71,5 +71,14 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
             singleOwnerTable = memberData.GetSingleMember(parameters);
             return singleOwnerTable;
         }
+
+        public bool ChangeMemberStatus(Dictionary<string, string> memberInformation)
+        {
+            SqlParameter[] parameters = new SqlParameter[memberInformation.Count];
+            parameters[0] = new SqlParameter("MemberId", memberInformation["MemberId"]);
+            parameters[1] = new SqlParameter("Status", memberInformation["Status"]);
+            memberData.ChangeStatus(parameters);
+            return true;
+        }
     }
 }

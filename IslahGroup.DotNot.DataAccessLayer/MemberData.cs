@@ -48,6 +48,17 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dBConn.Close();
             return true;
         }
+        public void ChangeStatus(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_ChangeMemberStatus";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+        }
 
         public bool Update(SqlParameter[] parameters)
         {

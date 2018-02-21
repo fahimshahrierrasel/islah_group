@@ -83,6 +83,7 @@
     <Content Include="Admin\MemberDetails.aspx" />
     <Content Include="Admin\MemberHalts.aspx" />
     <Content Include="Admin\MemberRequests.aspx" />
+    <Content Include="Admin\MemberStatus.aspx" />
     <Content Include="Admin\OwnerDashboard.aspx" />
     <Content Include="Admin\OwnerDetails.aspx" />
     <Content Include="Admin\Members.aspx" />
@@ -313,6 +314,13 @@
     </Compile>
     <Compile Include="Admin\MemberRequests.aspx.designer.cs">
       <DependentUpon>MemberRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MemberStatus.aspx.cs">
+      <DependentUpon>MemberStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MemberStatus.aspx.designer.cs">
+      <DependentUpon>MemberStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\OwnerDashboard.aspx.cs">
       <DependentUpon>OwnerDashboard.aspx</DependentUpon>

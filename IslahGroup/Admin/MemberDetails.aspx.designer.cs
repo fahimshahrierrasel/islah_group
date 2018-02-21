@@ -13,15 +13,6 @@ namespace IslahGroup.Admin {
     public partial class MemberDetails {
         
         /// <summary>
-        /// ProfileForm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
-        
-        /// <summary>
         /// LabelMemberName control.
         /// </summary>
         /// <remarks>
@@ -292,6 +283,33 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.HyperLink HyperLinkEmail;
         
         /// <summary>
+        /// StatusMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl StatusMenu;
+        
+        /// <summary>
+        /// AcceptLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink AcceptLink;
+        
+        /// <summary>
+        /// HaltLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HaltLink;
+        
+        /// <summary>
         /// LabelAmount control.
         /// </summary>
         /// <remarks>
@@ -310,13 +328,22 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelProfit;
         
         /// <summary>
-        /// RepeaterOwnerDeposits control.
+        /// RepeaterMemberDeposits control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepeaterOwnerDeposits;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterMemberDeposits;
+        
+        /// <summary>
+        /// ProfileForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm ProfileForm;
         
         /// <summary>
         /// TextBoxDAmount control.

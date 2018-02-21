@@ -8,18 +8,34 @@ namespace IslahGroup.Admin
     public partial class MemberDetails : System.Web.UI.Page
     {
         private MemberLogic memberLogic;
+        private MemberDepositLogic memberDepositLogic;
         public DataTable memberInfo;
+        DataTable depositInfo;
         private int memberId;
+        private string status;
         public MemberDetails()
         {
             memberLogic = new MemberLogic();
+            memberDepositLogic = new MemberDepositLogic();
             memberInfo = new DataTable();
+            depositInfo = new DataTable();
+            status = "None";
         }
         protected void Page_Load(object sender, EventArgs e)
         {
             memberId = Convert.ToInt32(Request.QueryString["MemId"]);
             LoadOwner(memberId);
             PopulateMemberInformation();
+            AcceptLink.NavigateUrl = String.Format("MemberStatus.aspx?MemId={0}&Sts=ACT", memberId);
+            HaltLink.NavigateUrl = String.Format("MemberStatus.aspx?MemId={0}&Sts=HALT", memberId);
+            if (!status.Equals("ACT"))
+            {
+                StatusMenu.Visible = true;
+            }
+            else
+            {
+                StatusMenu.Visible = false;
+            }
         }
 
         private void LoadOwner(int memberId)
@@ -31,16 +47,16 @@ namespace IslahGroup.Admin
             };
 
             memberInfo = memberLogic.GetSingleMember(memberInformation);
-            //PopulateMemberDeposits(memberInformation);
+            PopulateMemberDeposits(memberInformation);
         }
 
-        //private void PopulateMemberDeposits(Dictionary<string, int> memberInformation)
-        //{
-        //    depositInfo.Clear();
-        //    depositInfo = memberDepositLogic.GetMemberDeposits(memberInformation);
-        //    RepeaterOwnerDeposits.DataSource = depositInfo;
-        //    RepeaterOwnerDeposits.DataBind();
-        //}
+        private void PopulateMemberDeposits(Dictionary<string, int> memberInformation)
+        {
+            depositInfo.Clear();
+            depositInfo = memberDepositLogic.GetMemberDeposits(memberInformation);
+            RepeaterMemberDeposits.DataSource = depositInfo;
+            RepeaterMemberDeposits.DataBind();
+        }
 
         private void PopulateMemberInformation()
         {
@@ -79,8 +95,28 @@ namespace IslahGroup.Admin
                 HyperLinkEmail.NavigateUrl = "mailto:" + dr["Email"].ToString();
                 ImageMember.ImageUrl = dr["ImageUrl"].ToString();
                 ImageNominee.ImageUrl = dr["NomineeImageUrl"].ToString();
-                HyperLinkIntroducer.NavigateUrl = dr["IntroMembershipId"].ToString();
+                HyperLinkIntroducer.Text = dr["IntroMembershipId"].ToString();
+                status = dr["Status"].ToString();
             }
+        }
+
+        protected void ButtonAddODeposit_Click(object sender, EventArgs e)
+        {
+            string depositAmount = TextBoxDAmount.Text;
+            string depositDate = TextBoxDDate.Text;
+            string depositNote = TextBoxDNote.Text;
+            string userId = Session["UserId"].ToString();
+
+            Dictionary<string, string> memberDepositInfo = new Dictionary<string, string>
+            {
+                { "DepositDate", depositDate},
+                { "Amount", depositAmount },
+                { "Note", depositNote },
+                { "UserId", userId },
+                { "MemberId", memberId.ToString() }
+            };
+            memberDepositLogic.AddDeposit(memberDepositInfo);
+            Response.Redirect(Page.Request.RawUrl);
         }
     }
 }
