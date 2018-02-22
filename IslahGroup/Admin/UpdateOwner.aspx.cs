@@ -1,17 +1,86 @@
-﻿using System;
+﻿using IslahGroup.DotNet.BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
-using IslahGroup.DotNet.BusinessLogicLayer;
+using System.Web.UI;
 
 namespace IslahGroup.Admin
 {
-    public partial class RegisterOwner : System.Web.UI.Page
+    public partial class UpdateOwner : System.Web.UI.Page
     {
+        string memberId;
+        OwnerLogic ownerLogic;
+        DataTable memberInfo;
+        string memberImageUrl;
+        string nomineeImageUrl;
         enum PhotoType { Member, Nominee };
+
+        public UpdateOwner()
+        {
+            ownerLogic = new OwnerLogic();
+            memberInfo = new DataTable();
+            memberImageUrl = "";
+            nomineeImageUrl = "";
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            memberId = Request.QueryString["MemId"].ToString();
+            if (!IsPostBack)
+            {
+                LoadOwner(Convert.ToInt32(memberId));
+                PopulateMemberInformation();
+            }
         }
-        protected void FormSubmit_Click(object sender, EventArgs e)
+        private void LoadOwner(int memberId)
+        {
+            memberInfo.Clear();
+            Dictionary<string, int> memberInformation = new Dictionary<string, int>
+            {
+                { "MemberId", memberId }
+            };
+
+            memberInfo = ownerLogic.GetSingleOwner(memberInformation);
+        }
+        private void PopulateMemberInformation()
+        {
+            if (memberInfo.Rows.Count == 1)
+            {
+                DataRow dr = memberInfo.Rows[0];
+                Page.Title = dr["FullName"].ToString();
+                RegistrationDate.Text = DateTime.Parse(dr["RegistrationDate"].ToString()).Date.ToString("dd-MM-yyyy");
+                ShareNo.Text = dr["ShareNo"].ToString();
+                FullName.Text = dr["FullName"].ToString();
+                NidNo.Text = dr["NID"].ToString();
+                FatherName.Text = dr["FatherName"].ToString();
+                MotherName.Text = dr["MotherName"].ToString();
+                HusbWifeName.Text = dr["HusbWifeName"].ToString();
+                PresentAddress.Text = dr["PresentAddress"].ToString();
+                ParmanentAddress.Text = dr["ParmanentAddress"].ToString();
+                DateOfBirth.Text = DateTime.Parse(dr["DateOfBirth"].ToString()).Date.ToString("dd-MM-yyyy");
+                Education.Text = dr["Education"].ToString();
+                Nationality.Text = dr["Nationality"].ToString();
+                Gender.Text = dr["Gender"].ToString();
+                Profession.Text = dr["Profession"].ToString();
+                BloodGroup.Text = dr["BloodGroup"].ToString();
+                MobileNo.Text = dr["MobileNo"].ToString();
+                NomineeNidNo.Text = dr["NomineeNidNo"].ToString();
+                NomineeName.Text = dr["NomineeName"].ToString();
+                NomineeFatherHusbandName.Text = dr["NomineeFatherHusbandName"].ToString();
+                NomineeMotherName.Text = dr["NomineeMotherName"].ToString();
+                NomineeAddress.Text = dr["NomineeAddress"].ToString();
+                NomineeDateOfBirth.Text = DateTime.Parse(dr["NomineeDateOfBirth"].ToString()).Date.ToString("dd-MM-yyyy");
+                NomineeRelation.Text = dr["NomineeRelation"].ToString();
+                NomineeProfession.Text = dr["NomineeProfession"].ToString();
+                NomineeMobileNo.Text = dr["NomineeMobileNo"].ToString();
+                Email.Text = dr["Email"].ToString();
+                ImageMember.ImageUrl = dr["ImageUrl"].ToString();
+                ImageNominee.ImageUrl = dr["NomineeImageUrl"].ToString();
+                HiddenImageLabel.Text = dr["ImageUrl"].ToString();
+                HiddenNomineeImageLabel.Text = dr["NomineeImageUrl"].ToString();
+            }
+        }
+        protected void UpdateFormSubmit_Click(object sender, EventArgs e)
         {
             // Member Personal Info
             string registrationDate = RegistrationDate.Text;
@@ -54,6 +123,10 @@ namespace IslahGroup.Admin
                 RemoveFileIfExists(memberImageUploadPath);
                 MemberImageUpload.SaveAs(Server.MapPath(memberImageUploadPath));
             }
+            else
+            {
+                memberImageUploadPath = HiddenImageLabel.Text;
+            }
 
             if (NomineeImageUpload.HasFile)
             {
@@ -62,8 +135,10 @@ namespace IslahGroup.Admin
                 RemoveFileIfExists(nomineeImageUploadPath);
                 NomineeImageUpload.SaveAs(Server.MapPath(nomineeImageUploadPath));
             }
-
-            OwnerLogic ownerLogic = new OwnerLogic();
+            else
+            {
+                nomineeImageUploadPath = HiddenNomineeImageLabel.Text;
+            }
 
             Dictionary<string, string> memberInformation = new Dictionary<string, string>
             {
@@ -96,38 +171,20 @@ namespace IslahGroup.Admin
                 { "NomineeProfession", nomineeProfession },
                 { "NomineeMobileNo", nomineeMobileNo },
                 { "NomineeImageUrl", nomineeImageUploadPath },
-                { "UsernameAndPassword", NameWithoutSymbol(fullName) }
+                { "MemberId", memberId }
             };
-            
-
-            try
-            {
-                if (ownerLogic.RegisterNewOwner(memberInformation))
-                {
-                    Response.Redirect("~/Admin/Owners.aspx", false);
-                    Context.ApplicationInstance.CompleteRequest();
-                }
-                else
-                {
-                    Response.Write("<script>alert('Member Not Add');</script>");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            ownerLogic.UpdateOwner(memberInformation);
+            Response.Redirect("OwnerDetails.aspx?MemId=" + memberId);
         }
-
         private string ImageName(string name, string mobileNo, PhotoType photoType)
         {
             string newName = NameWithoutSymbol(name) + mobileNo.Substring(mobileNo.Length - 6);
-            if(photoType == PhotoType.Nominee)
+            if (photoType == PhotoType.Nominee)
             {
                 newName = newName + "_nominee";
             }
             return newName;
         }
-
         private string NameWithoutSymbol(string name)
         {
             return name.Replace(" ", String.Empty)
@@ -136,7 +193,6 @@ namespace IslahGroup.Admin
                     .Replace(",", String.Empty)
                     .ToLower();
         }
-
         private void RemoveFileIfExists(string filePath)
         {
             if (File.Exists(filePath))

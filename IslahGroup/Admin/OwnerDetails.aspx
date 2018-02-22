@@ -215,7 +215,7 @@
             <div class="card text-white bg-dark mb-3" style="max-width: 15rem;">
                 <div class="card-header">Action</div>
                 <div class="card-body text-center">
-                    <a href="UpdateOwner.aspx" class="btn btn-warning">Update</a>
+                    <asp:HyperLink ID="UpdateUrl" CssClass="btn btn-warning" runat="server" Text="Update"></asp:HyperLink>
                 </div>
             </div>
             <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">

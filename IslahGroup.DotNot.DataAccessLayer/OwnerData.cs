@@ -10,7 +10,6 @@ namespace IslahGroup.DotNet.DataAccessLayer
         {
             throw new NotImplementedException();
         }
-
         public DataTable GetAllOwners()
         {
             DBConn dBConn = new DBConn();
@@ -22,7 +21,6 @@ namespace IslahGroup.DotNet.DataAccessLayer
             memberTable.Load(reader);
             return memberTable;
         }
-
         public DataTable GetSingleOwner(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();
@@ -50,9 +48,17 @@ namespace IslahGroup.DotNet.DataAccessLayer
         }
         public bool Update(SqlParameter[] parameters)
         {
-            throw new NotImplementedException();
-        }
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_UpdateOwner";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
 
+            dBConn.Open();
+            dBConn.Cmd.ExecuteNonQuery();
+            dBConn.Close();
+
+            return true;
+        }
         public DataTable GetSingleOwnerByEmail(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();

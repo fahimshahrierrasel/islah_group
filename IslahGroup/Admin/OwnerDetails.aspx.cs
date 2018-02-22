@@ -25,6 +25,7 @@ namespace IslahGroup.Admin
             memberId = Convert.ToInt32(Request.QueryString["MemId"]);
             LoadOwner(memberId);
             PopulateMemberInformation();
+            UpdateUrl.NavigateUrl = "UpdateOwner.aspx?MemId=" + memberId;
         }
         private void LoadOwner(int memberId)
         {
