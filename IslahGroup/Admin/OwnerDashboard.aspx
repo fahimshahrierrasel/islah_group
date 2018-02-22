@@ -232,7 +232,8 @@
                 <div class="card text-white bg-danger mb-3" id="WarningCard" runat="server" style="max-width: 15rem;">
                     <div class="card-header">Warning</div>
                     <div class="card-body">
-                        <p class="card-text">Please, Hurry up and deposit you share so that you can get you profit!!</p>
+                        <p class="card-text">
+                            দ​য়া করে দ্রুত আপনার শেয়ার জমা দিন যাতে আপনি লাভ দেখতে পারেন !!</p>
                     </div>
                 </div>
             </div>

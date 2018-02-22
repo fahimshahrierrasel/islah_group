@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id="NomineeImageCard" runat="server">
                     <div class="card-header" id="headingTwo">
                         <a class="no_underline collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Nominee's Photo
                         </a>
@@ -212,7 +212,7 @@
                     </h5>
                 </div>
             </div>
-            <div class="card text-white bg-dark mb-3" style="max-width: 15rem;">
+            <div class="card text-white bg-dark mb-3" style="max-width: 15rem;" id="UpdateOwnerCard" runat="server">
                 <div class="card-header">Action</div>
                 <div class="card-body text-center">
                     <asp:HyperLink ID="UpdateUrl" CssClass="btn btn-warning" runat="server" Text="Update"></asp:HyperLink>
@@ -226,7 +226,7 @@
                     </h5>
                 </div>
             </div>
-            <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+            <div class="card text-white bg-success mb-3" style="max-width: 15rem;" id="ProfitCard" runat="server">
                 <div class="card-header">Profit</div>
                 <div class="card-body">
                     <h5 class="card-title">
@@ -241,7 +241,7 @@
             <div class="card">
                 <div class="card-header">
                     Owners Deposits
-                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal">
+                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal" runat="server">
                             <i class="fa fa-fw fa-plus"></i>Add
                         </button>
                 </div>
@@ -253,7 +253,7 @@
                                     <th>Date</th>
                                     <th>Amount</th>
                                     <th>Note</th>
-                                    <th>Action</th>
+                                    <th runat="server" id="HeaderAction">Action</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -261,7 +261,7 @@
                                     <th>Date</th>
                                     <th>Amount</th>
                                     <th>Note</th>
-                                    <th>Action</th>
+                                    <th runat="server" id="FooterAction">Action</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -271,7 +271,7 @@
                                             <td><%# Eval("DepositDate", "{0:d}") %></a></td>
                                             <td><%# Eval("Amount") %></td>
                                             <td><%# Eval("Note") %></td>
-                                            <td class="text-center"><a href="UpdateDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId")%>" class="btn btn-danger">Delete</a></td>
+                                            <td runat="server" visible='<%# (Session["UserType"].ToString().Equals("Admin") || Session["UserType"].ToString().Equals("Director"))%>' class="text-center"><a href="UpdateDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteDeposit.aspx?MemId=<%#memberId%>&DepId=<%#Eval("DepositId")%>" class="btn btn-danger">Delete</a></td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:Repeater>

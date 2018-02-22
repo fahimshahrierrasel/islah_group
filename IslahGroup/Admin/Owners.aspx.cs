@@ -1,5 +1,4 @@
 ﻿using IslahGroup.DotNet.BusinessLogicLayer;
-using IslahGroup.DotNet.DataAccessLayer;
 using System;
 using System.Data;
 
@@ -17,9 +16,14 @@ namespace IslahGroup.Admin
             {
                 PopulateUserTable();
             }
+            if(Session["UserType"].ToString().Equals("Admin") || Session["UserType"].ToString().Equals("Director"))
+            { }
+            else
+            {
+                RegisterOwnerArea.Visible = false;
+            }
+
         }
-
-
         private void PopulateUserTable()
         {
             userDataTable.Clear();

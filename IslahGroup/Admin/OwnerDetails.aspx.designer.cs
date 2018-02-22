@@ -31,6 +31,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Image ImageMember;
         
         /// <summary>
+        /// NomineeImageCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NomineeImageCard;
+        
+        /// <summary>
         /// ImageNominee control.
         /// </summary>
         /// <remarks>
@@ -274,6 +283,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelMemberShipId;
         
         /// <summary>
+        /// UpdateOwnerCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UpdateOwnerCard;
+        
+        /// <summary>
         /// UpdateUrl control.
         /// </summary>
         /// <remarks>
@@ -292,6 +310,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelAmount;
         
         /// <summary>
+        /// ProfitCard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProfitCard;
+        
+        /// <summary>
         /// LabelProfit control.
         /// </summary>
         /// <remarks>
@@ -299,6 +326,33 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelProfit;
+        
+        /// <summary>
+        /// add_modal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton add_modal;
+        
+        /// <summary>
+        /// HeaderAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell HeaderAction;
+        
+        /// <summary>
+        /// FooterAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell FooterAction;
         
         /// <summary>
         /// RepeaterOwnerDeposits control.

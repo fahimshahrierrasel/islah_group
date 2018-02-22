@@ -22,7 +22,7 @@ namespace IslahGroup.Masters
             }
             else if (Session["UserType"].ToString() == "Owner")
             {
-                OwnersMenu.Visible = false;
+                OwnersMenu.Visible = true;
                 MemberMenu.Visible = false;
                 ManagementMenu.Visible = false;
                 DashboardLink.HRef = "../Admin/OwnerDashboard.aspx";

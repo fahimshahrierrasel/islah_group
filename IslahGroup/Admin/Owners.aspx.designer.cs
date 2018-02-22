@@ -13,6 +13,15 @@ namespace IslahGroup.Admin {
     public partial class Owners {
         
         /// <summary>
+        /// RegisterOwnerArea control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl RegisterOwnerArea;
+        
+        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>

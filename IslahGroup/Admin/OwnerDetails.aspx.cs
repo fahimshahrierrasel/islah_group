@@ -26,7 +26,25 @@ namespace IslahGroup.Admin
             LoadOwner(memberId);
             PopulateMemberInformation();
             UpdateUrl.NavigateUrl = "UpdateOwner.aspx?MemId=" + memberId;
+            Authorization();
         }
+
+        private void Authorization()
+        {
+            if(Session["UserType"].ToString().Equals("Admin") || Session["UserType"].ToString().Equals("Director"))
+            {
+            }
+            else
+            {
+                UpdateOwnerCard.Visible = false;
+                ProfitCard.Visible = false;
+                HeaderAction.Visible = false;
+                FooterAction.Visible = false;
+                add_modal.Visible = false;
+                NomineeImageCard.Visible = false;
+            }
+        }
+
         private void LoadOwner(int memberId)
         {
             memberInfo.Clear();
