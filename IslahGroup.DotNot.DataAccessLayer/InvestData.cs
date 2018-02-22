@@ -53,6 +53,19 @@ namespace IslahGroup.DotNet.DataAccessLayer
             dataTable.Load(reader);
             return dataTable;
         }
+        public DataSet GetInvestInfoInvestor(SqlParameter[] parameters)
+        {
+            DBConn dBConn = new DBConn();
+            dBConn.Cmd.CommandText = "SP_TotalInvestInfo";
+            dBConn.Cmd.CommandType = CommandType.StoredProcedure;
+            dBConn.Cmd.Parameters.AddRange(parameters);
+
+            dBConn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(dBConn.Cmd);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+            return dataset;
+        }
         public bool Insert(SqlParameter[] parameters)
         {
             DBConn dBConn = new DBConn();

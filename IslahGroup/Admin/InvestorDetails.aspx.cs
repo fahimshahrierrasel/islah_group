@@ -12,6 +12,7 @@ namespace IslahGroup.Admin
         InvestLogic investLogic;
         InvestorLogic investorLogic;
         DataTable investorInfo;
+        DataSet investInfo;
         DataTable investTable;
         DataTable investTypeTable;
         public InvestorDetails()
@@ -20,6 +21,7 @@ namespace IslahGroup.Admin
             investorLogic = new InvestorLogic();
             investorInfo = new DataTable();
             investTable = new DataTable();
+            investInfo = new DataSet();
             investTypeTable = new DataTable();
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace IslahGroup.Admin
 
             this.investorInfo = investorLogic.GetSingleInvestor(investorInformation);
             PopulateInvestorInvests(investorInformation);
+            PopulateInvestInfo(investorInformation);
         }
         public void PopulateInvestType()
         {
@@ -72,6 +75,23 @@ namespace IslahGroup.Admin
             investTable = investLogic.GetInvestsByInvestor(investorInformation);
             RepeaterInvestorInvests.DataSource = investTable;
             RepeaterInvestorInvests.DataBind();
+        }
+        private void PopulateInvestInfo(Dictionary<string, int> investorInformation)
+        {
+            investInfo.Clear();
+            investInfo = investLogic.GetInvestInfoByInvestor(investorInformation);
+
+            double due = 0d, capital = 0d, product=0d, returned = 0d;
+            
+            double.TryParse(investInfo.Tables[0].Rows[0]["Total"].ToString() ?? "0", out capital);
+            double.TryParse(investInfo.Tables[1].Rows[0]["Total"].ToString() ?? "0", out product);
+            double.TryParse(investInfo.Tables[2].Rows[0]["Total"].ToString() ?? "0", out returned);
+
+            double invest = capital + product;
+            due = invest - returned;
+            LabelDue.Text = due.ToString();
+            LabelAmount.Text = invest.ToString();
+            LabelReturned.Text = returned.ToString();
         }
         private void PopulateInvestorInformation()
         {
@@ -91,7 +111,6 @@ namespace IslahGroup.Admin
                 LabelGender.Text = dr["InvGender"].ToString();
                 LabelProfession.Text = dr["InvProfession"].ToString();
                 LabelMobileNo.Text = dr["InvMobileNo"].ToString();
-                LabelAmount.Text = String.IsNullOrEmpty(dr["InvInvest"].ToString()) ? "0.00" : dr["InvInvest"].ToString();
             }
         }
         protected void ButtonAddInvest_Click(object sender, EventArgs e)

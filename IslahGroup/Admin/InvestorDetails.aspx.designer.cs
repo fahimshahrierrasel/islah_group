@@ -121,6 +121,15 @@ namespace IslahGroup.Admin {
         protected global::System.Web.UI.WebControls.Label LabelMobileNo;
         
         /// <summary>
+        /// LabelDue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDue;
+        
+        /// <summary>
         /// LabelAmount control.
         /// </summary>
         /// <remarks>
@@ -128,6 +137,15 @@ namespace IslahGroup.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelAmount;
+        
+        /// <summary>
+        /// LabelReturned control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelReturned;
         
         /// <summary>
         /// add_modal control.

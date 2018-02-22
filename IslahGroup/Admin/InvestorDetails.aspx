@@ -76,6 +76,14 @@
             </table>
         </div>
         <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3" style="max-width: 15rem;">
+                <div class="card-header">Total Due</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <asp:Label ID="LabelDue" runat="server" Text="123,534.00"></asp:Label>
+                    </h5>
+                </div>
+            </div>
             <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
                 <div class="card-header">Total Investment</div>
                 <div class="card-body">
@@ -84,6 +92,15 @@
                     </h5>
                 </div>
             </div>
+            <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+                <div class="card-header">Total Returned</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <asp:Label ID="LabelReturned" runat="server" Text="123,534.00"></asp:Label>
+                    </h5>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="row">
