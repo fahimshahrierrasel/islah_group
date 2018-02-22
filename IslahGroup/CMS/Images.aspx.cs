@@ -35,7 +35,7 @@ namespace IslahGroup.CMS
             if (FileUploadImage.HasFile)
             {
                 string fileExtension = Path.GetExtension(FileUploadImage.PostedFile.FileName);
-                imageUploadPath = @"~/Upload/Images/ImageGallery/" + DateTime.Now.ToString("hh_mm_ss_dd_MM_YYYY") + fileExtension;
+                imageUploadPath = @"~/Upload/Images/ImageGallery/" + DateTime.Now.ToString("hh_mm_ss_dd_MM_yyyy") + fileExtension;
                 FileUploadImage.SaveAs(Server.MapPath(imageUploadPath));
             }
 
