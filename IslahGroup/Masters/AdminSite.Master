@@ -117,7 +117,7 @@
                     <small>Copyright © Islah Group <% Response.Write(DateTime.Now.Year); %></small>
                 </div>
                 <div class="float-right">
-                    <small>Developed with </small><i class="fa fa-fw fa-heart text-danger"></i><small>treebricks</small>
+                    <small>Developed with </small><i class="fa fa-fw fa-heart text-danger"></i><small><a href="https://treebricks.github.io">treebricks</a></small>
                 </div>
             </div>
         </footer>
