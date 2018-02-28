@@ -98,7 +98,6 @@
     <Content Include="Admin\UpdateOwner.aspx" />
     <Content Include="Admin\UpdateUser.aspx" />
     <Content Include="CMS\Carousel.aspx" />
-    <Content Include="CMS\Default.aspx" />
     <Content Include="CMS\Images.aspx" />
     <Content Include="CMS\Login.aspx" />
     <Content Include="CMS\Logout.aspx" />
@@ -413,13 +412,6 @@
     <Compile Include="CMS\Carousel.aspx.designer.cs">
       <DependentUpon>Carousel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CMS\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CMS\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CMS\Images.aspx.cs">
       <DependentUpon>Images.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -512,6 +504,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\Images\Carousels\" />
     <Folder Include="Upload\Images\ImageGallery\" />
     <Folder Include="Upload\Images\Members\" />
     <Folder Include="Upload\Images\Nominees\" />
