@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Management" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="Management.aspx.cs" Inherits="IslahGroup.Admin.Management" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -23,7 +24,10 @@
                                 <td><%# Eval("Username") %></td>
                                 <td><%# Eval("Email") %></td>
                                 <td><%# Eval("Type") %></td>
-                                <td class="text-center"><a href="UpdateUser.aspx?UID=<%# Eval("UserId") %>" class="btn btn-warning m-1">Update</a><a href="DeleteUser.aspx?UID=<%# Eval("UserId") %>" class="btn btn-danger">Delete</a></td>
+                                <td class="text-center">
+                                    <a href="UpdateUser.aspx?UID=<%# Eval("UserId") %>" class="btn btn-warning m-1">Update</a>
+                                    <button class="btn btn-danger" data-id="<%# Eval("UserId") %>">Delete</button>
+                                </td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -76,16 +80,56 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="DeleteModalLabel">Are you sure?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Delete" below if you are ready to delete the user!</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-danger" id="delete_id">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <script src="../Scripts/jquery.validate.js"></script>
     <script>
         jQuery(document).ready(function () {
+
+            $('.btn-danger').click(function (e) {
+                $('#DeleteModal').modal();
+                var userId = $(this).attr('data-id');
+                $('#delete_id').attr("data-id", userId);
+            });
+
+            $('#delete_id').click(function (e) {
+                $('#DeleteModal').modal('hide');
+                $.ajax({
+                    url:"DeleteUser.aspx",
+                    data: { 'UID': $(this).attr('data-id') },
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('User not deleted!');
+                    }
+                });
+            });
+
             $('#Form1').validate({
                 rules: {
                     <%=TextBoxFullName.UniqueID%>: {
-                        required: true
-                    },
+                    required: true
+                },
                     <%=TextBoxUsername.UniqueID%>: {
                         required: true
                     },
@@ -104,17 +148,17 @@
                         required: true
                     }
                 },
-                errorElement: "div",
-                errorPlacement: function (error, element) {
-                    error.addClass("invalid-feedback");
-                    error.insertAfter(element);
-                },
-                highlight: function (element, errorClass, validClass) {
-                    $(element).addClass("is-invalid").removeClass("is-valid");
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                    $(element).addClass("is-valid").removeClass("is-invalid");
-                }
+            errorElement: "div",
+            errorPlacement: function (error, element) {
+                error.addClass("invalid-feedback");
+                error.insertAfter(element);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
             });
 
             $('#dataTable1').DataTable();

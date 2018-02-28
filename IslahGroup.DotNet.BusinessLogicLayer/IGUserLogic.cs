@@ -79,7 +79,7 @@ namespace IslahGroup.DotNet.BusinessLogicLayer
         public bool DeleteIGUser(Dictionary<string, string> deleteUser)
         {
             SqlParameter[] parameters = new SqlParameter[deleteUser.Count];
-            parameters[0] = new SqlParameter("UserId", deleteUser["UserId"]);
+            parameters[0] = new SqlParameter("UserId", Convert.ToInt32(deleteUser["UserId"]));
 
             if (iGUserData.DeleteIGUser(parameters))
                 return true;
