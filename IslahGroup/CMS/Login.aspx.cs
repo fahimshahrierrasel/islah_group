@@ -48,7 +48,7 @@ namespace IslahGroup.CMS
                     Session["Email"] = currentUser.Email;
                     Session["UserType"] = currentUser.UserType;
 
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Carousel.aspx");
                     
                 }
                 else

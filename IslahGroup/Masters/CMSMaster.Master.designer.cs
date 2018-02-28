@@ -31,15 +31,6 @@ namespace IslahGroup.Masters {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor DashboardLink;
         
         /// <summary>
-        /// Li2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li2;
-        
-        /// <summary>
         /// OwnersMenu control.
         /// </summary>
         /// <remarks>
