@@ -64,10 +64,10 @@
                         <li>
                             <a href="../Admin/Members.aspx">Members List</a>
                         </li>
-                        <li>
+                        <li id="MemberRequestsLink" runat="server">
                             <a href="../Admin/MemberRequests.aspx">Member Requests</a>
                         </li>
-                        <li>
+                        <li id="MemberHaltLink" runat="server">
                             <a href="../Admin/MemberHalts.aspx">Member Halts</a>
                         </li>
                     </ul>

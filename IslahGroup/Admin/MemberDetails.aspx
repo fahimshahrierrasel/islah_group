@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="MemberDetails.aspx.cs" Inherits="IslahGroup.Admin.MemberDetails" %>
+﻿<%@ Page Title="Member Details" Language="C#" MasterPageFile="~/Masters/AdminSite.Master" AutoEventWireup="true" CodeBehind="MemberDetails.aspx.cs" Inherits="IslahGroup.Admin.MemberDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -246,7 +246,7 @@
             <div class="card">
                 <div class="card-header">
                     Owners Deposits
-                        <button class="btn btn-primary float-right" id="add_modal" data-toggle="modal" data-target="#addDepositModal">
+                        <button class="btn btn-primary float-right" id="add_modal" runat="server" data-toggle="modal" data-target="#addDepositModal">
                             <i class="fa fa-fw fa-plus"></i>Add
 
                         </button>
@@ -322,4 +322,41 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script src="../Scripts/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#add_modal').click(function (e) {
+                e.preventDefault();
+            });
+
+            $('#DepositForm').validate({
+                rules: {
+                    <%=TextBoxDAmount.UniqueID%>: {
+                    required: true,
+                    number: true
+
+                },
+                    <%=TextBoxDDate.UniqueID%>: {
+                        required: true,
+                        date: true
+                    },
+                    <%=TextBoxDNote.UniqueID%>: {
+                        required: true
+                    }
+                },
+            errorElement: "div",
+            errorPlacement: function (error, element) {
+                error.addClass("invalid-feedback");
+                error.insertAfter(element);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
+            });
+
+        });
+    </script>
 </asp:Content>

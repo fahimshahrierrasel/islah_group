@@ -12,16 +12,12 @@ namespace IslahGroup.Admin
         string memberId;
         OwnerLogic ownerLogic;
         DataTable memberInfo;
-        string memberImageUrl;
-        string nomineeImageUrl;
         enum PhotoType { Member, Nominee };
 
         public UpdateOwner()
         {
             ownerLogic = new OwnerLogic();
             memberInfo = new DataTable();
-            memberImageUrl = "";
-            nomineeImageUrl = "";
         }
         protected void Page_Load(object sender, EventArgs e)
         {

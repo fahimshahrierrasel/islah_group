@@ -36,6 +36,18 @@ namespace IslahGroup.Admin
             {
                 StatusMenu.Visible = false;
             }
+            Authorization();
+        }
+
+        private void Authorization()
+        {
+            if (Session["UserType"].ToString().Equals("Admin") || Session["UserType"].ToString().Equals("Director"))
+            {
+            }
+            else
+            {
+                add_modal.Visible = false;
+            }
         }
 
         private void LoadOwner(int memberId)
