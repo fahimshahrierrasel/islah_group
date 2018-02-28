@@ -1,20 +1,47 @@
-CREATE PROCEDURE SP_UpdateInvest
-(
-  @InvestId INT,
-  @InvestDate DATE,
-  @Amount DECIMAL(10, 2),
-  @Profit DECIMAL(5, 2),
-  @Note VARCHAR(400)
-)
+﻿USE islahgro_admin
+GO
+
+ALTER PROCEDURE dbo.SP_UpdateExpenditure (@ExpnId INT,
+@ExpnNote VARCHAR(300),
+@ExpnAmount DECIMAL(15, 2),
+@ExpnType VARCHAR(20))
 AS
 BEGIN
 
-  UPDATE Invest
-    SET InvestDate = @InvestDate,
-      Amount = @Amount,
-      Profit = @Profit,
-      Note = @Note
-  WHERE @InvestId = @InvestId
+  DECLARE @CurrentCapital DECIMAL(15, 2);
+  DECLARE @UpdatedCapital DECIMAL(15, 2);
+  DECLARE @OldExpnAmount DECIMAL(15, 2);
+  DECLARE @CapitalId INT;
+  SET @CapitalId = 1;
+
+  SELECT
+    @CurrentCapital = c.CurrentAmount
+  FROM Capital c
+  WHERE c.CapitalId = @CapitalId;
+
+  SELECT
+    @OldExpnAmount = ExpnAmount
+  FROM Expenditure
+  WHERE ExpnId = @ExpnId;
+
+  IF @ExpnType = 'Earn'
+    SET @UpdatedCapital = @CurrentCapital - @OldExpnAmount + @ExpnAmount;
+  ELSE
+    BEGIN
+      IF @ExpnAmount < @CurrentCapital
+        SET @UpdatedCapital = @CurrentCapital + @OldExpnAmount - @ExpnAmount;
+      ELSE
+        RETURN 0;
+    END
+
+  UPDATE Expenditure
+  SET ExpnNote = @ExpnNote
+     ,ExpnAmount = @ExpnAmount
+  WHERE ExpnId = @ExpnId;
+
+  UPDATE Capital
+  SET CurrentAmount = @UpdatedCapital
+  WHERE CapitalId = @CapitalId;
 
 END
 GO
