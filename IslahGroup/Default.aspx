@@ -5,9 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="slider-area">
         <div class="slider-active owl-carousel">
-            <img src="http://via.placeholder.com/1920x851/2576f9/000000?text=Slide-1">
-            <img src="http://via.placeholder.com/1920x851/25f929/ffffff?text=Slide-2">
-            <img src="http://via.placeholder.com/1920x851/f92568/ffffff?text=Slide-3">
+            <img src="~/Upload/Images/Carousels/carousel1.jpg" runat="server" onerror="this.src='http://via.placeholder.com/1920x851'">
+            <img src="~/Upload/Images/Carousels/carousel2.jpg" runat="server" onerror="this.src='http://via.placeholder.com/1920x851'">
+            <img src="~/Upload/Images/Carousels/carousel3.jpg" runat="server" onerror="this.src='http://via.placeholder.com/1920x851'">
+            <img src="~/Upload/Images/Carousels/carousel4.jpg" runat="server" onerror="this.src='http://via.placeholder.com/1920x851'">
+            <img src="~/Upload/Images/Carousels/carousel5.jpg" runat="server" onerror="this.src='http://via.placeholder.com/1920x851'">
         </div>
     </div>
     <!--slider area ends-->
