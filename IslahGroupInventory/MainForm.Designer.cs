@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.islahInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,21 +42,20 @@
             this.tabPageProducts = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.colProdId = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colProdCode = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colProdName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSubCategory_Name = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colDescription = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSellingPrice = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colReOrderPoint = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colDiscount = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colStock = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colBranch_BranchId = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colBranch = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSubCategory = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource();
+            this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReOrderPoint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStock = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
@@ -72,7 +70,7 @@
             this.textBoxSPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -129,20 +127,19 @@
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.gridControlStockProductList = new DevExpress.XtraGrid.GridControl();
-            this.bandedGridView2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridViewStockProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPagePurchase = new System.Windows.Forms.TabPage();
             this.tabPageSale = new System.Windows.Forms.TabPage();
             this.tabPageVocher = new System.Windows.Forms.TabPage();
@@ -165,7 +162,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.gridControlCustomers = new DevExpress.XtraGrid.GridControl();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersBindingSource = new System.Windows.Forms.BindingSource();
             this.gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCustId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -177,8 +174,40 @@
             this.colBranch_BranchId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPageSupplier = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.labelTotalSuppliers = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textBoxISRemarks = new System.Windows.Forms.TextBox();
+            this.buttonAddSupplier = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBoxISEmail = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxISCPerson = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.textBoxISAddress = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBoxISName = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBoxISCode = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.gridControlSuppliers = new DevExpress.XtraGrid.GridControl();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource();
+            this.gridViewSuppliers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabPageUser = new System.Windows.Forms.TabPage();
-            this.imageListTab = new System.Windows.Forms.ImageList(this.components);
+            this.imageListTab = new System.Windows.Forms.ImageList();
+            this.colSuppId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSuppCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSuppName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContactPerson = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContactNo1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRemark1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch_BranchId2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textBoxISContactNo = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -186,7 +215,7 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxAddProduct.SuspendLayout();
@@ -201,7 +230,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlStockProductList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewStockProducts)).BeginInit();
             this.tabPageCustomer.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -209,6 +238,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
+            this.tabPageSupplier.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSuppliers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -327,24 +363,28 @@
             // 
             this.gridControlProducts.DataSource = this.productsBindingSource;
             this.gridControlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridControlProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControlProducts.Location = new System.Drawing.Point(3, 25);
-            this.gridControlProducts.MainView = this.bandedGridView1;
+            this.gridControlProducts.MainView = this.gridViewProducts;
             this.gridControlProducts.Name = "gridControlProducts";
             this.gridControlProducts.Size = new System.Drawing.Size(881, 588);
             this.gridControlProducts.TabIndex = 0;
+            this.gridControlProducts.UseEmbeddedNavigator = true;
             this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.bandedGridView1});
+            this.gridViewProducts});
             // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
             // 
-            // bandedGridView1
+            // gridViewProducts
             // 
-            this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1});
-            this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.gridViewProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProdId,
             this.colProdCode,
             this.colProdName,
@@ -357,29 +397,10 @@
             this.colBranch_BranchId,
             this.colBranch,
             this.colSubCategory});
-            this.bandedGridView1.GridControl = this.gridControlProducts;
-            this.bandedGridView1.Name = "bandedGridView1";
-            this.bandedGridView1.OptionsBehavior.Editable = false;
-            this.bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Product";
-            this.gridBand1.Columns.Add(this.colProdId);
-            this.gridBand1.Columns.Add(this.colProdCode);
-            this.gridBand1.Columns.Add(this.colProdName);
-            this.gridBand1.Columns.Add(this.colSubCategory_Name);
-            this.gridBand1.Columns.Add(this.colDescription);
-            this.gridBand1.Columns.Add(this.colSellingPrice);
-            this.gridBand1.Columns.Add(this.colReOrderPoint);
-            this.gridBand1.Columns.Add(this.colDiscount);
-            this.gridBand1.Columns.Add(this.colStock);
-            this.gridBand1.Columns.Add(this.colBranch_BranchId);
-            this.gridBand1.Columns.Add(this.colBranch);
-            this.gridBand1.Columns.Add(this.colSubCategory);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 625;
+            this.gridViewProducts.GridControl = this.gridControlProducts;
+            this.gridViewProducts.Name = "gridViewProducts";
+            this.gridViewProducts.OptionsBehavior.Editable = false;
+            this.gridViewProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
             // colProdId
             // 
@@ -392,7 +413,8 @@
             this.colProdCode.FieldName = "ProdCode";
             this.colProdCode.Name = "colProdCode";
             this.colProdCode.Visible = true;
-            this.colProdCode.Width = 76;
+            this.colProdCode.VisibleIndex = 0;
+            this.colProdCode.Width = 74;
             // 
             // colProdName
             // 
@@ -400,7 +422,8 @@
             this.colProdName.FieldName = "ProdName";
             this.colProdName.Name = "colProdName";
             this.colProdName.Visible = true;
-            this.colProdName.Width = 76;
+            this.colProdName.VisibleIndex = 1;
+            this.colProdName.Width = 116;
             // 
             // colSubCategory_Name
             // 
@@ -408,7 +431,8 @@
             this.colSubCategory_Name.FieldName = "SubCategory_Name";
             this.colSubCategory_Name.Name = "colSubCategory_Name";
             this.colSubCategory_Name.Visible = true;
-            this.colSubCategory_Name.Width = 72;
+            this.colSubCategory_Name.VisibleIndex = 2;
+            this.colSubCategory_Name.Width = 64;
             // 
             // colDescription
             // 
@@ -416,7 +440,8 @@
             this.colDescription.FieldName = "Description";
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
-            this.colDescription.Width = 171;
+            this.colDescription.VisibleIndex = 3;
+            this.colDescription.Width = 184;
             // 
             // colSellingPrice
             // 
@@ -424,7 +449,8 @@
             this.colSellingPrice.FieldName = "SellingPrice";
             this.colSellingPrice.Name = "colSellingPrice";
             this.colSellingPrice.Visible = true;
-            this.colSellingPrice.Width = 64;
+            this.colSellingPrice.VisibleIndex = 4;
+            this.colSellingPrice.Width = 67;
             // 
             // colReOrderPoint
             // 
@@ -432,7 +458,8 @@
             this.colReOrderPoint.FieldName = "ReOrderPoint";
             this.colReOrderPoint.Name = "colReOrderPoint";
             this.colReOrderPoint.Visible = true;
-            this.colReOrderPoint.Width = 63;
+            this.colReOrderPoint.VisibleIndex = 5;
+            this.colReOrderPoint.Width = 66;
             // 
             // colDiscount
             // 
@@ -440,7 +467,8 @@
             this.colDiscount.FieldName = "Discount";
             this.colDiscount.Name = "colDiscount";
             this.colDiscount.Visible = true;
-            this.colDiscount.Width = 53;
+            this.colDiscount.VisibleIndex = 6;
+            this.colDiscount.Width = 70;
             // 
             // colStock
             // 
@@ -448,7 +476,8 @@
             this.colStock.FieldName = "Stock";
             this.colStock.Name = "colStock";
             this.colStock.Visible = true;
-            this.colStock.Width = 50;
+            this.colStock.VisibleIndex = 7;
+            this.colStock.Width = 51;
             // 
             // colBranch_BranchId
             // 
@@ -1217,7 +1246,7 @@
             this.labelTotalProduct.Name = "labelTotalProduct";
             this.labelTotalProduct.Size = new System.Drawing.Size(333, 120);
             this.labelTotalProduct.TabIndex = 0;
-            this.labelTotalProduct.Text = "26";
+            this.labelTotalProduct.Text = "00";
             this.labelTotalProduct.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox5
@@ -1351,18 +1380,16 @@
             this.gridControlStockProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlStockProductList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControlStockProductList.Location = new System.Drawing.Point(3, 16);
-            this.gridControlStockProductList.MainView = this.bandedGridView2;
+            this.gridControlStockProductList.MainView = this.gridViewStockProducts;
             this.gridControlStockProductList.Name = "gridControlStockProductList";
             this.gridControlStockProductList.Size = new System.Drawing.Size(886, 597);
             this.gridControlStockProductList.TabIndex = 0;
             this.gridControlStockProductList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.bandedGridView2});
+            this.gridViewStockProducts});
             // 
-            // bandedGridView2
+            // gridViewStockProducts
             // 
-            this.bandedGridView2.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand2});
-            this.bandedGridView2.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.gridViewStockProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.bandedGridColumn1,
             this.bandedGridColumn2,
             this.bandedGridColumn3,
@@ -1375,29 +1402,10 @@
             this.bandedGridColumn10,
             this.bandedGridColumn11,
             this.bandedGridColumn12});
-            this.bandedGridView2.GridControl = this.gridControlStockProductList;
-            this.bandedGridView2.Name = "bandedGridView2";
-            this.bandedGridView2.OptionsBehavior.Editable = false;
-            this.bandedGridView2.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.Caption = "Product";
-            this.gridBand2.Columns.Add(this.bandedGridColumn1);
-            this.gridBand2.Columns.Add(this.bandedGridColumn2);
-            this.gridBand2.Columns.Add(this.bandedGridColumn3);
-            this.gridBand2.Columns.Add(this.bandedGridColumn4);
-            this.gridBand2.Columns.Add(this.bandedGridColumn5);
-            this.gridBand2.Columns.Add(this.bandedGridColumn6);
-            this.gridBand2.Columns.Add(this.bandedGridColumn7);
-            this.gridBand2.Columns.Add(this.bandedGridColumn8);
-            this.gridBand2.Columns.Add(this.bandedGridColumn9);
-            this.gridBand2.Columns.Add(this.bandedGridColumn10);
-            this.gridBand2.Columns.Add(this.bandedGridColumn11);
-            this.gridBand2.Columns.Add(this.bandedGridColumn12);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 0;
-            this.gridBand2.Width = 625;
+            this.gridViewStockProducts.GridControl = this.gridControlStockProductList;
+            this.gridViewStockProducts.Name = "gridViewStockProducts";
+            this.gridViewStockProducts.OptionsBehavior.Editable = false;
+            this.gridViewStockProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             // 
             // bandedGridColumn1
             // 
@@ -1410,7 +1418,8 @@
             this.bandedGridColumn2.FieldName = "ProdCode";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
-            this.bandedGridColumn2.Width = 76;
+            this.bandedGridColumn2.VisibleIndex = 0;
+            this.bandedGridColumn2.Width = 65;
             // 
             // bandedGridColumn3
             // 
@@ -1418,7 +1427,8 @@
             this.bandedGridColumn3.FieldName = "ProdName";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.Visible = true;
-            this.bandedGridColumn3.Width = 76;
+            this.bandedGridColumn3.VisibleIndex = 1;
+            this.bandedGridColumn3.Width = 136;
             // 
             // bandedGridColumn4
             // 
@@ -1426,7 +1436,8 @@
             this.bandedGridColumn4.FieldName = "SubCategory_Name";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
             this.bandedGridColumn4.Visible = true;
-            this.bandedGridColumn4.Width = 72;
+            this.bandedGridColumn4.VisibleIndex = 2;
+            this.bandedGridColumn4.Width = 68;
             // 
             // bandedGridColumn5
             // 
@@ -1434,7 +1445,8 @@
             this.bandedGridColumn5.FieldName = "Description";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
             this.bandedGridColumn5.Visible = true;
-            this.bandedGridColumn5.Width = 171;
+            this.bandedGridColumn5.VisibleIndex = 3;
+            this.bandedGridColumn5.Width = 188;
             // 
             // bandedGridColumn6
             // 
@@ -1442,7 +1454,8 @@
             this.bandedGridColumn6.FieldName = "SellingPrice";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.Visible = true;
-            this.bandedGridColumn6.Width = 64;
+            this.bandedGridColumn6.VisibleIndex = 4;
+            this.bandedGridColumn6.Width = 49;
             // 
             // bandedGridColumn7
             // 
@@ -1450,7 +1463,8 @@
             this.bandedGridColumn7.FieldName = "ReOrderPoint";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
             this.bandedGridColumn7.Visible = true;
-            this.bandedGridColumn7.Width = 63;
+            this.bandedGridColumn7.VisibleIndex = 5;
+            this.bandedGridColumn7.Width = 66;
             // 
             // bandedGridColumn8
             // 
@@ -1458,7 +1472,8 @@
             this.bandedGridColumn8.FieldName = "Discount";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.Visible = true;
-            this.bandedGridColumn8.Width = 53;
+            this.bandedGridColumn8.VisibleIndex = 6;
+            this.bandedGridColumn8.Width = 61;
             // 
             // bandedGridColumn9
             // 
@@ -1466,7 +1481,8 @@
             this.bandedGridColumn9.FieldName = "Stock";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
             this.bandedGridColumn9.Visible = true;
-            this.bandedGridColumn9.Width = 50;
+            this.bandedGridColumn9.VisibleIndex = 7;
+            this.bandedGridColumn9.Width = 59;
             // 
             // bandedGridColumn10
             // 
@@ -1545,7 +1561,7 @@
             this.labelTotalCustomers.Name = "labelTotalCustomers";
             this.labelTotalCustomers.Size = new System.Drawing.Size(351, 120);
             this.labelTotalCustomers.TabIndex = 0;
-            this.labelTotalCustomers.Text = "26";
+            this.labelTotalCustomers.Text = "00";
             this.labelTotalCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox9
@@ -1843,6 +1859,9 @@
             // 
             // tabPageSupplier
             // 
+            this.tabPageSupplier.Controls.Add(this.groupBox11);
+            this.tabPageSupplier.Controls.Add(this.groupBox12);
+            this.tabPageSupplier.Controls.Add(this.groupBox13);
             this.tabPageSupplier.ImageKey = "supplier.png";
             this.tabPageSupplier.Location = new System.Drawing.Point(4, 39);
             this.tabPageSupplier.Name = "tabPageSupplier";
@@ -1850,6 +1869,257 @@
             this.tabPageSupplier.TabIndex = 6;
             this.tabPageSupplier.Text = "Suppliers";
             this.tabPageSupplier.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.labelTotalSuppliers);
+            this.groupBox11.Location = new System.Drawing.Point(9, 15);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(357, 148);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Total Suppliers";
+            // 
+            // labelTotalSuppliers
+            // 
+            this.labelTotalSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTotalSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSuppliers.Location = new System.Drawing.Point(3, 25);
+            this.labelTotalSuppliers.Name = "labelTotalSuppliers";
+            this.labelTotalSuppliers.Size = new System.Drawing.Size(351, 120);
+            this.labelTotalSuppliers.TabIndex = 0;
+            this.labelTotalSuppliers.Text = "00";
+            this.labelTotalSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBoxISContactNo);
+            this.groupBox12.Controls.Add(this.label37);
+            this.groupBox12.Controls.Add(this.textBoxISRemarks);
+            this.groupBox12.Controls.Add(this.buttonAddSupplier);
+            this.groupBox12.Controls.Add(this.label28);
+            this.groupBox12.Controls.Add(this.textBoxISEmail);
+            this.groupBox12.Controls.Add(this.label32);
+            this.groupBox12.Controls.Add(this.textBoxISCPerson);
+            this.groupBox12.Controls.Add(this.label33);
+            this.groupBox12.Controls.Add(this.textBoxISAddress);
+            this.groupBox12.Controls.Add(this.label34);
+            this.groupBox12.Controls.Add(this.textBoxISName);
+            this.groupBox12.Controls.Add(this.label35);
+            this.groupBox12.Controls.Add(this.textBoxISCode);
+            this.groupBox12.Controls.Add(this.label36);
+            this.groupBox12.Location = new System.Drawing.Point(9, 178);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(357, 428);
+            this.groupBox12.TabIndex = 7;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Add Supplier";
+            // 
+            // textBoxISRemarks
+            // 
+            this.textBoxISRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISRemarks.Location = new System.Drawing.Point(100, 292);
+            this.textBoxISRemarks.Multiline = true;
+            this.textBoxISRemarks.Name = "textBoxISRemarks";
+            this.textBoxISRemarks.Size = new System.Drawing.Size(251, 83);
+            this.textBoxISRemarks.TabIndex = 36;
+            // 
+            // buttonAddSupplier
+            // 
+            this.buttonAddSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddSupplier.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddSupplier.Location = new System.Drawing.Point(261, 382);
+            this.buttonAddSupplier.Name = "buttonAddSupplier";
+            this.buttonAddSupplier.Size = new System.Drawing.Size(90, 36);
+            this.buttonAddSupplier.TabIndex = 35;
+            this.buttonAddSupplier.Text = "Add";
+            this.buttonAddSupplier.UseVisualStyleBackColor = true;
+            this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(21, 295);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(73, 20);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "Remarks";
+            // 
+            // textBoxISEmail
+            // 
+            this.textBoxISEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISEmail.Location = new System.Drawing.Point(100, 260);
+            this.textBoxISEmail.Name = "textBoxISEmail";
+            this.textBoxISEmail.Size = new System.Drawing.Size(251, 26);
+            this.textBoxISEmail.TabIndex = 30;
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(46, 263);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(48, 20);
+            this.label32.TabIndex = 29;
+            this.label32.Text = "Email";
+            // 
+            // textBoxISCPerson
+            // 
+            this.textBoxISCPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISCPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISCPerson.Location = new System.Drawing.Point(100, 194);
+            this.textBoxISCPerson.Name = "textBoxISCPerson";
+            this.textBoxISCPerson.Size = new System.Drawing.Size(251, 26);
+            this.textBoxISCPerson.TabIndex = 28;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(26, 180);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(68, 40);
+            this.label33.TabIndex = 27;
+            this.label33.Text = "Person Name";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxISAddress
+            // 
+            this.textBoxISAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISAddress.Location = new System.Drawing.Point(100, 105);
+            this.textBoxISAddress.Multiline = true;
+            this.textBoxISAddress.Name = "textBoxISAddress";
+            this.textBoxISAddress.Size = new System.Drawing.Size(251, 83);
+            this.textBoxISAddress.TabIndex = 24;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(26, 108);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(68, 20);
+            this.label34.TabIndex = 23;
+            this.label34.Text = "Address";
+            // 
+            // textBoxISName
+            // 
+            this.textBoxISName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISName.Location = new System.Drawing.Point(100, 73);
+            this.textBoxISName.Name = "textBoxISName";
+            this.textBoxISName.Size = new System.Drawing.Size(251, 26);
+            this.textBoxISName.TabIndex = 22;
+            // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(43, 76);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(51, 20);
+            this.label35.TabIndex = 21;
+            this.label35.Text = "Name";
+            // 
+            // textBoxISCode
+            // 
+            this.textBoxISCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISCode.Location = new System.Drawing.Point(100, 41);
+            this.textBoxISCode.Name = "textBoxISCode";
+            this.textBoxISCode.Size = new System.Drawing.Size(251, 26);
+            this.textBoxISCode.TabIndex = 20;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(47, 44);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(47, 20);
+            this.label36.TabIndex = 19;
+            this.label36.Text = "Code";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.gridControlSuppliers);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(372, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(895, 616);
+            this.groupBox13.TabIndex = 6;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Suppliers";
+            // 
+            // gridControlSuppliers
+            // 
+            this.gridControlSuppliers.DataSource = this.suppliersBindingSource;
+            this.gridControlSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlSuppliers.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlSuppliers.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gridControlSuppliers.Location = new System.Drawing.Point(3, 25);
+            this.gridControlSuppliers.MainView = this.gridViewSuppliers;
+            this.gridControlSuppliers.Name = "gridControlSuppliers";
+            this.gridControlSuppliers.Size = new System.Drawing.Size(889, 588);
+            this.gridControlSuppliers.TabIndex = 0;
+            this.gridControlSuppliers.UseEmbeddedNavigator = true;
+            this.gridControlSuppliers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewSuppliers});
+            // 
+            // suppliersBindingSource
+            // 
+            this.suppliersBindingSource.DataSource = typeof(IslahGroupInventory.Supplier);
+            // 
+            // gridViewSuppliers
+            // 
+            this.gridViewSuppliers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSuppId,
+            this.colSuppCode,
+            this.colSuppName,
+            this.colAddress1,
+            this.colContactPerson,
+            this.colContactNo1,
+            this.colEmail1,
+            this.colRemark1,
+            this.colBranch_BranchId2,
+            this.colBranch2});
+            this.gridViewSuppliers.GridControl = this.gridControlSuppliers;
+            this.gridViewSuppliers.Name = "gridViewSuppliers";
+            this.gridViewSuppliers.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
+            this.gridViewSuppliers.OptionsEditForm.EditFormColumnCount = 2;
+            this.gridViewSuppliers.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewSuppliers_ValidateRow);
             // 
             // tabPageUser
             // 
@@ -1875,6 +2145,94 @@
             this.imageListTab.Images.SetKeyName(7, "supplier.png");
             this.imageListTab.Images.SetKeyName(8, "voucher.png");
             // 
+            // colSuppId
+            // 
+            this.colSuppId.FieldName = "SuppId";
+            this.colSuppId.Name = "colSuppId";
+            // 
+            // colSuppCode
+            // 
+            this.colSuppCode.FieldName = "SuppCode";
+            this.colSuppCode.Name = "colSuppCode";
+            this.colSuppCode.Visible = true;
+            this.colSuppCode.VisibleIndex = 0;
+            // 
+            // colSuppName
+            // 
+            this.colSuppName.FieldName = "SuppName";
+            this.colSuppName.Name = "colSuppName";
+            this.colSuppName.Visible = true;
+            this.colSuppName.VisibleIndex = 1;
+            // 
+            // colAddress1
+            // 
+            this.colAddress1.FieldName = "Address";
+            this.colAddress1.Name = "colAddress1";
+            this.colAddress1.Visible = true;
+            this.colAddress1.VisibleIndex = 2;
+            // 
+            // colContactPerson
+            // 
+            this.colContactPerson.FieldName = "ContactPerson";
+            this.colContactPerson.Name = "colContactPerson";
+            this.colContactPerson.Visible = true;
+            this.colContactPerson.VisibleIndex = 3;
+            // 
+            // colContactNo1
+            // 
+            this.colContactNo1.FieldName = "ContactNo";
+            this.colContactNo1.Name = "colContactNo1";
+            this.colContactNo1.Visible = true;
+            this.colContactNo1.VisibleIndex = 4;
+            // 
+            // colEmail1
+            // 
+            this.colEmail1.FieldName = "Email";
+            this.colEmail1.Name = "colEmail1";
+            this.colEmail1.Visible = true;
+            this.colEmail1.VisibleIndex = 5;
+            // 
+            // colRemark1
+            // 
+            this.colRemark1.FieldName = "Remark";
+            this.colRemark1.Name = "colRemark1";
+            this.colRemark1.Visible = true;
+            this.colRemark1.VisibleIndex = 6;
+            // 
+            // colBranch_BranchId2
+            // 
+            this.colBranch_BranchId2.FieldName = "Branch_BranchId";
+            this.colBranch_BranchId2.Name = "colBranch_BranchId2";
+            // 
+            // colBranch2
+            // 
+            this.colBranch2.FieldName = "Branch";
+            this.colBranch2.Name = "colBranch2";
+            // 
+            // textBoxISContactNo
+            // 
+            this.textBoxISContactNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxISContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxISContactNo.Location = new System.Drawing.Point(100, 227);
+            this.textBoxISContactNo.Name = "textBoxISContactNo";
+            this.textBoxISContactNo.Size = new System.Drawing.Size(251, 26);
+            this.textBoxISContactNo.TabIndex = 38;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(5, 230);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(89, 20);
+            this.label37.TabIndex = 37;
+            this.label37.Text = "Contact No";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1898,7 +2256,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddProduct.ResumeLayout(false);
@@ -1918,7 +2276,7 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlStockProductList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewStockProducts)).EndInit();
             this.tabPageCustomer.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
@@ -1927,6 +2285,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
+            this.tabPageSupplier.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSuppliers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSuppliers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2002,20 +2368,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private DevExpress.XtraGrid.GridControl gridControlProducts;
         private System.Windows.Forms.BindingSource productsBindingSource;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colProdId;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colProdCode;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colProdName;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSubCategory_Name;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDescription;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSellingPrice;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colReOrderPoint;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDiscount;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colStock;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colBranch_BranchId;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colBranch;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSubCategory;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
         private System.Windows.Forms.Button buttonProductDelete;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -2040,20 +2392,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox4;
         private DevExpress.XtraGrid.GridControl gridControlStockProductList;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView2;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.BindingSource customersBindingSource;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -2083,6 +2421,64 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label labelTotalCustomers;
         private System.Windows.Forms.TextBox textBoxICRemarks;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProducts;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
+        private DevExpress.XtraGrid.Columns.GridColumn colStock;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewStockProducts;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn12;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label labelTotalSuppliers;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.TextBox textBoxISRemarks;
+        private System.Windows.Forms.Button buttonAddSupplier;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBoxISEmail;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox textBoxISCPerson;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox textBoxISAddress;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBoxISName;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox textBoxISCode;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private DevExpress.XtraGrid.GridControl gridControlSuppliers;
+        private System.Windows.Forms.BindingSource suppliersBindingSource;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSuppliers;
+        private System.Windows.Forms.TextBox textBoxISContactNo;
+        private System.Windows.Forms.Label label37;
+        private DevExpress.XtraGrid.Columns.GridColumn colSuppId;
+        private DevExpress.XtraGrid.Columns.GridColumn colSuppCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colSuppName;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress1;
+        private DevExpress.XtraGrid.Columns.GridColumn colContactPerson;
+        private DevExpress.XtraGrid.Columns.GridColumn colContactNo1;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail1;
+        private DevExpress.XtraGrid.Columns.GridColumn colRemark1;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId2;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch2;
     }
 }
 
