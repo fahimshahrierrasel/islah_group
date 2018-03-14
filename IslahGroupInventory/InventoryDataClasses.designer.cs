@@ -75,9 +75,6 @@ namespace IslahGroupInventory
     partial void InsertServiceType(ServiceType instance);
     partial void UpdateServiceType(ServiceType instance);
     partial void DeleteServiceType(ServiceType instance);
-    partial void InsertSubCategory(SubCategory instance);
-    partial void UpdateSubCategory(SubCategory instance);
-    partial void DeleteSubCategory(SubCategory instance);
     partial void InsertSupplier(Supplier instance);
     partial void UpdateSupplier(Supplier instance);
     partial void DeleteSupplier(Supplier instance);
@@ -87,6 +84,9 @@ namespace IslahGroupInventory
     partial void InsertVoucher(Voucher instance);
     partial void UpdateVoucher(Voucher instance);
     partial void DeleteVoucher(Voucher instance);
+    partial void InsertSubCategory(SubCategory instance);
+    partial void UpdateSubCategory(SubCategory instance);
+    partial void DeleteSubCategory(SubCategory instance);
     #endregion
 		
 		public InventoryDataClassesDataContext() : 
@@ -239,14 +239,6 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		public System.Data.Linq.Table<SubCategory> SubCategories
-		{
-			get
-			{
-				return this.GetTable<SubCategory>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Supplier> Suppliers
 		{
 			get
@@ -268,6 +260,14 @@ namespace IslahGroupInventory
 			get
 			{
 				return this.GetTable<Voucher>();
+			}
+		}
+		
+		public System.Data.Linq.Table<SubCategory> SubCategories
+		{
+			get
+			{
+				return this.GetTable<SubCategory>();
 			}
 		}
 	}
@@ -712,8 +712,6 @@ namespace IslahGroupInventory
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _Voucher_VoucId;
-		
 		private int _VIIid;
 		
 		private string _ItemName;
@@ -722,14 +720,14 @@ namespace IslahGroupInventory
 		
 		private decimal _Amount;
 		
+		private long _Voucher_VoucId;
+		
 		private EntityRef<Voucher> _Voucher;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnVoucher_VoucIdChanging(long value);
-    partial void OnVoucher_VoucIdChanged();
     partial void OnVIIidChanging(int value);
     partial void OnVIIidChanged();
     partial void OnItemNameChanging(string value);
@@ -738,36 +736,14 @@ namespace IslahGroupInventory
     partial void OnDetailsChanged();
     partial void OnAmountChanging(decimal value);
     partial void OnAmountChanged();
+    partial void OnVoucher_VoucIdChanging(long value);
+    partial void OnVoucher_VoucIdChanged();
     #endregion
 		
 		public VoucherItem()
 		{
 			this._Voucher = default(EntityRef<Voucher>);
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Voucher_VoucId", DbType="BigInt NOT NULL")]
-		public long Voucher_VoucId
-		{
-			get
-			{
-				return this._Voucher_VoucId;
-			}
-			set
-			{
-				if ((this._Voucher_VoucId != value))
-				{
-					if (this._Voucher.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnVoucher_VoucIdChanging(value);
-					this.SendPropertyChanging();
-					this._Voucher_VoucId = value;
-					this.SendPropertyChanged("Voucher_VoucId");
-					this.OnVoucher_VoucIdChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VIIid", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -846,6 +822,30 @@ namespace IslahGroupInventory
 					this._Amount = value;
 					this.SendPropertyChanged("Amount");
 					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Voucher_VoucId", DbType="BigInt NOT NULL")]
+		public long Voucher_VoucId
+		{
+			get
+			{
+				return this._Voucher_VoucId;
+			}
+			set
+			{
+				if ((this._Voucher_VoucId != value))
+				{
+					if (this._Voucher.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVoucher_VoucIdChanging(value);
+					this.SendPropertyChanging();
+					this._Voucher_VoucId = value;
+					this.SendPropertyChanged("Voucher_VoucId");
+					this.OnVoucher_VoucIdChanged();
 				}
 			}
 		}
@@ -1672,17 +1672,17 @@ namespace IslahGroupInventory
 		
 		private string _InvcCode;
 		
-		private int _Customer_CustId;
-		
 		private System.DateTime _InvcDate;
 		
 		private System.DateTime _PaymentDate;
 		
-		private string _PaymentType_PType;
-		
 		private decimal _Amount;
 		
 		private decimal _Due;
+		
+		private int _Customer_CustId;
+		
+		private string _PaymentType_PType;
 		
 		private int _Branch_BranchId;
 		
@@ -1702,18 +1702,18 @@ namespace IslahGroupInventory
     partial void OnInvcIdChanged();
     partial void OnInvcCodeChanging(string value);
     partial void OnInvcCodeChanged();
-    partial void OnCustomer_CustIdChanging(int value);
-    partial void OnCustomer_CustIdChanged();
     partial void OnInvcDateChanging(System.DateTime value);
     partial void OnInvcDateChanged();
     partial void OnPaymentDateChanging(System.DateTime value);
     partial void OnPaymentDateChanged();
-    partial void OnPaymentType_PTypeChanging(string value);
-    partial void OnPaymentType_PTypeChanged();
     partial void OnAmountChanging(decimal value);
     partial void OnAmountChanged();
     partial void OnDueChanging(decimal value);
     partial void OnDueChanged();
+    partial void OnCustomer_CustIdChanging(int value);
+    partial void OnCustomer_CustIdChanged();
+    partial void OnPaymentType_PTypeChanging(string value);
+    partial void OnPaymentType_PTypeChanged();
     partial void OnBranch_BranchIdChanging(int value);
     partial void OnBranch_BranchIdChanged();
     #endregion
@@ -1767,30 +1767,6 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_CustId", DbType="Int NOT NULL")]
-		public int Customer_CustId
-		{
-			get
-			{
-				return this._Customer_CustId;
-			}
-			set
-			{
-				if ((this._Customer_CustId != value))
-				{
-					if (this._Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCustomer_CustIdChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_CustId = value;
-					this.SendPropertyChanged("Customer_CustId");
-					this.OnCustomer_CustIdChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvcDate", DbType="DateTime NOT NULL")]
 		public System.DateTime InvcDate
 		{
@@ -1831,30 +1807,6 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType_PType", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string PaymentType_PType
-		{
-			get
-			{
-				return this._PaymentType_PType;
-			}
-			set
-			{
-				if ((this._PaymentType_PType != value))
-				{
-					if (this._PaymentType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPaymentType_PTypeChanging(value);
-					this.SendPropertyChanging();
-					this._PaymentType_PType = value;
-					this.SendPropertyChanged("PaymentType_PType");
-					this.OnPaymentType_PTypeChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Money NOT NULL")]
 		public decimal Amount
 		{
@@ -1891,6 +1843,54 @@ namespace IslahGroupInventory
 					this._Due = value;
 					this.SendPropertyChanged("Due");
 					this.OnDueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_CustId", DbType="Int NOT NULL")]
+		public int Customer_CustId
+		{
+			get
+			{
+				return this._Customer_CustId;
+			}
+			set
+			{
+				if ((this._Customer_CustId != value))
+				{
+					if (this._Customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCustomer_CustIdChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_CustId = value;
+					this.SendPropertyChanged("Customer_CustId");
+					this.OnCustomer_CustIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType_PType", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string PaymentType_PType
+		{
+			get
+			{
+				return this._PaymentType_PType;
+			}
+			set
+			{
+				if ((this._PaymentType_PType != value))
+				{
+					if (this._PaymentType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaymentType_PTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentType_PType = value;
+					this.SendPropertyChanged("PaymentType_PType");
+					this.OnPaymentType_PTypeChanged();
 				}
 			}
 		}
@@ -2677,8 +2677,6 @@ namespace IslahGroupInventory
 		
 		private string _ProdName;
 		
-		private string _SubCategory_Name;
-		
 		private string _Description;
 		
 		private decimal _SellingPrice;
@@ -2689,11 +2687,11 @@ namespace IslahGroupInventory
 		
 		private int _Stock;
 		
+		private string _SubCategory_Name;
+		
 		private int _Branch_BranchId;
 		
 		private EntitySet<InvoiceItem> _InvoiceItems;
-		
-		private EntitySet<PurchaseItem> _PurchaseItems;
 		
 		private EntityRef<Branch> _Branch;
 		
@@ -2709,8 +2707,6 @@ namespace IslahGroupInventory
     partial void OnProdCodeChanged();
     partial void OnProdNameChanging(string value);
     partial void OnProdNameChanged();
-    partial void OnSubCategory_NameChanging(string value);
-    partial void OnSubCategory_NameChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
     partial void OnSellingPriceChanging(decimal value);
@@ -2721,6 +2717,8 @@ namespace IslahGroupInventory
     partial void OnDiscountChanged();
     partial void OnStockChanging(int value);
     partial void OnStockChanged();
+    partial void OnSubCategory_NameChanging(string value);
+    partial void OnSubCategory_NameChanged();
     partial void OnBranch_BranchIdChanging(int value);
     partial void OnBranch_BranchIdChanged();
     #endregion
@@ -2728,7 +2726,6 @@ namespace IslahGroupInventory
 		public Product()
 		{
 			this._InvoiceItems = new EntitySet<InvoiceItem>(new Action<InvoiceItem>(this.attach_InvoiceItems), new Action<InvoiceItem>(this.detach_InvoiceItems));
-			this._PurchaseItems = new EntitySet<PurchaseItem>(new Action<PurchaseItem>(this.attach_PurchaseItems), new Action<PurchaseItem>(this.detach_PurchaseItems));
 			this._Branch = default(EntityRef<Branch>);
 			this._SubCategory = default(EntityRef<SubCategory>);
 			OnCreated();
@@ -2790,30 +2787,6 @@ namespace IslahGroupInventory
 					this._ProdName = value;
 					this.SendPropertyChanged("ProdName");
 					this.OnProdNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCategory_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string SubCategory_Name
-		{
-			get
-			{
-				return this._SubCategory_Name;
-			}
-			set
-			{
-				if ((this._SubCategory_Name != value))
-				{
-					if (this._SubCategory.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSubCategory_NameChanging(value);
-					this.SendPropertyChanging();
-					this._SubCategory_Name = value;
-					this.SendPropertyChanged("SubCategory_Name");
-					this.OnSubCategory_NameChanged();
 				}
 			}
 		}
@@ -2918,6 +2891,30 @@ namespace IslahGroupInventory
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SubCategory_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string SubCategory_Name
+		{
+			get
+			{
+				return this._SubCategory_Name;
+			}
+			set
+			{
+				if ((this._SubCategory_Name != value))
+				{
+					if (this._SubCategory.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSubCategory_NameChanging(value);
+					this.SendPropertyChanging();
+					this._SubCategory_Name = value;
+					this.SendPropertyChanged("SubCategory_Name");
+					this.OnSubCategory_NameChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_BranchId", DbType="Int NOT NULL")]
 		public int Branch_BranchId
 		{
@@ -2952,19 +2949,6 @@ namespace IslahGroupInventory
 			set
 			{
 				this._InvoiceItems.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_PurchaseItem", Storage="_PurchaseItems", ThisKey="ProdId", OtherKey="Product_ProdId")]
-		public EntitySet<PurchaseItem> PurchaseItems
-		{
-			get
-			{
-				return this._PurchaseItems;
-			}
-			set
-			{
-				this._PurchaseItems.Assign(value);
 			}
 		}
 		
@@ -3067,18 +3051,6 @@ namespace IslahGroupInventory
 			this.SendPropertyChanging();
 			entity.Product = null;
 		}
-		
-		private void attach_PurchaseItems(PurchaseItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_PurchaseItems(PurchaseItem entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Purchase")]
@@ -3093,15 +3065,17 @@ namespace IslahGroupInventory
 		
 		private System.DateTime _PurcDate;
 		
-		private int _Supplier_SuppId;
-		
 		private System.DateTime _PaymentDate;
 		
-		private string _PaymentType_PType;
+		private string _Purchaser;
 		
 		private decimal _Amount;
 		
 		private decimal _Due;
+		
+		private int _Supplier_SuppId;
+		
+		private string _PaymentType_PType;
 		
 		private int _Branch_BranchId;
 		
@@ -3123,16 +3097,18 @@ namespace IslahGroupInventory
     partial void OnPurcCodeChanged();
     partial void OnPurcDateChanging(System.DateTime value);
     partial void OnPurcDateChanged();
-    partial void OnSupplier_SuppIdChanging(int value);
-    partial void OnSupplier_SuppIdChanged();
     partial void OnPaymentDateChanging(System.DateTime value);
     partial void OnPaymentDateChanged();
-    partial void OnPaymentType_PTypeChanging(string value);
-    partial void OnPaymentType_PTypeChanged();
+    partial void OnPurchaserChanging(string value);
+    partial void OnPurchaserChanged();
     partial void OnAmountChanging(decimal value);
     partial void OnAmountChanged();
     partial void OnDueChanging(decimal value);
     partial void OnDueChanged();
+    partial void OnSupplier_SuppIdChanging(int value);
+    partial void OnSupplier_SuppIdChanged();
+    partial void OnPaymentType_PTypeChanging(string value);
+    partial void OnPaymentType_PTypeChanged();
     partial void OnBranch_BranchIdChanging(int value);
     partial void OnBranch_BranchIdChanged();
     #endregion
@@ -3206,30 +3182,6 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supplier_SuppId", DbType="Int NOT NULL")]
-		public int Supplier_SuppId
-		{
-			get
-			{
-				return this._Supplier_SuppId;
-			}
-			set
-			{
-				if ((this._Supplier_SuppId != value))
-				{
-					if (this._Supplier.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnSupplier_SuppIdChanging(value);
-					this.SendPropertyChanging();
-					this._Supplier_SuppId = value;
-					this.SendPropertyChanged("Supplier_SuppId");
-					this.OnSupplier_SuppIdChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentDate", DbType="DateTime NOT NULL")]
 		public System.DateTime PaymentDate
 		{
@@ -3250,26 +3202,22 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType_PType", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string PaymentType_PType
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Purchaser", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Purchaser
 		{
 			get
 			{
-				return this._PaymentType_PType;
+				return this._Purchaser;
 			}
 			set
 			{
-				if ((this._PaymentType_PType != value))
+				if ((this._Purchaser != value))
 				{
-					if (this._PaymentType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPaymentType_PTypeChanging(value);
+					this.OnPurchaserChanging(value);
 					this.SendPropertyChanging();
-					this._PaymentType_PType = value;
-					this.SendPropertyChanged("PaymentType_PType");
-					this.OnPaymentType_PTypeChanged();
+					this._Purchaser = value;
+					this.SendPropertyChanged("Purchaser");
+					this.OnPurchaserChanged();
 				}
 			}
 		}
@@ -3310,6 +3258,54 @@ namespace IslahGroupInventory
 					this._Due = value;
 					this.SendPropertyChanged("Due");
 					this.OnDueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Supplier_SuppId", DbType="Int NOT NULL")]
+		public int Supplier_SuppId
+		{
+			get
+			{
+				return this._Supplier_SuppId;
+			}
+			set
+			{
+				if ((this._Supplier_SuppId != value))
+				{
+					if (this._Supplier.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnSupplier_SuppIdChanging(value);
+					this.SendPropertyChanging();
+					this._Supplier_SuppId = value;
+					this.SendPropertyChanged("Supplier_SuppId");
+					this.OnSupplier_SuppIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentType_PType", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string PaymentType_PType
+		{
+			get
+			{
+				return this._PaymentType_PType;
+			}
+			set
+			{
+				if ((this._PaymentType_PType != value))
+				{
+					if (this._PaymentType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaymentType_PTypeChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentType_PType = value;
+					this.SendPropertyChanged("PaymentType_PType");
+					this.OnPaymentType_PTypeChanged();
 				}
 			}
 		}
@@ -3492,15 +3488,17 @@ namespace IslahGroupInventory
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _Purchase_PurcId;
+		private long _ItemId;
 		
-		private int _Product_ProdId;
+		private string _ItemName;
 		
-		private decimal _Quantity;
+		private int _Quantity;
+		
+		private decimal _UnitPrice;
 		
 		private decimal _Price;
 		
-		private EntityRef<Product> _Product;
+		private long _Purchase_PurcId;
 		
 		private EntityRef<Purchase> _Purchase;
 		
@@ -3508,73 +3506,68 @@ namespace IslahGroupInventory
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnPurchase_PurcIdChanging(long value);
-    partial void OnPurchase_PurcIdChanged();
-    partial void OnProduct_ProdIdChanging(int value);
-    partial void OnProduct_ProdIdChanged();
-    partial void OnQuantityChanging(decimal value);
+    partial void OnItemIdChanging(long value);
+    partial void OnItemIdChanged();
+    partial void OnItemNameChanging(string value);
+    partial void OnItemNameChanged();
+    partial void OnQuantityChanging(int value);
     partial void OnQuantityChanged();
+    partial void OnUnitPriceChanging(decimal value);
+    partial void OnUnitPriceChanged();
     partial void OnPriceChanging(decimal value);
     partial void OnPriceChanged();
+    partial void OnPurchase_PurcIdChanging(long value);
+    partial void OnPurchase_PurcIdChanged();
     #endregion
 		
 		public PurchaseItem()
 		{
-			this._Product = default(EntityRef<Product>);
 			this._Purchase = default(EntityRef<Purchase>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Purchase_PurcId", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
-		public long Purchase_PurcId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemId", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long ItemId
 		{
 			get
 			{
-				return this._Purchase_PurcId;
+				return this._ItemId;
 			}
 			set
 			{
-				if ((this._Purchase_PurcId != value))
+				if ((this._ItemId != value))
 				{
-					if (this._Purchase.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPurchase_PurcIdChanging(value);
+					this.OnItemIdChanging(value);
 					this.SendPropertyChanging();
-					this._Purchase_PurcId = value;
-					this.SendPropertyChanged("Purchase_PurcId");
-					this.OnPurchase_PurcIdChanged();
+					this._ItemId = value;
+					this.SendPropertyChanged("ItemId");
+					this.OnItemIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_ProdId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Product_ProdId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string ItemName
 		{
 			get
 			{
-				return this._Product_ProdId;
+				return this._ItemName;
 			}
 			set
 			{
-				if ((this._Product_ProdId != value))
+				if ((this._ItemName != value))
 				{
-					if (this._Product.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProduct_ProdIdChanging(value);
+					this.OnItemNameChanging(value);
 					this.SendPropertyChanging();
-					this._Product_ProdId = value;
-					this.SendPropertyChanged("Product_ProdId");
-					this.OnProduct_ProdIdChanged();
+					this._ItemName = value;
+					this.SendPropertyChanged("ItemName");
+					this.OnItemNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal(10,2) NOT NULL")]
-		public decimal Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
 		{
 			get
 			{
@@ -3589,6 +3582,26 @@ namespace IslahGroupInventory
 					this._Quantity = value;
 					this.SendPropertyChanged("Quantity");
 					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitPrice", DbType="Money NOT NULL")]
+		public decimal UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this.OnUnitPriceChanging(value);
+					this.SendPropertyChanging();
+					this._UnitPrice = value;
+					this.SendPropertyChanged("UnitPrice");
+					this.OnUnitPriceChanged();
 				}
 			}
 		}
@@ -3613,36 +3626,26 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_PurchaseItem", Storage="_Product", ThisKey="Product_ProdId", OtherKey="ProdId", IsForeignKey=true)]
-		public Product Product
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Purchase_PurcId", DbType="BigInt NOT NULL")]
+		public long Purchase_PurcId
 		{
 			get
 			{
-				return this._Product.Entity;
+				return this._Purchase_PurcId;
 			}
 			set
 			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				if ((this._Purchase_PurcId != value))
 				{
+					if (this._Purchase.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPurchase_PurcIdChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.PurchaseItems.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.PurchaseItems.Add(this);
-						this._Product_ProdId = value.ProdId;
-					}
-					else
-					{
-						this._Product_ProdId = default(int);
-					}
-					this.SendPropertyChanged("Product");
+					this._Purchase_PurcId = value;
+					this.SendPropertyChanged("Purchase_PurcId");
+					this.OnPurchase_PurcIdChanged();
 				}
 			}
 		}
@@ -3712,10 +3715,6 @@ namespace IslahGroupInventory
 		
 		private string _ServCode;
 		
-		private int _Customer_CustId;
-		
-		private string _ServiceType_Name;
-		
 		private System.DateTime _CreateDate;
 		
 		private System.DateTime _EstDeliveryDate;
@@ -3727,6 +3726,10 @@ namespace IslahGroupInventory
 		private string _Remark;
 		
 		private decimal _TotalCharge;
+		
+		private int _Customer_CustId;
+		
+		private string _ServiceType_Name;
 		
 		private int _Branch_BranchId;
 		
@@ -3746,10 +3749,6 @@ namespace IslahGroupInventory
     partial void OnServIdChanged();
     partial void OnServCodeChanging(string value);
     partial void OnServCodeChanged();
-    partial void OnCustomer_CustIdChanging(int value);
-    partial void OnCustomer_CustIdChanged();
-    partial void OnServiceType_NameChanging(string value);
-    partial void OnServiceType_NameChanged();
     partial void OnCreateDateChanging(System.DateTime value);
     partial void OnCreateDateChanged();
     partial void OnEstDeliveryDateChanging(System.DateTime value);
@@ -3762,6 +3761,10 @@ namespace IslahGroupInventory
     partial void OnRemarkChanged();
     partial void OnTotalChargeChanging(decimal value);
     partial void OnTotalChargeChanged();
+    partial void OnCustomer_CustIdChanging(int value);
+    partial void OnCustomer_CustIdChanged();
+    partial void OnServiceType_NameChanging(string value);
+    partial void OnServiceType_NameChanged();
     partial void OnBranch_BranchIdChanging(int value);
     partial void OnBranch_BranchIdChanged();
     #endregion
@@ -3811,54 +3814,6 @@ namespace IslahGroupInventory
 					this._ServCode = value;
 					this.SendPropertyChanged("ServCode");
 					this.OnServCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_CustId", DbType="Int NOT NULL")]
-		public int Customer_CustId
-		{
-			get
-			{
-				return this._Customer_CustId;
-			}
-			set
-			{
-				if ((this._Customer_CustId != value))
-				{
-					if (this._Customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCustomer_CustIdChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_CustId = value;
-					this.SendPropertyChanged("Customer_CustId");
-					this.OnCustomer_CustIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceType_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string ServiceType_Name
-		{
-			get
-			{
-				return this._ServiceType_Name;
-			}
-			set
-			{
-				if ((this._ServiceType_Name != value))
-				{
-					if (this._ServiceType.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnServiceType_NameChanging(value);
-					this.SendPropertyChanging();
-					this._ServiceType_Name = value;
-					this.SendPropertyChanged("ServiceType_Name");
-					this.OnServiceType_NameChanged();
 				}
 			}
 		}
@@ -3979,6 +3934,54 @@ namespace IslahGroupInventory
 					this._TotalCharge = value;
 					this.SendPropertyChanged("TotalCharge");
 					this.OnTotalChargeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_CustId", DbType="Int NOT NULL")]
+		public int Customer_CustId
+		{
+			get
+			{
+				return this._Customer_CustId;
+			}
+			set
+			{
+				if ((this._Customer_CustId != value))
+				{
+					if (this._Customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCustomer_CustIdChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_CustId = value;
+					this.SendPropertyChanged("Customer_CustId");
+					this.OnCustomer_CustIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServiceType_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string ServiceType_Name
+		{
+			get
+			{
+				return this._ServiceType_Name;
+			}
+			set
+			{
+				if ((this._ServiceType_Name != value))
+				{
+					if (this._ServiceType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnServiceType_NameChanging(value);
+					this.SendPropertyChanging();
+					this._ServiceType_Name = value;
+					this.SendPropertyChanged("ServiceType_Name");
+					this.OnServiceType_NameChanged();
 				}
 			}
 		}
@@ -4161,8 +4164,6 @@ namespace IslahGroupInventory
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _Service_ServId;
-		
 		private int _SIId;
 		
 		private string _ServiceName;
@@ -4171,14 +4172,14 @@ namespace IslahGroupInventory
 		
 		private decimal _Charge;
 		
+		private long _Service_ServId;
+		
 		private EntityRef<Service> _Service;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnService_ServIdChanging(long value);
-    partial void OnService_ServIdChanged();
     partial void OnSIIdChanging(int value);
     partial void OnSIIdChanged();
     partial void OnServiceNameChanging(string value);
@@ -4187,36 +4188,14 @@ namespace IslahGroupInventory
     partial void OnServiceDetailsChanged();
     partial void OnChargeChanging(decimal value);
     partial void OnChargeChanged();
+    partial void OnService_ServIdChanging(long value);
+    partial void OnService_ServIdChanged();
     #endregion
 		
 		public ServiceItem()
 		{
 			this._Service = default(EntityRef<Service>);
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Service_ServId", DbType="BigInt NOT NULL")]
-		public long Service_ServId
-		{
-			get
-			{
-				return this._Service_ServId;
-			}
-			set
-			{
-				if ((this._Service_ServId != value))
-				{
-					if (this._Service.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnService_ServIdChanging(value);
-					this.SendPropertyChanging();
-					this._Service_ServId = value;
-					this.SendPropertyChanged("Service_ServId");
-					this.OnService_ServIdChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SIId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
@@ -4295,6 +4274,30 @@ namespace IslahGroupInventory
 					this._Charge = value;
 					this.SendPropertyChanged("Charge");
 					this.OnChargeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Service_ServId", DbType="BigInt NOT NULL")]
+		public long Service_ServId
+		{
+			get
+			{
+				return this._Service_ServId;
+			}
+			set
+			{
+				if ((this._Service_ServId != value))
+				{
+					if (this._Service.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnService_ServIdChanging(value);
+					this.SendPropertyChanging();
+					this._Service_ServId = value;
+					this.SendPropertyChanged("Service_ServId");
+					this.OnService_ServIdChanged();
 				}
 			}
 		}
@@ -4441,161 +4444,6 @@ namespace IslahGroupInventory
 		{
 			this.SendPropertyChanging();
 			entity.ServiceType = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SubCategory")]
-	public partial class SubCategory : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Name;
-		
-		private string _Category_Name;
-		
-		private EntitySet<Product> _Products;
-		
-		private EntityRef<Category> _Category;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnCategory_NameChanging(string value);
-    partial void OnCategory_NameChanged();
-    #endregion
-		
-		public SubCategory()
-		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
-			this._Category = default(EntityRef<Category>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string Category_Name
-		{
-			get
-			{
-				return this._Category_Name;
-			}
-			set
-			{
-				if ((this._Category_Name != value))
-				{
-					if (this._Category.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCategory_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Category_Name = value;
-					this.SendPropertyChanged("Category_Name");
-					this.OnCategory_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SubCategory_Product", Storage="_Products", ThisKey="Name", OtherKey="SubCategory_Name")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_SubCategory", Storage="_Category", ThisKey="Category_Name", OtherKey="Name", IsForeignKey=true)]
-		public Category Category
-		{
-			get
-			{
-				return this._Category.Entity;
-			}
-			set
-			{
-				Category previousValue = this._Category.Entity;
-				if (((previousValue != value) 
-							|| (this._Category.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Category.Entity = null;
-						previousValue.SubCategories.Remove(this);
-					}
-					this._Category.Entity = value;
-					if ((value != null))
-					{
-						value.SubCategories.Add(this);
-						this._Category_Name = value.Name;
-					}
-					else
-					{
-						this._Category_Name = default(string);
-					}
-					this.SendPropertyChanged("Category");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.SubCategory = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.SubCategory = null;
 		}
 	}
 	
@@ -5284,6 +5132,185 @@ namespace IslahGroupInventory
 		{
 			this.SendPropertyChanging();
 			entity.Voucher = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SubCategory")]
+	public partial class SubCategory : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Name;
+		
+		private string _Category_Name;
+		
+		private string _Category_Code;
+		
+		private EntitySet<Product> _Products;
+		
+		private EntityRef<Category> _Category;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnCategory_NameChanging(string value);
+    partial void OnCategory_NameChanged();
+    partial void OnCategory_CodeChanging(string value);
+    partial void OnCategory_CodeChanged();
+    #endregion
+		
+		public SubCategory()
+		{
+			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
+			this._Category = default(EntityRef<Category>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category_Name", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Category_Name
+		{
+			get
+			{
+				return this._Category_Name;
+			}
+			set
+			{
+				if ((this._Category_Name != value))
+				{
+					if (this._Category.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCategory_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Category_Name = value;
+					this.SendPropertyChanged("Category_Name");
+					this.OnCategory_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category_Code", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category_Code
+		{
+			get
+			{
+				return this._Category_Code;
+			}
+			set
+			{
+				if ((this._Category_Code != value))
+				{
+					this.OnCategory_CodeChanging(value);
+					this.SendPropertyChanging();
+					this._Category_Code = value;
+					this.SendPropertyChanged("Category_Code");
+					this.OnCategory_CodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SubCategory_Product", Storage="_Products", ThisKey="Name", OtherKey="SubCategory_Name")]
+		public EntitySet<Product> Products
+		{
+			get
+			{
+				return this._Products;
+			}
+			set
+			{
+				this._Products.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Category_SubCategory", Storage="_Category", ThisKey="Category_Name", OtherKey="Name", IsForeignKey=true)]
+		public Category Category
+		{
+			get
+			{
+				return this._Category.Entity;
+			}
+			set
+			{
+				Category previousValue = this._Category.Entity;
+				if (((previousValue != value) 
+							|| (this._Category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Category.Entity = null;
+						previousValue.SubCategories.Remove(this);
+					}
+					this._Category.Entity = value;
+					if ((value != null))
+					{
+						value.SubCategories.Add(this);
+						this._Category_Name = value.Name;
+					}
+					else
+					{
+						this._Category_Name = default(string);
+					}
+					this.SendPropertyChanged("Category");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Products(Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.SubCategory = this;
+		}
+		
+		private void detach_Products(Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.SubCategory = null;
 		}
 	}
 }

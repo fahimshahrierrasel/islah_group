@@ -1,12 +1,16 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,10 +19,12 @@ namespace IslahGroupInventory
     public partial class MainForm : Form
     {
         InventoryDataClassesDataContext dbContext;
+        DataTable purchaseItems;
         public MainForm()
         {
             dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
+           
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -39,7 +45,7 @@ namespace IslahGroupInventory
             }
             else if (selectedPage == tabPagePurchase)
             {
-
+                LoadPurchasePage();
             }
             else if (selectedPage == tabPageSale)
             {
@@ -60,6 +66,10 @@ namespace IslahGroupInventory
             else if (selectedPage == tabPageUser)
             {
 
+            }
+            else if(selectedPage == tabPageBarcode)
+            {
+                LoadBarcodePage();
             }
         }
 
@@ -299,9 +309,146 @@ namespace IslahGroupInventory
 
             dbContext.SubmitChanges();
         }
-
-
         // Suppliers Tab Methods End
 
+        // Purchase Tab Methods Start 
+
+        private void LoadPurchasePage()
+        {
+            InitializePurchaseItemGridView();
+            InitializeSupplierComboBox();
+        }
+        
+        private void InitializePurchaseItemGridView()
+        {
+            purchaseItems = new DataTable();
+            purchaseItems.Columns.Add("ProductCode", typeof(string));
+            purchaseItems.Columns.Add("UnitPrice", typeof(decimal));
+            purchaseItems.Columns.Add("Quantity", typeof(decimal));
+            purchaseItems.Columns.Add("TotalPrice", typeof(decimal));
+            gridControlPurchaseItems.DataSource = purchaseItems;
+        }
+
+        private void InitializeSupplierComboBox()
+        {
+            suppliersBindingSource.DataSource = new IslahGroupInventory.InventoryDataClassesDataContext().Suppliers;
+            comboBoxPSupplier.DataSource = suppliersBindingSource;
+            comboBoxPSupplier.DisplayMember = "SuppName";
+            comboBoxPSupplier.ValueMember = "SuppId";
+        }
+
+        private void buttonAddPurchaseProduct_Click(object sender, EventArgs e)
+        {
+            string pName = textBoxPPName.Text;
+            //int.TryParse(textBoxPPQuantity.Text, out int quantity);
+            if (Decimal.TryParse(textBoxPPUPrice.Text, out decimal price) &
+                int.TryParse(textBoxPPQuantity.Text, out int quantity))
+            {
+
+                    DataRow dr = purchaseItems.NewRow();
+                    dr[0] = pName;
+                    dr[1] = price;
+                    dr[2] = quantity;
+                    dr[3] = price * quantity;
+                    purchaseItems.Rows.Add(dr);
+                    gridControlPurchaseItems.RefreshDataSource();
+            }
+            else {
+                XtraMessageBox.Show("Qunatity should be number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void gridViewPurchaseItem_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            var row = view.GetRow(e.RowHandle);
+            Decimal.TryParse(view.GetRowCellValue(e.RowHandle, "Quantity").ToString(), out decimal quantity);
+
+            if (quantity >= 1)
+            {
+                string unitPrice = view.GetRowCellValue(e.RowHandle, "UnitPrice").ToString();
+                decimal totalPricee = Convert.ToDecimal(quantity) * Convert.ToDecimal(unitPrice);
+
+                view.SetRowCellValue(e.RowHandle, "TotalPrice", totalPricee);
+            }
+            else
+            {
+                e.Valid = false;
+                e.ErrorText = "Quantity should be positive or at least 1";
+            }
+        }
+
+        private void gridViewPurchaseItem_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        {
+            GridSummaryItem summary = e.Info.SummaryItem;
+            // Obtain the total summary's value. 
+            double summaryValue = Convert.ToDouble(summary.SummaryValue);
+            string summaryText = String.Format("{0:#.##}", summaryValue);
+            textBoxPTotal.Text = summaryText;
+            double due = summaryValue - Convert.ToDouble(textBoxPAmount.Text);
+            textBoxPDue.Text = String.Format("{0:#.##}", due); 
+        }
+
+        private void buttonPSubmit_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow item in purchaseItems.Rows)
+            {
+                Console.WriteLine(item[1]);
+            }
+        }
+
+        private void textBoxPAmount_TextChanged(object sender, EventArgs e)
+        {
+            decimal.TryParse(textBoxPTotal.Text, out decimal total);
+            decimal.TryParse(textBoxPAmount.Text, out decimal amount);
+            //decimal.TryParse(textBoxPDue.Text, out decimal due);
+            textBoxPDue.Text = String.Format("{0:#.##}", (total - amount));
+        }
+
+
+
+
+
+
+        // Purchase Tab Method End
+        // Barcode Print Tab Start
+
+        private void LoadBarcodePage()
+        {
+            InitializeBarcodeCategoryComboBox();
+        }
+        private void InitializeBarcodeCategoryComboBox()
+        {
+            productCategoryBindingSource.DataSource = new IslahGroupInventory.InventoryDataClassesDataContext().SubCategories;
+            comboBoxProductBarcodeCategory.DataSource = productCategoryBindingSource;
+            comboBoxProductBarcodeCategory.DisplayMember = "Name";
+            comboBoxProductBarcodeCategory.ValueMember = "Category_Code";
+        }
+        private void buttonPrintBarcode_Click(object sender, EventArgs e)
+        {
+            string productCode = textBoxBPCode.Text;
+            int.TryParse(textBoxBCNumber.Text, out int totalBarcode);
+            if(productCode.Length == 8 && Regex.IsMatch(productCode, @"^\d+$"))
+            {
+                new ReportPrintTool(new BarcodePrint(productCode, totalBarcode)).ShowPreview();
+            }
+            else
+            {
+                XtraMessageBox.Show("Product code should be 8 character long!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } 
+        }
+
+        private void comboBoxProductBarcodeCategory_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textBoxBPCCode.Text = comboBoxProductBarcodeCategory.SelectedValue.ToString();
+            textBoxBPCode.Text = textBoxBPCCode.Text + textBoxBCSuffix.Text;
+        }
+
+        private void textBoxBCSuffix_KeyUp(object sender, KeyEventArgs e)
+        {
+            textBoxBPCode.Text = textBoxBPCCode.Text + textBoxBCSuffix.Text;
+        }
+        // Barcode Print Tab End
     }
 }

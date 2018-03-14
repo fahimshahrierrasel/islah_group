@@ -21,11 +21,11 @@
   </Table>
   <Table Name="dbo.VoucherItem" Member="VoucherItems">
     <Type Name="VoucherItem">
-      <Column Name="Voucher_VoucId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="VIIid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ItemName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="Details" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Voucher_VoucId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Association Name="Voucher_VoucherItem" Member="Voucher" ThisKey="Voucher_VoucId" OtherKey="VoucId" Type="Voucher" IsForeignKey="true" />
     </Type>
   </Table>
@@ -69,12 +69,12 @@
     <Type Name="Invoice">
       <Column Name="InvcId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="InvcCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Customer_CustId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="InvcDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="PaymentType_PType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Due" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Customer_CustId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentType_PType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Invoice_InvoiceItem" Member="InvoiceItems" ThisKey="InvcId" OtherKey="Invoice_InvcId" Type="InvoiceItem" />
       <Association Name="Branch_Invoice" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
@@ -116,15 +116,14 @@
       <Column Name="ProdId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ProdCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="ProdName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="SubCategory_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="SellingPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="ReOrderPoint" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Discount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
       <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubCategory_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Product_InvoiceItem" Member="InvoiceItems" ThisKey="ProdId" OtherKey="Product_ProdId" Type="InvoiceItem" />
-      <Association Name="Product_PurchaseItem" Member="PurchaseItems" ThisKey="ProdId" OtherKey="Product_ProdId" Type="PurchaseItem" />
       <Association Name="Branch_Product" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
       <Association Name="SubCategory_Product" Member="SubCategory" ThisKey="SubCategory_Name" OtherKey="Name" Type="SubCategory" IsForeignKey="true" />
     </Type>
@@ -134,11 +133,12 @@
       <Column Name="PurcId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="PurcCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="PurcDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Supplier_SuppId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PaymentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="PaymentType_PType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Purchaser" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Due" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Supplier_SuppId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentType_PType" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Purchase_PurchaseItem" Member="PurchaseItems" ThisKey="PurcId" OtherKey="Purchase_PurcId" Type="PurchaseItem" />
       <Association Name="Branch_Purchase" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
@@ -148,11 +148,12 @@
   </Table>
   <Table Name="dbo.PurchaseItem" Member="PurchaseItems">
     <Type Name="PurchaseItem">
-      <Column Name="Purchase_PurcId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Product_ProdId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Association Name="Product_PurchaseItem" Member="Product" ThisKey="Product_ProdId" OtherKey="ProdId" Type="Product" IsForeignKey="true" />
+      <Column Name="Purchase_PurcId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Association Name="Purchase_PurchaseItem" Member="Purchase" ThisKey="Purchase_PurcId" OtherKey="PurcId" Type="Purchase" IsForeignKey="true" />
     </Type>
   </Table>
@@ -160,14 +161,14 @@
     <Type Name="Service">
       <Column Name="ServId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ServCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Customer_CustId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ServiceType_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="EstDeliveryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="DeliveryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="Remark" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="TotalCharge" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Customer_CustId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceType_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Service_ServiceItem" Member="ServiceItems" ThisKey="ServId" OtherKey="Service_ServId" Type="ServiceItem" />
       <Association Name="Branch_Service" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
@@ -177,11 +178,11 @@
   </Table>
   <Table Name="dbo.ServiceItem" Member="ServiceItems">
     <Type Name="ServiceItem">
-      <Column Name="Service_ServId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="SIId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ServiceName" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
       <Column Name="ServiceDetails" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="Charge" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Service_ServId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Association Name="Service_ServiceItem" Member="Service" ThisKey="Service_ServId" OtherKey="ServId" Type="Service" IsForeignKey="true" />
     </Type>
   </Table>
@@ -189,14 +190,6 @@
     <Type Name="ServiceType">
       <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="ServiceType_Service" Member="Services" ThisKey="Name" OtherKey="ServiceType_Name" Type="Service" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SubCategory" Member="SubCategories">
-    <Type Name="SubCategory">
-      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Category_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Association Name="SubCategory_Product" Member="Products" ThisKey="Name" OtherKey="SubCategory_Name" Type="Product" />
-      <Association Name="Category_SubCategory" Member="Category" ThisKey="Category_Name" OtherKey="Name" Type="Category" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Supplier" Member="Suppliers">
@@ -231,6 +224,15 @@
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Voucher_VoucherItem" Member="VoucherItems" ThisKey="VoucId" OtherKey="Voucher_VoucId" Type="VoucherItem" />
       <Association Name="Branch_Voucher" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubCategory" Member="SubCategories">
+    <Type Name="SubCategory">
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Category_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="SubCategory_Product" Member="Products" ThisKey="Name" OtherKey="SubCategory_Name" Type="Product" />
+      <Association Name="Category_SubCategory" Member="Category" ThisKey="Category_Name" OtherKey="Name" Type="Category" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

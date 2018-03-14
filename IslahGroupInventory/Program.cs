@@ -14,9 +14,13 @@ namespace IslahGroupInventory
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var loginForm = new Login();
-            loginForm.FormClosed += FormClosed;
-            loginForm.Show();
+            //var loginForm = new Login();
+            //loginForm.FormClosed += FormClosed;
+            //loginForm.Show();
+
+            var mainForm = new MainForm();
+            mainForm.FormClosed += FormClosed;
+            mainForm.Show();
 
             Application.Run();
         }
