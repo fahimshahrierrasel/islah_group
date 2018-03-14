@@ -449,6 +449,24 @@ namespace IslahGroupInventory
         {
             textBoxBPCode.Text = textBoxBPCCode.Text + textBoxBCSuffix.Text;
         }
+
         // Barcode Print Tab End
+
+        // Raw Material Tab Start
+
+
+
+        private void buttonAddRawMaterial_Click(object sender, EventArgs e)
+        {
+            string materialCode = textBoxIRMCode.Text;
+            string materialName = textBoxIRMName.Text;
+            string materialDesc = textBoxIRMDesc.Text;
+            string reorderPoint = textBoxIRMRPoint.Text;
+            string materialStock = textBoxIRMStock.Text;
+        }
+
+
+
+        // Raw Material Tab Ends
     }
 }

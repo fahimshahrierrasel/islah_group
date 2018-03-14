@@ -293,16 +293,16 @@
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.buttonAddRawMaterial = new System.Windows.Forms.Button();
+            this.textBoxIRMStock = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxIRMRPoint = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxIRMDesc = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBoxIRMName = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBoxIRMCode = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
@@ -326,8 +326,8 @@
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.buttonLoadStockRawMaterial = new System.Windows.Forms.Button();
+            this.buttonAddStockRawMaterial = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
@@ -3266,16 +3266,16 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.button7);
-            this.groupBox18.Controls.Add(this.textBox8);
+            this.groupBox18.Controls.Add(this.buttonAddRawMaterial);
+            this.groupBox18.Controls.Add(this.textBoxIRMStock);
             this.groupBox18.Controls.Add(this.label54);
-            this.groupBox18.Controls.Add(this.textBox10);
+            this.groupBox18.Controls.Add(this.textBoxIRMRPoint);
             this.groupBox18.Controls.Add(this.label56);
-            this.groupBox18.Controls.Add(this.textBox12);
+            this.groupBox18.Controls.Add(this.textBoxIRMDesc);
             this.groupBox18.Controls.Add(this.label59);
-            this.groupBox18.Controls.Add(this.textBox14);
+            this.groupBox18.Controls.Add(this.textBoxIRMName);
             this.groupBox18.Controls.Add(this.label60);
-            this.groupBox18.Controls.Add(this.textBox15);
+            this.groupBox18.Controls.Add(this.textBoxIRMCode);
             this.groupBox18.Controls.Add(this.label61);
             this.groupBox18.Location = new System.Drawing.Point(6, 6);
             this.groupBox18.Name = "groupBox18";
@@ -3284,28 +3284,29 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Add Raw Material";
             // 
-            // button7
+            // buttonAddRawMaterial
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button7.Location = new System.Drawing.Point(260, 260);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 36);
-            this.button7.TabIndex = 35;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonAddRawMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddRawMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddRawMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddRawMaterial.Location = new System.Drawing.Point(260, 260);
+            this.buttonAddRawMaterial.Name = "buttonAddRawMaterial";
+            this.buttonAddRawMaterial.Size = new System.Drawing.Size(90, 36);
+            this.buttonAddRawMaterial.TabIndex = 35;
+            this.buttonAddRawMaterial.Text = "Add";
+            this.buttonAddRawMaterial.UseVisualStyleBackColor = true;
+            this.buttonAddRawMaterial.Click += new System.EventHandler(this.buttonAddRawMaterial_Click);
             // 
-            // textBox8
+            // textBoxIRMStock
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIRMStock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(118, 226);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(232, 26);
-            this.textBox8.TabIndex = 34;
+            this.textBoxIRMStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIRMStock.Location = new System.Drawing.Point(118, 226);
+            this.textBoxIRMStock.Name = "textBoxIRMStock";
+            this.textBoxIRMStock.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMStock.TabIndex = 34;
             // 
             // label54
             // 
@@ -3320,16 +3321,16 @@
             this.label54.TabIndex = 33;
             this.label54.Text = "Stock";
             // 
-            // textBox10
+            // textBoxIRMRPoint
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIRMRPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(118, 194);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(232, 26);
-            this.textBox10.TabIndex = 30;
+            this.textBoxIRMRPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIRMRPoint.Location = new System.Drawing.Point(118, 194);
+            this.textBoxIRMRPoint.Name = "textBoxIRMRPoint";
+            this.textBoxIRMRPoint.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMRPoint.TabIndex = 30;
             // 
             // label56
             // 
@@ -3344,16 +3345,16 @@
             this.label56.TabIndex = 29;
             this.label56.Text = "Reorder Point";
             // 
-            // textBox12
+            // textBoxIRMDesc
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxIRMDesc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(118, 105);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(232, 83);
-            this.textBox12.TabIndex = 24;
+            this.textBoxIRMDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIRMDesc.Location = new System.Drawing.Point(118, 105);
+            this.textBoxIRMDesc.Multiline = true;
+            this.textBoxIRMDesc.Name = "textBoxIRMDesc";
+            this.textBoxIRMDesc.Size = new System.Drawing.Size(232, 83);
+            this.textBoxIRMDesc.TabIndex = 24;
             // 
             // label59
             // 
@@ -3368,16 +3369,16 @@
             this.label59.TabIndex = 23;
             this.label59.Text = "Description";
             // 
-            // textBox14
+            // textBoxIRMName
             // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIRMName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(118, 73);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(232, 26);
-            this.textBox14.TabIndex = 22;
+            this.textBoxIRMName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIRMName.Location = new System.Drawing.Point(118, 73);
+            this.textBoxIRMName.Name = "textBoxIRMName";
+            this.textBoxIRMName.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMName.TabIndex = 22;
             // 
             // label60
             // 
@@ -3392,16 +3393,16 @@
             this.label60.TabIndex = 21;
             this.label60.Text = "Name";
             // 
-            // textBox15
+            // textBoxIRMCode
             // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIRMCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(118, 41);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(232, 26);
-            this.textBox15.TabIndex = 20;
+            this.textBoxIRMCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIRMCode.Location = new System.Drawing.Point(118, 41);
+            this.textBoxIRMCode.Name = "textBoxIRMCode";
+            this.textBoxIRMCode.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMCode.TabIndex = 20;
             // 
             // label61
             // 
@@ -3412,9 +3413,9 @@
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(6, 44);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(106, 20);
+            this.label61.Size = new System.Drawing.Size(107, 20);
             this.label61.TabIndex = 19;
-            this.label61.Text = "Product Code";
+            this.label61.Text = "Material Code";
             // 
             // tabPage5
             // 
@@ -3657,8 +3658,8 @@
             // 
             this.groupBox21.Controls.Add(this.textBox9);
             this.groupBox21.Controls.Add(this.label55);
-            this.groupBox21.Controls.Add(this.button6);
-            this.groupBox21.Controls.Add(this.button9);
+            this.groupBox21.Controls.Add(this.buttonLoadStockRawMaterial);
+            this.groupBox21.Controls.Add(this.buttonAddStockRawMaterial);
             this.groupBox21.Controls.Add(this.textBox11);
             this.groupBox21.Controls.Add(this.label57);
             this.groupBox21.Controls.Add(this.textBox17);
@@ -3694,30 +3695,30 @@
             this.label55.TabIndex = 37;
             this.label55.Text = "Add Stock";
             // 
-            // button6
+            // buttonLoadStockRawMaterial
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(284, 54);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 36);
-            this.button6.TabIndex = 36;
-            this.button6.Text = "Load";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonLoadStockRawMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoadStockRawMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoadStockRawMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonLoadStockRawMaterial.Location = new System.Drawing.Point(284, 54);
+            this.buttonLoadStockRawMaterial.Name = "buttonLoadStockRawMaterial";
+            this.buttonLoadStockRawMaterial.Size = new System.Drawing.Size(90, 36);
+            this.buttonLoadStockRawMaterial.TabIndex = 36;
+            this.buttonLoadStockRawMaterial.Text = "Load";
+            this.buttonLoadStockRawMaterial.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // buttonAddStockRawMaterial
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.Enabled = false;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button9.Location = new System.Drawing.Point(285, 169);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(90, 36);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "Add";
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonAddStockRawMaterial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddStockRawMaterial.Enabled = false;
+            this.buttonAddStockRawMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddStockRawMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddStockRawMaterial.Location = new System.Drawing.Point(285, 169);
+            this.buttonAddStockRawMaterial.Name = "buttonAddStockRawMaterial";
+            this.buttonAddStockRawMaterial.Size = new System.Drawing.Size(90, 36);
+            this.buttonAddStockRawMaterial.TabIndex = 35;
+            this.buttonAddStockRawMaterial.Text = "Add";
+            this.buttonAddStockRawMaterial.UseVisualStyleBackColor = true;
             // 
             // textBox11
             // 
@@ -3763,9 +3764,9 @@
             this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label58.Location = new System.Drawing.Point(6, 25);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(106, 20);
+            this.label58.Size = new System.Drawing.Size(107, 20);
             this.label58.TabIndex = 19;
-            this.label58.Text = "Product Code";
+            this.label58.Text = "Material Code";
             // 
             // MainForm
             // 
@@ -4050,8 +4051,8 @@
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button buttonLoadStockRawMaterial;
+        private System.Windows.Forms.Button buttonAddStockRawMaterial;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.TextBox textBox17;
@@ -4074,16 +4075,16 @@
         private System.Windows.Forms.TabControl tabControl3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button buttonAddRawMaterial;
+        private System.Windows.Forms.TextBox textBoxIRMStock;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxIRMRPoint;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxIRMDesc;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBoxIRMName;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBoxIRMCode;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox19;

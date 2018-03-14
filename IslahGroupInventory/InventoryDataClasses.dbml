@@ -12,8 +12,10 @@
       <Association Name="Branch_IGUser" Member="IGUsers" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="IGUser" />
       <Association Name="Branch_Invoice" Member="Invoices" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Invoice" />
       <Association Name="Branch_Log" Member="Logs" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Log" />
+      <Association Name="Branch_Processing" Member="Processings" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Processing" />
       <Association Name="Branch_Product" Member="Products" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Product" />
       <Association Name="Branch_Purchase" Member="Purchases" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Purchase" />
+      <Association Name="Branch_RawProduct" Member="RawProducts" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="RawProduct" />
       <Association Name="Branch_Service" Member="Services" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Service" />
       <Association Name="Branch_Supplier" Member="Suppliers" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Supplier" />
       <Association Name="Branch_Voucher" Member="Vouchers" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Voucher" />
@@ -111,6 +113,25 @@
       <Association Name="PaymentType_Purchase" Member="Purchases" ThisKey="PType" OtherKey="PaymentType_PType" Type="Purchase" />
     </Type>
   </Table>
+  <Table Name="dbo.Processing" Member="Processings">
+    <Type Name="Processing">
+      <Column Name="ProcessingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Processing_ProcessingItem" Member="ProcessingItems" ThisKey="ProcessingID" OtherKey="Processing_ProcessingID" Type="ProcessingItem" />
+      <Association Name="Branch_Processing" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProcessingItem" Member="ProcessingItems">
+    <Type Name="ProcessingItem">
+      <Column Name="Processing_ProcessingID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RawProduct_RPId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Processing_ProcessingItem" Member="Processing" ThisKey="Processing_ProcessingID" OtherKey="ProcessingID" Type="Processing" IsForeignKey="true" />
+      <Association Name="RawProduct_ProcessingItem" Member="RawProduct" ThisKey="RawProduct_RPId" OtherKey="RPId" Type="RawProduct" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Product" Member="Products">
     <Type Name="Product">
       <Column Name="ProdId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -157,6 +178,19 @@
       <Association Name="Purchase_PurchaseItem" Member="Purchase" ThisKey="Purchase_PurcId" OtherKey="PurcId" Type="Purchase" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.RawProduct" Member="RawProducts">
+    <Type Name="RawProduct">
+      <Column Name="RPId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RPCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RPName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ReOrderPoint" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RawProduct_ProcessingItem" Member="ProcessingItems" ThisKey="RPId" OtherKey="RawProduct_RPId" Type="ProcessingItem" />
+      <Association Name="Branch_RawProduct" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Service" Member="Services">
     <Type Name="Service">
       <Column Name="ServId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -192,6 +226,14 @@
       <Association Name="ServiceType_Service" Member="Services" ThisKey="Name" OtherKey="ServiceType_Name" Type="Service" />
     </Type>
   </Table>
+  <Table Name="dbo.SubCategory" Member="SubCategories">
+    <Type Name="SubCategory">
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Category_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="SubCategory_Product" Member="Products" ThisKey="Name" OtherKey="SubCategory_Name" Type="Product" />
+      <Association Name="Category_SubCategory" Member="Category" ThisKey="Category_Name" OtherKey="Name" Type="Category" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Supplier" Member="Suppliers">
     <Type Name="Supplier">
       <Column Name="SuppId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -224,15 +266,6 @@
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Voucher_VoucherItem" Member="VoucherItems" ThisKey="VoucId" OtherKey="Voucher_VoucId" Type="VoucherItem" />
       <Association Name="Branch_Voucher" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.SubCategory" Member="SubCategories">
-    <Type Name="SubCategory">
-      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Category_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Category_Code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="SubCategory_Product" Member="Products" ThisKey="Name" OtherKey="SubCategory_Name" Type="Product" />
-      <Association Name="Category_SubCategory" Member="Category" ThisKey="Category_Name" OtherKey="Name" Type="Category" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
