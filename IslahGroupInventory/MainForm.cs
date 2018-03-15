@@ -55,7 +55,7 @@ namespace IslahGroupInventory
             }
             else if (selectedPage == tabPageSale)
             {
-
+                LoadSaleTabPage();
             }
             else if (selectedPage == tabPageVocher)
             {
@@ -84,6 +84,12 @@ namespace IslahGroupInventory
         {
             LoadProductsGridView();
             LoadProductCategory();
+            LoadNewProductCode();
+        }
+
+        private void LoadNewProductCode()
+        {
+            textBoxProdCode.Text = String.Format("PROD{0:D5}", dbContext.GetNextProductCode());
         }
 
         private void LoadProductCategory()
@@ -111,7 +117,7 @@ namespace IslahGroupInventory
             string discount = textBoxDiscount.Text;
             string stock = textBoxStock.Text;
 
-            dbContext.Products.InsertOnSubmit(new Product()
+            Product newProduct = new Product()
             {
                 ProdCode = prodCode,
                 ProdName = prodName,
@@ -122,11 +128,12 @@ namespace IslahGroupInventory
                 Discount = Convert.ToDecimal(discount),
                 Stock = Convert.ToInt32(stock),
                 Branch_BranchId = BRANCH_ID
-            });
+            };
+            dbContext.Products.InsertOnSubmit(newProduct);
             dbContext.SubmitChanges();
-
+            Console.WriteLine(newProduct.ProdId);
             LoadProductsGridView();
-
+            LoadNewProductCode();
         }
 
         private void buttonUpdateProduct_Click(object sender, EventArgs e)
@@ -206,7 +213,7 @@ namespace IslahGroupInventory
             LoadCustomersGridView();
             LoadNewCustomerCode();
         }
-        
+
         private void LoadNewCustomerCode()
         {
             textBoxICCode.Text = String.Format("CUST{0:D5}", dbContext.GetNextCustomerCode());
@@ -547,6 +554,10 @@ namespace IslahGroupInventory
 
         // Sale Tab Start
 
+        private void LoadSaleTabPage()
+        {
+            InitializeInvoiceItemGridView();
+        }
 
         private void InitializeInvoiceItemGridView()
         {
@@ -563,21 +574,55 @@ namespace IslahGroupInventory
         {
             string prodCode = comboBoxIProducts.SelectedValue.ToString();
             var product = dbContext.Products.SingleOrDefault(p => p.ProdCode == prodCode);
-            if (int.TryParse(textBoxPPQuantity.Text, out int quantity))
+            if (int.TryParse(textBoxIQuantity.Text, out int quantity))
             {
 
-                DataRow dr = purchaseItems.NewRow();
-                dr[0] = prodCode;
-                dr[1] = product.SellingPrice;
-                dr[2] = quantity;
-                dr[3] = product.SellingPrice * quantity;
-                purchaseItems.Rows.Add(dr);
-                gridControlPurchaseItems.RefreshDataSource();
+                DataRow dr = invoiceItems.NewRow();
+                dr[0] = product.ProdId;
+                dr[1] = prodCode;
+                dr[2] = product.SellingPrice;
+                dr[3] = quantity;
+                dr[4] = product.SellingPrice * quantity;
+                invoiceItems.Rows.Add(dr);
+                gridControlSaleProducts.RefreshDataSource();
             }
             else
             {
                 XtraMessageBox.Show("Qunatity should be number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void gridViewSaleProducts_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            var row = view.GetRow(e.RowHandle);
+            Decimal.TryParse(view.GetRowCellValue(e.RowHandle, "PQuantity").ToString(), out decimal quantity);
+
+            if (quantity >= 1)
+            {
+                string unitPrice = view.GetRowCellValue(e.RowHandle, "PUPrice").ToString();
+                decimal totalPricee = Convert.ToDecimal(quantity) * Convert.ToDecimal(unitPrice);
+
+                view.SetRowCellValue(e.RowHandle, "PTotalPrice", totalPricee);
+            }
+            else
+            {
+                e.Valid = false;
+                e.ErrorText = "Quantity should be positive or at least 1";
+            }
+        }
+
+        private void gridViewSaleProducts_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        {
+            GridSummaryItem summary = e.Info.SummaryItem;
+            // Obtain the total summary's value. 
+            double summaryValue = Convert.ToDouble(summary.SummaryValue);
+            Console.WriteLine(summaryValue);
+            Console.WriteLine("Hello");
+            string summaryText = String.Format("{0:#.##}", summaryValue);
+            textBoxITotal.Text = summaryText;
+            double due = summaryValue - Convert.ToDouble(textBoxIAmount.Text);
+            textBoxIDue.Text = String.Format("{0:#.##}", due);
         }
 
 

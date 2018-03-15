@@ -295,4 +295,7 @@
   <Function Name="dbo.GetNextSupplierCode" Method="GetNextSupplierCode">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.GetNextProductCode" Method="GetNextProductCode">
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

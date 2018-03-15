@@ -240,6 +240,7 @@
             this.tabPageNewInvoice = new System.Windows.Forms.TabPage();
             this.gridControlSaleProducts = new DevExpress.XtraGrid.GridControl();
             this.gridViewSaleProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PProductId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PUPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -251,14 +252,14 @@
             this.buttonAddInvoiceItem = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBoxIDue = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBoxIAmount = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBoxITotal = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label75 = new System.Windows.Forms.Label();
@@ -361,7 +362,6 @@
             this.tabPageUser = new System.Windows.Forms.TabPage();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
             this.bindingSourcePurchaseItem = new System.Windows.Forms.BindingSource(this.components);
-            this.PProductId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -1619,6 +1619,7 @@
             this.textBoxProdCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxProdCode.Enabled = false;
             this.textBoxProdCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProdCode.Location = new System.Drawing.Point(118, 41);
             this.textBoxProdCode.Name = "textBoxProdCode";
@@ -2873,11 +2874,13 @@
             // 
             // gridControlSaleProducts
             // 
+            this.gridControlSaleProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlSaleProducts.Location = new System.Drawing.Point(394, 6);
             this.gridControlSaleProducts.MainView = this.gridViewSaleProducts;
             this.gridControlSaleProducts.Name = "gridControlSaleProducts";
             this.gridControlSaleProducts.Size = new System.Drawing.Size(868, 573);
             this.gridControlSaleProducts.TabIndex = 7;
+            this.gridControlSaleProducts.UseEmbeddedNavigator = true;
             this.gridControlSaleProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSaleProducts});
             // 
@@ -2891,18 +2894,31 @@
             this.PTotalPrice});
             this.gridViewSaleProducts.GridControl = this.gridControlSaleProducts;
             this.gridViewSaleProducts.Name = "gridViewSaleProducts";
+            this.gridViewSaleProducts.OptionsView.ShowFooter = true;
+            this.gridViewSaleProducts.OptionsView.ShowGroupPanel = false;
+            this.gridViewSaleProducts.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.gridViewSaleProducts_CustomDrawFooterCell);
+            this.gridViewSaleProducts.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewSaleProducts_ValidateRow);
+            // 
+            // PProductId
+            // 
+            this.PProductId.Caption = "Product Id";
+            this.PProductId.FieldName = "PProductId";
+            this.PProductId.Name = "PProductId";
             // 
             // PCode
             // 
             this.PCode.Caption = "Product Code";
+            this.PCode.FieldName = "PCode";
             this.PCode.Name = "PCode";
             this.PCode.OptionsColumn.AllowEdit = false;
+            this.PCode.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.PCode.Visible = true;
             this.PCode.VisibleIndex = 0;
             // 
             // PUPrice
             // 
             this.PUPrice.Caption = "Unit Price";
+            this.PUPrice.FieldName = "PUPrice";
             this.PUPrice.Name = "PUPrice";
             this.PUPrice.OptionsColumn.AllowEdit = false;
             this.PUPrice.Visible = true;
@@ -2911,6 +2927,7 @@
             // PQuantity
             // 
             this.PQuantity.Caption = "Quantity";
+            this.PQuantity.FieldName = "PQuantity";
             this.PQuantity.Name = "PQuantity";
             this.PQuantity.Visible = true;
             this.PQuantity.VisibleIndex = 2;
@@ -2918,8 +2935,15 @@
             // PTotalPrice
             // 
             this.PTotalPrice.Caption = "Total Price";
+            this.PTotalPrice.DisplayFormat.FormatString = "c2";
+            this.PTotalPrice.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.PTotalPrice.FieldName = "PTotalPrice";
             this.PTotalPrice.Name = "PTotalPrice";
             this.PTotalPrice.OptionsColumn.AllowEdit = false;
+            this.PTotalPrice.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PTotalPrice", "Total={0:c2}")});
+            this.PTotalPrice.UnboundExpression = "[PUPrice] * [PQuantity]";
+            this.PTotalPrice.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PTotalPrice.Visible = true;
             this.PTotalPrice.VisibleIndex = 3;
             // 
@@ -3004,13 +3028,13 @@
             // 
             // groupBox23
             // 
-            this.groupBox23.Controls.Add(this.textBox15);
+            this.groupBox23.Controls.Add(this.textBoxIDue);
             this.groupBox23.Controls.Add(this.label72);
             this.groupBox23.Controls.Add(this.comboBox2);
             this.groupBox23.Controls.Add(this.dateTimePicker2);
-            this.groupBox23.Controls.Add(this.textBox19);
+            this.groupBox23.Controls.Add(this.textBoxIAmount);
             this.groupBox23.Controls.Add(this.label73);
-            this.groupBox23.Controls.Add(this.textBox24);
+            this.groupBox23.Controls.Add(this.textBoxITotal);
             this.groupBox23.Controls.Add(this.label74);
             this.groupBox23.Controls.Add(this.comboBox3);
             this.groupBox23.Controls.Add(this.label75);
@@ -3025,19 +3049,19 @@
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Invoice Information";
             // 
-            // textBox15
+            // textBoxIDue
             // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIDue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Enabled = false;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(159, 242);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(218, 26);
-            this.textBox15.TabIndex = 40;
-            this.textBox15.Text = "0.00";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIDue.Enabled = false;
+            this.textBoxIDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIDue.Location = new System.Drawing.Point(159, 242);
+            this.textBoxIDue.Name = "textBoxIDue";
+            this.textBoxIDue.Size = new System.Drawing.Size(218, 26);
+            this.textBoxIDue.TabIndex = 40;
+            this.textBoxIDue.Text = "0.00";
+            this.textBoxIDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label72
             // 
@@ -3080,18 +3104,18 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(217, 33);
             this.dateTimePicker2.TabIndex = 37;
             // 
-            // textBox19
+            // textBoxIAmount
             // 
-            this.textBox19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(159, 210);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(218, 26);
-            this.textBox19.TabIndex = 30;
-            this.textBox19.Text = "0.00";
-            this.textBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIAmount.Location = new System.Drawing.Point(159, 210);
+            this.textBoxIAmount.Name = "textBoxIAmount";
+            this.textBoxIAmount.Size = new System.Drawing.Size(218, 26);
+            this.textBoxIAmount.TabIndex = 30;
+            this.textBoxIAmount.Text = "0.00";
+            this.textBoxIAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label73
             // 
@@ -3106,19 +3130,19 @@
             this.label73.TabIndex = 29;
             this.label73.Text = "Amount";
             // 
-            // textBox24
+            // textBoxITotal
             // 
-            this.textBox24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxITotal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox24.Enabled = false;
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(158, 178);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(218, 26);
-            this.textBox24.TabIndex = 28;
-            this.textBox24.Text = "0.00";
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxITotal.Enabled = false;
+            this.textBoxITotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxITotal.Location = new System.Drawing.Point(158, 178);
+            this.textBoxITotal.Name = "textBoxITotal";
+            this.textBoxITotal.Size = new System.Drawing.Size(218, 26);
+            this.textBoxITotal.TabIndex = 28;
+            this.textBoxITotal.Text = "0.00";
+            this.textBoxITotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label74
             // 
@@ -4174,11 +4198,6 @@
             this.imageListTab.Images.SetKeyName(10, "box.png");
             this.imageListTab.Images.SetKeyName(11, "processing.png");
             // 
-            // PProductId
-            // 
-            this.PProductId.Caption = "Product Id";
-            this.PProductId.Name = "PProductId";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4585,13 +4604,13 @@
         private System.Windows.Forms.Button buttonAddInvoiceItem;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.GroupBox groupBox23;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBoxIDue;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBoxIAmount;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBoxITotal;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label75;
