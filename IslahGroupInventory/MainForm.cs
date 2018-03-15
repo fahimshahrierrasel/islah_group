@@ -617,8 +617,6 @@ namespace IslahGroupInventory
             GridSummaryItem summary = e.Info.SummaryItem;
             // Obtain the total summary's value. 
             double summaryValue = Convert.ToDouble(summary.SummaryValue);
-            Console.WriteLine(summaryValue);
-            Console.WriteLine("Hello");
             string summaryText = String.Format("{0:#.##}", summaryValue);
             textBoxITotal.Text = summaryText;
             double due = summaryValue - Convert.ToDouble(textBoxIAmount.Text);
