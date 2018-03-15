@@ -3163,6 +3163,8 @@ namespace IslahGroupInventory
 		
 		private string _Description;
 		
+		private bool _Active;
+		
 		private decimal _SellingPrice;
 		
 		private short _ReOrderPoint;
@@ -3193,6 +3195,8 @@ namespace IslahGroupInventory
     partial void OnProdNameChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
     partial void OnSellingPriceChanging(decimal value);
     partial void OnSellingPriceChanged();
     partial void OnReOrderPointChanging(short value);
@@ -3291,6 +3295,26 @@ namespace IslahGroupInventory
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
 				}
 			}
 		}
@@ -4203,6 +4227,8 @@ namespace IslahGroupInventory
 		
 		private string _Description;
 		
+		private bool _Active;
+		
 		private short _ReOrderPoint;
 		
 		private int _Stock;
@@ -4225,6 +4251,8 @@ namespace IslahGroupInventory
     partial void OnRPNameChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
     partial void OnReOrderPointChanging(short value);
     partial void OnReOrderPointChanged();
     partial void OnStockChanging(int value);
@@ -4316,6 +4344,26 @@ namespace IslahGroupInventory
 					this._Description = value;
 					this.SendPropertyChanged("Description");
 					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
 				}
 			}
 		}
@@ -5216,6 +5264,8 @@ namespace IslahGroupInventory
 		
 		private string _Category_Name;
 		
+		private string _Code;
+		
 		private EntitySet<Product> _Products;
 		
 		private EntityRef<Category> _Category;
@@ -5228,6 +5278,8 @@ namespace IslahGroupInventory
     partial void OnNameChanged();
     partial void OnCategory_NameChanging(string value);
     partial void OnCategory_NameChanged();
+    partial void OnCodeChanging(string value);
+    partial void OnCodeChanged();
     #endregion
 		
 		public SubCategory()
@@ -5277,6 +5329,26 @@ namespace IslahGroupInventory
 					this._Category_Name = value;
 					this.SendPropertyChanged("Category_Name");
 					this.OnCategory_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string Code
+		{
+			get
+			{
+				return this._Code;
+			}
+			set
+			{
+				if ((this._Code != value))
+				{
+					this.OnCodeChanging(value);
+					this.SendPropertyChanging();
+					this._Code = value;
+					this.SendPropertyChanged("Code");
+					this.OnCodeChanged();
 				}
 			}
 		}

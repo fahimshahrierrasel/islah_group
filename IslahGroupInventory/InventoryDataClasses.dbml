@@ -138,6 +138,7 @@
       <Column Name="ProdCode" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="ProdName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="SellingPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="ReOrderPoint" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Discount" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
@@ -184,6 +185,7 @@
       <Column Name="RPCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="RPName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="ReOrderPoint" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -230,6 +232,7 @@
     <Type Name="SubCategory">
       <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Category_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Association Name="SubCategory_Product" Member="Products" ThisKey="Name" OtherKey="SubCategory_Name" Type="Product" />
       <Association Name="Category_SubCategory" Member="Category" ThisKey="Category_Name" OtherKey="Name" Type="Category" IsForeignKey="true" />
     </Type>
