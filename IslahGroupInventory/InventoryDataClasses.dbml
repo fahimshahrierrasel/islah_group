@@ -271,4 +271,28 @@
       <Association Name="Branch_Voucher" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.GetNextCustomerCode" Method="GetNextCustomerCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextBranchCode" Method="GetNextBranchCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextVoucherCode" Method="GetNextVoucherCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextInvoiceCode" Method="GetNextInvoiceCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextPurchaseCode" Method="GetNextPurchaseCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextRawProductCode" Method="GetNextRawProductCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextServiceCode" Method="GetNextServiceCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextSupplierCode" Method="GetNextSupplierCode">
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

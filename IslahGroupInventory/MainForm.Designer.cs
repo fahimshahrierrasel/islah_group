@@ -115,7 +115,6 @@
             this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
@@ -239,20 +238,23 @@
             this.tabPageSale = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPageNewInvoice = new System.Windows.Forms.TabPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControlSaleProducts = new DevExpress.XtraGrid.GridControl();
+            this.gridViewSaleProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.PCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PUPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PTotalPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.comboBoxIProducts = new System.Windows.Forms.ComboBox();
+            this.textBoxIQuantity = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
+            this.buttonAddInvoiceItem = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
@@ -285,7 +287,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.gridControlCustomers = new DevExpress.XtraGrid.GridControl();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCustId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -360,6 +361,7 @@
             this.tabPageUser = new System.Windows.Forms.TabPage();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
             this.bindingSourcePurchaseItem = new System.Windows.Forms.BindingSource(this.components);
+            this.PProductId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -381,7 +383,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxAddProduct.SuspendLayout();
@@ -407,16 +408,16 @@
             this.tabPageSale.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPageNewInvoice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSaleProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSaleProducts)).BeginInit();
             this.groupBox22.SuspendLayout();
             this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.tabPageCustomer.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
             this.tabPageSupplier.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1247,8 +1248,7 @@
             this.gridControlProducts.TabIndex = 0;
             this.gridControlProducts.UseEmbeddedNavigator = true;
             this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewProducts,
-            this.gridView1});
+            this.gridViewProducts});
             // 
             // productsBindingSource
             // 
@@ -1367,11 +1367,6 @@
             // 
             this.colSubCategory.FieldName = "SubCategory";
             this.colSubCategory.Name = "colSubCategory";
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControlProducts;
-            this.gridView1.Name = "gridView1";
             // 
             // tabControl2
             // 
@@ -2865,7 +2860,7 @@
             // 
             // tabPageNewInvoice
             // 
-            this.tabPageNewInvoice.Controls.Add(this.gridControl1);
+            this.tabPageNewInvoice.Controls.Add(this.gridControlSaleProducts);
             this.tabPageNewInvoice.Controls.Add(this.groupBox22);
             this.tabPageNewInvoice.Controls.Add(this.groupBox23);
             this.tabPageNewInvoice.Location = new System.Drawing.Point(4, 34);
@@ -2876,59 +2871,97 @@
             this.tabPageNewInvoice.Text = "New Invoice";
             this.tabPageNewInvoice.UseVisualStyleBackColor = true;
             // 
-            // gridControl1
+            // gridControlSaleProducts
             // 
-            this.gridControl1.Location = new System.Drawing.Point(394, 6);
-            this.gridControl1.MainView = this.gridView2;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(868, 573);
-            this.gridControl1.TabIndex = 7;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridControlSaleProducts.Location = new System.Drawing.Point(394, 6);
+            this.gridControlSaleProducts.MainView = this.gridViewSaleProducts;
+            this.gridControlSaleProducts.Name = "gridControlSaleProducts";
+            this.gridControlSaleProducts.Size = new System.Drawing.Size(868, 573);
+            this.gridControlSaleProducts.TabIndex = 7;
+            this.gridControlSaleProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewSaleProducts});
             // 
-            // gridView2
+            // gridViewSaleProducts
             // 
-            this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.Name = "gridView2";
+            this.gridViewSaleProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.PProductId,
+            this.PCode,
+            this.PUPrice,
+            this.PQuantity,
+            this.PTotalPrice});
+            this.gridViewSaleProducts.GridControl = this.gridControlSaleProducts;
+            this.gridViewSaleProducts.Name = "gridViewSaleProducts";
+            // 
+            // PCode
+            // 
+            this.PCode.Caption = "Product Code";
+            this.PCode.Name = "PCode";
+            this.PCode.OptionsColumn.AllowEdit = false;
+            this.PCode.Visible = true;
+            this.PCode.VisibleIndex = 0;
+            // 
+            // PUPrice
+            // 
+            this.PUPrice.Caption = "Unit Price";
+            this.PUPrice.Name = "PUPrice";
+            this.PUPrice.OptionsColumn.AllowEdit = false;
+            this.PUPrice.Visible = true;
+            this.PUPrice.VisibleIndex = 1;
+            // 
+            // PQuantity
+            // 
+            this.PQuantity.Caption = "Quantity";
+            this.PQuantity.Name = "PQuantity";
+            this.PQuantity.Visible = true;
+            this.PQuantity.VisibleIndex = 2;
+            // 
+            // PTotalPrice
+            // 
+            this.PTotalPrice.Caption = "Total Price";
+            this.PTotalPrice.Name = "PTotalPrice";
+            this.PTotalPrice.OptionsColumn.AllowEdit = false;
+            this.PTotalPrice.Visible = true;
+            this.PTotalPrice.VisibleIndex = 3;
             // 
             // groupBox22
             // 
-            this.groupBox22.Controls.Add(this.comboBox4);
-            this.groupBox22.Controls.Add(this.textBox10);
+            this.groupBox22.Controls.Add(this.comboBoxIProducts);
+            this.groupBox22.Controls.Add(this.textBoxIQuantity);
             this.groupBox22.Controls.Add(this.label63);
-            this.groupBox22.Controls.Add(this.button6);
-            this.groupBox22.Controls.Add(this.textBox12);
-            this.groupBox22.Controls.Add(this.label65);
+            this.groupBox22.Controls.Add(this.buttonAddInvoiceItem);
             this.groupBox22.Controls.Add(this.label66);
             this.groupBox22.Location = new System.Drawing.Point(6, 288);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(382, 183);
+            this.groupBox22.Size = new System.Drawing.Size(382, 146);
             this.groupBox22.TabIndex = 6;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Add Product";
             // 
-            // comboBox4
+            // comboBoxIProducts
             // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.comboBoxIProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(115, 36);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(260, 28);
-            this.comboBox4.TabIndex = 48;
+            this.comboBoxIProducts.DataSource = this.productsBindingSource;
+            this.comboBoxIProducts.DisplayMember = "ProdName";
+            this.comboBoxIProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxIProducts.FormattingEnabled = true;
+            this.comboBoxIProducts.Location = new System.Drawing.Point(115, 36);
+            this.comboBoxIProducts.Name = "comboBoxIProducts";
+            this.comboBoxIProducts.Size = new System.Drawing.Size(260, 28);
+            this.comboBoxIProducts.TabIndex = 48;
+            this.comboBoxIProducts.ValueMember = "ProdCode";
             // 
-            // textBox10
+            // textBoxIQuantity
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxIQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(115, 102);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(260, 26);
-            this.textBox10.TabIndex = 47;
+            this.textBoxIQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIQuantity.Location = new System.Drawing.Point(115, 70);
+            this.textBoxIQuantity.Name = "textBoxIQuantity";
+            this.textBoxIQuantity.Size = new System.Drawing.Size(260, 26);
+            this.textBoxIQuantity.TabIndex = 47;
             // 
             // label63
             // 
@@ -2937,48 +2970,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(42, 105);
+            this.label63.Location = new System.Drawing.Point(42, 73);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(68, 20);
             this.label63.TabIndex = 46;
             this.label63.Text = "Quantity";
             // 
-            // button6
+            // buttonAddInvoiceItem
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(257, 141);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 36);
-            this.button6.TabIndex = 45;
-            this.button6.Text = "Add Product";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(115, 70);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(260, 26);
-            this.textBox12.TabIndex = 44;
-            // 
-            // label65
-            // 
-            this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(33, 73);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(77, 20);
-            this.label65.TabIndex = 43;
-            this.label65.Text = "Unit Price";
+            this.buttonAddInvoiceItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddInvoiceItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddInvoiceItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonAddInvoiceItem.Location = new System.Drawing.Point(257, 104);
+            this.buttonAddInvoiceItem.Name = "buttonAddInvoiceItem";
+            this.buttonAddInvoiceItem.Size = new System.Drawing.Size(118, 36);
+            this.buttonAddInvoiceItem.TabIndex = 45;
+            this.buttonAddInvoiceItem.Text = "Add Product";
+            this.buttonAddInvoiceItem.UseVisualStyleBackColor = true;
+            this.buttonAddInvoiceItem.Click += new System.EventHandler(this.buttonAddInvoiceItem_Click);
             // 
             // label66
             // 
@@ -3048,18 +3057,25 @@
             this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.DataSource = this.customersBindingSource;
+            this.comboBox2.DisplayMember = "CustName";
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(157, 110);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(218, 28);
             this.comboBox2.TabIndex = 38;
+            this.comboBox2.ValueMember = "CustId";
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(158, 75);
+            this.dateTimePicker2.Location = new System.Drawing.Point(158, 72);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(217, 33);
             this.dateTimePicker2.TabIndex = 37;
@@ -3406,6 +3422,7 @@
             this.textBoxICCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxICCode.Enabled = false;
             this.textBoxICCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxICCode.Location = new System.Drawing.Point(100, 41);
             this.textBoxICCode.Name = "textBoxICCode";
@@ -3450,10 +3467,6 @@
             this.gridControlCustomers.UseEmbeddedNavigator = true;
             this.gridControlCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCustomer});
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
             // 
             // gridViewCustomer
             // 
@@ -4161,6 +4174,11 @@
             this.imageListTab.Images.SetKeyName(10, "box.png");
             this.imageListTab.Images.SetKeyName(11, "processing.png");
             // 
+            // PProductId
+            // 
+            this.PProductId.Caption = "Product Id";
+            this.PProductId.Name = "PProductId";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4202,7 +4220,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddProduct.ResumeLayout(false);
@@ -4235,19 +4252,19 @@
             this.tabPageSale.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPageNewInvoice.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSaleProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSaleProducts)).EndInit();
             this.groupBox22.ResumeLayout(false);
             this.groupBox22.PerformLayout();
             this.groupBox23.ResumeLayout(false);
             this.groupBox23.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             this.tabPageCustomer.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
             this.tabPageSupplier.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
@@ -4557,18 +4574,15 @@
         private System.Windows.Forms.Button buttonProductDelete;
         private System.Windows.Forms.TextBox textBoxDPCode;
         private System.Windows.Forms.Label label24;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.TabPage tabPageProcessing;
         private System.Windows.Forms.TabControl tabControl4;
         private System.Windows.Forms.TabPage tabPageNewInvoice;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gridControlSaleProducts;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSaleProducts;
         private System.Windows.Forms.GroupBox groupBox22;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxIQuantity;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Button buttonAddInvoiceItem;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.GroupBox groupBox23;
         private System.Windows.Forms.TextBox textBox15;
@@ -4586,7 +4600,7 @@
         private System.Windows.Forms.TextBox textBox25;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.TabPage tabPageInvoiceList;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxIProducts;
         private System.Windows.Forms.CheckBox checkBoxRMUActive;
         private DevExpress.XtraGrid.GridControl gridControlRawMaterial;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewRawMaterial;
@@ -4600,6 +4614,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStock2;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId4;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch4;
+        private DevExpress.XtraGrid.Columns.GridColumn PCode;
+        private DevExpress.XtraGrid.Columns.GridColumn PUPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn PQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn pTotalPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn PPId;
+        private DevExpress.XtraGrid.Columns.GridColumn PProductId;
+        private DevExpress.XtraGrid.Columns.GridColumn PTotalPrice;
     }
 }
 
