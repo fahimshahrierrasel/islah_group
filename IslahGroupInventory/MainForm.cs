@@ -623,6 +623,11 @@ namespace IslahGroupInventory
             textBoxIDue.Text = String.Format("{0:#.##}", due);
         }
 
+        private void tabPageWorks_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         // Sale Tab Ends

@@ -123,14 +123,20 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>316, 19</value>
   </metadata>
-  <metadata name="customersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>904, 20</value>
+  <metadata name="rawProductsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>26, 47</value>
   </metadata>
   <metadata name="productsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>529, 18</value>
   </metadata>
   <metadata name="productCategoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>694, 17</value>
+  </metadata>
+  <metadata name="customersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>904, 20</value>
+  </metadata>
+  <metadata name="suppliersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1076, 21</value>
   </metadata>
   <metadata name="imageListTab.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>422, 19</value>
@@ -140,7 +146,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC4
-        PwAAAk1TRnQBSQFMAgEBDgEAAWgBAQFoAQEBIAEAASABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        PwAAAk1TRnQBSQFMAgEBDgEAAXgBAQF4AQEBIAEAASABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABgAMAAYADAAEBAQABCAYAAUAYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -181,7 +187,7 @@
         ASkBZQGKAQ8BOAExARRKAAHvARUBmgSgAZoBSgGZCaABAAHvAewBEAG5AQ8BiwGQBwAB9wERAUQBDgEQ
         AQ4BIgEOARACIgEQAQ4BIgEOARABDgFKASIB90oAAf8BAAMOAUMBmgugAXMBAAIOARABuQEPAYsBkAgA
         AfMD8gEUARABSwFMAksBTAFLARABFAPyAfNLAAHxAQ8DcwEcAaABmgEPAZkGoAGZARMBAAHvAfEBkgEO
-        ARUBAAEQAUMLAAHuASIBSwFEAQ4CEQEOAUQBSwEiAe5OAAGSARQGoAF5AZoFoAGZARABFAHzAgAB/wH3
+        ARUBAAEQAUMLAAG8ASIBSwFEAQ4CEQEOAUQBSwEiAbxOAAGSARQGoAF5AZoFoAGZARABFAHzAgAB/wH3
         BJIBvAkAAf8BDgJEASIEbgEiAkQBDgH/TQAB8wEACEoBHAOgAXkBDgETAf8TAAG8AQ4BAAEjASIBbgJt
         AW4BIgEjAQABDgG8TgAB8gHrAQABQwEAAUMBAAEVAQABcwKgAZkBEQEVAf8UAAHrAQAB6gEiAUsBDgIA
         AQ4BSwEiAW4BAAHrTwAB8gEAAXQBAAF0AQ4BFQEQAZoCoAFKARAB9BMAAfQB7QEOARIBmQEPAUQBSgEi
@@ -190,9 +196,9 @@
         AXQBFAGaAZMCDgGaAZMBDgF0AQ8B/0wAAfIBAAF0AQABdAEOAREBDwFKARQBEQH0FAAB/wEPAXQBDgGT
         AXQCDgGTAW4BmgGTAg4BmgGTAQ8BdAEPAf9MAAHyAQABdAEAAXQBDgHwAQcC7AH/FgABbQFuARACkwFu
         AXMBkwKaAZMCbgKTARABbgFtTQAB8gEAAXUBRAF0AQ4B8BoAAfQB6wEAAW4DFAFuApMBEgIUAeoBdAEA
-        AesB9E0AAfIBAAF1AXQBdQEOAfAaAAHrA0MNFQH4TQAB8gEAAXQBDgF0AQ4B8BoAAewCEAIRAZkBmgFD
+        AesB9E0AAfIBAAF1AXQBdQEOAfAaAAHrA0MNFQHsTQAB8gEAAXQBDgF0AQ4B8BoAAewCEAIRAZkBmgFD
         CREB7E0AAfIBAAN1AQ4B8BsAAe0BKgE3BDgHNwEqAe1IAAHqAg4B6gHzAREBDgEAAw4BAAIOAewDAAH0
-        AREBDgH3EgAB6wEOARABIgExATgBMAIOATABOAExASIBEAEOAfhJAAINAwAHZQIAAfQCAAHsAQ4BDQHq
+        AREBDgH3EgAB6wEOARABIgExATgBMAIOATABOAExASIBEAEOAexJAAINAwAHZQIAAfQCAAHsAQ4BDQHq
         EgAB7QFLAXkBSgEqATAESgEwASoBSgF5AUsB7UkAAWUBDQEPAWUBAAFlBYoBpgEAAQ4BDwHvAW0BAAFl
         AQ0B9xIAAfMBFQF6AUoBKgEOAUsDUQEOASoBSgF6ARQB80kAAWUCDQGKAQABZQWKAaYBAAGmAQ0BDwEN
         AWUBigEOAfATAAESAUsBSgEqAQ4BeQN6AQ8BKgFKAVEBEkoAAWUCDQGKAQABZQWKAaYBAAWKAQ0BFQH/
@@ -414,23 +420,8 @@
         AQABxwL/AeABBwL/AQABDwH/AfgBAAEDAv8B8AEPAv8B8AEPAv8BjwL/AfgBAAEHAv8B+AEfAf8L
 </value>
   </data>
-  <metadata name="rawProductsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>31, 46</value>
-  </metadata>
-  <metadata name="productCategoryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>694, 17</value>
-  </metadata>
-  <metadata name="customersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>904, 20</value>
-  </metadata>
-  <metadata name="suppliersBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1076, 21</value>
-  </metadata>
   <metadata name="bindingSourcePurchaseItem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>26, 19</value>
-  </metadata>
-  <metadata name="productsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>529, 18</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>83</value>
