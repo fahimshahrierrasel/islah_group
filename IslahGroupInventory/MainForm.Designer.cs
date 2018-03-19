@@ -51,66 +51,10 @@
             this.tabPagePurchase = new System.Windows.Forms.TabPage();
             this.purchasesControl1 = new IslahGroupInventory.ViewControls.PurchasesControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
+            this.salesControl1 = new IslahGroupInventory.ViewControls.SalesControl();
             this.tabPageVocher = new System.Windows.Forms.TabPage();
-            this.tabControl5 = new System.Windows.Forms.TabControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.gridControlVoucherItem = new DevExpress.XtraGrid.GridControl();
-            this.gridViewVoucherItem = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.VItemName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VDetails = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VAmount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label71 = new System.Windows.Forms.Label();
-            this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.tabPage = new System.Windows.Forms.TabPage();
+            this.vouchersControl1 = new IslahGroupInventory.ViewControls.VouchersControl();
             this.tabPageCustomer = new System.Windows.Forms.TabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.labelTotalCustomers = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBoxICRemarks = new System.Windows.Forms.TextBox();
-            this.buttonAddCustomer = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBoxICEmail = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBoxICContactNo = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBoxICAddress = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBoxICName = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBoxICCode = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.gridControlCustomers = new DevExpress.XtraGrid.GridControl();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCustId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCustName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colContactNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch_BranchId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPageSupplier = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.labelTotalSuppliers = new System.Windows.Forms.Label();
@@ -202,9 +146,10 @@
             this.tabPageUser = new System.Windows.Forms.TabPage();
             this.usersControl1 = new IslahGroupInventory.ViewControls.UsersControl();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourcePurchaseItem = new System.Windows.Forms.BindingSource(this.components);
-            this.salesControl1 = new IslahGroupInventory.ViewControls.SalesControl();
+            this.customersControl1 = new IslahGroupInventory.ViewControls.CustomersControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -215,19 +160,7 @@
             this.tabPagePurchase.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             this.tabPageVocher.SuspendLayout();
-            this.tabControl5.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlVoucherItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVoucherItem)).BeginInit();
-            this.groupBox24.SuspendLayout();
-            this.groupBox25.SuspendLayout();
             this.tabPageCustomer.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
             this.tabPageSupplier.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
@@ -251,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewWorks)).BeginInit();
             this.groupBox32.SuspendLayout();
             this.tabPageUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePurchaseItem)).BeginInit();
             this.SuspendLayout();
@@ -457,9 +391,18 @@
             this.tabPageSale.Text = "Sales";
             this.tabPageSale.UseVisualStyleBackColor = true;
             // 
+            // salesControl1
+            // 
+            this.salesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salesControl1.Location = new System.Drawing.Point(0, 0);
+            this.salesControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.salesControl1.Name = "salesControl1";
+            this.salesControl1.Size = new System.Drawing.Size(1276, 622);
+            this.salesControl1.TabIndex = 0;
+            // 
             // tabPageVocher
             // 
-            this.tabPageVocher.Controls.Add(this.tabControl5);
+            this.tabPageVocher.Controls.Add(this.vouchersControl1);
             this.tabPageVocher.ImageKey = "voucher.png";
             this.tabPageVocher.Location = new System.Drawing.Point(4, 39);
             this.tabPageVocher.Name = "tabPageVocher";
@@ -468,358 +411,17 @@
             this.tabPageVocher.Text = "Vouchers";
             this.tabPageVocher.UseVisualStyleBackColor = true;
             // 
-            // tabControl5
+            // vouchersControl1
             // 
-            this.tabControl5.Controls.Add(this.tabPage7);
-            this.tabControl5.Controls.Add(this.tabPage);
-            this.tabControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl5.Location = new System.Drawing.Point(0, 0);
-            this.tabControl5.Name = "tabControl5";
-            this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(1276, 622);
-            this.tabControl5.TabIndex = 1;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.button13);
-            this.tabPage7.Controls.Add(this.button8);
-            this.tabPage7.Controls.Add(this.gridControlVoucherItem);
-            this.tabPage7.Controls.Add(this.groupBox24);
-            this.tabPage7.Controls.Add(this.groupBox25);
-            this.tabPage7.Location = new System.Drawing.Point(4, 34);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1268, 584);
-            this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "New Voucher";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(187, 535);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(94, 43);
-            this.button13.TabIndex = 9;
-            this.button13.Text = "Discard";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(287, 535);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(94, 43);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Save";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // gridControlVoucherItem
-            // 
-            this.gridControlVoucherItem.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gridControlVoucherItem.Location = new System.Drawing.Point(394, 6);
-            this.gridControlVoucherItem.MainView = this.gridViewVoucherItem;
-            this.gridControlVoucherItem.Name = "gridControlVoucherItem";
-            this.gridControlVoucherItem.Size = new System.Drawing.Size(868, 573);
-            this.gridControlVoucherItem.TabIndex = 7;
-            this.gridControlVoucherItem.UseEmbeddedNavigator = true;
-            this.gridControlVoucherItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewVoucherItem});
-            // 
-            // gridViewVoucherItem
-            // 
-            this.gridViewVoucherItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.VItemName,
-            this.VDetails,
-            this.VAmount});
-            this.gridViewVoucherItem.GridControl = this.gridControlVoucherItem;
-            this.gridViewVoucherItem.Name = "gridViewVoucherItem";
-            this.gridViewVoucherItem.OptionsView.ShowFooter = true;
-            this.gridViewVoucherItem.OptionsView.ShowGroupPanel = false;
-            // 
-            // VItemName
-            // 
-            this.VItemName.Caption = "Item Name";
-            this.VItemName.FieldName = "VItemName";
-            this.VItemName.Name = "VItemName";
-            this.VItemName.Visible = true;
-            this.VItemName.VisibleIndex = 0;
-            this.VItemName.Width = 244;
-            // 
-            // VDetails
-            // 
-            this.VDetails.Caption = "Details";
-            this.VDetails.FieldName = "VDetails";
-            this.VDetails.Name = "VDetails";
-            this.VDetails.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
-            this.VDetails.Visible = true;
-            this.VDetails.VisibleIndex = 1;
-            this.VDetails.Width = 536;
-            // 
-            // VAmount
-            // 
-            this.VAmount.Caption = "Amount";
-            this.VAmount.FieldName = "VAmount";
-            this.VAmount.Name = "VAmount";
-            this.VAmount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "VAmount", "Total = {0:c2}")});
-            this.VAmount.Visible = true;
-            this.VAmount.VisibleIndex = 2;
-            this.VAmount.Width = 148;
-            // 
-            // groupBox24
-            // 
-            this.groupBox24.Controls.Add(this.textBox11);
-            this.groupBox24.Controls.Add(this.label79);
-            this.groupBox24.Controls.Add(this.textBox9);
-            this.groupBox24.Controls.Add(this.textBox8);
-            this.groupBox24.Controls.Add(this.label65);
-            this.groupBox24.Controls.Add(this.button6);
-            this.groupBox24.Controls.Add(this.label71);
-            this.groupBox24.Location = new System.Drawing.Point(6, 299);
-            this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(382, 219);
-            this.groupBox24.TabIndex = 6;
-            this.groupBox24.TabStop = false;
-            this.groupBox24.Text = "Add Item";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(115, 144);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(260, 26);
-            this.textBox11.TabIndex = 50;
-            // 
-            // label79
-            // 
-            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(44, 147);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(65, 20);
-            this.label79.TabIndex = 49;
-            this.label79.Text = "Amount";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(115, 37);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(260, 26);
-            this.textBox9.TabIndex = 48;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(115, 69);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(260, 69);
-            this.textBox8.TabIndex = 47;
-            // 
-            // label65
-            // 
-            this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(52, 72);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(58, 20);
-            this.label65.TabIndex = 46;
-            this.label65.Text = "Details";
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(257, 177);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 36);
-            this.button6.TabIndex = 45;
-            this.button6.Text = "Add Item";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // label71
-            // 
-            this.label71.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(23, 40);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(87, 20);
-            this.label71.TabIndex = 41;
-            this.label71.Text = "Item Name";
-            // 
-            // groupBox25
-            // 
-            this.groupBox25.Controls.Add(this.textBox15);
-            this.groupBox25.Controls.Add(this.textBox14);
-            this.groupBox25.Controls.Add(this.dateTimePicker3);
-            this.groupBox25.Controls.Add(this.textBox10);
-            this.groupBox25.Controls.Add(this.label80);
-            this.groupBox25.Controls.Add(this.label82);
-            this.groupBox25.Controls.Add(this.label83);
-            this.groupBox25.Controls.Add(this.label84);
-            this.groupBox25.Controls.Add(this.textBox12);
-            this.groupBox25.Controls.Add(this.label85);
-            this.groupBox25.Location = new System.Drawing.Point(6, 6);
-            this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(382, 287);
-            this.groupBox25.TabIndex = 5;
-            this.groupBox25.TabStop = false;
-            this.groupBox25.Text = "Voucher Information";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(115, 137);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(260, 26);
-            this.textBox15.TabIndex = 42;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(115, 105);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(260, 26);
-            this.textBox14.TabIndex = 41;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CustomFormat = "";
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(116, 66);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(259, 33);
-            this.dateTimePicker3.TabIndex = 37;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(115, 169);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(260, 106);
-            this.textBox10.TabIndex = 30;
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label80
-            // 
-            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(52, 172);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(58, 20);
-            this.label80.TabIndex = 29;
-            this.label80.Text = "Details";
-            // 
-            // label82
-            // 
-            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(2, 140);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(108, 20);
-            this.label82.TabIndex = 25;
-            this.label82.Text = "Reference No";
-            // 
-            // label83
-            // 
-            this.label83.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(6, 108);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(104, 20);
-            this.label83.TabIndex = 23;
-            this.label83.Text = "Submitted By";
-            // 
-            // label84
-            // 
-            this.label84.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(66, 76);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(44, 20);
-            this.label84.TabIndex = 21;
-            this.label84.Text = "Date";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(115, 34);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(260, 26);
-            this.textBox12.TabIndex = 20;
-            // 
-            // label85
-            // 
-            this.label85.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(17, 37);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(93, 20);
-            this.label85.TabIndex = 19;
-            this.label85.Text = "Voucher No";
-            // 
-            // tabPage
-            // 
-            this.tabPage.Location = new System.Drawing.Point(4, 34);
-            this.tabPage.Name = "tabPage";
-            this.tabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage.Size = new System.Drawing.Size(1268, 584);
-            this.tabPage.TabIndex = 1;
-            this.tabPage.Text = "Voucher List";
-            this.tabPage.UseVisualStyleBackColor = true;
+            this.vouchersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vouchersControl1.Location = new System.Drawing.Point(0, 0);
+            this.vouchersControl1.Name = "vouchersControl1";
+            this.vouchersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.vouchersControl1.TabIndex = 0;
             // 
             // tabPageCustomer
             // 
-            this.tabPageCustomer.Controls.Add(this.groupBox10);
-            this.tabPageCustomer.Controls.Add(this.groupBox9);
-            this.tabPageCustomer.Controls.Add(this.groupBox8);
+            this.tabPageCustomer.Controls.Add(this.customersControl1);
             this.tabPageCustomer.ImageKey = "customers.png";
             this.tabPageCustomer.Location = new System.Drawing.Point(4, 39);
             this.tabPageCustomer.Name = "tabPageCustomer";
@@ -827,321 +429,6 @@
             this.tabPageCustomer.TabIndex = 5;
             this.tabPageCustomer.Text = "Customers";
             this.tabPageCustomer.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.labelTotalCustomers);
-            this.groupBox10.Location = new System.Drawing.Point(15, 16);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(357, 148);
-            this.groupBox10.TabIndex = 5;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Total Customer";
-            // 
-            // labelTotalCustomers
-            // 
-            this.labelTotalCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTotalCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalCustomers.Location = new System.Drawing.Point(3, 29);
-            this.labelTotalCustomers.Name = "labelTotalCustomers";
-            this.labelTotalCustomers.Size = new System.Drawing.Size(351, 116);
-            this.labelTotalCustomers.TabIndex = 0;
-            this.labelTotalCustomers.Text = "00";
-            this.labelTotalCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.textBoxICRemarks);
-            this.groupBox9.Controls.Add(this.buttonAddCustomer);
-            this.groupBox9.Controls.Add(this.label23);
-            this.groupBox9.Controls.Add(this.textBoxICEmail);
-            this.groupBox9.Controls.Add(this.label26);
-            this.groupBox9.Controls.Add(this.textBoxICContactNo);
-            this.groupBox9.Controls.Add(this.label27);
-            this.groupBox9.Controls.Add(this.textBoxICAddress);
-            this.groupBox9.Controls.Add(this.label29);
-            this.groupBox9.Controls.Add(this.textBoxICName);
-            this.groupBox9.Controls.Add(this.label30);
-            this.groupBox9.Controls.Add(this.textBoxICCode);
-            this.groupBox9.Controls.Add(this.label31);
-            this.groupBox9.Location = new System.Drawing.Point(15, 179);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(357, 390);
-            this.groupBox9.TabIndex = 3;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Add Customer";
-            // 
-            // textBoxICRemarks
-            // 
-            this.textBoxICRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICRemarks.Location = new System.Drawing.Point(100, 258);
-            this.textBoxICRemarks.Multiline = true;
-            this.textBoxICRemarks.Name = "textBoxICRemarks";
-            this.textBoxICRemarks.Size = new System.Drawing.Size(251, 83);
-            this.textBoxICRemarks.TabIndex = 36;
-            // 
-            // buttonAddCustomer
-            // 
-            this.buttonAddCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCustomer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddCustomer.Location = new System.Drawing.Point(261, 347);
-            this.buttonAddCustomer.Name = "buttonAddCustomer";
-            this.buttonAddCustomer.Size = new System.Drawing.Size(90, 36);
-            this.buttonAddCustomer.TabIndex = 35;
-            this.buttonAddCustomer.Text = "Add";
-            this.buttonAddCustomer.UseVisualStyleBackColor = true;
-            this.buttonAddCustomer.Click += new System.EventHandler(this.buttonAddCustomer_Click);
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(21, 261);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 20);
-            this.label23.TabIndex = 31;
-            this.label23.Text = "Remarks";
-            // 
-            // textBoxICEmail
-            // 
-            this.textBoxICEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICEmail.Location = new System.Drawing.Point(100, 226);
-            this.textBoxICEmail.Name = "textBoxICEmail";
-            this.textBoxICEmail.Size = new System.Drawing.Size(251, 26);
-            this.textBoxICEmail.TabIndex = 30;
-            // 
-            // label26
-            // 
-            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(46, 229);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(48, 20);
-            this.label26.TabIndex = 29;
-            this.label26.Text = "Email";
-            // 
-            // textBoxICContactNo
-            // 
-            this.textBoxICContactNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICContactNo.Location = new System.Drawing.Point(100, 194);
-            this.textBoxICContactNo.Name = "textBoxICContactNo";
-            this.textBoxICContactNo.Size = new System.Drawing.Size(251, 26);
-            this.textBoxICContactNo.TabIndex = 28;
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(5, 197);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(89, 20);
-            this.label27.TabIndex = 27;
-            this.label27.Text = "Contact No";
-            // 
-            // textBoxICAddress
-            // 
-            this.textBoxICAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICAddress.Location = new System.Drawing.Point(100, 105);
-            this.textBoxICAddress.Multiline = true;
-            this.textBoxICAddress.Name = "textBoxICAddress";
-            this.textBoxICAddress.Size = new System.Drawing.Size(251, 83);
-            this.textBoxICAddress.TabIndex = 24;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(26, 108);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(68, 20);
-            this.label29.TabIndex = 23;
-            this.label29.Text = "Address";
-            // 
-            // textBoxICName
-            // 
-            this.textBoxICName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICName.Location = new System.Drawing.Point(100, 73);
-            this.textBoxICName.Name = "textBoxICName";
-            this.textBoxICName.Size = new System.Drawing.Size(251, 26);
-            this.textBoxICName.TabIndex = 22;
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(43, 76);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(51, 20);
-            this.label30.TabIndex = 21;
-            this.label30.Text = "Name";
-            // 
-            // textBoxICCode
-            // 
-            this.textBoxICCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxICCode.Enabled = false;
-            this.textBoxICCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxICCode.Location = new System.Drawing.Point(100, 41);
-            this.textBoxICCode.Name = "textBoxICCode";
-            this.textBoxICCode.Size = new System.Drawing.Size(251, 26);
-            this.textBoxICCode.TabIndex = 20;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(47, 44);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(47, 20);
-            this.label31.TabIndex = 19;
-            this.label31.Text = "Code";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.gridControlCustomers);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(386, 4);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(887, 616);
-            this.groupBox8.TabIndex = 2;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Customers";
-            // 
-            // gridControlCustomers
-            // 
-            this.gridControlCustomers.DataSource = this.customersBindingSource;
-            this.gridControlCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlCustomers.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gridControlCustomers.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlCustomers.Location = new System.Drawing.Point(3, 25);
-            this.gridControlCustomers.MainView = this.gridViewCustomer;
-            this.gridControlCustomers.Name = "gridControlCustomers";
-            this.gridControlCustomers.Size = new System.Drawing.Size(881, 588);
-            this.gridControlCustomers.TabIndex = 0;
-            this.gridControlCustomers.UseEmbeddedNavigator = true;
-            this.gridControlCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewCustomer});
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
-            // 
-            // gridViewCustomer
-            // 
-            this.gridViewCustomer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCustId,
-            this.colCustCode,
-            this.colCustName,
-            this.colAddress,
-            this.colContactNo,
-            this.colEmail,
-            this.colRemark,
-            this.colBranch_BranchId1,
-            this.colBranch1});
-            this.gridViewCustomer.GridControl = this.gridControlCustomers;
-            this.gridViewCustomer.Name = "gridViewCustomer";
-            this.gridViewCustomer.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
-            this.gridViewCustomer.OptionsEditForm.EditFormColumnCount = 2;
-            this.gridViewCustomer.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewCustomer_ValidateRow);
-            // 
-            // colCustId
-            // 
-            this.colCustId.FieldName = "CustId";
-            this.colCustId.Name = "colCustId";
-            this.colCustId.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
-            // 
-            // colCustCode
-            // 
-            this.colCustCode.Caption = "Code";
-            this.colCustCode.FieldName = "CustCode";
-            this.colCustCode.Name = "colCustCode";
-            this.colCustCode.Visible = true;
-            this.colCustCode.VisibleIndex = 0;
-            this.colCustCode.Width = 87;
-            // 
-            // colCustName
-            // 
-            this.colCustName.Caption = "Name";
-            this.colCustName.FieldName = "CustName";
-            this.colCustName.Name = "colCustName";
-            this.colCustName.Visible = true;
-            this.colCustName.VisibleIndex = 1;
-            this.colCustName.Width = 145;
-            // 
-            // colAddress
-            // 
-            this.colAddress.FieldName = "Address";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.Visible = true;
-            this.colAddress.VisibleIndex = 2;
-            this.colAddress.Width = 146;
-            // 
-            // colContactNo
-            // 
-            this.colContactNo.FieldName = "ContactNo";
-            this.colContactNo.Name = "colContactNo";
-            this.colContactNo.Visible = true;
-            this.colContactNo.VisibleIndex = 3;
-            this.colContactNo.Width = 102;
-            // 
-            // colEmail
-            // 
-            this.colEmail.FieldName = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 4;
-            this.colEmail.Width = 102;
-            // 
-            // colRemark
-            // 
-            this.colRemark.FieldName = "Remark";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 5;
-            this.colRemark.Width = 110;
-            // 
-            // colBranch_BranchId1
-            // 
-            this.colBranch_BranchId1.FieldName = "Branch_BranchId";
-            this.colBranch_BranchId1.Name = "colBranch_BranchId1";
-            // 
-            // colBranch1
-            // 
-            this.colBranch1.FieldName = "Branch";
-            this.colBranch1.Name = "colBranch1";
             // 
             // tabPageSupplier
             // 
@@ -2056,18 +1343,22 @@
             this.imageListTab.Images.SetKeyName(12, "hammer.png");
             this.imageListTab.Images.SetKeyName(13, "builder.png");
             // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
+            // 
             // rawProductsBindingSource
             // 
             this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
             // 
-            // salesControl1
+            // customersControl1
             // 
-            this.salesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salesControl1.Location = new System.Drawing.Point(0, 0);
-            this.salesControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.salesControl1.Name = "salesControl1";
-            this.salesControl1.Size = new System.Drawing.Size(1276, 622);
-            this.salesControl1.TabIndex = 0;
+            this.customersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersControl1.Location = new System.Drawing.Point(0, 0);
+            this.customersControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.customersControl1.Name = "customersControl1";
+            this.customersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.customersControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -2095,22 +1386,7 @@
             this.tabPagePurchase.ResumeLayout(false);
             this.tabPageSale.ResumeLayout(false);
             this.tabPageVocher.ResumeLayout(false);
-            this.tabControl5.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlVoucherItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewVoucherItem)).EndInit();
-            this.groupBox24.ResumeLayout(false);
-            this.groupBox24.PerformLayout();
-            this.groupBox25.ResumeLayout(false);
-            this.groupBox25.PerformLayout();
             this.tabPageCustomer.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
             this.tabPageSupplier.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
@@ -2138,6 +1414,7 @@
             this.groupBox32.ResumeLayout(false);
             this.groupBox32.PerformLayout();
             this.tabPageUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePurchaseItem)).EndInit();
             this.ResumeLayout(false);
@@ -2168,35 +1445,7 @@
         private System.Windows.Forms.ImageList imageListTab;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private System.Windows.Forms.BindingSource productCategoryBindingSource;
-        private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.BindingSource customersBindingSource;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button buttonAddCustomer;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBoxICEmail;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBoxICContactNo;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBoxICAddress;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBoxICName;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBoxICCode;
-        private System.Windows.Forms.Label label31;
-        private DevExpress.XtraGrid.GridControl gridControlCustomers;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomer;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustId;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colCustName;
-        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
-        private DevExpress.XtraGrid.Columns.GridColumn colContactNo;
-        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
-        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch1;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label labelTotalCustomers;
-        private System.Windows.Forms.TextBox textBoxICRemarks;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.Label labelTotalSuppliers;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -2263,35 +1512,6 @@
         private System.Windows.Forms.BindingSource rawProductsBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn pTotalPrice;
         private DevExpress.XtraGrid.Columns.GridColumn PPId;
-        private System.Windows.Forms.TabControl tabControl5;
-        private System.Windows.Forms.TabPage tabPage7;
-        private DevExpress.XtraGrid.GridControl gridControlVoucherItem;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewVoucherItem;
-        private DevExpress.XtraGrid.Columns.GridColumn VItemName;
-        private DevExpress.XtraGrid.Columns.GridColumn VDetails;
-        private DevExpress.XtraGrid.Columns.GridColumn VAmount;
-        private System.Windows.Forms.GroupBox groupBox24;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.TabPage tabPage;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TabPage tabPageWorker;
         private System.Windows.Forms.TabPage tabPageWorks;
         private System.Windows.Forms.GroupBox groupBox28;
@@ -2324,6 +1544,8 @@
         private ViewControls.StocksControl stocksControl1;
         private ViewControls.PurchasesControl purchasesControl1;
         private ViewControls.SalesControl salesControl1;
+        private ViewControls.VouchersControl vouchersControl1;
+        private ViewControls.CustomersControl customersControl1;
     }
 }
 
