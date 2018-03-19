@@ -22,7 +22,7 @@ namespace IslahGroupInventory.ViewControls
         private void InitializeRawMaterialGridView()
         {
         }
-        private void buttonAddRawMaterial_Click(object sender, EventArgs e)
+        private void ButtonAddRawMaterial_Click(object sender, EventArgs e)
         {
             string materialCode = textBoxIRMCode.Text;
             string materialName = textBoxIRMName.Text;
@@ -44,7 +44,7 @@ namespace IslahGroupInventory.ViewControls
             InitializeRawMaterialGridView();
         }
 
-        private void buttonRMULoad_Click(object sender, EventArgs e)
+        private void ButtonRMULoad_Click(object sender, EventArgs e)
         {
             string rawMaterialCode = textBoxRMUCode.Text;
             var rawMaterial = dbContext.RawProducts.SingleOrDefault(p => p.RPCode == rawMaterialCode);
@@ -60,7 +60,7 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
-        private void buttonRMU_Click(object sender, EventArgs e)
+        private void ButtonRMU_Click(object sender, EventArgs e)
         {
 
             // TODO: Raw Material Input Validation
@@ -77,7 +77,7 @@ namespace IslahGroupInventory.ViewControls
             InitializeRawMaterialGridView();
         }
 
-        private void buttonRMUStockLoad_Click(object sender, EventArgs e)
+        private void ButtonRMUStockLoad_Click(object sender, EventArgs e)
         {
             string rawMaterialCode = textBoxRMSUCode.Text;
             var rawMaterial = dbContext.RawProducts.SingleOrDefault(p => p.RPCode == rawMaterialCode);
@@ -89,7 +89,7 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
-        private void buttonRMSUAddStock_Click(object sender, EventArgs e)
+        private void ButtonRMSUAddStock_Click(object sender, EventArgs e)
         {
             string rawMaterialCode = textBoxRMSUCode.Text;
             var rawMaterial = dbContext.RawProducts.SingleOrDefault(p => p.RPCode == rawMaterialCode);

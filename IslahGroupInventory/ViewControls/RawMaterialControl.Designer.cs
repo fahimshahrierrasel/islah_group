@@ -133,7 +133,7 @@
             this.buttonRMUStockLoad.TabIndex = 36;
             this.buttonRMUStockLoad.Text = "Load";
             this.buttonRMUStockLoad.UseVisualStyleBackColor = true;
-            this.buttonRMUStockLoad.Click += new System.EventHandler(this.buttonRMUStockLoad_Click);
+            this.buttonRMUStockLoad.Click += new System.EventHandler(this.ButtonRMUStockLoad_Click);
             // 
             // buttonRMSUAddStock
             // 
@@ -146,7 +146,7 @@
             this.buttonRMSUAddStock.TabIndex = 35;
             this.buttonRMSUAddStock.Text = "Add";
             this.buttonRMSUAddStock.UseVisualStyleBackColor = true;
-            this.buttonRMSUAddStock.Click += new System.EventHandler(this.buttonRMSUAddStock_Click);
+            this.buttonRMSUAddStock.Click += new System.EventHandler(this.ButtonRMSUAddStock_Click);
             // 
             // textBoxRMSUCtock
             // 
@@ -237,7 +237,7 @@
             this.buttonAddRawMaterial.TabIndex = 35;
             this.buttonAddRawMaterial.Text = "Add";
             this.buttonAddRawMaterial.UseVisualStyleBackColor = true;
-            this.buttonAddRawMaterial.Click += new System.EventHandler(this.buttonAddRawMaterial_Click);
+            this.buttonAddRawMaterial.Click += new System.EventHandler(this.ButtonAddRawMaterial_Click);
             // 
             // textBoxIRMStock
             // 
@@ -383,7 +383,7 @@
             this.buttonRMULoad.TabIndex = 37;
             this.buttonRMULoad.Text = "Load";
             this.buttonRMULoad.UseVisualStyleBackColor = true;
-            this.buttonRMULoad.Click += new System.EventHandler(this.buttonRMULoad_Click);
+            this.buttonRMULoad.Click += new System.EventHandler(this.ButtonRMULoad_Click);
             // 
             // buttonRMU
             // 
@@ -396,7 +396,7 @@
             this.buttonRMU.TabIndex = 35;
             this.buttonRMU.Text = "Update";
             this.buttonRMU.UseVisualStyleBackColor = true;
-            this.buttonRMU.Click += new System.EventHandler(this.buttonRMU_Click);
+            this.buttonRMU.Click += new System.EventHandler(this.ButtonRMU_Click);
             // 
             // textBoxRMUStock
             // 
