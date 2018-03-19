@@ -406,6 +406,8 @@
             this.gridControlProcessingItem = new DevExpress.XtraGrid.GridControl();
             this.gridViewProcessingItem = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.tabPageWorker = new System.Windows.Forms.TabPage();
+            this.tabPageWorks = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -569,6 +571,8 @@
             this.tabControlMain.Controls.Add(this.tabPageCustomer);
             this.tabControlMain.Controls.Add(this.tabPageSupplier);
             this.tabControlMain.Controls.Add(this.tabPageBarcode);
+            this.tabControlMain.Controls.Add(this.tabPageWorker);
+            this.tabControlMain.Controls.Add(this.tabPageWorks);
             this.tabControlMain.Controls.Add(this.tabPageUser);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4582,6 +4586,8 @@
             this.imageListTab.Images.SetKeyName(9, "raw.png");
             this.imageListTab.Images.SetKeyName(10, "box.png");
             this.imageListTab.Images.SetKeyName(11, "processing.png");
+            this.imageListTab.Images.SetKeyName(12, "hammer.png");
+            this.imageListTab.Images.SetKeyName(13, "builder.png");
             // 
             // tabControl6
             // 
@@ -4769,6 +4775,26 @@
             this.comboBox4.Size = new System.Drawing.Size(256, 28);
             this.comboBox4.TabIndex = 49;
             this.comboBox4.ValueMember = "ProdCode";
+            // 
+            // tabPageWorker
+            // 
+            this.tabPageWorker.ImageKey = "builder.png";
+            this.tabPageWorker.Location = new System.Drawing.Point(4, 39);
+            this.tabPageWorker.Name = "tabPageWorker";
+            this.tabPageWorker.Size = new System.Drawing.Size(1276, 622);
+            this.tabPageWorker.TabIndex = 11;
+            this.tabPageWorker.Text = "Workers";
+            this.tabPageWorker.UseVisualStyleBackColor = true;
+            // 
+            // tabPageWorks
+            // 
+            this.tabPageWorks.ImageKey = "hammer.png";
+            this.tabPageWorks.Location = new System.Drawing.Point(4, 39);
+            this.tabPageWorks.Name = "tabPageWorks";
+            this.tabPageWorks.Size = new System.Drawing.Size(1276, 622);
+            this.tabPageWorks.TabIndex = 12;
+            this.tabPageWorks.Text = "Works";
+            this.tabPageWorks.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -5271,6 +5297,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPageWorker;
+        private System.Windows.Forms.TabPage tabPageWorks;
     }
 }
 
