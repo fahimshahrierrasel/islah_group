@@ -23,6 +23,7 @@ namespace IslahGroupInventory.ViewControls
         private void CustomersControl_Load(object sender, EventArgs e)
         {
             LoadNewCustomerCode();
+            LoadTotalCustomerCounter();
         }
 
         private void LoadNewCustomerCode()
