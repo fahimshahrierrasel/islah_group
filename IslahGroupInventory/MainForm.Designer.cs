@@ -37,8 +37,8 @@
             this.treebricksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslBranchCode = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageRawMaterial = new System.Windows.Forms.TabPage();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
@@ -99,7 +99,6 @@
             this.gridViewProcessingItem = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.cbMaterialName = new System.Windows.Forms.ComboBox();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbMaterialQuantity = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
@@ -113,6 +112,7 @@
             this.tabPageProducts = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -468,11 +468,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).BeginInit();
             this.groupBox26.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.groupBox20.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -593,25 +593,25 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.tsslUsername,
+            this.tsslBranchCode});
             this.statusStrip1.Location = new System.Drawing.Point(0, 689);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // tsslUsername
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(60, 17);
-            this.toolStripStatusLabel1.Text = "Username";
+            this.tsslUsername.Name = "tsslUsername";
+            this.tsslUsername.Size = new System.Drawing.Size(60, 17);
+            this.tsslUsername.Text = "Username";
             // 
-            // toolStripStatusLabel2
+            // tsslBranchCode
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(75, 17);
-            this.toolStripStatusLabel2.Text = "Branch Code";
+            this.tsslBranchCode.Name = "tsslBranchCode";
+            this.tsslBranchCode.Size = new System.Drawing.Size(75, 17);
+            this.tsslBranchCode.Text = "Branch Code";
             // 
             // tabControlMain
             // 
@@ -1330,10 +1330,6 @@
             this.cbMaterialName.TabIndex = 49;
             this.cbMaterialName.ValueMember = "RPId";
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
-            // 
             // tbMaterialQuantity
             // 
             this.tbMaterialQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1495,6 +1491,10 @@
             this.gridControlProducts.UseEmbeddedNavigator = true;
             this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewProducts});
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
             // 
             // gridViewProducts
             // 
@@ -5347,12 +5347,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).EndInit();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             this.tabPageProducts.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -5454,8 +5454,8 @@
         private System.Windows.Forms.ToolStripMenuItem treebricksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel tsslUsername;
+        private System.Windows.Forms.ToolStripStatusLabel tsslBranchCode;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageProducts;
         private System.Windows.Forms.TabPage tabPageStocks;

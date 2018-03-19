@@ -18,19 +18,30 @@ namespace IslahGroupInventory
 {
     public partial class MainForm : Form
     {
-        private int BRANCH_ID = 1;
+        private int BRANCH_ID = 0;
+        private string BRANCH_CODE = "BRANCH0000";
+        private int USER_ID = 0;
+        private string USERNAME = "Username";
+
         InventoryDataClassesDataContext dbContext;
         DataTable purchaseItems;
         DataTable invoiceItems;
-        public MainForm()
+
+        public MainForm(int userId, string aUsername, int branchId, string branchCode)
         {
+            USER_ID = userId;
+            BRANCH_ID = branchId;
+            BRANCH_CODE = branchCode;
+            USERNAME = aUsername;
+
             dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            tsslUsername.Text = USERNAME;
+            tsslBranchCode.Text = BRANCH_CODE;
             LoadRawMaterialTabPage();
         }
 
