@@ -114,6 +114,12 @@
     <Compile Include="ViewControls\RawMaterialControl.Designer.cs">
       <DependentUpon>RawMaterialControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\SalesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\SalesControl.Designer.cs">
+      <DependentUpon>SalesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControls\StocksControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\RawMaterialControl.resx">
       <DependentUpon>RawMaterialControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\SalesControl.resx">
+      <DependentUpon>SalesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\StocksControl.resx">
       <DependentUpon>StocksControl.cs</DependentUpon>
