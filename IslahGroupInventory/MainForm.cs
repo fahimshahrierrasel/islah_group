@@ -58,7 +58,7 @@ namespace IslahGroupInventory
             }
             else if (selectedPage == tabPageStocks)
             {
-                LoadStocksPage();
+                //LoadStocksPage();
             }
             else if (selectedPage == tabPagePurchase)
             {
@@ -90,18 +90,7 @@ namespace IslahGroupInventory
             }
         }
 
-        // Stocks Tab Methods Start
-        private void LoadStocksPage()
-        {
-            LoadTotalProductCounter();
-        }
 
-        private void LoadTotalProductCounter()
-        {
-            var totalProduct = dbContext.Products.Count();
-            labelTotalProduct.Text = totalProduct.ToString();
-        }
-        // Stocks Tab Methods End
 
         // Customers Tab Methods Start
         private void LoadCustomerPage()

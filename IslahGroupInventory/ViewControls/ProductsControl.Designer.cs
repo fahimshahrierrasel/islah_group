@@ -28,21 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
-            this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory_Name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colReOrderPoint = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStock = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
@@ -90,9 +75,20 @@
             this.buttonProductDelete = new System.Windows.Forms.Button();
             this.textBoxDPCode = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
+            this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
+            this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReOrderPoint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStock = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxAddProduct.SuspendLayout();
@@ -100,150 +96,9 @@
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.gridControlProducts);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(386, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(887, 616);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Products List";
-            // 
-            // gridControlProducts
-            // 
-            this.gridControlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
-            this.gridControlProducts.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
-            this.gridControlProducts.EmbeddedNavigator.Buttons.Edit.Visible = false;
-            this.gridControlProducts.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControlProducts.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridControlProducts.Location = new System.Drawing.Point(3, 25);
-            this.gridControlProducts.MainView = this.gridViewProducts;
-            this.gridControlProducts.Name = "gridControlProducts";
-            this.gridControlProducts.Size = new System.Drawing.Size(881, 588);
-            this.gridControlProducts.TabIndex = 0;
-            this.gridControlProducts.UseEmbeddedNavigator = true;
-            this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewProducts});
-            // 
-            // gridViewProducts
-            // 
-            this.gridViewProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colProdId,
-            this.colProdCode,
-            this.colProdName,
-            this.colSubCategory_Name,
-            this.colDescription,
-            this.colSellingPrice,
-            this.colReOrderPoint,
-            this.colDiscount,
-            this.colStock,
-            this.colBranch_BranchId,
-            this.colBranch,
-            this.colSubCategory});
-            this.gridViewProducts.GridControl = this.gridControlProducts;
-            this.gridViewProducts.Name = "gridViewProducts";
-            this.gridViewProducts.OptionsBehavior.Editable = false;
-            this.gridViewProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.gridViewProducts.OptionsView.ShowGroupPanel = false;
-            // 
-            // colProdId
-            // 
-            this.colProdId.FieldName = "ProdId";
-            this.colProdId.Name = "colProdId";
-            // 
-            // colProdCode
-            // 
-            this.colProdCode.Caption = "Code";
-            this.colProdCode.FieldName = "ProdCode";
-            this.colProdCode.Name = "colProdCode";
-            this.colProdCode.Visible = true;
-            this.colProdCode.VisibleIndex = 0;
-            this.colProdCode.Width = 74;
-            // 
-            // colProdName
-            // 
-            this.colProdName.Caption = "Name";
-            this.colProdName.FieldName = "ProdName";
-            this.colProdName.Name = "colProdName";
-            this.colProdName.Visible = true;
-            this.colProdName.VisibleIndex = 1;
-            this.colProdName.Width = 116;
-            // 
-            // colSubCategory_Name
-            // 
-            this.colSubCategory_Name.Caption = "Category";
-            this.colSubCategory_Name.FieldName = "SubCategory_Name";
-            this.colSubCategory_Name.Name = "colSubCategory_Name";
-            this.colSubCategory_Name.Visible = true;
-            this.colSubCategory_Name.VisibleIndex = 2;
-            this.colSubCategory_Name.Width = 64;
-            // 
-            // colDescription
-            // 
-            this.colDescription.Caption = "Description";
-            this.colDescription.FieldName = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 3;
-            this.colDescription.Width = 184;
-            // 
-            // colSellingPrice
-            // 
-            this.colSellingPrice.Caption = "Selling Price";
-            this.colSellingPrice.FieldName = "SellingPrice";
-            this.colSellingPrice.Name = "colSellingPrice";
-            this.colSellingPrice.Visible = true;
-            this.colSellingPrice.VisibleIndex = 4;
-            this.colSellingPrice.Width = 67;
-            // 
-            // colReOrderPoint
-            // 
-            this.colReOrderPoint.Caption = "Re-Order Point";
-            this.colReOrderPoint.FieldName = "ReOrderPoint";
-            this.colReOrderPoint.Name = "colReOrderPoint";
-            this.colReOrderPoint.Visible = true;
-            this.colReOrderPoint.VisibleIndex = 5;
-            this.colReOrderPoint.Width = 66;
-            // 
-            // colDiscount
-            // 
-            this.colDiscount.Caption = "Discount";
-            this.colDiscount.FieldName = "Discount";
-            this.colDiscount.Name = "colDiscount";
-            this.colDiscount.Visible = true;
-            this.colDiscount.VisibleIndex = 6;
-            this.colDiscount.Width = 70;
-            // 
-            // colStock
-            // 
-            this.colStock.Caption = "Stock";
-            this.colStock.FieldName = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.Visible = true;
-            this.colStock.VisibleIndex = 7;
-            this.colStock.Width = 51;
-            // 
-            // colBranch_BranchId
-            // 
-            this.colBranch_BranchId.FieldName = "Branch_BranchId";
-            this.colBranch_BranchId.Name = "colBranch_BranchId";
-            this.colBranch_BranchId.Width = 67;
-            // 
-            // colBranch
-            // 
-            this.colBranch.FieldName = "Branch";
-            this.colBranch.Name = "colBranch";
-            // 
-            // colSubCategory
-            // 
-            this.colSubCategory.FieldName = "SubCategory";
-            this.colSubCategory.Name = "colSubCategory";
             // 
             // tabControl2
             // 
@@ -254,7 +109,7 @@
             this.tabControl2.Location = new System.Drawing.Point(3, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(381, 619);
+            this.tabControl2.Size = new System.Drawing.Size(381, 615);
             this.tabControl2.TabIndex = 2;
             // 
             // tabPage1
@@ -263,7 +118,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(373, 582);
+            this.tabPage1.Size = new System.Drawing.Size(373, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -800,16 +655,144 @@
             this.label24.TabIndex = 19;
             this.label24.Text = "Product Code";
             // 
+            // gridControlProducts
+            // 
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Edit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
+            this.gridControlProducts.EmbeddedNavigator.Buttons.Remove.Visible = false;
+            this.gridControlProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControlProducts.Location = new System.Drawing.Point(386, 3);
+            this.gridControlProducts.MainView = this.gridViewProducts;
+            this.gridControlProducts.Name = "gridControlProducts";
+            this.gridControlProducts.Size = new System.Drawing.Size(887, 614);
+            this.gridControlProducts.TabIndex = 3;
+            this.gridControlProducts.UseEmbeddedNavigator = true;
+            this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewProducts});
+            // 
+            // gridViewProducts
+            // 
+            this.gridViewProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProdId,
+            this.colProdCode,
+            this.colProdName,
+            this.colSubCategory_Name,
+            this.colDescription,
+            this.colSellingPrice,
+            this.colReOrderPoint,
+            this.colDiscount,
+            this.colStock,
+            this.colBranch_BranchId,
+            this.colBranch,
+            this.colSubCategory});
+            this.gridViewProducts.GridControl = this.gridControlProducts;
+            this.gridViewProducts.Name = "gridViewProducts";
+            this.gridViewProducts.OptionsBehavior.Editable = false;
+            this.gridViewProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewProducts.OptionsView.ShowGroupPanel = false;
+            // 
+            // colProdId
+            // 
+            this.colProdId.FieldName = "ProdId";
+            this.colProdId.Name = "colProdId";
+            // 
+            // colProdCode
+            // 
+            this.colProdCode.Caption = "Code";
+            this.colProdCode.FieldName = "ProdCode";
+            this.colProdCode.Name = "colProdCode";
+            this.colProdCode.Visible = true;
+            this.colProdCode.VisibleIndex = 0;
+            this.colProdCode.Width = 74;
+            // 
+            // colProdName
+            // 
+            this.colProdName.Caption = "Name";
+            this.colProdName.FieldName = "ProdName";
+            this.colProdName.Name = "colProdName";
+            this.colProdName.Visible = true;
+            this.colProdName.VisibleIndex = 1;
+            this.colProdName.Width = 116;
+            // 
+            // colSubCategory_Name
+            // 
+            this.colSubCategory_Name.Caption = "Category";
+            this.colSubCategory_Name.FieldName = "SubCategory_Name";
+            this.colSubCategory_Name.Name = "colSubCategory_Name";
+            this.colSubCategory_Name.Visible = true;
+            this.colSubCategory_Name.VisibleIndex = 2;
+            this.colSubCategory_Name.Width = 64;
+            // 
+            // colDescription
+            // 
+            this.colDescription.Caption = "Description";
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.Visible = true;
+            this.colDescription.VisibleIndex = 3;
+            this.colDescription.Width = 184;
+            // 
+            // colSellingPrice
+            // 
+            this.colSellingPrice.Caption = "Selling Price";
+            this.colSellingPrice.FieldName = "SellingPrice";
+            this.colSellingPrice.Name = "colSellingPrice";
+            this.colSellingPrice.Visible = true;
+            this.colSellingPrice.VisibleIndex = 4;
+            this.colSellingPrice.Width = 67;
+            // 
+            // colReOrderPoint
+            // 
+            this.colReOrderPoint.Caption = "Re-Order Point";
+            this.colReOrderPoint.FieldName = "ReOrderPoint";
+            this.colReOrderPoint.Name = "colReOrderPoint";
+            this.colReOrderPoint.Visible = true;
+            this.colReOrderPoint.VisibleIndex = 5;
+            this.colReOrderPoint.Width = 66;
+            // 
+            // colDiscount
+            // 
+            this.colDiscount.Caption = "Discount";
+            this.colDiscount.FieldName = "Discount";
+            this.colDiscount.Name = "colDiscount";
+            this.colDiscount.Visible = true;
+            this.colDiscount.VisibleIndex = 6;
+            this.colDiscount.Width = 70;
+            // 
+            // colStock
+            // 
+            this.colStock.Caption = "Stock";
+            this.colStock.FieldName = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.Visible = true;
+            this.colStock.VisibleIndex = 7;
+            this.colStock.Width = 51;
+            // 
+            // colBranch_BranchId
+            // 
+            this.colBranch_BranchId.FieldName = "Branch_BranchId";
+            this.colBranch_BranchId.Name = "colBranch_BranchId";
+            this.colBranch_BranchId.Width = 67;
+            // 
+            // colBranch
+            // 
+            this.colBranch.FieldName = "Branch";
+            this.colBranch.Name = "colBranch";
+            // 
+            // colSubCategory
+            // 
+            this.colSubCategory.FieldName = "SubCategory";
+            this.colSubCategory.Name = "colSubCategory";
+            // 
             // ProductsControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gridControlProducts);
             this.Controls.Add(this.tabControl2);
             this.Name = "ProductsControl";
             this.Size = new System.Drawing.Size(1276, 622);
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddProduct.ResumeLayout(false);
@@ -820,27 +803,13 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox3;
-        private DevExpress.XtraGrid.GridControl gridControlProducts;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProducts;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdId;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdName;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name;
-        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
-        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
-        private DevExpress.XtraGrid.Columns.GridColumn colStock;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBoxAddProduct;
@@ -888,5 +857,19 @@
         private System.Windows.Forms.Button buttonProductDelete;
         private System.Windows.Forms.TextBox textBoxDPCode;
         private System.Windows.Forms.Label label24;
+        private DevExpress.XtraGrid.GridControl gridControlProducts;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProducts;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdName;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
+        private DevExpress.XtraGrid.Columns.GridColumn colStock;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
     }
 }
