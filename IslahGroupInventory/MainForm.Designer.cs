@@ -41,6 +41,7 @@
             this.tsslBranchCode = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageRawMaterial = new System.Windows.Forms.TabPage();
+            this.rawMaterialControl1 = new IslahGroupInventory.ViewControls.RawMaterialControl();
             this.tabPageProcessing = new System.Windows.Forms.TabPage();
             this.processingControl1 = new IslahGroupInventory.ViewControls.ProcessingControl();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
@@ -69,6 +70,7 @@
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabPageRawMaterial.SuspendLayout();
             this.tabPageProcessing.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
             this.tabPageStocks.SuspendLayout();
@@ -174,10 +176,10 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(1284, 665);
             this.tabControlMain.TabIndex = 3;
-            this.tabControlMain.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControlMain_Selected);
             // 
             // tabPageRawMaterial
             // 
+            this.tabPageRawMaterial.Controls.Add(this.rawMaterialControl1);
             this.tabPageRawMaterial.ImageKey = "raw.png";
             this.tabPageRawMaterial.Location = new System.Drawing.Point(4, 39);
             this.tabPageRawMaterial.Name = "tabPageRawMaterial";
@@ -185,6 +187,14 @@
             this.tabPageRawMaterial.TabIndex = 9;
             this.tabPageRawMaterial.Text = "Raw Material";
             this.tabPageRawMaterial.UseVisualStyleBackColor = true;
+            // 
+            // rawMaterialControl1
+            // 
+            this.rawMaterialControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rawMaterialControl1.Location = new System.Drawing.Point(0, 0);
+            this.rawMaterialControl1.Name = "rawMaterialControl1";
+            this.rawMaterialControl1.Size = new System.Drawing.Size(1276, 622);
+            this.rawMaterialControl1.TabIndex = 0;
             // 
             // tabPageProcessing
             // 
@@ -458,6 +468,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageRawMaterial.ResumeLayout(false);
             this.tabPageProcessing.ResumeLayout(false);
             this.tabPageProducts.ResumeLayout(false);
             this.tabPageStocks.ResumeLayout(false);
@@ -513,6 +524,7 @@
         private ViewControls.BarcodeControl barcodeControl1;
         private ViewControls.WorkersControl workersControl1;
         private ViewControls.WorksControl worksControl1;
+        private ViewControls.RawMaterialControl rawMaterialControl1;
     }
 }
 

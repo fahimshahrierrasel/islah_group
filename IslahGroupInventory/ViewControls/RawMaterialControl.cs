@@ -15,18 +15,32 @@ namespace IslahGroupInventory.ViewControls
         InventoryDataClassesDataContext dbContext;
         public RawMaterialControl()
         {
-            dbContext = new InventoryDataClassesDataContext();
+            dbContext = MainForm.dbContext;
             InitializeComponent();
         }
 
         private void RawMaterialControl_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("Raw Material Load");
+            InitializeRawMaterialGridView();
+            SetNextRawProductCode();
         }
 
         private void InitializeRawMaterialGridView()
         {
+            var rawProducts = from rawProduct in dbContext.RawProducts
+                              where rawProduct.Branch_BranchId == BranchInfo.BranchId
+                              select rawProduct;
+
+            rawProductsBindingSource.DataSource = rawProducts;
+            rawMaterialGridControl.RefreshDataSource();
         }
+
+        private void SetNextRawProductCode()
+        {
+            // Code Prefix: RAWPRD
+            textBoxIRMCode.Text = String.Format("RWPRD{0:D5}", dbContext.GetNextRawProductCode());
+        }
+
         private void ButtonAddRawMaterial_Click(object sender, EventArgs e)
         {
             string materialCode = textBoxIRMCode.Text;
@@ -43,9 +57,10 @@ namespace IslahGroupInventory.ViewControls
                 ReOrderPoint = Convert.ToInt16(reorderPoint),
                 Stock = Convert.ToInt32(materialStock),
                 Active = true,
-                Branch_BranchId = 1
+                Branch_BranchId = BranchInfo.BranchId
             });
             dbContext.SubmitChanges();
+            SetNextRawProductCode();
             InitializeRawMaterialGridView();
         }
 
@@ -67,7 +82,6 @@ namespace IslahGroupInventory.ViewControls
 
         private void ButtonRMU_Click(object sender, EventArgs e)
         {
-
             // TODO: Raw Material Input Validation
             string rawMaterialCode = textBoxRMUCode.Text;
             var rawMaterial = dbContext.RawProducts.SingleOrDefault(p => p.RPCode == rawMaterialCode);

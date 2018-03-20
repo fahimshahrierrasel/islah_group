@@ -31,55 +31,7 @@ namespace IslahGroupInventory
         {
             tsslUsername.Text = BranchInfo.Username;
             tsslBranchCode.Text = BranchInfo.BranchCode;
-            //LoadRawMaterialTabPage();
+            
         }
-
-        private void tabControlMain_Selected(object sender, TabControlEventArgs e)
-        {
-            TabPage selectedPage = tabControlMain.SelectedTab;
-            if (selectedPage == tabPageRawMaterial)
-            {
-                RawMaterialControl rmControl = new RawMaterialControl();
-                rmControl.Dock = DockStyle.Fill;
-                tabPageRawMaterial.Controls.Add(rmControl);
-            }
-            if (selectedPage == tabPageProducts)
-            {
-                //LoadProductsPage();
-            }
-            else if (selectedPage == tabPageStocks)
-            {
-                //LoadStocksPage();
-            }
-            else if (selectedPage == tabPagePurchase)
-            {
-                //LoadPurchasePage();
-            }
-            else if (selectedPage == tabPageSale)
-            {
-                //LoadSaleTabPage();
-            }
-            else if (selectedPage == tabPageVocher)
-            {
-
-            }
-            else if (selectedPage == tabPageCustomer)
-            {
-                //LoadCustomerPage();
-            }
-            else if (selectedPage == tabPageSupplier)
-            {
-                //LoadSuppliersPage();
-            }
-            else if (selectedPage == tabPageUser)
-            {
-
-            }
-            else if (selectedPage == tabPageBarcode)
-            {
-                //LoadBarcodePage();
-            }
-        }
-
     }
 }

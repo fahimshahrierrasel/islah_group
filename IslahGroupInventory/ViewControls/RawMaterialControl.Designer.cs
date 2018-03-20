@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.textBoxRMSUAStock = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
@@ -66,7 +67,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.textBoxRMUCode = new System.Windows.Forms.TextBox();
             this.label69 = new System.Windows.Forms.Label();
-            this.gridControlRawMaterial = new DevExpress.XtraGrid.GridControl();
+            this.rawMaterialGridControl = new DevExpress.XtraGrid.GridControl();
+            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewRawMaterial = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRPId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRPCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,7 +85,8 @@
             this.groupBox18.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlRawMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,6 +317,7 @@
             // 
             // textBoxIRMCode
             // 
+            this.textBoxIRMCode.Enabled = false;
             this.textBoxIRMCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIRMCode.Location = new System.Drawing.Point(118, 41);
             this.textBoxIRMCode.Name = "textBoxIRMCode";
@@ -490,15 +494,20 @@
             this.label69.TabIndex = 19;
             this.label69.Text = "Product Code";
             // 
-            // gridControlRawMaterial
+            // rawMaterialGridControl
             // 
-            this.gridControlRawMaterial.Location = new System.Drawing.Point(390, 3);
-            this.gridControlRawMaterial.MainView = this.gridViewRawMaterial;
-            this.gridControlRawMaterial.Name = "gridControlRawMaterial";
-            this.gridControlRawMaterial.Size = new System.Drawing.Size(883, 615);
-            this.gridControlRawMaterial.TabIndex = 8;
-            this.gridControlRawMaterial.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.rawMaterialGridControl.DataSource = this.rawProductsBindingSource;
+            this.rawMaterialGridControl.Location = new System.Drawing.Point(390, 3);
+            this.rawMaterialGridControl.MainView = this.gridViewRawMaterial;
+            this.rawMaterialGridControl.Name = "rawMaterialGridControl";
+            this.rawMaterialGridControl.Size = new System.Drawing.Size(883, 615);
+            this.rawMaterialGridControl.TabIndex = 8;
+            this.rawMaterialGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRawMaterial});
+            // 
+            // rawProductsBindingSource
+            // 
+            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
             // 
             // gridViewRawMaterial
             // 
@@ -512,7 +521,7 @@
             this.colStock2,
             this.colBranch_BranchId4,
             this.colBranch4});
-            this.gridViewRawMaterial.GridControl = this.gridControlRawMaterial;
+            this.gridViewRawMaterial.GridControl = this.rawMaterialGridControl;
             this.gridViewRawMaterial.Name = "gridViewRawMaterial";
             this.gridViewRawMaterial.OptionsView.ShowGroupPanel = false;
             // 
@@ -594,7 +603,7 @@
             // RawMaterialControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.gridControlRawMaterial);
+            this.Controls.Add(this.rawMaterialGridControl);
             this.Controls.Add(this.groupBox21);
             this.Controls.Add(this.tabControl3);
             this.Name = "RawMaterialControl";
@@ -609,7 +618,8 @@
             this.tabPage5.ResumeLayout(false);
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlRawMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).EndInit();
             this.ResumeLayout(false);
 
@@ -655,7 +665,7 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.TextBox textBoxRMUCode;
         private System.Windows.Forms.Label label69;
-        private DevExpress.XtraGrid.GridControl gridControlRawMaterial;
+        private DevExpress.XtraGrid.GridControl rawMaterialGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewRawMaterial;
         private DevExpress.XtraGrid.Columns.GridColumn colRPId;
         private DevExpress.XtraGrid.Columns.GridColumn colRPCode;
@@ -666,5 +676,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colStock2;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId4;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch4;
+        private System.Windows.Forms.BindingSource rawProductsBindingSource;
     }
 }
