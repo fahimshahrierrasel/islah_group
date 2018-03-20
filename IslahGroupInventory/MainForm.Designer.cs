@@ -57,36 +57,9 @@
             this.tabPageCustomer = new System.Windows.Forms.TabPage();
             this.customersControl1 = new IslahGroupInventory.ViewControls.CustomersControl();
             this.tabPageSupplier = new System.Windows.Forms.TabPage();
+            this.suppliersControl1 = new IslahGroupInventory.ViewControls.SuppliersControl();
             this.tabPageBarcode = new System.Windows.Forms.TabPage();
-            this.gridControlBarcodeProductControl = new DevExpress.XtraGrid.GridControl();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridViewProductBarcode = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colProdId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdCode1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSellingPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colReOrderPoint1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscount1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStock1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory_Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch_BranchId3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.textBoxBCNumber = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.textBoxBPCode = new System.Windows.Forms.TextBox();
-            this.buttonPrintBarcode = new System.Windows.Forms.Button();
-            this.label51 = new System.Windows.Forms.Label();
-            this.comboBoxProductBarcodeCategory = new System.Windows.Forms.ComboBox();
-            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxBCSuffix = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.textBoxBPCCode = new System.Windows.Forms.TextBox();
+            this.barcodeControl1 = new IslahGroupInventory.ViewControls.BarcodeControl();
             this.tabPageWorker = new System.Windows.Forms.TabPage();
             this.groupBox28 = new System.Windows.Forms.GroupBox();
             this.label87 = new System.Windows.Forms.Label();
@@ -115,11 +88,12 @@
             this.tabPageUser = new System.Windows.Forms.TabPage();
             this.usersControl1 = new IslahGroupInventory.ViewControls.UsersControl();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourcePurchaseItem = new System.Windows.Forms.BindingSource(this.components);
-            this.suppliersControl1 = new IslahGroupInventory.ViewControls.SuppliersControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -133,11 +107,6 @@
             this.tabPageCustomer.SuspendLayout();
             this.tabPageSupplier.SuspendLayout();
             this.tabPageBarcode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcodeProductControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProductBarcode)).BeginInit();
-            this.groupBox16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             this.tabPageWorker.SuspendLayout();
             this.groupBox28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlWorker)).BeginInit();
@@ -148,6 +117,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewWorks)).BeginInit();
             this.groupBox32.SuspendLayout();
             this.tabPageUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
@@ -415,10 +386,17 @@
             this.tabPageSupplier.Text = "Suppliers";
             this.tabPageSupplier.UseVisualStyleBackColor = true;
             // 
+            // suppliersControl1
+            // 
+            this.suppliersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suppliersControl1.Location = new System.Drawing.Point(0, 0);
+            this.suppliersControl1.Name = "suppliersControl1";
+            this.suppliersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.suppliersControl1.TabIndex = 0;
+            // 
             // tabPageBarcode
             // 
-            this.tabPageBarcode.Controls.Add(this.gridControlBarcodeProductControl);
-            this.tabPageBarcode.Controls.Add(this.groupBox16);
+            this.tabPageBarcode.Controls.Add(this.barcodeControl1);
             this.tabPageBarcode.ImageKey = "barcode.png";
             this.tabPageBarcode.Location = new System.Drawing.Point(4, 39);
             this.tabPageBarcode.Name = "tabPageBarcode";
@@ -427,240 +405,14 @@
             this.tabPageBarcode.Text = "Barcode";
             this.tabPageBarcode.UseVisualStyleBackColor = true;
             // 
-            // gridControlBarcodeProductControl
+            // barcodeControl1
             // 
-            this.gridControlBarcodeProductControl.DataSource = this.productsBindingSource;
-            this.gridControlBarcodeProductControl.Location = new System.Drawing.Point(639, 3);
-            this.gridControlBarcodeProductControl.MainView = this.gridViewProductBarcode;
-            this.gridControlBarcodeProductControl.Name = "gridControlBarcodeProductControl";
-            this.gridControlBarcodeProductControl.Size = new System.Drawing.Size(634, 616);
-            this.gridControlBarcodeProductControl.TabIndex = 10;
-            this.gridControlBarcodeProductControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewProductBarcode});
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
-            // 
-            // gridViewProductBarcode
-            // 
-            this.gridViewProductBarcode.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colProdId1,
-            this.colProdCode1,
-            this.colProdName1,
-            this.colDescription1,
-            this.colSellingPrice1,
-            this.colReOrderPoint1,
-            this.colDiscount1,
-            this.colStock1,
-            this.colSubCategory_Name1,
-            this.colBranch_BranchId3,
-            this.colBranch3,
-            this.colSubCategory1});
-            this.gridViewProductBarcode.GridControl = this.gridControlBarcodeProductControl;
-            this.gridViewProductBarcode.Name = "gridViewProductBarcode";
-            // 
-            // colProdId1
-            // 
-            this.colProdId1.FieldName = "ProdId";
-            this.colProdId1.Name = "colProdId1";
-            // 
-            // colProdCode1
-            // 
-            this.colProdCode1.Caption = "Product Code";
-            this.colProdCode1.FieldName = "Product Code";
-            this.colProdCode1.Name = "colProdCode1";
-            this.colProdCode1.Visible = true;
-            this.colProdCode1.VisibleIndex = 0;
-            this.colProdCode1.Width = 147;
-            // 
-            // colProdName1
-            // 
-            this.colProdName1.Caption = "Product Name";
-            this.colProdName1.FieldName = "Product Name";
-            this.colProdName1.Name = "colProdName1";
-            this.colProdName1.Visible = true;
-            this.colProdName1.VisibleIndex = 1;
-            this.colProdName1.Width = 335;
-            // 
-            // colDescription1
-            // 
-            this.colDescription1.FieldName = "Description";
-            this.colDescription1.Name = "colDescription1";
-            // 
-            // colSellingPrice1
-            // 
-            this.colSellingPrice1.FieldName = "SellingPrice";
-            this.colSellingPrice1.Name = "colSellingPrice1";
-            // 
-            // colReOrderPoint1
-            // 
-            this.colReOrderPoint1.FieldName = "ReOrderPoint";
-            this.colReOrderPoint1.Name = "colReOrderPoint1";
-            // 
-            // colDiscount1
-            // 
-            this.colDiscount1.FieldName = "Discount";
-            this.colDiscount1.Name = "colDiscount1";
-            // 
-            // colStock1
-            // 
-            this.colStock1.FieldName = "Stock";
-            this.colStock1.Name = "colStock1";
-            // 
-            // colSubCategory_Name1
-            // 
-            this.colSubCategory_Name1.Caption = "Sub Category";
-            this.colSubCategory_Name1.FieldName = "Sub-Category";
-            this.colSubCategory_Name1.Name = "colSubCategory_Name1";
-            this.colSubCategory_Name1.Visible = true;
-            this.colSubCategory_Name1.VisibleIndex = 2;
-            this.colSubCategory_Name1.Width = 134;
-            // 
-            // colBranch_BranchId3
-            // 
-            this.colBranch_BranchId3.FieldName = "Branch_BranchId";
-            this.colBranch_BranchId3.Name = "colBranch_BranchId3";
-            // 
-            // colBranch3
-            // 
-            this.colBranch3.FieldName = "Branch";
-            this.colBranch3.Name = "colBranch3";
-            // 
-            // colSubCategory1
-            // 
-            this.colSubCategory1.FieldName = "SubCategory";
-            this.colSubCategory1.Name = "colSubCategory1";
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.label53);
-            this.groupBox16.Controls.Add(this.textBoxBCNumber);
-            this.groupBox16.Controls.Add(this.label52);
-            this.groupBox16.Controls.Add(this.label48);
-            this.groupBox16.Controls.Add(this.textBoxBPCode);
-            this.groupBox16.Controls.Add(this.buttonPrintBarcode);
-            this.groupBox16.Controls.Add(this.label51);
-            this.groupBox16.Controls.Add(this.comboBoxProductBarcodeCategory);
-            this.groupBox16.Controls.Add(this.textBoxBCSuffix);
-            this.groupBox16.Controls.Add(this.label49);
-            this.groupBox16.Controls.Add(this.label50);
-            this.groupBox16.Controls.Add(this.textBoxBPCCode);
-            this.groupBox16.Location = new System.Drawing.Point(77, 105);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(488, 353);
-            this.groupBox16.TabIndex = 9;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Barcode Generator";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(427, 229);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(36, 25);
-            this.label53.TabIndex = 11;
-            this.label53.Text = "x 3";
-            // 
-            // textBoxBCNumber
-            // 
-            this.textBoxBCNumber.Location = new System.Drawing.Point(231, 226);
-            this.textBoxBCNumber.Name = "textBoxBCNumber";
-            this.textBoxBCNumber.Size = new System.Drawing.Size(190, 33);
-            this.textBoxBCNumber.TabIndex = 10;
-            this.textBoxBCNumber.Text = "8";
-            this.textBoxBCNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(50, 229);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(177, 25);
-            this.label52.TabIndex = 9;
-            this.label52.Text = "Number of Barcode";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(70, 42);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(159, 25);
-            this.label48.TabIndex = 1;
-            this.label48.Text = "Product Category";
-            // 
-            // textBoxBPCode
-            // 
-            this.textBoxBPCode.Enabled = false;
-            this.textBoxBPCode.Location = new System.Drawing.Point(230, 180);
-            this.textBoxBPCode.Name = "textBoxBPCode";
-            this.textBoxBPCode.Size = new System.Drawing.Size(229, 33);
-            this.textBoxBPCode.TabIndex = 8;
-            // 
-            // buttonPrintBarcode
-            // 
-            this.buttonPrintBarcode.Location = new System.Drawing.Point(301, 281);
-            this.buttonPrintBarcode.Name = "buttonPrintBarcode";
-            this.buttonPrintBarcode.Size = new System.Drawing.Size(158, 45);
-            this.buttonPrintBarcode.TabIndex = 0;
-            this.buttonPrintBarcode.Text = "Print Preview";
-            this.buttonPrintBarcode.UseVisualStyleBackColor = true;
-            this.buttonPrintBarcode.Click += new System.EventHandler(this.buttonPrintBarcode_Click);
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(98, 183);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(127, 25);
-            this.label51.TabIndex = 7;
-            this.label51.Text = "Product Code";
-            // 
-            // comboBoxProductBarcodeCategory
-            // 
-            this.comboBoxProductBarcodeCategory.DataSource = this.productCategoryBindingSource;
-            this.comboBoxProductBarcodeCategory.DisplayMember = "Category_Code";
-            this.comboBoxProductBarcodeCategory.FormattingEnabled = true;
-            this.comboBoxProductBarcodeCategory.Location = new System.Drawing.Point(231, 39);
-            this.comboBoxProductBarcodeCategory.Name = "comboBoxProductBarcodeCategory";
-            this.comboBoxProductBarcodeCategory.Size = new System.Drawing.Size(228, 33);
-            this.comboBoxProductBarcodeCategory.TabIndex = 2;
-            this.comboBoxProductBarcodeCategory.SelectionChangeCommitted += new System.EventHandler(this.comboBoxProductBarcodeCategory_SelectionChangeCommitted);
-            // 
-            // textBoxBCSuffix
-            // 
-            this.textBoxBCSuffix.Location = new System.Drawing.Point(230, 135);
-            this.textBoxBCSuffix.MaxLength = 4;
-            this.textBoxBCSuffix.Name = "textBoxBCSuffix";
-            this.textBoxBCSuffix.Size = new System.Drawing.Size(229, 33);
-            this.textBoxBCSuffix.TabIndex = 6;
-            this.textBoxBCSuffix.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxBCSuffix_KeyUp);
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(19, 91);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(208, 25);
-            this.label49.TabIndex = 3;
-            this.label49.Text = "Product Category Code";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(48, 138);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(179, 25);
-            this.label50.TabIndex = 5;
-            this.label50.Text = "Product Code Suffix";
-            // 
-            // textBoxBPCCode
-            // 
-            this.textBoxBPCCode.Enabled = false;
-            this.textBoxBPCCode.Location = new System.Drawing.Point(230, 88);
-            this.textBoxBPCCode.Name = "textBoxBPCCode";
-            this.textBoxBPCCode.Size = new System.Drawing.Size(229, 33);
-            this.textBoxBPCCode.TabIndex = 4;
+            this.barcodeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.barcodeControl1.Location = new System.Drawing.Point(0, 0);
+            this.barcodeControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.barcodeControl1.Name = "barcodeControl1";
+            this.barcodeControl1.Size = new System.Drawing.Size(1276, 622);
+            this.barcodeControl1.TabIndex = 0;
             // 
             // tabPageWorker
             // 
@@ -976,6 +728,10 @@
             this.imageListTab.Images.SetKeyName(12, "hammer.png");
             this.imageListTab.Images.SetKeyName(13, "builder.png");
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
+            // 
             // suppliersBindingSource
             // 
             this.suppliersBindingSource.DataSource = typeof(IslahGroupInventory.Supplier);
@@ -987,14 +743,6 @@
             // rawProductsBindingSource
             // 
             this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
-            // 
-            // suppliersControl1
-            // 
-            this.suppliersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suppliersControl1.Location = new System.Drawing.Point(0, 0);
-            this.suppliersControl1.Name = "suppliersControl1";
-            this.suppliersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.suppliersControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -1025,12 +773,6 @@
             this.tabPageCustomer.ResumeLayout(false);
             this.tabPageSupplier.ResumeLayout(false);
             this.tabPageBarcode.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcodeProductControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProductBarcode)).EndInit();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
             this.tabPageWorker.ResumeLayout(false);
             this.groupBox28.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlWorker)).EndInit();
@@ -1043,6 +785,8 @@
             this.groupBox32.ResumeLayout(false);
             this.groupBox32.PerformLayout();
             this.tabPageUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
@@ -1079,33 +823,6 @@
         private System.Windows.Forms.BindingSource suppliersBindingSource;
         private System.Windows.Forms.BindingSource bindingSourcePurchaseItem;
         private System.Windows.Forms.TabPage tabPageBarcode;
-        private System.Windows.Forms.Button buttonPrintBarcode;
-        private DevExpress.XtraGrid.GridControl gridControlBarcodeProductControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProductBarcode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdCode1;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDescription1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice1;
-        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscount1;
-        private DevExpress.XtraGrid.Columns.GridColumn colStock1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name1;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId3;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch3;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory1;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBoxBPCode;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.ComboBox comboBoxProductBarcodeCategory;
-        private System.Windows.Forms.TextBox textBoxBCSuffix;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBoxBPCCode;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBoxBCNumber;
-        private System.Windows.Forms.Label label52;
         private System.Windows.Forms.TabPage tabPageRawMaterial;
         private System.Windows.Forms.TabPage tabPageProcessing;
         private System.Windows.Forms.BindingSource rawProductsBindingSource;
@@ -1146,6 +863,7 @@
         private ViewControls.VouchersControl vouchersControl1;
         private ViewControls.CustomersControl customersControl1;
         private ViewControls.SuppliersControl suppliersControl1;
+        private ViewControls.BarcodeControl barcodeControl1;
     }
 }
 
