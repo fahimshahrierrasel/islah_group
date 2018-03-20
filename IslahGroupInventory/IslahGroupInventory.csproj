@@ -162,6 +162,12 @@
     <Compile Include="ViewControls\WorkersControl.Designer.cs">
       <DependentUpon>WorkersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\WorksControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\WorksControl.Designer.cs">
+      <DependentUpon>WorksControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BarcodePrint.resx">
       <DependentUpon>BarcodePrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\WorkersControl.resx">
       <DependentUpon>WorkersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\WorksControl.resx">
+      <DependentUpon>WorksControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="InventoryDataClasses.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
