@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using IslahGroupInventory.ViewControls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,28 +19,18 @@ namespace IslahGroupInventory
 {
     public partial class MainForm : Form
     {
-        private int BRANCH_ID = 0;
-        private string BRANCH_CODE = "BRANCH0000";
-        private int USER_ID = 0;
-        private string USERNAME = "Username";
+        public static InventoryDataClassesDataContext dbContext;
 
-        InventoryDataClassesDataContext dbContext;
-
-        public MainForm(int userId, string aUsername, int branchId, string branchCode)
+        public MainForm()
         {
-            USER_ID = userId;
-            BRANCH_ID = branchId;
-            BRANCH_CODE = branchCode;
-            USERNAME = aUsername;
-
             dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            tsslUsername.Text = USERNAME;
-            tsslBranchCode.Text = BRANCH_CODE;
+            tsslUsername.Text = BranchInfo.Username;
+            tsslBranchCode.Text = BranchInfo.BranchCode;
             //LoadRawMaterialTabPage();
         }
 
@@ -48,7 +39,9 @@ namespace IslahGroupInventory
             TabPage selectedPage = tabControlMain.SelectedTab;
             if (selectedPage == tabPageRawMaterial)
             {
-                //LoadRawMaterialTabPage();
+                RawMaterialControl rmControl = new RawMaterialControl();
+                rmControl.Dock = DockStyle.Fill;
+                tabPageRawMaterial.Controls.Add(rmControl);
             }
             if (selectedPage == tabPageProducts)
             {

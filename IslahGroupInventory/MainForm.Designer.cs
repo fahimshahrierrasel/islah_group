@@ -41,7 +41,6 @@
             this.tsslBranchCode = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageRawMaterial = new System.Windows.Forms.TabPage();
-            this.rawMaterialControl1 = new IslahGroupInventory.ViewControls.RawMaterialControl();
             this.tabPageProcessing = new System.Windows.Forms.TabPage();
             this.processingControl1 = new IslahGroupInventory.ViewControls.ProcessingControl();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
@@ -63,20 +62,13 @@
             this.tabPageWorker = new System.Windows.Forms.TabPage();
             this.workersControl1 = new IslahGroupInventory.ViewControls.WorkersControl();
             this.tabPageWorks = new System.Windows.Forms.TabPage();
+            this.worksControl1 = new IslahGroupInventory.ViewControls.WorksControl();
             this.tabPageUser = new System.Windows.Forms.TabPage();
             this.usersControl1 = new IslahGroupInventory.ViewControls.UsersControl();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourcePurchaseItem = new System.Windows.Forms.BindingSource(this.components);
-            this.worksControl1 = new IslahGroupInventory.ViewControls.WorksControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
-            this.tabPageRawMaterial.SuspendLayout();
             this.tabPageProcessing.SuspendLayout();
             this.tabPageProducts.SuspendLayout();
             this.tabPageStocks.SuspendLayout();
@@ -89,12 +81,6 @@
             this.tabPageWorker.SuspendLayout();
             this.tabPageWorks.SuspendLayout();
             this.tabPageUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePurchaseItem)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -192,7 +178,6 @@
             // 
             // tabPageRawMaterial
             // 
-            this.tabPageRawMaterial.Controls.Add(this.rawMaterialControl1);
             this.tabPageRawMaterial.ImageKey = "raw.png";
             this.tabPageRawMaterial.Location = new System.Drawing.Point(4, 39);
             this.tabPageRawMaterial.Name = "tabPageRawMaterial";
@@ -200,15 +185,6 @@
             this.tabPageRawMaterial.TabIndex = 9;
             this.tabPageRawMaterial.Text = "Raw Material";
             this.tabPageRawMaterial.UseVisualStyleBackColor = true;
-            // 
-            // rawMaterialControl1
-            // 
-            this.rawMaterialControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rawMaterialControl1.Location = new System.Drawing.Point(0, 0);
-            this.rawMaterialControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.rawMaterialControl1.Name = "rawMaterialControl1";
-            this.rawMaterialControl1.Size = new System.Drawing.Size(1276, 622);
-            this.rawMaterialControl1.TabIndex = 0;
             // 
             // tabPageProcessing
             // 
@@ -416,6 +392,14 @@
             this.tabPageWorks.Text = "Works";
             this.tabPageWorks.UseVisualStyleBackColor = true;
             // 
+            // worksControl1
+            // 
+            this.worksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.worksControl1.Location = new System.Drawing.Point(0, 0);
+            this.worksControl1.Name = "worksControl1";
+            this.worksControl1.Size = new System.Drawing.Size(1276, 622);
+            this.worksControl1.TabIndex = 0;
+            // 
             // tabPageUser
             // 
             this.tabPageUser.Controls.Add(this.usersControl1);
@@ -455,30 +439,6 @@
             this.imageListTab.Images.SetKeyName(12, "hammer.png");
             this.imageListTab.Images.SetKeyName(13, "builder.png");
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
-            // 
-            // suppliersBindingSource
-            // 
-            this.suppliersBindingSource.DataSource = typeof(IslahGroupInventory.Supplier);
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
-            // 
-            // rawProductsBindingSource
-            // 
-            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
-            // 
-            // worksControl1
-            // 
-            this.worksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.worksControl1.Location = new System.Drawing.Point(0, 0);
-            this.worksControl1.Name = "worksControl1";
-            this.worksControl1.Size = new System.Drawing.Size(1276, 622);
-            this.worksControl1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -498,7 +458,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
-            this.tabPageRawMaterial.ResumeLayout(false);
             this.tabPageProcessing.ResumeLayout(false);
             this.tabPageProducts.ResumeLayout(false);
             this.tabPageStocks.ResumeLayout(false);
@@ -511,12 +470,6 @@
             this.tabPageWorker.ResumeLayout(false);
             this.tabPageWorks.ResumeLayout(false);
             this.tabPageUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productCategoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePurchaseItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,21 +496,12 @@
         private System.Windows.Forms.TabPage tabPageSupplier;
         private System.Windows.Forms.TabPage tabPageUser;
         private System.Windows.Forms.ImageList imageListTab;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private System.Windows.Forms.BindingSource productCategoryBindingSource;
-        private System.Windows.Forms.BindingSource customersBindingSource;
-        private System.Windows.Forms.BindingSource suppliersBindingSource;
-        private System.Windows.Forms.BindingSource bindingSourcePurchaseItem;
         private System.Windows.Forms.TabPage tabPageBarcode;
         private System.Windows.Forms.TabPage tabPageRawMaterial;
         private System.Windows.Forms.TabPage tabPageProcessing;
-        private System.Windows.Forms.BindingSource rawProductsBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn pTotalPrice;
-        private DevExpress.XtraGrid.Columns.GridColumn PPId;
         private System.Windows.Forms.TabPage tabPageWorker;
         private System.Windows.Forms.TabPage tabPageWorks;
         private ViewControls.UsersControl usersControl1;
-        private ViewControls.RawMaterialControl rawMaterialControl1;
         private ViewControls.ProcessingControl processingControl1;
         private ViewControls.ProductsControl productsControl1;
         private ViewControls.StocksControl stocksControl1;

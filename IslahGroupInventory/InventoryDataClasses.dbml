@@ -12,6 +12,7 @@
       <Association Name="Branch_IGUser" Member="IGUsers" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="IGUser" />
       <Association Name="Branch_Invoice" Member="Invoices" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Invoice" />
       <Association Name="Branch_Log" Member="Logs" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Log" />
+      <Association Name="Branch_Operator" Member="Operators" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Operator" />
       <Association Name="Branch_Processing" Member="Processings" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Processing" />
       <Association Name="Branch_Product" Member="Products" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Product" />
       <Association Name="Branch_Purchase" Member="Purchases" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Purchase" />
@@ -21,14 +22,10 @@
       <Association Name="Branch_Voucher" Member="Vouchers" ThisKey="BranchId" OtherKey="Branch_BranchId" Type="Voucher" />
     </Type>
   </Table>
-  <Table Name="dbo.VoucherItem" Member="VoucherItems">
-    <Type Name="VoucherItem">
-      <Column Name="VIIid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ItemName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Details" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Voucher_VoucId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Association Name="Voucher_VoucherItem" Member="Voucher" ThisKey="Voucher_VoucId" OtherKey="VoucId" Type="Voucher" IsForeignKey="true" />
+  <Table Name="dbo.WorkType" Member="WorkTypes">
+    <Type Name="WorkType">
+      <Column Name="Type" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="WorkType_OperatorWork" Member="OperatorWorks" ThisKey="Type" OtherKey="WorkType_Type" Type="OperatorWork" />
     </Type>
   </Table>
   <Table Name="dbo.Category" Member="Categories">
@@ -104,6 +101,28 @@
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Branch_Log" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
       <Association Name="IGUser_Log" Member="IGUser" ThisKey="IGUser_UserId" OtherKey="UserId" Type="IGUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operator" Member="Operators">
+    <Type Name="Operator">
+      <Column Name="OId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Field" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Operator_OperatorWork" Member="OperatorWorks" ThisKey="OId" OtherKey="Operator_OId" Type="OperatorWork" />
+      <Association Name="Branch_Operator" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OperatorWork" Member="OperatorWorks">
+    <Type Name="OperatorWork">
+      <Column Name="OWId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkType_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Operator_OId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Operator_OperatorWork" Member="Operator" ThisKey="Operator_OId" OtherKey="OId" Type="Operator" IsForeignKey="true" />
+      <Association Name="WorkType_OperatorWork" Member="WorkType" ThisKey="WorkType_Type" OtherKey="Type" Type="WorkType" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PaymentType" Member="PaymentTypes">
@@ -269,6 +288,16 @@
       <Column Name="Branch_BranchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Voucher_VoucherItem" Member="VoucherItems" ThisKey="VoucId" OtherKey="Voucher_VoucId" Type="VoucherItem" />
       <Association Name="Branch_Voucher" Member="Branch" ThisKey="Branch_BranchId" OtherKey="BranchId" Type="Branch" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VoucherItem" Member="VoucherItems">
+    <Type Name="VoucherItem">
+      <Column Name="VIIid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Voucher_VoucId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Voucher_VoucherItem" Member="Voucher" ThisKey="Voucher_VoucId" OtherKey="VoucId" Type="Voucher" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.GetNextCustomerCode" Method="GetNextCustomerCode">

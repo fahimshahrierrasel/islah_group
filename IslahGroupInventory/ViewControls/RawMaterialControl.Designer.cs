@@ -599,6 +599,7 @@
             this.Controls.Add(this.tabControl3);
             this.Name = "RawMaterialControl";
             this.Size = new System.Drawing.Size(1276, 622);
+            this.Load += new System.EventHandler(this.RawMaterialControl_Load);
             this.groupBox21.ResumeLayout(false);
             this.groupBox21.PerformLayout();
             this.tabControl3.ResumeLayout(false);

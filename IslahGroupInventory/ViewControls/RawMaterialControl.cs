@@ -19,6 +19,11 @@ namespace IslahGroupInventory.ViewControls
             InitializeComponent();
         }
 
+        private void RawMaterialControl_Load(object sender, EventArgs e)
+        {
+            Console.WriteLine("Raw Material Load");
+        }
+
         private void InitializeRawMaterialGridView()
         {
         }
@@ -97,5 +102,6 @@ namespace IslahGroupInventory.ViewControls
             dbContext.SubmitChanges();
             InitializeRawMaterialGridView();
         }
+
     }
 }

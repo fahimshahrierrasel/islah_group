@@ -71,6 +71,7 @@
     <Compile Include="BarcodePrint.Designer.cs">
       <DependentUpon>BarcodePrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="BranchInfo.cs" />
     <Compile Include="InventoryDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

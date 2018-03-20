@@ -33,9 +33,9 @@ namespace IslahGroupInventory
     partial void InsertBranch(Branch instance);
     partial void UpdateBranch(Branch instance);
     partial void DeleteBranch(Branch instance);
-    partial void InsertVoucherItem(VoucherItem instance);
-    partial void UpdateVoucherItem(VoucherItem instance);
-    partial void DeleteVoucherItem(VoucherItem instance);
+    partial void InsertWorkType(WorkType instance);
+    partial void UpdateWorkType(WorkType instance);
+    partial void DeleteWorkType(WorkType instance);
     partial void InsertCategory(Category instance);
     partial void UpdateCategory(Category instance);
     partial void DeleteCategory(Category instance);
@@ -54,6 +54,12 @@ namespace IslahGroupInventory
     partial void InsertLog(Log instance);
     partial void UpdateLog(Log instance);
     partial void DeleteLog(Log instance);
+    partial void InsertOperator(Operator instance);
+    partial void UpdateOperator(Operator instance);
+    partial void DeleteOperator(Operator instance);
+    partial void InsertOperatorWork(OperatorWork instance);
+    partial void UpdateOperatorWork(OperatorWork instance);
+    partial void DeleteOperatorWork(OperatorWork instance);
     partial void InsertPaymentType(PaymentType instance);
     partial void UpdatePaymentType(PaymentType instance);
     partial void DeletePaymentType(PaymentType instance);
@@ -96,6 +102,9 @@ namespace IslahGroupInventory
     partial void InsertVoucher(Voucher instance);
     partial void UpdateVoucher(Voucher instance);
     partial void DeleteVoucher(Voucher instance);
+    partial void InsertVoucherItem(VoucherItem instance);
+    partial void UpdateVoucherItem(VoucherItem instance);
+    partial void DeleteVoucherItem(VoucherItem instance);
     #endregion
 		
 		public InventoryDataClassesDataContext() : 
@@ -136,11 +145,11 @@ namespace IslahGroupInventory
 			}
 		}
 		
-		public System.Data.Linq.Table<VoucherItem> VoucherItems
+		public System.Data.Linq.Table<WorkType> WorkTypes
 		{
 			get
 			{
-				return this.GetTable<VoucherItem>();
+				return this.GetTable<WorkType>();
 			}
 		}
 		
@@ -189,6 +198,22 @@ namespace IslahGroupInventory
 			get
 			{
 				return this.GetTable<Log>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Operator> Operators
+		{
+			get
+			{
+				return this.GetTable<Operator>();
+			}
+		}
+		
+		public System.Data.Linq.Table<OperatorWork> OperatorWorks
+		{
+			get
+			{
+				return this.GetTable<OperatorWork>();
 			}
 		}
 		
@@ -304,6 +329,14 @@ namespace IslahGroupInventory
 			}
 		}
 		
+		public System.Data.Linq.Table<VoucherItem> VoucherItems
+		{
+			get
+			{
+				return this.GetTable<VoucherItem>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetNextCustomerCode")]
 		public int GetNextCustomerCode()
 		{
@@ -394,6 +427,8 @@ namespace IslahGroupInventory
 		
 		private EntitySet<Log> _Logs;
 		
+		private EntitySet<Operator> _Operators;
+		
 		private EntitySet<Processing> _Processings;
 		
 		private EntitySet<Product> _Products;
@@ -432,6 +467,7 @@ namespace IslahGroupInventory
 			this._IGUsers = new EntitySet<IGUser>(new Action<IGUser>(this.attach_IGUsers), new Action<IGUser>(this.detach_IGUsers));
 			this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
 			this._Logs = new EntitySet<Log>(new Action<Log>(this.attach_Logs), new Action<Log>(this.detach_Logs));
+			this._Operators = new EntitySet<Operator>(new Action<Operator>(this.attach_Operators), new Action<Operator>(this.detach_Operators));
 			this._Processings = new EntitySet<Processing>(new Action<Processing>(this.attach_Processings), new Action<Processing>(this.detach_Processings));
 			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			this._Purchases = new EntitySet<Purchase>(new Action<Purchase>(this.attach_Purchases), new Action<Purchase>(this.detach_Purchases));
@@ -614,6 +650,19 @@ namespace IslahGroupInventory
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_Operator", Storage="_Operators", ThisKey="BranchId", OtherKey="Branch_BranchId")]
+		public EntitySet<Operator> Operators
+		{
+			get
+			{
+				return this._Operators;
+			}
+			set
+			{
+				this._Operators.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_Processing", Storage="_Processings", ThisKey="BranchId", OtherKey="Branch_BranchId")]
 		public EntitySet<Processing> Processings
 		{
@@ -773,6 +822,18 @@ namespace IslahGroupInventory
 			entity.Branch = null;
 		}
 		
+		private void attach_Operators(Operator entity)
+		{
+			this.SendPropertyChanging();
+			entity.Branch = this;
+		}
+		
+		private void detach_Operators(Operator entity)
+		{
+			this.SendPropertyChanging();
+			entity.Branch = null;
+		}
+		
 		private void attach_Processings(Processing entity)
 		{
 			this.SendPropertyChanging();
@@ -858,181 +919,60 @@ namespace IslahGroupInventory
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VoucherItem")]
-	public partial class VoucherItem : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.WorkType")]
+	public partial class WorkType : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _VIIid;
+		private string _Type;
 		
-		private string _ItemName;
-		
-		private string _Details;
-		
-		private decimal _Amount;
-		
-		private long _Voucher_VoucId;
-		
-		private EntityRef<Voucher> _Voucher;
+		private EntitySet<OperatorWork> _OperatorWorks;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnVIIidChanging(int value);
-    partial void OnVIIidChanged();
-    partial void OnItemNameChanging(string value);
-    partial void OnItemNameChanged();
-    partial void OnDetailsChanging(string value);
-    partial void OnDetailsChanged();
-    partial void OnAmountChanging(decimal value);
-    partial void OnAmountChanged();
-    partial void OnVoucher_VoucIdChanging(long value);
-    partial void OnVoucher_VoucIdChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
     #endregion
 		
-		public VoucherItem()
+		public WorkType()
 		{
-			this._Voucher = default(EntityRef<Voucher>);
+			this._OperatorWorks = new EntitySet<OperatorWork>(new Action<OperatorWork>(this.attach_OperatorWorks), new Action<OperatorWork>(this.detach_OperatorWorks));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VIIid", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int VIIid
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Type
 		{
 			get
 			{
-				return this._VIIid;
+				return this._Type;
 			}
 			set
 			{
-				if ((this._VIIid != value))
+				if ((this._Type != value))
 				{
-					this.OnVIIidChanging(value);
+					this.OnTypeChanging(value);
 					this.SendPropertyChanging();
-					this._VIIid = value;
-					this.SendPropertyChanged("VIIid");
-					this.OnVIIidChanged();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string ItemName
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkType_OperatorWork", Storage="_OperatorWorks", ThisKey="Type", OtherKey="WorkType_Type")]
+		public EntitySet<OperatorWork> OperatorWorks
 		{
 			get
 			{
-				return this._ItemName;
+				return this._OperatorWorks;
 			}
 			set
 			{
-				if ((this._ItemName != value))
-				{
-					this.OnItemNameChanging(value);
-					this.SendPropertyChanging();
-					this._ItemName = value;
-					this.SendPropertyChanged("ItemName");
-					this.OnItemNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Details", DbType="VarChar(MAX)")]
-		public string Details
-		{
-			get
-			{
-				return this._Details;
-			}
-			set
-			{
-				if ((this._Details != value))
-				{
-					this.OnDetailsChanging(value);
-					this.SendPropertyChanging();
-					this._Details = value;
-					this.SendPropertyChanged("Details");
-					this.OnDetailsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Money NOT NULL")]
-		public decimal Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Voucher_VoucId", DbType="BigInt NOT NULL")]
-		public long Voucher_VoucId
-		{
-			get
-			{
-				return this._Voucher_VoucId;
-			}
-			set
-			{
-				if ((this._Voucher_VoucId != value))
-				{
-					if (this._Voucher.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnVoucher_VoucIdChanging(value);
-					this.SendPropertyChanging();
-					this._Voucher_VoucId = value;
-					this.SendPropertyChanged("Voucher_VoucId");
-					this.OnVoucher_VoucIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Voucher_VoucherItem", Storage="_Voucher", ThisKey="Voucher_VoucId", OtherKey="VoucId", IsForeignKey=true)]
-		public Voucher Voucher
-		{
-			get
-			{
-				return this._Voucher.Entity;
-			}
-			set
-			{
-				Voucher previousValue = this._Voucher.Entity;
-				if (((previousValue != value) 
-							|| (this._Voucher.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Voucher.Entity = null;
-						previousValue.VoucherItems.Remove(this);
-					}
-					this._Voucher.Entity = value;
-					if ((value != null))
-					{
-						value.VoucherItems.Add(this);
-						this._Voucher_VoucId = value.VoucId;
-					}
-					else
-					{
-						this._Voucher_VoucId = default(long);
-					}
-					this.SendPropertyChanged("Voucher");
-				}
+				this._OperatorWorks.Assign(value);
 			}
 		}
 		
@@ -1054,6 +994,18 @@ namespace IslahGroupInventory
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_OperatorWorks(OperatorWork entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkType = this;
+		}
+		
+		private void detach_OperatorWorks(OperatorWork entity)
+		{
+			this.SendPropertyChanging();
+			entity.WorkType = null;
 		}
 	}
 	
@@ -2674,6 +2626,473 @@ namespace IslahGroupInventory
 						this._IGUser_UserId = default(int);
 					}
 					this.SendPropertyChanged("IGUser");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Operator")]
+	public partial class Operator : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _OId;
+		
+		private string _Name;
+		
+		private string _Field;
+		
+		private bool _Active;
+		
+		private int _Branch_BranchId;
+		
+		private EntitySet<OperatorWork> _OperatorWorks;
+		
+		private EntityRef<Branch> _Branch;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOIdChanging(int value);
+    partial void OnOIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnFieldChanging(string value);
+    partial void OnFieldChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    partial void OnBranch_BranchIdChanging(int value);
+    partial void OnBranch_BranchIdChanged();
+    #endregion
+		
+		public Operator()
+		{
+			this._OperatorWorks = new EntitySet<OperatorWork>(new Action<OperatorWork>(this.attach_OperatorWorks), new Action<OperatorWork>(this.detach_OperatorWorks));
+			this._Branch = default(EntityRef<Branch>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int OId
+		{
+			get
+			{
+				return this._OId;
+			}
+			set
+			{
+				if ((this._OId != value))
+				{
+					this.OnOIdChanging(value);
+					this.SendPropertyChanging();
+					this._OId = value;
+					this.SendPropertyChanged("OId");
+					this.OnOIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Field", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string Field
+		{
+			get
+			{
+				return this._Field;
+			}
+			set
+			{
+				if ((this._Field != value))
+				{
+					this.OnFieldChanging(value);
+					this.SendPropertyChanging();
+					this._Field = value;
+					this.SendPropertyChanged("Field");
+					this.OnFieldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Branch_BranchId", DbType="Int NOT NULL")]
+		public int Branch_BranchId
+		{
+			get
+			{
+				return this._Branch_BranchId;
+			}
+			set
+			{
+				if ((this._Branch_BranchId != value))
+				{
+					if (this._Branch.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBranch_BranchIdChanging(value);
+					this.SendPropertyChanging();
+					this._Branch_BranchId = value;
+					this.SendPropertyChanged("Branch_BranchId");
+					this.OnBranch_BranchIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Operator_OperatorWork", Storage="_OperatorWorks", ThisKey="OId", OtherKey="Operator_OId")]
+		public EntitySet<OperatorWork> OperatorWorks
+		{
+			get
+			{
+				return this._OperatorWorks;
+			}
+			set
+			{
+				this._OperatorWorks.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Branch_Operator", Storage="_Branch", ThisKey="Branch_BranchId", OtherKey="BranchId", IsForeignKey=true)]
+		public Branch Branch
+		{
+			get
+			{
+				return this._Branch.Entity;
+			}
+			set
+			{
+				Branch previousValue = this._Branch.Entity;
+				if (((previousValue != value) 
+							|| (this._Branch.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Branch.Entity = null;
+						previousValue.Operators.Remove(this);
+					}
+					this._Branch.Entity = value;
+					if ((value != null))
+					{
+						value.Operators.Add(this);
+						this._Branch_BranchId = value.BranchId;
+					}
+					else
+					{
+						this._Branch_BranchId = default(int);
+					}
+					this.SendPropertyChanged("Branch");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_OperatorWorks(OperatorWork entity)
+		{
+			this.SendPropertyChanging();
+			entity.Operator = this;
+		}
+		
+		private void detach_OperatorWorks(OperatorWork entity)
+		{
+			this.SendPropertyChanging();
+			entity.Operator = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.OperatorWork")]
+	public partial class OperatorWork : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _OWId;
+		
+		private System.DateTime _Date;
+		
+		private int _Quantity;
+		
+		private string _WorkType_Type;
+		
+		private int _Operator_OId;
+		
+		private EntityRef<Operator> _Operator;
+		
+		private EntityRef<WorkType> _WorkType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOWIdChanging(long value);
+    partial void OnOWIdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnQuantityChanging(int value);
+    partial void OnQuantityChanged();
+    partial void OnWorkType_TypeChanging(string value);
+    partial void OnWorkType_TypeChanged();
+    partial void OnOperator_OIdChanging(int value);
+    partial void OnOperator_OIdChanged();
+    #endregion
+		
+		public OperatorWork()
+		{
+			this._Operator = default(EntityRef<Operator>);
+			this._WorkType = default(EntityRef<WorkType>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OWId", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long OWId
+		{
+			get
+			{
+				return this._OWId;
+			}
+			set
+			{
+				if ((this._OWId != value))
+				{
+					this.OnOWIdChanging(value);
+					this.SendPropertyChanging();
+					this._OWId = value;
+					this.SendPropertyChanged("OWId");
+					this.OnOWIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int NOT NULL")]
+		public int Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkType_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string WorkType_Type
+		{
+			get
+			{
+				return this._WorkType_Type;
+			}
+			set
+			{
+				if ((this._WorkType_Type != value))
+				{
+					if (this._WorkType.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnWorkType_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._WorkType_Type = value;
+					this.SendPropertyChanged("WorkType_Type");
+					this.OnWorkType_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operator_OId", DbType="Int NOT NULL")]
+		public int Operator_OId
+		{
+			get
+			{
+				return this._Operator_OId;
+			}
+			set
+			{
+				if ((this._Operator_OId != value))
+				{
+					if (this._Operator.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnOperator_OIdChanging(value);
+					this.SendPropertyChanging();
+					this._Operator_OId = value;
+					this.SendPropertyChanged("Operator_OId");
+					this.OnOperator_OIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Operator_OperatorWork", Storage="_Operator", ThisKey="Operator_OId", OtherKey="OId", IsForeignKey=true)]
+		public Operator Operator
+		{
+			get
+			{
+				return this._Operator.Entity;
+			}
+			set
+			{
+				Operator previousValue = this._Operator.Entity;
+				if (((previousValue != value) 
+							|| (this._Operator.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Operator.Entity = null;
+						previousValue.OperatorWorks.Remove(this);
+					}
+					this._Operator.Entity = value;
+					if ((value != null))
+					{
+						value.OperatorWorks.Add(this);
+						this._Operator_OId = value.OId;
+					}
+					else
+					{
+						this._Operator_OId = default(int);
+					}
+					this.SendPropertyChanged("Operator");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="WorkType_OperatorWork", Storage="_WorkType", ThisKey="WorkType_Type", OtherKey="Type", IsForeignKey=true)]
+		public WorkType WorkType
+		{
+			get
+			{
+				return this._WorkType.Entity;
+			}
+			set
+			{
+				WorkType previousValue = this._WorkType.Entity;
+				if (((previousValue != value) 
+							|| (this._WorkType.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._WorkType.Entity = null;
+						previousValue.OperatorWorks.Remove(this);
+					}
+					this._WorkType.Entity = value;
+					if ((value != null))
+					{
+						value.OperatorWorks.Add(this);
+						this._WorkType_Type = value.Type;
+					}
+					else
+					{
+						this._WorkType_Type = default(string);
+					}
+					this.SendPropertyChanged("WorkType");
 				}
 			}
 		}
@@ -6181,6 +6600,205 @@ namespace IslahGroupInventory
 		{
 			this.SendPropertyChanging();
 			entity.Voucher = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VoucherItem")]
+	public partial class VoucherItem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _VIIid;
+		
+		private string _ItemName;
+		
+		private string _Details;
+		
+		private decimal _Amount;
+		
+		private long _Voucher_VoucId;
+		
+		private EntityRef<Voucher> _Voucher;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnVIIidChanging(int value);
+    partial void OnVIIidChanged();
+    partial void OnItemNameChanging(string value);
+    partial void OnItemNameChanged();
+    partial void OnDetailsChanging(string value);
+    partial void OnDetailsChanged();
+    partial void OnAmountChanging(decimal value);
+    partial void OnAmountChanged();
+    partial void OnVoucher_VoucIdChanging(long value);
+    partial void OnVoucher_VoucIdChanged();
+    #endregion
+		
+		public VoucherItem()
+		{
+			this._Voucher = default(EntityRef<Voucher>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VIIid", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int VIIid
+		{
+			get
+			{
+				return this._VIIid;
+			}
+			set
+			{
+				if ((this._VIIid != value))
+				{
+					this.OnVIIidChanging(value);
+					this.SendPropertyChanging();
+					this._VIIid = value;
+					this.SendPropertyChanged("VIIid");
+					this.OnVIIidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this.OnItemNameChanging(value);
+					this.SendPropertyChanging();
+					this._ItemName = value;
+					this.SendPropertyChanged("ItemName");
+					this.OnItemNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Details", DbType="VarChar(MAX)")]
+		public string Details
+		{
+			get
+			{
+				return this._Details;
+			}
+			set
+			{
+				if ((this._Details != value))
+				{
+					this.OnDetailsChanging(value);
+					this.SendPropertyChanging();
+					this._Details = value;
+					this.SendPropertyChanged("Details");
+					this.OnDetailsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Money NOT NULL")]
+		public decimal Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Voucher_VoucId", DbType="BigInt NOT NULL")]
+		public long Voucher_VoucId
+		{
+			get
+			{
+				return this._Voucher_VoucId;
+			}
+			set
+			{
+				if ((this._Voucher_VoucId != value))
+				{
+					if (this._Voucher.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnVoucher_VoucIdChanging(value);
+					this.SendPropertyChanging();
+					this._Voucher_VoucId = value;
+					this.SendPropertyChanged("Voucher_VoucId");
+					this.OnVoucher_VoucIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Voucher_VoucherItem", Storage="_Voucher", ThisKey="Voucher_VoucId", OtherKey="VoucId", IsForeignKey=true)]
+		public Voucher Voucher
+		{
+			get
+			{
+				return this._Voucher.Entity;
+			}
+			set
+			{
+				Voucher previousValue = this._Voucher.Entity;
+				if (((previousValue != value) 
+							|| (this._Voucher.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Voucher.Entity = null;
+						previousValue.VoucherItems.Remove(this);
+					}
+					this._Voucher.Entity = value;
+					if ((value != null))
+					{
+						value.VoucherItems.Add(this);
+						this._Voucher_VoucId = value.VoucId;
+					}
+					else
+					{
+						this._Voucher_VoucId = default(long);
+					}
+					this.SendPropertyChanged("Voucher");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

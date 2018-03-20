@@ -42,7 +42,8 @@ namespace IslahGroupInventory
 
             if(iGUser != null)
             {
-                var mainForm = new MainForm(iGUser.UserId, iGUser.AUsername, branchId, branchCode);
+                var mainForm = new MainForm();
+                BranchInfo.SetBranchInfo(branchId, branchCode, iGUser.UserId, iGUser.AUsername);
                 mainForm.Show();
                 Close();
             }
