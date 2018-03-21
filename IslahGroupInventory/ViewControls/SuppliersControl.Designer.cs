@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.labelTotalSuppliers = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -47,6 +48,7 @@
             this.textBoxISCode = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.gridControlSuppliers = new DevExpress.XtraGrid.GridControl();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewSuppliers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSuppId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSuppCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,6 +63,7 @@
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSuppliers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,9 +71,9 @@
             // 
             this.groupBox11.Controls.Add(this.labelTotalSuppliers);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(9, 15);
+            this.groupBox11.Location = new System.Drawing.Point(8, 8);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(357, 148);
+            this.groupBox11.Size = new System.Drawing.Size(358, 155);
             this.groupBox11.TabIndex = 11;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Total Suppliers";
@@ -81,7 +84,7 @@
             this.labelTotalSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalSuppliers.Location = new System.Drawing.Point(3, 25);
             this.labelTotalSuppliers.Name = "labelTotalSuppliers";
-            this.labelTotalSuppliers.Size = new System.Drawing.Size(351, 120);
+            this.labelTotalSuppliers.Size = new System.Drawing.Size(352, 127);
             this.labelTotalSuppliers.TabIndex = 0;
             this.labelTotalSuppliers.Text = "00";
             this.labelTotalSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -104,9 +107,9 @@
             this.groupBox12.Controls.Add(this.textBoxISCode);
             this.groupBox12.Controls.Add(this.label36);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(9, 178);
+            this.groupBox12.Location = new System.Drawing.Point(8, 178);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(357, 428);
+            this.groupBox12.Size = new System.Drawing.Size(358, 436);
             this.groupBox12.TabIndex = 10;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Add Supplier";
@@ -148,7 +151,7 @@
             this.buttonAddSupplier.TabIndex = 35;
             this.buttonAddSupplier.Text = "Add";
             this.buttonAddSupplier.UseVisualStyleBackColor = true;
-            this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
+            this.buttonAddSupplier.Click += new System.EventHandler(this.ButtonAddSupplier_Click);
             // 
             // label28
             // 
@@ -235,6 +238,7 @@
             // 
             // textBoxISCode
             // 
+            this.textBoxISCode.Enabled = false;
             this.textBoxISCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxISCode.Location = new System.Drawing.Point(100, 41);
             this.textBoxISCode.Name = "textBoxISCode";
@@ -253,16 +257,21 @@
             // 
             // gridControlSuppliers
             // 
+            this.gridControlSuppliers.DataSource = this.suppliersBindingSource;
             this.gridControlSuppliers.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlSuppliers.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlSuppliers.Location = new System.Drawing.Point(372, 3);
+            this.gridControlSuppliers.Location = new System.Drawing.Point(372, 8);
             this.gridControlSuppliers.MainView = this.gridViewSuppliers;
             this.gridControlSuppliers.Name = "gridControlSuppliers";
-            this.gridControlSuppliers.Size = new System.Drawing.Size(901, 616);
+            this.gridControlSuppliers.Size = new System.Drawing.Size(896, 606);
             this.gridControlSuppliers.TabIndex = 12;
             this.gridControlSuppliers.UseEmbeddedNavigator = true;
             this.gridControlSuppliers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSuppliers});
+            // 
+            // suppliersBindingSource
+            // 
+            this.suppliersBindingSource.DataSource = typeof(IslahGroupInventory.Supplier);
             // 
             // gridViewSuppliers
             // 
@@ -281,7 +290,7 @@
             this.gridViewSuppliers.Name = "gridViewSuppliers";
             this.gridViewSuppliers.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
             this.gridViewSuppliers.OptionsEditForm.EditFormColumnCount = 2;
-            this.gridViewSuppliers.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewSuppliers_ValidateRow);
+            this.gridViewSuppliers.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.GridViewSuppliers_ValidateRow);
             // 
             // colSuppId
             // 
@@ -354,12 +363,14 @@
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.groupBox12);
             this.Name = "SuppliersControl";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.SuppliersControl_Load);
             this.groupBox11.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSuppliers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSuppliers)).EndInit();
             this.ResumeLayout(false);
 
@@ -397,5 +408,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark1;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId2;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch2;
+        private System.Windows.Forms.BindingSource suppliersBindingSource;
     }
 }

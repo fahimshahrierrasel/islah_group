@@ -24,6 +24,13 @@ namespace IslahGroupInventory.ViewControls
         private void SuppliersControl_Load(object sender, EventArgs e)
         {
             LoadTotalSupplierCounter();
+            LoadSupplierGridView();
+            SetNextSupplierCode();
+        }
+
+        private void SetNextSupplierCode()
+        {
+            textBoxISCode.Text = String.Format("SUPPL{0:D5}", dbContext.GetNextSupplierCode());
         }
 
         private void LoadTotalSupplierCounter()
@@ -32,7 +39,16 @@ namespace IslahGroupInventory.ViewControls
             labelTotalSuppliers.Text = totalSuppliers.ToString();
         }
 
-        private void buttonAddSupplier_Click(object sender, EventArgs e)
+        private void LoadSupplierGridView()
+        {
+            var suppliers = from supplier in dbContext.Suppliers
+                            where supplier.Branch_BranchId == BranchInfo.BranchId
+                            select supplier;
+            suppliersBindingSource.DataSource = suppliers;
+            gridControlSuppliers.RefreshDataSource();
+        }
+
+        private void ButtonAddSupplier_Click(object sender, EventArgs e)
         {
             // TODO: Add Supplier Validation
 
@@ -45,14 +61,14 @@ namespace IslahGroupInventory.ViewControls
                 ContactNo = textBoxISContactNo.Text,
                 Email = textBoxISEmail.Text,
                 Remark = textBoxISRemarks.Text,
-                Branch_BranchId = 2
+                Branch_BranchId = BranchInfo.BranchId
             });
             dbContext.SubmitChanges();
-
-            
+            LoadSupplierGridView();
+            SetNextSupplierCode();
         }
 
-        private void gridViewSuppliers_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        private void GridViewSuppliers_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
             var row = view.GetRow(e.RowHandle);
@@ -69,6 +85,7 @@ namespace IslahGroupInventory.ViewControls
             supplier.Remark = rowSupplier.Remark;
 
             dbContext.SubmitChanges();
+            LoadSupplierGridView();
         }
 
     }

@@ -20,12 +20,16 @@ namespace IslahGroupInventory.ViewControls
 
         public PurchasesControl()
         {
+            dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
         }
 
         private void PurchasesControl_Load(object sender, EventArgs e)
         {
             InitializePurchaseItemGridView();
+            InitializeSupplierComboBox();
+            InitializePaymentComboBox();
+            SetNextPurchaseCode();
         }
 
         private void InitializePurchaseItemGridView()
@@ -38,22 +42,37 @@ namespace IslahGroupInventory.ViewControls
             gridControlPurchaseItems.DataSource = purchaseItems;
         }
 
+        private void SetNextPurchaseCode()
+        {
+            textBoxPurchaseCode.Text = String.Format("PURCH{0:D5}", dbContext.GetNextSupplierCode());
+        }
+
         private void InitializeSupplierComboBox()
         {
-            //suppliersBindingSource.DataSource = new InventoryDataClassesDataContext().Suppliers;
-            //comboBoxPSupplier.DataSource = suppliersBindingSource;
+            var suppliers = from supplier in dbContext.Suppliers
+                            where supplier.Branch_BranchId == BranchInfo.BranchId
+                            select new { supplier.SuppName, supplier.SuppId };
+            comboBoxPSupplier.DataSource = suppliers;
             comboBoxPSupplier.DisplayMember = "SuppName";
             comboBoxPSupplier.ValueMember = "SuppId";
         }
 
-        private void buttonAddPurchaseProduct_Click(object sender, EventArgs e)
+        private void InitializePaymentComboBox()
+        {
+            var paymentType = from payType in dbContext.PaymentTypes
+                              select payType.PType;
+
+            comboBoxPaymentType.DataSource = paymentType;
+            comboBoxPaymentType.DisplayMember = "PType";
+            comboBoxPaymentType.ValueMember = "PType";
+        }
+
+        private void ButtonAddPurchaseProduct_Click(object sender, EventArgs e)
         {
             string pName = textBoxPPName.Text;
-            //int.TryParse(textBoxPPQuantity.Text, out int quantity);
             if (Decimal.TryParse(textBoxPPUPrice.Text, out decimal price) &
                 int.TryParse(textBoxPPQuantity.Text, out int quantity))
             {
-
                 DataRow dr = purchaseItems.NewRow();
                 dr[0] = pName;
                 dr[1] = price;
@@ -69,7 +88,7 @@ namespace IslahGroupInventory.ViewControls
 
         }
 
-        private void gridViewPurchaseItem_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        private void GridViewPurchaseItem_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             GridView view = sender as GridView;
             var row = view.GetRow(e.RowHandle);
@@ -89,7 +108,7 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
-        private void gridViewPurchaseItem_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
+        private void GridViewPurchaseItem_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
         {
             GridSummaryItem summary = e.Info.SummaryItem;
             // Obtain the total summary's value. 
@@ -100,23 +119,60 @@ namespace IslahGroupInventory.ViewControls
             textBoxPDue.Text = String.Format("{0:#.##}", due);
         }
 
-        private void buttonPSubmit_Click(object sender, EventArgs e)
+        private void ButtonPSubmit_Click(object sender, EventArgs e)
         {
+            string pCode = textBoxPurchaseCode.Text;
+            DateTime pDate = dtpPurchaseTime.Value;
+            int supplierId = Convert.ToInt32(comboBoxPSupplier.SelectedValue);
+            string paymentType = comboBoxPaymentType.SelectedValue.ToString();
+            DateTime payDate = dtpPaymentDate.Value;
+            string purchaser = textBoxPurchaser.Text;
+            decimal.TryParse(textBoxPTotal.Text, out decimal totalAmount);
+            decimal.TryParse(textBoxPAmount.Text, out decimal paidAmount);
+            decimal.TryParse(textBoxPDue.Text, out decimal due);
+
+            Purchase purchase = new Purchase()
+            {
+                PurcCode = pCode,
+                PurcDate = pDate,
+                Supplier_SuppId = supplierId,
+                PaymentType_PType = paymentType,
+                PaymentDate = payDate,
+                Purchaser = purchaser,
+                Amount = paidAmount,
+                Due = due,
+                Branch_BranchId = BranchInfo.BranchId
+            };
+
+            dbContext.Purchases.InsertOnSubmit(purchase);
+            dbContext.SubmitChanges();
+
+            List<PurchaseItem> items = new List<PurchaseItem>();
+
             foreach (DataRow item in purchaseItems.Rows)
             {
-                Console.WriteLine(item[1]);
+                PurchaseItem pItem = new PurchaseItem()
+                {
+                    ItemName = item[0].ToString(),
+                    UnitPrice = Convert.ToDecimal(item[1]),
+                    Quantity = Convert.ToInt32(item[2]),
+                    Price = Convert.ToDecimal(item[3].ToString().Replace("$", String.Empty).Replace(",", String.Empty)),
+                    Purchase_PurcId = purchase.PurcId
+                };
+                items.Add(pItem);
             }
+            dbContext.PurchaseItems.InsertAllOnSubmit(items);
+            dbContext.SubmitChanges();
+            SetNextPurchaseCode();
         }
 
-        private void textBoxPAmount_TextChanged(object sender, EventArgs e)
+        private void TextBoxPAmount_TextChanged(object sender, EventArgs e)
         {
             decimal.TryParse(textBoxPTotal.Text, out decimal total);
             decimal.TryParse(textBoxPAmount.Text, out decimal amount);
             //decimal.TryParse(textBoxPDue.Text, out decimal due);
             textBoxPDue.Text = String.Format("{0:#.##}", (total - amount));
         }
-
-
-        // Purchase Tab Method End
+        
     }
 }
