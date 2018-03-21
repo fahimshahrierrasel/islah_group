@@ -16,7 +16,7 @@ namespace IslahGroupInventory.ViewControls
         InventoryDataClassesDataContext dbContext;
         public ProductsControl()
         {
-            dbContext = MainForm.dbContext;
+            dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
         }
         private void ProductsControl_Load(object sender, EventArgs e)

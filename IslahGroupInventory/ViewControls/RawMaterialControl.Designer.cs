@@ -68,7 +68,6 @@
             this.textBoxRMUCode = new System.Windows.Forms.TextBox();
             this.label69 = new System.Windows.Forms.Label();
             this.rawMaterialGridControl = new DevExpress.XtraGrid.GridControl();
-            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewRawMaterial = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRPId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRPCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,6 +78,7 @@
             this.colStock2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch_BranchId4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox21.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -86,8 +86,8 @@
             this.tabPage5.SuspendLayout();
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox21
@@ -505,10 +505,6 @@
             this.rawMaterialGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRawMaterial});
             // 
-            // rawProductsBindingSource
-            // 
-            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
-            // 
             // gridViewRawMaterial
             // 
             this.gridViewRawMaterial.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -600,6 +596,10 @@
             this.colBranch4.FieldName = "Branch";
             this.colBranch4.Name = "colBranch4";
             // 
+            // rawProductsBindingSource
+            // 
+            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
+            // 
             // RawMaterialControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -619,8 +619,8 @@
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
