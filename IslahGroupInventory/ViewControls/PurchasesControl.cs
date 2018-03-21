@@ -32,6 +32,21 @@ namespace IslahGroupInventory.ViewControls
             SetNextPurchaseCode();
         }
 
+        private void TabControlPurchases_Selected(object sender, TabControlEventArgs e)
+        {
+            if(tabControlPurchases.SelectedTab == tabPagePurchaseList)
+            {
+                LoadPurchasesList();
+            }
+        }
+
+        private void LoadPurchasesList()
+        {
+            purchasesBindingSource.DataSource = new InventoryDataClassesDataContext().Purchases
+                .Where(p => p.Branch_BranchId == BranchInfo.BranchId);
+            gridControlPurchases.RefreshDataSource();
+        }
+
         private void InitializePurchaseItemGridView()
         {
             purchaseItems = new DataTable();
@@ -173,6 +188,5 @@ namespace IslahGroupInventory.ViewControls
             //decimal.TryParse(textBoxPDue.Text, out decimal due);
             textBoxPDue.Text = String.Format("{0:#.##}", (total - amount));
         }
-        
     }
 }
