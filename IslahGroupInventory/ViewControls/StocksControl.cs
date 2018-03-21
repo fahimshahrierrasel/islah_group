@@ -21,7 +21,18 @@ namespace IslahGroupInventory.ViewControls
 
         private void StocksControl_Load(object sender, EventArgs e)
         {
+            LoadStockProductGridView();
             LoadTotalProductCounter();
+        }
+
+        private void LoadStockProductGridView()
+        {
+            var products = from product in dbContext.Products
+                           where product.Branch_BranchId == BranchInfo.BranchId
+                           select product; ;
+
+            productsBindingSource.DataSource = products;
+            gridControlStockProductList.RefreshDataSource();
         }
 
         private void LoadTotalProductCounter()
@@ -30,5 +41,46 @@ namespace IslahGroupInventory.ViewControls
             labelTotalProduct.Text = totalProduct.ToString();
         }
 
+        private void ButtonLoadStock_Click(object sender, EventArgs e)
+        {
+            string productCode = tbsProductCode.Text;
+            var product = dbContext.Products.SingleOrDefault(p => p.ProdCode == productCode);
+            if (product != null)
+            {
+                tbsCurrentStock.Text = product.Stock.ToString();
+                ButtonAddStock.Enabled = true;
+            }
+        }
+
+        private void ButtonAddStock_Click(object sender, EventArgs e)
+        {
+            string productCode = tbsProductCode.Text;
+            var product = dbContext.Products.SingleOrDefault(p => p.ProdCode == productCode);
+            Int32.TryParse(tbsAddStock.Text, out int numberOfAddItem);
+            product.Stock = Convert.ToInt32(tbsCurrentStock.Text) + numberOfAddItem;
+            dbContext.SubmitChanges();
+            LoadStockProductGridView();
+        }
+
+        private void ButtonUpdateLoadStock_Click(object sender, EventArgs e)
+        {
+            string productCode = tbusProductCode.Text;
+            var product = dbContext.Products.SingleOrDefault(p => p.ProdCode == productCode);
+            if (product != null)
+            {
+                tbusCurrentStock.Text = product.Stock.ToString();
+                ButtonUpdateStock.Enabled = true;
+            }
+        }
+
+        private void ButtonUpdateStock_Click(object sender, EventArgs e)
+        {
+            string productCode = tbusProductCode.Text;
+            var product = dbContext.Products.SingleOrDefault(p => p.ProdCode == productCode);
+            Int32.TryParse(tbusNewStock.Text, out int numberOfItem);
+            product.Stock = numberOfItem;
+            dbContext.SubmitChanges();
+            LoadStockProductGridView();
+        }
     }
 }
