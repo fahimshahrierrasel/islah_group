@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBoxAddProduct = new System.Windows.Forms.GroupBox();
-            this.buttonAddCategory = new System.Windows.Forms.Button();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.textBoxStock = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonUPLoad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonUpdateProduct = new System.Windows.Forms.Button();
             this.textBoxUPStock = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.textBoxDPCode = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,6 +97,7 @@
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +126,6 @@
             // 
             // groupBoxAddProduct
             // 
-            this.groupBoxAddProduct.Controls.Add(this.buttonAddCategory);
             this.groupBoxAddProduct.Controls.Add(this.buttonAddProduct);
             this.groupBoxAddProduct.Controls.Add(this.textBoxStock);
             this.groupBoxAddProduct.Controls.Add(this.label8);
@@ -150,17 +150,6 @@
             this.groupBoxAddProduct.TabStop = false;
             this.groupBoxAddProduct.Text = "Add Product";
             // 
-            // buttonAddCategory
-            // 
-            this.buttonAddCategory.AutoSize = true;
-            this.buttonAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCategory.Location = new System.Drawing.Point(316, 192);
-            this.buttonAddCategory.Name = "buttonAddCategory";
-            this.buttonAddCategory.Size = new System.Drawing.Size(29, 30);
-            this.buttonAddCategory.TabIndex = 36;
-            this.buttonAddCategory.Text = "+";
-            this.buttonAddCategory.UseVisualStyleBackColor = true;
-            // 
             // buttonAddProduct
             // 
             this.buttonAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,7 +160,7 @@
             this.buttonAddProduct.TabIndex = 35;
             this.buttonAddProduct.Text = "Add";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
-            this.buttonAddProduct.Click += new System.EventHandler(this.buttonAddProduct_Click);
+            this.buttonAddProduct.Click += new System.EventHandler(this.ButtonAddProduct_Click);
             // 
             // textBoxStock
             // 
@@ -252,7 +241,7 @@
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(118, 194);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(192, 28);
+            this.comboBoxCategory.Size = new System.Drawing.Size(232, 28);
             this.comboBoxCategory.TabIndex = 26;
             this.comboBoxCategory.ValueMember = "Name";
             // 
@@ -328,7 +317,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(373, 582);
+            this.tabPage2.Size = new System.Drawing.Size(373, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Update";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -336,7 +325,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonUPLoad);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.buttonUpdateProduct);
             this.groupBox1.Controls.Add(this.textBoxUPStock);
             this.groupBox1.Controls.Add(this.label9);
@@ -372,19 +360,7 @@
             this.buttonUPLoad.TabIndex = 37;
             this.buttonUPLoad.Text = "Load";
             this.buttonUPLoad.UseVisualStyleBackColor = true;
-            this.buttonUPLoad.Click += new System.EventHandler(this.buttonUPLoad_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(316, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 30);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonUPLoad.Click += new System.EventHandler(this.ButtonUPLoad_Click);
             // 
             // buttonUpdateProduct
             // 
@@ -398,7 +374,7 @@
             this.buttonUpdateProduct.TabIndex = 35;
             this.buttonUpdateProduct.Text = "Update";
             this.buttonUpdateProduct.UseVisualStyleBackColor = true;
-            this.buttonUpdateProduct.Click += new System.EventHandler(this.buttonUpdateProduct_Click);
+            this.buttonUpdateProduct.Click += new System.EventHandler(this.ButtonUpdateProduct_Click);
             // 
             // textBoxUPStock
             // 
@@ -507,7 +483,7 @@
             this.comboBoxUPCategory.FormattingEnabled = true;
             this.comboBoxUPCategory.Location = new System.Drawing.Point(118, 229);
             this.comboBoxUPCategory.Name = "comboBoxUPCategory";
-            this.comboBoxUPCategory.Size = new System.Drawing.Size(192, 28);
+            this.comboBoxUPCategory.Size = new System.Drawing.Size(232, 28);
             this.comboBoxUPCategory.TabIndex = 26;
             this.comboBoxUPCategory.ValueMember = "Name";
             // 
@@ -602,7 +578,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 33);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(373, 582);
+            this.tabPage3.Size = new System.Drawing.Size(373, 578);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -657,6 +633,7 @@
             // 
             // gridControlProducts
             // 
+            this.gridControlProducts.DataSource = this.productsBindingSource;
             this.gridControlProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlProducts.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControlProducts.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -671,6 +648,10 @@
             this.gridControlProducts.UseEmbeddedNavigator = true;
             this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewProducts});
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
             // 
             // gridViewProducts
             // 
@@ -793,6 +774,7 @@
             this.Controls.Add(this.tabControl2);
             this.Name = "ProductsControl";
             this.Size = new System.Drawing.Size(1276, 622);
+            this.Load += new System.EventHandler(this.ProductsControl_Load);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddProduct.ResumeLayout(false);
@@ -804,6 +786,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.ResumeLayout(false);
 
@@ -813,7 +796,6 @@
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBoxAddProduct;
-        private System.Windows.Forms.Button buttonAddCategory;
         private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.TextBox textBoxStock;
         private System.Windows.Forms.Label label8;
@@ -834,7 +816,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonUPLoad;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonUpdateProduct;
         private System.Windows.Forms.TextBox textBoxUPStock;
         private System.Windows.Forms.Label label9;
@@ -871,5 +852,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
+        private System.Windows.Forms.BindingSource productsBindingSource;
     }
 }
