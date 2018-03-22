@@ -28,20 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridControlBarcodeProductControl = new DevExpress.XtraGrid.GridControl();
-            this.gridViewProductBarcode = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colProdId1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdCode1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProdName1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSellingPrice1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colReOrderPoint1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDiscount1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStock1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory_Name1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch_BranchId3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colBranch3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSubCategory1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.components = new System.ComponentModel.Container();
+            this.subCategoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.label53 = new System.Windows.Forms.Label();
             this.textBoxBCNumber = new System.Windows.Forms.TextBox();
@@ -55,110 +44,35 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.textBoxBPCCode = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcodeProductControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProductBarcode)).BeginInit();
+            this.gridControlProducts = new DevExpress.XtraGrid.GridControl();
+            this.gridViewProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colProdId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProdName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colActive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSellingPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colReOrderPoint = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiscount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStock = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory_Name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.subCategoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.groupBox16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControlBarcodeProductControl
+            // subCategoriesBindingSource
             // 
-            this.gridControlBarcodeProductControl.Location = new System.Drawing.Point(464, 3);
-            this.gridControlBarcodeProductControl.MainView = this.gridViewProductBarcode;
-            this.gridControlBarcodeProductControl.Name = "gridControlBarcodeProductControl";
-            this.gridControlBarcodeProductControl.Size = new System.Drawing.Size(809, 616);
-            this.gridControlBarcodeProductControl.TabIndex = 12;
-            this.gridControlBarcodeProductControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewProductBarcode});
+            this.subCategoriesBindingSource.DataSource = typeof(IslahGroupInventory.SubCategory);
             // 
-            // gridViewProductBarcode
+            // productsBindingSource
             // 
-            this.gridViewProductBarcode.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colProdId1,
-            this.colProdCode1,
-            this.colProdName1,
-            this.colDescription1,
-            this.colSellingPrice1,
-            this.colReOrderPoint1,
-            this.colDiscount1,
-            this.colStock1,
-            this.colSubCategory_Name1,
-            this.colBranch_BranchId3,
-            this.colBranch3,
-            this.colSubCategory1});
-            this.gridViewProductBarcode.GridControl = this.gridControlBarcodeProductControl;
-            this.gridViewProductBarcode.Name = "gridViewProductBarcode";
-            // 
-            // colProdId1
-            // 
-            this.colProdId1.FieldName = "ProdId";
-            this.colProdId1.Name = "colProdId1";
-            // 
-            // colProdCode1
-            // 
-            this.colProdCode1.Caption = "Product Code";
-            this.colProdCode1.FieldName = "Product Code";
-            this.colProdCode1.Name = "colProdCode1";
-            this.colProdCode1.Visible = true;
-            this.colProdCode1.VisibleIndex = 0;
-            this.colProdCode1.Width = 214;
-            // 
-            // colProdName1
-            // 
-            this.colProdName1.Caption = "Product Name";
-            this.colProdName1.FieldName = "Product Name";
-            this.colProdName1.Name = "colProdName1";
-            this.colProdName1.Visible = true;
-            this.colProdName1.VisibleIndex = 1;
-            this.colProdName1.Width = 365;
-            // 
-            // colDescription1
-            // 
-            this.colDescription1.FieldName = "Description";
-            this.colDescription1.Name = "colDescription1";
-            // 
-            // colSellingPrice1
-            // 
-            this.colSellingPrice1.FieldName = "SellingPrice";
-            this.colSellingPrice1.Name = "colSellingPrice1";
-            // 
-            // colReOrderPoint1
-            // 
-            this.colReOrderPoint1.FieldName = "ReOrderPoint";
-            this.colReOrderPoint1.Name = "colReOrderPoint1";
-            // 
-            // colDiscount1
-            // 
-            this.colDiscount1.FieldName = "Discount";
-            this.colDiscount1.Name = "colDiscount1";
-            // 
-            // colStock1
-            // 
-            this.colStock1.FieldName = "Stock";
-            this.colStock1.Name = "colStock1";
-            // 
-            // colSubCategory_Name1
-            // 
-            this.colSubCategory_Name1.Caption = "Sub Category";
-            this.colSubCategory_Name1.FieldName = "Sub-Category";
-            this.colSubCategory_Name1.Name = "colSubCategory_Name1";
-            this.colSubCategory_Name1.Visible = true;
-            this.colSubCategory_Name1.VisibleIndex = 2;
-            this.colSubCategory_Name1.Width = 148;
-            // 
-            // colBranch_BranchId3
-            // 
-            this.colBranch_BranchId3.FieldName = "Branch_BranchId";
-            this.colBranch_BranchId3.Name = "colBranch_BranchId3";
-            // 
-            // colBranch3
-            // 
-            this.colBranch3.FieldName = "Branch";
-            this.colBranch3.Name = "colBranch3";
-            // 
-            // colSubCategory1
-            // 
-            this.colSubCategory1.FieldName = "SubCategory";
-            this.colSubCategory1.Name = "colSubCategory1";
+            this.productsBindingSource.DataSource = typeof(IslahGroupInventory.Product);
             // 
             // groupBox16
             // 
@@ -175,7 +89,7 @@
             this.groupBox16.Controls.Add(this.label50);
             this.groupBox16.Controls.Add(this.textBoxBPCCode);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(3, 3);
+            this.groupBox16.Location = new System.Drawing.Point(8, 8);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(455, 315);
             this.groupBox16.TabIndex = 11;
@@ -234,7 +148,7 @@
             this.buttonPrintBarcode.TabIndex = 0;
             this.buttonPrintBarcode.Text = "Print Preview";
             this.buttonPrintBarcode.UseVisualStyleBackColor = true;
-            this.buttonPrintBarcode.Click += new System.EventHandler(this.buttonPrintBarcode_Click);
+            this.buttonPrintBarcode.Click += new System.EventHandler(this.ButtonPrintBarcode_Click);
             // 
             // label51
             // 
@@ -247,13 +161,15 @@
             // 
             // comboBoxProductBarcodeCategory
             // 
-            this.comboBoxProductBarcodeCategory.DisplayMember = "Category_Code";
+            this.comboBoxProductBarcodeCategory.DataSource = this.subCategoriesBindingSource;
+            this.comboBoxProductBarcodeCategory.DisplayMember = "Name";
             this.comboBoxProductBarcodeCategory.FormattingEnabled = true;
             this.comboBoxProductBarcodeCategory.Location = new System.Drawing.Point(218, 38);
             this.comboBoxProductBarcodeCategory.Name = "comboBoxProductBarcodeCategory";
             this.comboBoxProductBarcodeCategory.Size = new System.Drawing.Size(228, 32);
             this.comboBoxProductBarcodeCategory.TabIndex = 2;
-            this.comboBoxProductBarcodeCategory.SelectionChangeCommitted += new System.EventHandler(this.comboBoxProductBarcodeCategory_SelectionChangeCommitted);
+            this.comboBoxProductBarcodeCategory.ValueMember = "Code";
+            this.comboBoxProductBarcodeCategory.SelectionChangeCommitted += new System.EventHandler(this.ComboBoxProductBarcodeCategory_SelectionChangeCommitted);
             // 
             // textBoxBCSuffix
             // 
@@ -262,6 +178,7 @@
             this.textBoxBCSuffix.Name = "textBoxBCSuffix";
             this.textBoxBCSuffix.Size = new System.Drawing.Size(229, 29);
             this.textBoxBCSuffix.TabIndex = 6;
+            this.textBoxBCSuffix.TextChanged += new System.EventHandler(this.TextBoxBCSuffix_TextChanged);
             // 
             // label49
             // 
@@ -289,37 +206,150 @@
             this.textBoxBPCCode.Size = new System.Drawing.Size(229, 29);
             this.textBoxBPCCode.TabIndex = 4;
             // 
+            // gridControlProducts
+            // 
+            this.gridControlProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlProducts.DataSource = this.productsBindingSource;
+            this.gridControlProducts.Location = new System.Drawing.Point(469, 8);
+            this.gridControlProducts.MainView = this.gridViewProducts;
+            this.gridControlProducts.Name = "gridControlProducts";
+            this.gridControlProducts.Size = new System.Drawing.Size(799, 606);
+            this.gridControlProducts.TabIndex = 12;
+            this.gridControlProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewProducts});
+            // 
+            // gridViewProducts
+            // 
+            this.gridViewProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProdId,
+            this.colProdCode,
+            this.colProdName,
+            this.colDescription,
+            this.colActive,
+            this.colSellingPrice,
+            this.colReOrderPoint,
+            this.colDiscount,
+            this.colStock,
+            this.colSubCategory_Name,
+            this.colBranch_BranchId,
+            this.colBranch,
+            this.colSubCategory});
+            this.gridViewProducts.GridControl = this.gridControlProducts;
+            this.gridViewProducts.Name = "gridViewProducts";
+            // 
+            // colProdId
+            // 
+            this.colProdId.FieldName = "ProdId";
+            this.colProdId.Name = "colProdId";
+            this.colProdId.OptionsColumn.AllowEdit = false;
+            // 
+            // colProdCode
+            // 
+            this.colProdCode.Caption = "Code";
+            this.colProdCode.FieldName = "ProdCode";
+            this.colProdCode.Name = "colProdCode";
+            this.colProdCode.OptionsColumn.AllowEdit = false;
+            this.colProdCode.Visible = true;
+            this.colProdCode.VisibleIndex = 0;
+            this.colProdCode.Width = 154;
+            // 
+            // colProdName
+            // 
+            this.colProdName.Caption = "Name";
+            this.colProdName.FieldName = "ProdName";
+            this.colProdName.Name = "colProdName";
+            this.colProdName.OptionsColumn.AllowEdit = false;
+            this.colProdName.Visible = true;
+            this.colProdName.VisibleIndex = 1;
+            this.colProdName.Width = 391;
+            // 
+            // colDescription
+            // 
+            this.colDescription.FieldName = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.OptionsColumn.AllowEdit = false;
+            // 
+            // colActive
+            // 
+            this.colActive.FieldName = "Active";
+            this.colActive.Name = "colActive";
+            this.colActive.OptionsColumn.AllowEdit = false;
+            // 
+            // colSellingPrice
+            // 
+            this.colSellingPrice.FieldName = "SellingPrice";
+            this.colSellingPrice.Name = "colSellingPrice";
+            this.colSellingPrice.OptionsColumn.AllowEdit = false;
+            // 
+            // colReOrderPoint
+            // 
+            this.colReOrderPoint.FieldName = "ReOrderPoint";
+            this.colReOrderPoint.Name = "colReOrderPoint";
+            this.colReOrderPoint.OptionsColumn.AllowEdit = false;
+            // 
+            // colDiscount
+            // 
+            this.colDiscount.FieldName = "Discount";
+            this.colDiscount.Name = "colDiscount";
+            this.colDiscount.OptionsColumn.AllowEdit = false;
+            // 
+            // colStock
+            // 
+            this.colStock.FieldName = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.OptionsColumn.AllowEdit = false;
+            // 
+            // colSubCategory_Name
+            // 
+            this.colSubCategory_Name.Caption = "Category";
+            this.colSubCategory_Name.FieldName = "SubCategory_Name";
+            this.colSubCategory_Name.Name = "colSubCategory_Name";
+            this.colSubCategory_Name.OptionsColumn.AllowEdit = false;
+            this.colSubCategory_Name.Visible = true;
+            this.colSubCategory_Name.VisibleIndex = 2;
+            // 
+            // colBranch_BranchId
+            // 
+            this.colBranch_BranchId.FieldName = "Branch_BranchId";
+            this.colBranch_BranchId.Name = "colBranch_BranchId";
+            this.colBranch_BranchId.OptionsColumn.AllowEdit = false;
+            // 
+            // colBranch
+            // 
+            this.colBranch.FieldName = "Branch";
+            this.colBranch.Name = "colBranch";
+            this.colBranch.OptionsColumn.AllowEdit = false;
+            // 
+            // colSubCategory
+            // 
+            this.colSubCategory.Caption = "Category";
+            this.colSubCategory.FieldName = "SubCategory";
+            this.colSubCategory.Name = "colSubCategory";
+            this.colSubCategory.OptionsColumn.AllowEdit = false;
+            this.colSubCategory.Width = 147;
+            // 
             // BarcodeControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.gridControlBarcodeProductControl);
+            this.Controls.Add(this.gridControlProducts);
             this.Controls.Add(this.groupBox16);
             this.Name = "BarcodeControl";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1276, 622);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlBarcodeProductControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProductBarcode)).EndInit();
+            this.Load += new System.EventHandler(this.BarcodeControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.subCategoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraGrid.GridControl gridControlBarcodeProductControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProductBarcode;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdId1;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdCode1;
-        private DevExpress.XtraGrid.Columns.GridColumn colProdName1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDescription1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice1;
-        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint1;
-        private DevExpress.XtraGrid.Columns.GridColumn colDiscount1;
-        private DevExpress.XtraGrid.Columns.GridColumn colStock1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name1;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId3;
-        private DevExpress.XtraGrid.Columns.GridColumn colBranch3;
-        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory1;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.TextBox textBoxBCNumber;
@@ -333,5 +363,22 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox textBoxBPCCode;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private System.Windows.Forms.BindingSource subCategoriesBindingSource;
+        private DevExpress.XtraGrid.GridControl gridControlProducts;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProducts;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdId;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colProdName;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colActive;
+        private DevExpress.XtraGrid.Columns.GridColumn colSellingPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colReOrderPoint;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiscount;
+        private DevExpress.XtraGrid.Columns.GridColumn colStock;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory_Name;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId;
+        private DevExpress.XtraGrid.Columns.GridColumn colBranch;
+        private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
     }
 }

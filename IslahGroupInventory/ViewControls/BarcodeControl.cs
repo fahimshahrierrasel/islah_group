@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraEditors;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace IslahGroupInventory.ViewControls
 {
@@ -20,19 +14,20 @@ namespace IslahGroupInventory.ViewControls
             InitializeComponent();
         }
 
-        // Barcode Print Tab Start
-        private void LoadBarcodePage()
+        private void BarcodeControl_Load(object sender, EventArgs e)
         {
             InitializeBarcodeCategoryComboBox();
+            InitializeProductsGridView();
+        }
+        private void InitializeProductsGridView()
+        {
+            productsBindingSource.DataSource = new InventoryDataClassesDataContext().Products.Where(p => p.Branch_BranchId == BranchInfo.BranchId);
         }
         private void InitializeBarcodeCategoryComboBox()
         {
-            //productCategoryBindingSource.DataSource = new InventoryDataClassesDataContext().SubCategories;
-            //comboBoxProductBarcodeCategory.DataSource = productCategoryBindingSource;
-            comboBoxProductBarcodeCategory.DisplayMember = "Name";
-            comboBoxProductBarcodeCategory.ValueMember = "Code";
+            subCategoriesBindingSource.DataSource = new InventoryDataClassesDataContext().SubCategories;
         }
-        private void buttonPrintBarcode_Click(object sender, EventArgs e)
+        private void ButtonPrintBarcode_Click(object sender, EventArgs e)
         {
             string productCode = textBoxBPCode.Text;
             int.TryParse(textBoxBCNumber.Text, out int totalBarcode);
@@ -45,15 +40,15 @@ namespace IslahGroupInventory.ViewControls
                 XtraMessageBox.Show("Product code should be 8 character long!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private void comboBoxProductBarcodeCategory_SelectionChangeCommitted(object sender, EventArgs e)
+        private void ComboBoxProductBarcodeCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
             textBoxBPCCode.Text = comboBoxProductBarcodeCategory.SelectedValue.ToString();
             textBoxBPCode.Text = textBoxBPCCode.Text + textBoxBCSuffix.Text;
         }
-        private void textBoxBCSuffix_KeyUp(object sender, KeyEventArgs e)
+        private void TextBoxBCSuffix_TextChanged(object sender, EventArgs e)
         {
             textBoxBPCode.Text = textBoxBPCCode.Text + textBoxBCSuffix.Text;
         }
-        // Barcode Print Tab End
+
     }
 }
