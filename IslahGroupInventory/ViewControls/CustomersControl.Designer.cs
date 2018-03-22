@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.labelTotalCustomers = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -45,6 +46,7 @@
             this.textBoxICCode = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.gridControlCustomers = new DevExpress.XtraGrid.GridControl();
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCustId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,6 +60,7 @@
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +68,9 @@
             // 
             this.groupBox10.Controls.Add(this.labelTotalCustomers);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(9, 15);
+            this.groupBox10.Location = new System.Drawing.Point(8, 8);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(357, 148);
+            this.groupBox10.Size = new System.Drawing.Size(358, 155);
             this.groupBox10.TabIndex = 8;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Total Customer";
@@ -78,7 +81,7 @@
             this.labelTotalCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotalCustomers.Location = new System.Drawing.Point(3, 25);
             this.labelTotalCustomers.Name = "labelTotalCustomers";
-            this.labelTotalCustomers.Size = new System.Drawing.Size(351, 120);
+            this.labelTotalCustomers.Size = new System.Drawing.Size(352, 127);
             this.labelTotalCustomers.TabIndex = 0;
             this.labelTotalCustomers.Text = "00";
             this.labelTotalCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,9 +102,9 @@
             this.groupBox9.Controls.Add(this.textBoxICCode);
             this.groupBox9.Controls.Add(this.label31);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(9, 178);
+            this.groupBox9.Location = new System.Drawing.Point(8, 178);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(357, 390);
+            this.groupBox9.Size = new System.Drawing.Size(358, 390);
             this.groupBox9.TabIndex = 7;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Add Customer";
@@ -125,7 +128,7 @@
             this.buttonAddCustomer.TabIndex = 35;
             this.buttonAddCustomer.Text = "Add";
             this.buttonAddCustomer.UseVisualStyleBackColor = true;
-            this.buttonAddCustomer.Click += new System.EventHandler(this.buttonAddCustomer_Click);
+            this.buttonAddCustomer.Click += new System.EventHandler(this.ButtonAddCustomer_Click);
             // 
             // label23
             // 
@@ -231,16 +234,24 @@
             // 
             // gridControlCustomers
             // 
+            this.gridControlCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlCustomers.DataSource = this.customersBindingSource;
             this.gridControlCustomers.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlCustomers.EmbeddedNavigator.Buttons.Remove.Visible = false;
-            this.gridControlCustomers.Location = new System.Drawing.Point(372, 3);
+            this.gridControlCustomers.Location = new System.Drawing.Point(372, 8);
             this.gridControlCustomers.MainView = this.gridViewCustomer;
             this.gridControlCustomers.Name = "gridControlCustomers";
-            this.gridControlCustomers.Size = new System.Drawing.Size(901, 616);
+            this.gridControlCustomers.Size = new System.Drawing.Size(896, 606);
             this.gridControlCustomers.TabIndex = 9;
             this.gridControlCustomers.UseEmbeddedNavigator = true;
             this.gridControlCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCustomer});
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataSource = typeof(IslahGroupInventory.Customer);
             // 
             // gridViewCustomer
             // 
@@ -258,7 +269,7 @@
             this.gridViewCustomer.Name = "gridViewCustomer";
             this.gridViewCustomer.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
             this.gridViewCustomer.OptionsEditForm.EditFormColumnCount = 2;
-            this.gridViewCustomer.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridViewCustomer_ValidateRow);
+            this.gridViewCustomer.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.GridViewCustomer_ValidateRow);
             // 
             // colCustId
             // 
@@ -271,6 +282,8 @@
             this.colCustCode.Caption = "Code";
             this.colCustCode.FieldName = "CustCode";
             this.colCustCode.Name = "colCustCode";
+            this.colCustCode.OptionsColumn.AllowEdit = false;
+            this.colCustCode.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.False;
             this.colCustCode.Visible = true;
             this.colCustCode.VisibleIndex = 0;
             this.colCustCode.Width = 87;
@@ -333,12 +346,14 @@
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox9);
             this.Name = "CustomersControl";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.CustomersControl_Load);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
             this.ResumeLayout(false);
 
@@ -373,5 +388,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRemark;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId1;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch1;
+        private System.Windows.Forms.BindingSource customersBindingSource;
     }
 }
