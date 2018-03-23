@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
@@ -47,7 +42,7 @@ namespace IslahGroupInventory.ViewControls
         {
             var products = from product in dbContext.Products
                            where product.Branch_BranchId == BranchInfo.BranchId
-                           select product; ;
+                           select product;
 
             productsBindingSource.DataSource = products;
             gridControlProducts.RefreshDataSource();
@@ -71,15 +66,15 @@ namespace IslahGroupInventory.ViewControls
                 ProdName = prodName,
                 Description = desc,
                 SubCategory_Name = category,
+                Active = true,
                 SellingPrice = Convert.ToDecimal(sellPrice),
                 ReOrderPoint = Convert.ToInt16(rp),
                 Discount = Convert.ToDecimal(discount),
                 Stock = Convert.ToInt32(stock),
-                Branch_BranchId = 1
+                Branch_BranchId = BranchInfo.BranchId
             };
             dbContext.Products.InsertOnSubmit(newProduct);
             dbContext.SubmitChanges();
-            Console.WriteLine(newProduct.ProdId);
             LoadProductsGridView();
             LoadNewProductCode();
         }
