@@ -19,6 +19,8 @@ namespace POS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            BranchInfo.SetBranchInfo(1, "SHOW001", 1, "fahimshahrierasel");
+
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");

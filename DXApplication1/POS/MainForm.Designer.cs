@@ -38,8 +38,10 @@
             this.xtraTabPageService = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageReport = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageIslah = new DevExpress.XtraTab.XtraTabPage();
+            this.productViewControl1 = new POS.ViewControls.ProductViewControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).BeginInit();
             this.xtraTabControlPos.SuspendLayout();
+            this.xtraTabPageProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // xtraTabControlPos
@@ -83,6 +85,7 @@
             // 
             // xtraTabPageProduct
             // 
+            this.xtraTabPageProduct.Controls.Add(this.productViewControl1);
             this.xtraTabPageProduct.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageProduct.Image")));
             this.xtraTabPageProduct.Name = "xtraTabPageProduct";
             this.xtraTabPageProduct.Size = new System.Drawing.Size(1000, 564);
@@ -116,6 +119,14 @@
             this.xtraTabPageIslah.Size = new System.Drawing.Size(1000, 564);
             this.xtraTabPageIslah.Text = "Islah";
             // 
+            // productViewControl1
+            // 
+            this.productViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.productViewControl1.Name = "productViewControl1";
+            this.productViewControl1.Size = new System.Drawing.Size(1000, 564);
+            this.productViewControl1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +137,7 @@
             this.Text = "Islah POS";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).EndInit();
             this.xtraTabControlPos.ResumeLayout(false);
+            this.xtraTabPageProduct.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,6 +153,7 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPageService;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageReport;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageIslah;
+        private ViewControls.ProductViewControl productViewControl1;
     }
 }
 
