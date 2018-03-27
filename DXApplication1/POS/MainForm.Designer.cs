@@ -41,9 +41,11 @@
             this.xtraTabPageService = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageReport = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageIslah = new DevExpress.XtraTab.XtraTabPage();
+            this.saleLedgerViewControl1 = new POS.ViewControls.SaleLedgerViewControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).BeginInit();
             this.xtraTabControlPos.SuspendLayout();
             this.xtraTabPageSale.SuspendLayout();
+            this.xtraTabPageLedger.SuspendLayout();
             this.xtraTabPageProduct.SuspendLayout();
             this.xtraTabPageCustomer.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             // 
             this.xtraTabPageDashboard.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageDashboard.Image")));
             this.xtraTabPageDashboard.Name = "xtraTabPageDashboard";
-            this.xtraTabPageDashboard.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageDashboard.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageDashboard.Text = "Dashboard";
             // 
             // xtraTabPageSale
@@ -92,9 +94,10 @@
             // 
             // xtraTabPageLedger
             // 
+            this.xtraTabPageLedger.Controls.Add(this.saleLedgerViewControl1);
             this.xtraTabPageLedger.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageLedger.Image")));
             this.xtraTabPageLedger.Name = "xtraTabPageLedger";
-            this.xtraTabPageLedger.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageLedger.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageLedger.Text = "Sale Ledger";
             // 
             // xtraTabPageProduct
@@ -102,7 +105,7 @@
             this.xtraTabPageProduct.Controls.Add(this.productViewControl1);
             this.xtraTabPageProduct.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageProduct.Image")));
             this.xtraTabPageProduct.Name = "xtraTabPageProduct";
-            this.xtraTabPageProduct.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageProduct.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageProduct.Text = "Products";
             // 
             // productViewControl1
@@ -111,7 +114,7 @@
             this.productViewControl1.Location = new System.Drawing.Point(0, 0);
             this.productViewControl1.Name = "productViewControl1";
             this.productViewControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.productViewControl1.Size = new System.Drawing.Size(1278, 634);
+            this.productViewControl1.Size = new System.Drawing.Size(1298, 696);
             this.productViewControl1.TabIndex = 0;
             // 
             // xtraTabPageCustomer
@@ -119,7 +122,7 @@
             this.xtraTabPageCustomer.Controls.Add(this.customerViewControl1);
             this.xtraTabPageCustomer.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageCustomer.Image")));
             this.xtraTabPageCustomer.Name = "xtraTabPageCustomer";
-            this.xtraTabPageCustomer.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageCustomer.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageCustomer.Text = "Customers";
             // 
             // customerViewControl1
@@ -128,29 +131,37 @@
             this.customerViewControl1.Location = new System.Drawing.Point(0, 0);
             this.customerViewControl1.Name = "customerViewControl1";
             this.customerViewControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.customerViewControl1.Size = new System.Drawing.Size(1278, 634);
+            this.customerViewControl1.Size = new System.Drawing.Size(1298, 696);
             this.customerViewControl1.TabIndex = 0;
             // 
             // xtraTabPageService
             // 
             this.xtraTabPageService.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageService.Image")));
             this.xtraTabPageService.Name = "xtraTabPageService";
-            this.xtraTabPageService.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageService.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageService.Text = "Services";
             // 
             // xtraTabPageReport
             // 
             this.xtraTabPageReport.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageReport.Image")));
             this.xtraTabPageReport.Name = "xtraTabPageReport";
-            this.xtraTabPageReport.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageReport.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageReport.Text = "Reports";
             // 
             // xtraTabPageIslah
             // 
             this.xtraTabPageIslah.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageIslah.Image")));
             this.xtraTabPageIslah.Name = "xtraTabPageIslah";
-            this.xtraTabPageIslah.Size = new System.Drawing.Size(1278, 634);
+            this.xtraTabPageIslah.Size = new System.Drawing.Size(1298, 696);
             this.xtraTabPageIslah.Text = "Islah";
+            // 
+            // saleLedgerViewControl1
+            // 
+            this.saleLedgerViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.saleLedgerViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.saleLedgerViewControl1.Name = "saleLedgerViewControl1";
+            this.saleLedgerViewControl1.Size = new System.Drawing.Size(1298, 696);
+            this.saleLedgerViewControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -163,6 +174,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).EndInit();
             this.xtraTabControlPos.ResumeLayout(false);
             this.xtraTabPageSale.ResumeLayout(false);
+            this.xtraTabPageLedger.ResumeLayout(false);
             this.xtraTabPageProduct.ResumeLayout(false);
             this.xtraTabPageCustomer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -183,6 +195,7 @@
         private ViewControls.ProductViewControl productViewControl1;
         private ViewControls.CustomerViewControl customerViewControl1;
         private ViewControls.SaleViewControl saleViewControl1;
+        private ViewControls.SaleLedgerViewControl saleLedgerViewControl1;
     }
 }
 

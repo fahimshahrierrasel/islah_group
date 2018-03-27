@@ -33,8 +33,6 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.InvoiceGridControl = new DevExpress.XtraGrid.GridControl();
             this.InvoicesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.InvoiceItemsGridControl = new DevExpress.XtraGrid.GridControl();
-            this.InvoiceItemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInvcId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInvcCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colInvcDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,7 +46,9 @@
             this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPaymentType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.InvoiceItemsGridControl = new DevExpress.XtraGrid.GridControl();
             this.invoiceItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.InvoiceItemsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInvoice_InvcId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProduct_ProdId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvoicesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // invoicesBindingSource
@@ -113,30 +113,7 @@
             this.colPaymentType});
             this.InvoicesGridView.GridControl = this.InvoiceGridControl;
             this.InvoicesGridView.Name = "InvoicesGridView";
-            // 
-            // InvoiceItemsGridControl
-            // 
-            this.InvoiceItemsGridControl.DataSource = this.invoiceItemsBindingSource;
-            this.InvoiceItemsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InvoiceItemsGridControl.Location = new System.Drawing.Point(0, 0);
-            this.InvoiceItemsGridControl.MainView = this.InvoiceItemsGridView;
-            this.InvoiceItemsGridControl.Name = "InvoiceItemsGridControl";
-            this.InvoiceItemsGridControl.Size = new System.Drawing.Size(568, 807);
-            this.InvoiceItemsGridControl.TabIndex = 0;
-            this.InvoiceItemsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.InvoiceItemsGridView});
-            // 
-            // InvoiceItemsGridView
-            // 
-            this.InvoiceItemsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colInvoice_InvcId,
-            this.colProduct_ProdId,
-            this.colQuantity,
-            this.colPrice,
-            this.colInvoice,
-            this.colProduct});
-            this.InvoiceItemsGridView.GridControl = this.InvoiceItemsGridControl;
-            this.InvoiceItemsGridView.Name = "InvoiceItemsGridView";
+            this.InvoicesGridView.OptionsDetail.EnableMasterViewMode = false;
             // 
             // colInvcId
             // 
@@ -219,10 +196,34 @@
             this.colPaymentType.FieldName = "PaymentType";
             this.colPaymentType.Name = "colPaymentType";
             // 
+            // InvoiceItemsGridControl
+            // 
+            this.InvoiceItemsGridControl.DataSource = this.invoiceItemsBindingSource;
+            this.InvoiceItemsGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InvoiceItemsGridControl.Location = new System.Drawing.Point(0, 0);
+            this.InvoiceItemsGridControl.MainView = this.InvoiceItemsGridView;
+            this.InvoiceItemsGridControl.Name = "InvoiceItemsGridControl";
+            this.InvoiceItemsGridControl.Size = new System.Drawing.Size(568, 807);
+            this.InvoiceItemsGridControl.TabIndex = 0;
+            this.InvoiceItemsGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.InvoiceItemsGridView});
+            // 
             // invoiceItemsBindingSource
             // 
             this.invoiceItemsBindingSource.DataMember = "InvoiceItems";
             this.invoiceItemsBindingSource.DataSource = this.invoicesBindingSource;
+            // 
+            // InvoiceItemsGridView
+            // 
+            this.InvoiceItemsGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colInvoice_InvcId,
+            this.colProduct_ProdId,
+            this.colQuantity,
+            this.colPrice,
+            this.colInvoice,
+            this.colProduct});
+            this.InvoiceItemsGridView.GridControl = this.InvoiceItemsGridControl;
+            this.InvoiceItemsGridView.Name = "InvoiceItemsGridView";
             // 
             // colInvoice_InvcId
             // 
@@ -273,8 +274,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvoicesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceItemsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
