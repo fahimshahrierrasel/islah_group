@@ -239,4 +239,10 @@
       <Association Name="Voucher_VoucherItem" Member="Voucher" ThisKey="Voucher_VoucId" OtherKey="VoucId" Type="Voucher" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.GetNextCustomerCode" Method="GetNextCustomerCode">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetNextInvoiceCode" Method="GetNextInvoiceCode">
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
