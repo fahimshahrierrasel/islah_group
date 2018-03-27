@@ -299,6 +299,7 @@
             this.colBranch});
             this.CustomerGridView.GridControl = this.CustomerGridControl;
             this.CustomerGridView.Name = "CustomerGridView";
+            this.CustomerGridView.OptionsDetail.EnableMasterViewMode = false;
             // 
             // colCustId
             // 
