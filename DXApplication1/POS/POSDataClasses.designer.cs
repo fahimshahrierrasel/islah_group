@@ -284,6 +284,13 @@ namespace POS
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTotalSale")]
+		public ISingleResult<GetTotalSaleResult> GetTotalSale([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SaleDate", DbType="Date")] System.Nullable<System.DateTime> saleDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), saleDate);
+			return ((ISingleResult<GetTotalSaleResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Branch")]
@@ -5399,6 +5406,50 @@ namespace POS
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class GetTotalSaleResult
+	{
+		
+		private System.Nullable<System.DateTime> _SaleDate;
+		
+		private System.Nullable<decimal> _Paid;
+		
+		public GetTotalSaleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaleDate", DbType="Date")]
+		public System.Nullable<System.DateTime> SaleDate
+		{
+			get
+			{
+				return this._SaleDate;
+			}
+			set
+			{
+				if ((this._SaleDate != value))
+				{
+					this._SaleDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paid", DbType="Money")]
+		public System.Nullable<decimal> Paid
+		{
+			get
+			{
+				return this._Paid;
+			}
+			set
+			{
+				if ((this._Paid != value))
+				{
+					this._Paid = value;
+				}
 			}
 		}
 	}

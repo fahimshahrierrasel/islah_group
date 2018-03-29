@@ -130,7 +130,7 @@
         <classShapeMoniker Id="c1e2b6e2-5654-4a01-bfe5-fc317ee8dc70" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 15.9631982421875); (1.75 : 17.8213525390625); (6.25 : 17.8213525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.75 : 15.9631982421875); (1.75 : 17.8213525390625); (2.19791916666667 : 17.8213525390625 : JumpStart); (2.36458583333333 : 17.8213525390625 : JumpEnd); (6.25 : 17.8213525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/POSDataClassesDataContext/Branch/Branch_Invoice" />
       <nodes>
         <classShapeMoniker Id="4a4f3f28-b2cd-430e-bee8-18e26936eb0d" />
@@ -179,14 +179,14 @@
         <classShapeMoniker Id="88eb9cea-f2e1-44e4-a2fa-9bc5e936c8be" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11.5 : 10.90625); (13.1666666666667 : 10.90625 : JumpStart); (13.3333333333333 : 10.90625 : JumpEnd); (16.25 : 10.90625); (16.25 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(11.5 : 10.90625); (16.25 : 10.90625); (16.25 : 13.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/POSDataClassesDataContext/Product/Product_InvoiceItem" />
       <nodes>
         <classShapeMoniker Id="a7b75150-d1fc-4cdd-adca-b937dfc68790" />
         <classShapeMoniker Id="4d200d86-6b23-4a5a-b77c-7230c6230281" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.2187475 : 14); (1.2187475 : 11.7652498372396); (2.19791916666667 : 11.7652498372396 : JumpStart); (2.36458583333333 : 11.7652498372396 : JumpEnd); (8.57291666666667 : 11.7652498372396 : JumpStart); (8.73958333333333 : 11.7652498372396 : JumpEnd); (9.5 : 11.7652498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(1.2187475 : 14); (1.2187475 : 11.7652498372396); (1.66666666666667 : 11.7652498372396 : JumpStart); (1.83333333333333 : 11.7652498372396 : JumpEnd); (2.19791916666667 : 11.7652498372396 : JumpStart); (2.36458583333333 : 11.7652498372396 : JumpEnd); (9.5 : 11.7652498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/POSDataClassesDataContext/Branch/Branch_Product" />
       <nodes>
         <classShapeMoniker Id="4a4f3f28-b2cd-430e-bee8-18e26936eb0d" />

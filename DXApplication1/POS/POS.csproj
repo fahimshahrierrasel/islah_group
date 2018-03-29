@@ -112,6 +112,12 @@
     <Compile Include="ViewControls\DashboardViewControl.Designer.cs">
       <DependentUpon>DashboardViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\IslahViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\IslahViewControl.Designer.cs">
+      <DependentUpon>IslahViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControls\ProductViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,11 +136,11 @@
     <Compile Include="ViewControls\SaleViewControl.Designer.cs">
       <DependentUpon>SaleViewControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControls\ServiceViewControl.cs">
+    <Compile Include="ViewControls\ServicesViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewControls\ServiceViewControl.Designer.cs">
-      <DependentUpon>ServiceViewControl.cs</DependentUpon>
+    <Compile Include="ViewControls\ServicesViewControl.Designer.cs">
+      <DependentUpon>ServicesViewControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -155,6 +161,9 @@
     <EmbeddedResource Include="ViewControls\DashboardViewControl.resx">
       <DependentUpon>DashboardViewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\IslahViewControl.resx">
+      <DependentUpon>IslahViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\ProductViewControl.resx">
       <DependentUpon>ProductViewControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +173,8 @@
     <EmbeddedResource Include="ViewControls\SaleViewControl.resx">
       <DependentUpon>SaleViewControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewControls\ServiceViewControl.resx">
-      <DependentUpon>ServiceViewControl.cs</DependentUpon>
+    <EmbeddedResource Include="ViewControls\ServicesViewControl.resx">
+      <DependentUpon>ServicesViewControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="POSDataClasses.dbml">

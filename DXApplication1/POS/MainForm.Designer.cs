@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.xtraTabControlPos = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageDashboard = new DevExpress.XtraTab.XtraTabPage();
+            this.dashboardViewControl1 = new POS.ViewControls.DashboardViewControl();
             this.xtraTabPageSale = new DevExpress.XtraTab.XtraTabPage();
             this.saleViewControl1 = new POS.ViewControls.SaleViewControl();
             this.xtraTabPageLedger = new DevExpress.XtraTab.XtraTabPage();
@@ -42,7 +44,9 @@
             this.xtraTabPageService = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageReport = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageIslah = new DevExpress.XtraTab.XtraTabPage();
-            this.dashboardViewControl1 = new POS.ViewControls.DashboardViewControl();
+            this.islahViewControl1 = new POS.ViewControls.IslahViewControl();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.serviceViewControl1 = new POS.ViewControls.ServicesViewControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).BeginInit();
             this.xtraTabControlPos.SuspendLayout();
             this.xtraTabPageDashboard.SuspendLayout();
@@ -50,6 +54,9 @@
             this.xtraTabPageLedger.SuspendLayout();
             this.xtraTabPageProduct.SuspendLayout();
             this.xtraTabPageCustomer.SuspendLayout();
+            this.xtraTabPageService.SuspendLayout();
+            this.xtraTabPageIslah.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControlPos
@@ -77,6 +84,14 @@
             this.xtraTabPageDashboard.Name = "xtraTabPageDashboard";
             this.xtraTabPageDashboard.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageDashboard.Text = "Dashboard";
+            // 
+            // dashboardViewControl1
+            // 
+            this.dashboardViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.dashboardViewControl1.Name = "dashboardViewControl1";
+            this.dashboardViewControl1.Size = new System.Drawing.Size(1298, 681);
+            this.dashboardViewControl1.TabIndex = 0;
             // 
             // xtraTabPageSale
             // 
@@ -147,6 +162,7 @@
             // 
             // xtraTabPageService
             // 
+            this.xtraTabPageService.Controls.Add(this.serviceViewControl1);
             this.xtraTabPageService.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageService.Image")));
             this.xtraTabPageService.Name = "xtraTabPageService";
             this.xtraTabPageService.Size = new System.Drawing.Size(1298, 681);
@@ -161,18 +177,31 @@
             // 
             // xtraTabPageIslah
             // 
+            this.xtraTabPageIslah.Controls.Add(this.islahViewControl1);
             this.xtraTabPageIslah.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageIslah.Image")));
             this.xtraTabPageIslah.Name = "xtraTabPageIslah";
             this.xtraTabPageIslah.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageIslah.Text = "Islah";
             // 
-            // dashboardViewControl1
+            // islahViewControl1
             // 
-            this.dashboardViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardViewControl1.Location = new System.Drawing.Point(0, 0);
-            this.dashboardViewControl1.Name = "dashboardViewControl1";
-            this.dashboardViewControl1.Size = new System.Drawing.Size(1298, 681);
-            this.dashboardViewControl1.TabIndex = 0;
+            this.islahViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.islahViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.islahViewControl1.Name = "islahViewControl1";
+            this.islahViewControl1.Size = new System.Drawing.Size(1298, 681);
+            this.islahViewControl1.TabIndex = 0;
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataSource = typeof(POS.Category);
+            // 
+            // serviceViewControl1
+            // 
+            this.serviceViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.serviceViewControl1.Name = "serviceViewControl1";
+            this.serviceViewControl1.Size = new System.Drawing.Size(1298, 681);
+            this.serviceViewControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -189,6 +218,9 @@
             this.xtraTabPageLedger.ResumeLayout(false);
             this.xtraTabPageProduct.ResumeLayout(false);
             this.xtraTabPageCustomer.ResumeLayout(false);
+            this.xtraTabPageService.ResumeLayout(false);
+            this.xtraTabPageIslah.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,6 +241,9 @@
         private ViewControls.SaleLedgerViewControl saleLedgerViewControl1;
         private ViewControls.SaleViewControl saleViewControl1;
         private ViewControls.DashboardViewControl dashboardViewControl1;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private ViewControls.IslahViewControl islahViewControl1;
+        private ViewControls.ServicesViewControl serviceViewControl1;
     }
 }
 

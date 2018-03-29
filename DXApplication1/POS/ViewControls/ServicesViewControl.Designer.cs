@@ -1,6 +1,6 @@
 ﻿namespace POS.ViewControls
 {
-    partial class ServiceViewControl
+    partial class ServicesViewControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -32,7 +32,6 @@
             this.servicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ServicesXtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.EntryXtraTabPage = new DevExpress.XtraTab.XtraTabPage();
-            this.ListXtraTabPage = new DevExpress.XtraTab.XtraTabPage();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.ServiceItemGridControl = new DevExpress.XtraGrid.GridControl();
@@ -62,6 +61,7 @@
             this.ItemForEstDeliveryDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForRemark = new DevExpress.XtraLayout.LayoutControlItem();
             this.ItemForCustomer_CustId = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ListXtraTabPage = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.servicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ServicesXtraTabControl)).BeginInit();
             this.ServicesXtraTabControl.SuspendLayout();
@@ -126,12 +126,6 @@
             this.EntryXtraTabPage.Size = new System.Drawing.Size(1147, 666);
             this.EntryXtraTabPage.Text = "Service Entry";
             // 
-            // ListXtraTabPage
-            // 
-            this.ListXtraTabPage.Name = "ListXtraTabPage";
-            this.ListXtraTabPage.Size = new System.Drawing.Size(294, 272);
-            this.ListXtraTabPage.Text = "Service List";
-            // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 12.25F);
@@ -154,10 +148,13 @@
             // 
             // ServiceItemGridControl
             // 
+            this.ServiceItemGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ServiceItemGridControl.Location = new System.Drawing.Point(321, 3);
             this.ServiceItemGridControl.MainView = this.ServiceItemridView;
             this.ServiceItemGridControl.Name = "ServiceItemGridControl";
-            this.ServiceItemGridControl.Size = new System.Drawing.Size(823, 580);
+            this.ServiceItemGridControl.Size = new System.Drawing.Size(823, 660);
             this.ServiceItemGridControl.TabIndex = 7;
             this.ServiceItemGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.ServiceItemridView});
@@ -468,6 +465,12 @@
             this.ItemForCustomer_CustId.Text = "Customer";
             this.ItemForCustomer_CustId.TextLocation = DevExpress.Utils.Locations.Top;
             this.ItemForCustomer_CustId.TextSize = new System.Drawing.Size(168, 19);
+            // 
+            // ListXtraTabPage
+            // 
+            this.ListXtraTabPage.Name = "ListXtraTabPage";
+            this.ListXtraTabPage.Size = new System.Drawing.Size(1147, 666);
+            this.ListXtraTabPage.Text = "Service List";
             // 
             // ServiceViewControl
             // 

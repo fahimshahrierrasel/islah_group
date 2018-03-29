@@ -245,4 +245,11 @@
   <Function Name="dbo.GetNextInvoiceCode" Method="GetNextInvoiceCode">
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.GetTotalSale" Method="GetTotalSale">
+    <Parameter Name="SaleDate" Parameter="saleDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetTotalSaleResult">
+      <Column Name="SaleDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
