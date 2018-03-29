@@ -124,6 +124,12 @@
     <Compile Include="ViewControls\SaleViewControl.Designer.cs">
       <DependentUpon>SaleViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\ServiceViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\ServiceViewControl.Designer.cs">
+      <DependentUpon>ServiceViewControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\SaleViewControl.resx">
       <DependentUpon>SaleViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\ServiceViewControl.resx">
+      <DependentUpon>ServiceViewControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="POSDataClasses.dbml">
