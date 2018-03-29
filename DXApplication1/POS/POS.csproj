@@ -106,6 +106,12 @@
     <Compile Include="ViewControls\CustomerViewControl.Designer.cs">
       <DependentUpon>CustomerViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\DashboardViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\DashboardViewControl.Designer.cs">
+      <DependentUpon>DashboardViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControls\ProductViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="ViewControls\CustomerViewControl.resx">
       <DependentUpon>CustomerViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\DashboardViewControl.resx">
+      <DependentUpon>DashboardViewControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\ProductViewControl.resx">
       <DependentUpon>ProductViewControl.cs</DependentUpon>

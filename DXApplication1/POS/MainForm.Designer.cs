@@ -42,8 +42,10 @@
             this.xtraTabPageService = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageReport = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPageIslah = new DevExpress.XtraTab.XtraTabPage();
+            this.dashboardViewControl1 = new POS.ViewControls.DashboardViewControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).BeginInit();
             this.xtraTabControlPos.SuspendLayout();
+            this.xtraTabPageDashboard.SuspendLayout();
             this.xtraTabPageSale.SuspendLayout();
             this.xtraTabPageLedger.SuspendLayout();
             this.xtraTabPageProduct.SuspendLayout();
@@ -70,9 +72,10 @@
             // 
             // xtraTabPageDashboard
             // 
+            this.xtraTabPageDashboard.Controls.Add(this.dashboardViewControl1);
             this.xtraTabPageDashboard.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageDashboard.Image")));
             this.xtraTabPageDashboard.Name = "xtraTabPageDashboard";
-            this.xtraTabPageDashboard.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageDashboard.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageDashboard.Text = "Dashboard";
             // 
             // xtraTabPageSale
@@ -97,7 +100,7 @@
             this.xtraTabPageLedger.Controls.Add(this.saleLedgerViewControl1);
             this.xtraTabPageLedger.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageLedger.Image")));
             this.xtraTabPageLedger.Name = "xtraTabPageLedger";
-            this.xtraTabPageLedger.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageLedger.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageLedger.Text = "Sale Ledger";
             // 
             // saleLedgerViewControl1
@@ -105,7 +108,7 @@
             this.saleLedgerViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.saleLedgerViewControl1.Location = new System.Drawing.Point(0, 0);
             this.saleLedgerViewControl1.Name = "saleLedgerViewControl1";
-            this.saleLedgerViewControl1.Size = new System.Drawing.Size(1298, 664);
+            this.saleLedgerViewControl1.Size = new System.Drawing.Size(1298, 681);
             this.saleLedgerViewControl1.TabIndex = 0;
             // 
             // xtraTabPageProduct
@@ -113,7 +116,7 @@
             this.xtraTabPageProduct.Controls.Add(this.productViewControl1);
             this.xtraTabPageProduct.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageProduct.Image")));
             this.xtraTabPageProduct.Name = "xtraTabPageProduct";
-            this.xtraTabPageProduct.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageProduct.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageProduct.Text = "Products";
             // 
             // productViewControl1
@@ -122,7 +125,7 @@
             this.productViewControl1.Location = new System.Drawing.Point(0, 0);
             this.productViewControl1.Name = "productViewControl1";
             this.productViewControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.productViewControl1.Size = new System.Drawing.Size(1298, 664);
+            this.productViewControl1.Size = new System.Drawing.Size(1298, 681);
             this.productViewControl1.TabIndex = 0;
             // 
             // xtraTabPageCustomer
@@ -130,7 +133,7 @@
             this.xtraTabPageCustomer.Controls.Add(this.customerViewControl1);
             this.xtraTabPageCustomer.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageCustomer.Image")));
             this.xtraTabPageCustomer.Name = "xtraTabPageCustomer";
-            this.xtraTabPageCustomer.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageCustomer.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageCustomer.Text = "Customers";
             // 
             // customerViewControl1
@@ -139,29 +142,37 @@
             this.customerViewControl1.Location = new System.Drawing.Point(0, 0);
             this.customerViewControl1.Name = "customerViewControl1";
             this.customerViewControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.customerViewControl1.Size = new System.Drawing.Size(1298, 664);
+            this.customerViewControl1.Size = new System.Drawing.Size(1298, 681);
             this.customerViewControl1.TabIndex = 0;
             // 
             // xtraTabPageService
             // 
             this.xtraTabPageService.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageService.Image")));
             this.xtraTabPageService.Name = "xtraTabPageService";
-            this.xtraTabPageService.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageService.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageService.Text = "Services";
             // 
             // xtraTabPageReport
             // 
             this.xtraTabPageReport.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageReport.Image")));
             this.xtraTabPageReport.Name = "xtraTabPageReport";
-            this.xtraTabPageReport.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageReport.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageReport.Text = "Reports";
             // 
             // xtraTabPageIslah
             // 
             this.xtraTabPageIslah.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageIslah.Image")));
             this.xtraTabPageIslah.Name = "xtraTabPageIslah";
-            this.xtraTabPageIslah.Size = new System.Drawing.Size(1298, 664);
+            this.xtraTabPageIslah.Size = new System.Drawing.Size(1298, 681);
             this.xtraTabPageIslah.Text = "Islah";
+            // 
+            // dashboardViewControl1
+            // 
+            this.dashboardViewControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardViewControl1.Location = new System.Drawing.Point(0, 0);
+            this.dashboardViewControl1.Name = "dashboardViewControl1";
+            this.dashboardViewControl1.Size = new System.Drawing.Size(1298, 681);
+            this.dashboardViewControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -173,6 +184,7 @@
             this.Text = "Islah POS";
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlPos)).EndInit();
             this.xtraTabControlPos.ResumeLayout(false);
+            this.xtraTabPageDashboard.ResumeLayout(false);
             this.xtraTabPageSale.ResumeLayout(false);
             this.xtraTabPageLedger.ResumeLayout(false);
             this.xtraTabPageProduct.ResumeLayout(false);
@@ -196,6 +208,7 @@
         private ViewControls.CustomerViewControl customerViewControl1;
         private ViewControls.SaleLedgerViewControl saleLedgerViewControl1;
         private ViewControls.SaleViewControl saleViewControl1;
+        private ViewControls.DashboardViewControl dashboardViewControl1;
     }
 }
 
