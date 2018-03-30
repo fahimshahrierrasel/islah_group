@@ -252,4 +252,20 @@
       <Column Name="Paid" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetTodayTotalProductSale" Method="GetTodayTotalProductSale">
+    <Parameter Name="SaleDate" Parameter="saleDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetTodayTotalProductSaleResult">
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TotalProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTodaySummery" Method="GetTodaySummery">
+    <Parameter Name="SaleDate" Parameter="saleDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetTodaySummeryResult">
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TotalSale" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CustomerServed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalInvoice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

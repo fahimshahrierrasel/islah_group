@@ -291,6 +291,20 @@ namespace POS
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), saleDate);
 			return ((ISingleResult<GetTotalSaleResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTodayTotalProductSale")]
+		public ISingleResult<GetTodayTotalProductSaleResult> GetTodayTotalProductSale([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SaleDate", DbType="Date")] System.Nullable<System.DateTime> saleDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), saleDate);
+			return ((ISingleResult<GetTodayTotalProductSaleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTodaySummery")]
+		public ISingleResult<GetTodaySummeryResult> GetTodaySummery([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SaleDate", DbType="Date")] System.Nullable<System.DateTime> saleDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), saleDate);
+			return ((ISingleResult<GetTodaySummeryResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Branch")]
@@ -5449,6 +5463,130 @@ namespace POS
 				if ((this._Paid != value))
 				{
 					this._Paid = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetTodayTotalProductSaleResult
+	{
+		
+		private System.Nullable<System.DateTime> _InvoiceDate;
+		
+		private System.Nullable<int> _TotalProduct;
+		
+		public GetTodayTotalProductSaleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceDate", DbType="Date")]
+		public System.Nullable<System.DateTime> InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalProduct", DbType="Int")]
+		public System.Nullable<int> TotalProduct
+		{
+			get
+			{
+				return this._TotalProduct;
+			}
+			set
+			{
+				if ((this._TotalProduct != value))
+				{
+					this._TotalProduct = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetTodaySummeryResult
+	{
+		
+		private System.Nullable<System.DateTime> _InvoiceDate;
+		
+		private System.Nullable<decimal> _TotalSale;
+		
+		private System.Nullable<int> _CustomerServed;
+		
+		private System.Nullable<int> _TotalInvoice;
+		
+		public GetTodaySummeryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceDate", DbType="Date")]
+		public System.Nullable<System.DateTime> InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalSale", DbType="Money")]
+		public System.Nullable<decimal> TotalSale
+		{
+			get
+			{
+				return this._TotalSale;
+			}
+			set
+			{
+				if ((this._TotalSale != value))
+				{
+					this._TotalSale = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerServed", DbType="Int")]
+		public System.Nullable<int> CustomerServed
+		{
+			get
+			{
+				return this._CustomerServed;
+			}
+			set
+			{
+				if ((this._CustomerServed != value))
+				{
+					this._CustomerServed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalInvoice", DbType="Int")]
+		public System.Nullable<int> TotalInvoice
+		{
+			get
+			{
+				return this._TotalInvoice;
+			}
+			set
+			{
+				if ((this._TotalInvoice != value))
+				{
+					this._TotalInvoice = value;
 				}
 			}
 		}

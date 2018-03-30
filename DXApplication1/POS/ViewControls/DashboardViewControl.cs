@@ -25,6 +25,7 @@ namespace POS.ViewControls
         private void DashboardViewControl_Load(object sender, EventArgs e)
         {
             SetTopSellingProduct();
+            SetTodaySummery();
         }
 
         private void SetTopSellingProduct()
@@ -36,11 +37,28 @@ namespace POS.ViewControls
                              on p.ProdId equals i.id
                              orderby i.Quantity descending
                              select new { p.ProdName, i.Quantity }).Take(10);
-            BindingSource sellingBindingSource = new BindingSource();
-            sellingBindingSource.DataSource = topSelling;
+            BindingSource sellingBindingSource = new BindingSource
+            {
+                DataSource = topSelling
+            };
             TopSellingGridControl.DataSource = sellingBindingSource;
             TopSellingGridControl.RefreshDataSource();
+        }
+        private void SetTodaySummery()
+        {
+            var summeryResult = db.GetTodaySummery(DateTime.Now.Date).SingleOrDefault();
+            if (summeryResult != null)
+            {
+                TotalSaleLabel.Text = String.Format("$ {0}", summeryResult.TotalSale);
+                TotalCustServedLabel.Text = summeryResult.CustomerServed.ToString();
+                TotalInvoiceLabel.Text = summeryResult.TotalInvoice.ToString();
+            }
 
+            var totalProductSale = db.GetTodayTotalProductSale(DateTime.Now.Date).SingleOrDefault();
+            if(totalProductSale != null)
+            {
+                TotalProductSoldLabel.Text = totalProductSale.TotalProduct.ToString();
+            }
         }
     }
 }
