@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -113,5 +115,16 @@ namespace IslahGroupInventory.ViewControls
             InitializeRawMaterialGridView();
         }
 
+        private void gridViewRawMaterial_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            if (view.IsValidRowHandle(e.RowHandle))
+            {
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "ReOrderPoint").ToString(), out int order);
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
+                if (stock <= order)
+                    e.Appearance.BackColor = Color.Tomato;
+            }
+        }
     }
 }

@@ -68,6 +68,7 @@
             this.textBoxRMUCode = new System.Windows.Forms.TextBox();
             this.label69 = new System.Windows.Forms.Label();
             this.rawMaterialGridControl = new DevExpress.XtraGrid.GridControl();
+            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewRawMaterial = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colRPId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRPCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,7 +79,6 @@
             this.colStock2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch_BranchId4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox21.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -86,8 +86,8 @@
             this.tabPage5.SuspendLayout();
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox21
@@ -101,9 +101,9 @@
             this.groupBox21.Controls.Add(this.textBoxRMSUCode);
             this.groupBox21.Controls.Add(this.label58);
             this.groupBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox21.Location = new System.Drawing.Point(3, 402);
+            this.groupBox21.Location = new System.Drawing.Point(8, 408);
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(381, 216);
+            this.groupBox21.Size = new System.Drawing.Size(377, 224);
             this.groupBox21.TabIndex = 7;
             this.groupBox21.TabStop = false;
             this.groupBox21.Text = "Add Stock";
@@ -193,7 +193,7 @@
             this.tabControl3.Controls.Add(this.tabPage4);
             this.tabControl3.Controls.Add(this.tabPage5);
             this.tabControl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl3.Location = new System.Drawing.Point(3, 2);
+            this.tabControl3.Location = new System.Drawing.Point(8, 8);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
             this.tabControl3.Size = new System.Drawing.Size(381, 394);
@@ -496,17 +496,26 @@
             // 
             // rawMaterialGridControl
             // 
+            this.rawMaterialGridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rawMaterialGridControl.DataSource = this.rawProductsBindingSource;
-            this.rawMaterialGridControl.Location = new System.Drawing.Point(390, 3);
+            this.rawMaterialGridControl.Location = new System.Drawing.Point(395, 8);
             this.rawMaterialGridControl.MainView = this.gridViewRawMaterial;
             this.rawMaterialGridControl.Name = "rawMaterialGridControl";
-            this.rawMaterialGridControl.Size = new System.Drawing.Size(883, 615);
+            this.rawMaterialGridControl.Size = new System.Drawing.Size(873, 624);
             this.rawMaterialGridControl.TabIndex = 8;
             this.rawMaterialGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRawMaterial});
             // 
+            // rawProductsBindingSource
+            // 
+            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
+            // 
             // gridViewRawMaterial
             // 
+            this.gridViewRawMaterial.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12.25F);
+            this.gridViewRawMaterial.Appearance.Row.Options.UseFont = true;
             this.gridViewRawMaterial.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colRPId,
             this.colRPCode,
@@ -519,7 +528,10 @@
             this.colBranch4});
             this.gridViewRawMaterial.GridControl = this.rawMaterialGridControl;
             this.gridViewRawMaterial.Name = "gridViewRawMaterial";
+            this.gridViewRawMaterial.OptionsDetail.EnableMasterViewMode = false;
+            this.gridViewRawMaterial.OptionsView.ShowFooter = true;
             this.gridViewRawMaterial.OptionsView.ShowGroupPanel = false;
+            this.gridViewRawMaterial.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridViewRawMaterial_RowStyle);
             // 
             // colRPId
             // 
@@ -582,6 +594,8 @@
             this.colStock2.FieldName = "Stock";
             this.colStock2.Name = "colStock2";
             this.colStock2.OptionsColumn.AllowEdit = false;
+            this.colStock2.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Stock", "Total Item={0:0}")});
             this.colStock2.Visible = true;
             this.colStock2.VisibleIndex = 5;
             this.colStock2.Width = 99;
@@ -596,10 +610,6 @@
             this.colBranch4.FieldName = "Branch";
             this.colBranch4.Name = "colBranch4";
             // 
-            // rawProductsBindingSource
-            // 
-            this.rawProductsBindingSource.DataSource = typeof(IslahGroupInventory.RawProduct);
-            // 
             // RawMaterialControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -607,7 +617,8 @@
             this.Controls.Add(this.groupBox21);
             this.Controls.Add(this.tabControl3);
             this.Name = "RawMaterialControl";
-            this.Size = new System.Drawing.Size(1276, 622);
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.Size = new System.Drawing.Size(1276, 640);
             this.Load += new System.EventHandler(this.RawMaterialControl_Load);
             this.groupBox21.ResumeLayout(false);
             this.groupBox21.PerformLayout();
@@ -619,8 +630,8 @@
             this.groupBox19.ResumeLayout(false);
             this.groupBox19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).EndInit();
             this.ResumeLayout(false);
 
         }
