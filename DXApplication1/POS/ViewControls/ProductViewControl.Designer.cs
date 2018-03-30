@@ -141,8 +141,10 @@
             this.ProductsGridView.GridControl = this.ProductsGridControl;
             this.ProductsGridView.Name = "ProductsGridView";
             this.ProductsGridView.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
+            this.ProductsGridView.OptionsDetail.EnableMasterViewMode = false;
             this.ProductsGridView.OptionsEditForm.EditFormColumnCount = 2;
             this.ProductsGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.ProductsGridView.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.ProductsGridView_RowStyle);
             // 
             // colProdId
             // 

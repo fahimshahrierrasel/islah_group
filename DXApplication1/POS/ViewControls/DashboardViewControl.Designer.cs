@@ -34,7 +34,6 @@
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraGrid.GridControl TopSellingGridControl;
             DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
@@ -56,12 +55,12 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.TopSellingGroupControl = new DevExpress.XtraEditors.GroupControl();
+            this.TopSellingGridControl = new DevExpress.XtraGrid.GridControl();
             this.TopSellingGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            TopSellingGridControl = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -83,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopSellingGroupControl)).BeginInit();
             this.TopSellingGroupControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(TopSellingGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TopSellingGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopSellingGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -312,7 +311,7 @@
             // 
             this.TopSellingGroupControl.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 16.25F);
             this.TopSellingGroupControl.AppearanceCaption.Options.UseFont = true;
-            this.TopSellingGroupControl.Controls.Add(TopSellingGridControl);
+            this.TopSellingGroupControl.Controls.Add(this.TopSellingGridControl);
             this.TopSellingGroupControl.Location = new System.Drawing.Point(591, 12);
             this.TopSellingGroupControl.Name = "TopSellingGroupControl";
             this.TopSellingGroupControl.Size = new System.Drawing.Size(575, 347);
@@ -321,20 +320,22 @@
             // 
             // TopSellingGridControl
             // 
-            TopSellingGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            TopSellingGridControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            TopSellingGridControl.Location = new System.Drawing.Point(2, 34);
-            TopSellingGridControl.MainView = this.TopSellingGridView;
-            TopSellingGridControl.Name = "TopSellingGridControl";
-            TopSellingGridControl.Size = new System.Drawing.Size(571, 311);
-            TopSellingGridControl.TabIndex = 9;
-            TopSellingGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.TopSellingGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TopSellingGridControl.Location = new System.Drawing.Point(2, 34);
+            this.TopSellingGridControl.MainView = this.TopSellingGridView;
+            this.TopSellingGridControl.Name = "TopSellingGridControl";
+            this.TopSellingGridControl.Size = new System.Drawing.Size(571, 311);
+            this.TopSellingGridControl.TabIndex = 0;
+            this.TopSellingGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.TopSellingGridView});
             // 
             // TopSellingGridView
             // 
-            this.TopSellingGridView.GridControl = TopSellingGridControl;
+            this.TopSellingGridView.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 16.25F);
+            this.TopSellingGridView.Appearance.Row.Options.UseFont = true;
+            this.TopSellingGridView.GridControl = this.TopSellingGridControl;
             this.TopSellingGridView.Name = "TopSellingGridView";
+            this.TopSellingGridView.OptionsBehavior.Editable = false;
             this.TopSellingGridView.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControlGroup1
@@ -416,7 +417,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopSellingGroupControl)).EndInit();
             this.TopSellingGroupControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(TopSellingGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TopSellingGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopSellingGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -432,7 +433,6 @@
         private System.Windows.Forms.BindingSource invoicesBindingSource;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.GroupControl TopSellingGroupControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView TopSellingGridView;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -450,5 +450,7 @@
         private DevExpress.XtraEditors.LabelControl TotalCustServedLabel;
         private DevExpress.XtraEditors.LabelControl TotalInvoiceLabel;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraGrid.GridControl TopSellingGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView TopSellingGridView;
     }
 }

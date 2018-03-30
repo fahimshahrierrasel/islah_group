@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace POS.ViewControls
 {
@@ -75,6 +77,17 @@ namespace POS.ViewControls
         private void ButtonDiscard_Click(object sender, EventArgs e)
         {
             ResetInputFields();
+        }
+        private void ProductsGridView_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            if(view.IsValidRowHandle(e.RowHandle))
+            {
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "ReOrderPoint").ToString(), out int order);
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
+                if(stock <= order)
+                    e.Appearance.BackColor = Color.Tomato;
+            }
         }
     }
 }
