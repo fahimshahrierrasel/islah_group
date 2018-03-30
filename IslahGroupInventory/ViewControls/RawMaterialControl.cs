@@ -5,12 +5,17 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
+/* Todo
+ *   clear add material input fields
+ *   clear update material input fields
+ *   add material validation
+ */
+
 namespace IslahGroupInventory.ViewControls
 {
     public partial class RawMaterialControl : UserControl
     {
         InventoryDataClassesDataContext dbContext;
-        //BindingSource rawProductsBindingSource;
         public RawMaterialControl()
         {
             dbContext = new InventoryDataClassesDataContext();
@@ -22,7 +27,10 @@ namespace IslahGroupInventory.ViewControls
             InitializeRawMaterialGridView();
             SetNextRawProductCode();
         }
-
+        private void RawMaterialControl_VisibleChanged(object sender, EventArgs e)
+        {
+            InitializeRawMaterialGridView();
+        }
         private void InitializeRawMaterialGridView()
         {
             var rawProducts = from rawProduct in dbContext.RawProducts
@@ -115,7 +123,7 @@ namespace IslahGroupInventory.ViewControls
             InitializeRawMaterialGridView();
         }
 
-        private void gridViewRawMaterial_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        private void GridViewRawMaterial_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
         {
             ColumnView view = (ColumnView)sender;
             if (view.IsValidRowHandle(e.RowHandle))
@@ -126,5 +134,6 @@ namespace IslahGroupInventory.ViewControls
                     e.Appearance.BackColor = Color.Tomato;
             }
         }
+
     }
 }

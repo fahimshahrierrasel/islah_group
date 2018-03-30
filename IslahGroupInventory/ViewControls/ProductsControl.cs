@@ -21,6 +21,11 @@ namespace IslahGroupInventory.ViewControls
             LoadProductsGridView();
             LoadProductCategory();
         }
+        private void ProductsControl_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadProductsGridView();
+            LoadProductCategory();
+        }
 
         private void LoadProductCategory()
         {
@@ -73,10 +78,10 @@ namespace IslahGroupInventory.ViewControls
             dbContext.Products.InsertOnSubmit(newProduct);
             dbContext.SubmitChanges();
             LoadProductsGridView();
-            ClearProductAddInputFileds();
+            ClearProductAddInputFields();
         }
 
-        private void ClearProductAddInputFileds()
+        private void ClearProductAddInputFields()
         {
             string empty = String.Empty;
             textBoxProdCode.Text = empty;
@@ -102,7 +107,7 @@ namespace IslahGroupInventory.ViewControls
 
             dbContext.SubmitChanges();
             LoadProductsGridView();
-            ClearProductUploadInputFields();
+            ClearProductUpdateInputFields();
             XtraMessageBox.Show("Product Updated!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -127,7 +132,7 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
-        private void ClearProductUploadInputFields()
+        private void ClearProductUpdateInputFields()
         {
             string empty = String.Empty;
             textBoxUPCode.Text = empty;

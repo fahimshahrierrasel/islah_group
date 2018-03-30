@@ -115,6 +115,8 @@
             this.textBoxRMSUAStock.Name = "textBoxRMSUAStock";
             this.textBoxRMSUAStock.Size = new System.Drawing.Size(256, 26);
             this.textBoxRMSUAStock.TabIndex = 38;
+            this.textBoxRMSUAStock.Text = "0";
+            this.textBoxRMSUAStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label55
             // 
@@ -159,6 +161,7 @@
             this.textBoxRMSUCtock.Name = "textBoxRMSUCtock";
             this.textBoxRMSUCtock.Size = new System.Drawing.Size(256, 26);
             this.textBoxRMSUCtock.TabIndex = 34;
+            this.textBoxRMSUCtock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label57
             // 
@@ -531,7 +534,7 @@
             this.gridViewRawMaterial.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewRawMaterial.OptionsView.ShowFooter = true;
             this.gridViewRawMaterial.OptionsView.ShowGroupPanel = false;
-            this.gridViewRawMaterial.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridViewRawMaterial_RowStyle);
+            this.gridViewRawMaterial.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.GridViewRawMaterial_RowStyle);
             // 
             // colRPId
             // 
@@ -620,6 +623,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1276, 640);
             this.Load += new System.EventHandler(this.RawMaterialControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.RawMaterialControl_VisibleChanged);
             this.groupBox21.ResumeLayout(false);
             this.groupBox21.PerformLayout();
             this.tabControl3.ResumeLayout(false);

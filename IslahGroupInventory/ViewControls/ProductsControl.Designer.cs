@@ -781,6 +781,7 @@
             this.Name = "ProductsControl";
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.ProductsControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.ProductsControl_VisibleChanged);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxAddProduct.ResumeLayout(false);
