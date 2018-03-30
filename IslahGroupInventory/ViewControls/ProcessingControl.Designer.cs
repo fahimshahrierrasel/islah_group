@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonDiscardProcessing = new System.Windows.Forms.Button();
+            this.buttonSaveProcessing = new System.Windows.Forms.Button();
+            this.gridControlProcessingItem = new DevExpress.XtraGrid.GridControl();
+            this.gridViewProcessingItem = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.cbMaterialName = new System.Windows.Forms.ComboBox();
             this.rawProductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,22 +48,18 @@
             this.dtpProcessingDate = new System.Windows.Forms.DateTimePicker();
             this.label90 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.gridControlProcessingItem = new DevExpress.XtraGrid.GridControl();
-            this.gridViewProcessingItem = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.buttonDiscardProcessing = new System.Windows.Forms.Button();
-            this.buttonSaveProcessing = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.gridControlProcessing = new DevExpress.XtraGrid.GridControl();
-            this.gridViewProcessing = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControlPItems = new DevExpress.XtraGrid.GridControl();
-            this.gridViewPItems = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.processingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridViewProcessing = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProcessingID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControlPItems = new DevExpress.XtraGrid.GridControl();
             this.processingItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridViewPItems = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colProcessing_ProcessingID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawProduct_RPId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,22 +67,22 @@
             this.colRawProduct = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl6.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).BeginInit();
             this.groupBox26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             this.groupBox20.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessing)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.processingsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.processingItemsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl6
@@ -111,6 +111,43 @@
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "New Processing";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // buttonDiscardProcessing
+            // 
+            this.buttonDiscardProcessing.Location = new System.Drawing.Point(187, 388);
+            this.buttonDiscardProcessing.Name = "buttonDiscardProcessing";
+            this.buttonDiscardProcessing.Size = new System.Drawing.Size(94, 43);
+            this.buttonDiscardProcessing.TabIndex = 8;
+            this.buttonDiscardProcessing.Text = "Discard";
+            this.buttonDiscardProcessing.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveProcessing
+            // 
+            this.buttonSaveProcessing.Location = new System.Drawing.Point(287, 389);
+            this.buttonSaveProcessing.Name = "buttonSaveProcessing";
+            this.buttonSaveProcessing.Size = new System.Drawing.Size(94, 43);
+            this.buttonSaveProcessing.TabIndex = 7;
+            this.buttonSaveProcessing.Text = "Save";
+            this.buttonSaveProcessing.UseVisualStyleBackColor = true;
+            this.buttonSaveProcessing.Click += new System.EventHandler(this.ButtonSaveProcessing_Click);
+            // 
+            // gridControlProcessingItem
+            // 
+            this.gridControlProcessingItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlProcessingItem.Location = new System.Drawing.Point(388, 9);
+            this.gridControlProcessingItem.MainView = this.gridViewProcessingItem;
+            this.gridControlProcessingItem.Name = "gridControlProcessingItem";
+            this.gridControlProcessingItem.Size = new System.Drawing.Size(872, 568);
+            this.gridControlProcessingItem.TabIndex = 6;
+            this.gridControlProcessingItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewProcessingItem});
+            // 
+            // gridViewProcessingItem
+            // 
+            this.gridViewProcessingItem.GridControl = this.gridControlProcessingItem;
+            this.gridViewProcessingItem.Name = "gridViewProcessingItem";
             // 
             // groupBox26
             // 
@@ -244,43 +281,6 @@
             this.tabPage8.Text = "Processing List";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // gridControlProcessingItem
-            // 
-            this.gridControlProcessingItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControlProcessingItem.Location = new System.Drawing.Point(388, 9);
-            this.gridControlProcessingItem.MainView = this.gridViewProcessingItem;
-            this.gridControlProcessingItem.Name = "gridControlProcessingItem";
-            this.gridControlProcessingItem.Size = new System.Drawing.Size(872, 568);
-            this.gridControlProcessingItem.TabIndex = 6;
-            this.gridControlProcessingItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewProcessingItem});
-            // 
-            // gridViewProcessingItem
-            // 
-            this.gridViewProcessingItem.GridControl = this.gridControlProcessingItem;
-            this.gridViewProcessingItem.Name = "gridViewProcessingItem";
-            // 
-            // buttonDiscardProcessing
-            // 
-            this.buttonDiscardProcessing.Location = new System.Drawing.Point(187, 388);
-            this.buttonDiscardProcessing.Name = "buttonDiscardProcessing";
-            this.buttonDiscardProcessing.Size = new System.Drawing.Size(94, 43);
-            this.buttonDiscardProcessing.TabIndex = 8;
-            this.buttonDiscardProcessing.Text = "Discard";
-            this.buttonDiscardProcessing.UseVisualStyleBackColor = true;
-            // 
-            // buttonSaveProcessing
-            // 
-            this.buttonSaveProcessing.Location = new System.Drawing.Point(287, 389);
-            this.buttonSaveProcessing.Name = "buttonSaveProcessing";
-            this.buttonSaveProcessing.Size = new System.Drawing.Size(94, 43);
-            this.buttonSaveProcessing.TabIndex = 7;
-            this.buttonSaveProcessing.Text = "Save";
-            this.buttonSaveProcessing.UseVisualStyleBackColor = true;
-            this.buttonSaveProcessing.Click += new System.EventHandler(this.ButtonSaveProcessing_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -310,6 +310,10 @@
             this.gridControlProcessing.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewProcessing});
             // 
+            // processingsBindingSource
+            // 
+            this.processingsBindingSource.DataSource = typeof(IslahGroupInventory.Processing);
+            // 
             // gridViewProcessing
             // 
             this.gridViewProcessing.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -320,33 +324,6 @@
             this.colBranch});
             this.gridViewProcessing.GridControl = this.gridControlProcessing;
             this.gridViewProcessing.Name = "gridViewProcessing";
-            // 
-            // gridControlPItems
-            // 
-            this.gridControlPItems.DataSource = this.processingItemsBindingSource;
-            this.gridControlPItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlPItems.Location = new System.Drawing.Point(0, 0);
-            this.gridControlPItems.MainView = this.gridViewPItems;
-            this.gridControlPItems.Name = "gridControlPItems";
-            this.gridControlPItems.Size = new System.Drawing.Size(528, 579);
-            this.gridControlPItems.TabIndex = 0;
-            this.gridControlPItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewPItems});
-            // 
-            // gridViewPItems
-            // 
-            this.gridViewPItems.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colProcessing_ProcessingID,
-            this.colRawProduct_RPId,
-            this.colQuantity,
-            this.colProcessing,
-            this.colRawProduct});
-            this.gridViewPItems.GridControl = this.gridControlPItems;
-            this.gridViewPItems.Name = "gridViewPItems";
-            // 
-            // processingsBindingSource
-            // 
-            this.processingsBindingSource.DataSource = typeof(IslahGroupInventory.Processing);
             // 
             // colProcessingID
             // 
@@ -377,10 +354,33 @@
             this.colBranch.FieldName = "Branch";
             this.colBranch.Name = "colBranch";
             // 
+            // gridControlPItems
+            // 
+            this.gridControlPItems.DataSource = this.processingItemsBindingSource;
+            this.gridControlPItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlPItems.Location = new System.Drawing.Point(0, 0);
+            this.gridControlPItems.MainView = this.gridViewPItems;
+            this.gridControlPItems.Name = "gridControlPItems";
+            this.gridControlPItems.Size = new System.Drawing.Size(528, 579);
+            this.gridControlPItems.TabIndex = 0;
+            this.gridControlPItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewPItems});
+            // 
             // processingItemsBindingSource
             // 
             this.processingItemsBindingSource.DataMember = "ProcessingItems";
             this.processingItemsBindingSource.DataSource = this.processingsBindingSource;
+            // 
+            // gridViewPItems
+            // 
+            this.gridViewPItems.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colProcessing_ProcessingID,
+            this.colRawProduct_RPId,
+            this.colQuantity,
+            this.colProcessing,
+            this.colRawProduct});
+            this.gridViewPItems.GridControl = this.gridControlPItems;
+            this.gridViewPItems.Name = "gridViewPItems";
             // 
             // colProcessing_ProcessingID
             // 
@@ -420,24 +420,24 @@
             this.Load += new System.EventHandler(this.ProcessingControl_Load);
             this.tabControl6.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).EndInit();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             this.tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessingItem)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessing)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProcessing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.processingsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.processingItemsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).EndInit();
             this.ResumeLayout(false);
 
         }
