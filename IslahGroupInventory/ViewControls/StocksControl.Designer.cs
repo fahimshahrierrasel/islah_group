@@ -292,6 +292,9 @@
             // 
             // gridControlStockProductList
             // 
+            this.gridControlStockProductList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlStockProductList.DataSource = this.productsBindingSource;
             this.gridControlStockProductList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControlStockProductList.Location = new System.Drawing.Point(358, 8);
@@ -308,6 +311,8 @@
             // 
             // gridViewStockProducts
             // 
+            this.gridViewStockProducts.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12.25F);
+            this.gridViewStockProducts.Appearance.Row.Options.UseFont = true;
             this.gridViewStockProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.bandedGridColumn1,
             this.bandedGridColumn2,
@@ -324,8 +329,10 @@
             this.gridViewStockProducts.GridControl = this.gridControlStockProductList;
             this.gridViewStockProducts.Name = "gridViewStockProducts";
             this.gridViewStockProducts.OptionsBehavior.Editable = false;
+            this.gridViewStockProducts.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewStockProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewStockProducts.OptionsView.ShowGroupPanel = false;
+            this.gridViewStockProducts.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.GridViewStockProducts_RowStyle);
             // 
             // bandedGridColumn1
             // 

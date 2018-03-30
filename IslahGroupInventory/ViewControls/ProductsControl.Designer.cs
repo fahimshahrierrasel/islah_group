@@ -294,7 +294,6 @@
             // 
             // textBoxProdCode
             // 
-            this.textBoxProdCode.Enabled = false;
             this.textBoxProdCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProdCode.Location = new System.Drawing.Point(118, 41);
             this.textBoxProdCode.Name = "textBoxProdCode";
@@ -633,6 +632,9 @@
             // 
             // gridControlProducts
             // 
+            this.gridControlProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlProducts.DataSource = this.productsBindingSource;
             this.gridControlProducts.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlProducts.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
@@ -655,6 +657,8 @@
             // 
             // gridViewProducts
             // 
+            this.gridViewProducts.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12.25F);
+            this.gridViewProducts.Appearance.Row.Options.UseFont = true;
             this.gridViewProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colProdId,
             this.colProdCode,
@@ -671,8 +675,10 @@
             this.gridViewProducts.GridControl = this.gridControlProducts;
             this.gridViewProducts.Name = "gridViewProducts";
             this.gridViewProducts.OptionsBehavior.Editable = false;
+            this.gridViewProducts.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewProducts.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewProducts.OptionsView.ShowGroupPanel = false;
+            this.gridViewProducts.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.GridViewProducts_RowStyle);
             // 
             // colProdId
             // 

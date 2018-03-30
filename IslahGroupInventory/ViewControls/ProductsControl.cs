@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace IslahGroupInventory.ViewControls
 {
@@ -17,12 +19,7 @@ namespace IslahGroupInventory.ViewControls
         private void ProductsControl_Load(object sender, EventArgs e)
         {
             LoadProductsGridView();
-            LoadNewProductCode();
             LoadProductCategory();
-        }
-        private void LoadNewProductCode()
-        {
-            textBoxProdCode.Text = String.Format("PRODT{0:D5}", dbContext.GetNextProductCode());
         }
 
         private void LoadProductCategory()
@@ -76,7 +73,20 @@ namespace IslahGroupInventory.ViewControls
             dbContext.Products.InsertOnSubmit(newProduct);
             dbContext.SubmitChanges();
             LoadProductsGridView();
-            LoadNewProductCode();
+            ClearProductAddInputFileds();
+        }
+
+        private void ClearProductAddInputFileds()
+        {
+            string empty = String.Empty;
+            textBoxProdCode.Text = empty;
+            textBoxName.Text = empty;
+            textBoxDescription.Text = empty;
+            comboBoxCategory.Text = empty;
+            textBoxSPrice.Text = empty;
+            textBoxRPoint.Text = empty;
+            textBoxDiscount.Text = empty;
+            textBoxStock.Text = empty;
         }
 
         private void ButtonUpdateProduct_Click(object sender, EventArgs e)
@@ -92,7 +102,7 @@ namespace IslahGroupInventory.ViewControls
 
             dbContext.SubmitChanges();
             LoadProductsGridView();
-
+            ClearProductUploadInputFields();
             XtraMessageBox.Show("Product Updated!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -117,6 +127,19 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
+        private void ClearProductUploadInputFields()
+        {
+            string empty = String.Empty;
+            textBoxUPCode.Text = empty;
+            textBoxUPName.Text = empty;
+            textBoxUPDescription.Text = empty;
+            comboBoxUPCategory.Text = empty;
+            textBoxUPSPrice.Text = empty;
+            textBoxUPRPoint.Text = empty;
+            textBoxUPDiscount.Text = empty;
+            textBoxUPStock.Text = empty;
+        }
+
         private void ButtonProductDelete_Click(object sender, EventArgs e)
         {
             string productCode = textBoxDPCode.Text;
@@ -132,6 +155,18 @@ namespace IslahGroupInventory.ViewControls
             else
             {
                 XtraMessageBox.Show("No product found!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void GridViewProducts_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            if (view.IsValidRowHandle(e.RowHandle))
+            {
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "ReOrderPoint").ToString(), out int order);
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
+                if (stock <= order)
+                    e.Appearance.BackColor = Color.Tomato;
             }
         }
     }

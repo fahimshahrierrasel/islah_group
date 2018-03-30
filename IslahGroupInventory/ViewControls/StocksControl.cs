@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
 
 namespace IslahGroupInventory.ViewControls
 {
@@ -81,6 +82,18 @@ namespace IslahGroupInventory.ViewControls
             product.Stock = numberOfItem;
             dbContext.SubmitChanges();
             LoadStockProductGridView();
+        }
+
+        private void GridViewStockProducts_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            if (view.IsValidRowHandle(e.RowHandle))
+            {
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "ReOrderPoint").ToString(), out int order);
+                int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
+                if (stock <= order)
+                    e.Appearance.BackColor = Color.Tomato;
+            }
         }
     }
 }
