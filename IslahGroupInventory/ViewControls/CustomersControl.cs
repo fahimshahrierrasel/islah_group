@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
 
+/* Todo
+ *  Clear customer input fields
+ *  validate customer input fields
+ */
+
 namespace IslahGroupInventory.ViewControls
 {
     public partial class CustomersControl : UserControl
@@ -19,14 +24,12 @@ namespace IslahGroupInventory.ViewControls
             dbContext = new InventoryDataClassesDataContext();
             InitializeComponent();
         }
-
         private void CustomersControl_Load(object sender, EventArgs e)
         {
             LoadNewCustomerCode();
             LoadTotalCustomerCounter();
             LoadCustomersGridView();
         }
-
         private void LoadNewCustomerCode()
         {
             textBoxICCode.Text = String.Format("CUST{0:D6}", dbContext.GetNextCustomerCode());
@@ -81,6 +84,7 @@ namespace IslahGroupInventory.ViewControls
             customer.Remark = rowCustomer.Remark;
 
             dbContext.SubmitChanges();
+            LoadCustomersGridView();
         }
     }
 }

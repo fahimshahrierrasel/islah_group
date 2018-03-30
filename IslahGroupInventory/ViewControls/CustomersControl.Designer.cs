@@ -268,6 +268,7 @@
             this.gridViewCustomer.GridControl = this.gridControlCustomers;
             this.gridViewCustomer.Name = "gridViewCustomer";
             this.gridViewCustomer.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
+            this.gridViewCustomer.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewCustomer.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewCustomer.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.GridViewCustomer_ValidateRow);
             // 

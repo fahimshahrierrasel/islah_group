@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
+/* Todo
+ *  clear supplier input fields
+ *  validate supplier input fields
+ */
 
 namespace IslahGroupInventory.ViewControls
 {
@@ -66,6 +70,7 @@ namespace IslahGroupInventory.ViewControls
             dbContext.SubmitChanges();
             LoadSupplierGridView();
             SetNextSupplierCode();
+            LoadTotalSupplierCounter();
         }
 
         private void GridViewSuppliers_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -87,6 +92,5 @@ namespace IslahGroupInventory.ViewControls
             dbContext.SubmitChanges();
             LoadSupplierGridView();
         }
-
     }
 }

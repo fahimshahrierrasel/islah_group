@@ -257,6 +257,9 @@
             // 
             // gridControlSuppliers
             // 
+            this.gridControlSuppliers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControlSuppliers.DataSource = this.suppliersBindingSource;
             this.gridControlSuppliers.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.gridControlSuppliers.EmbeddedNavigator.Buttons.Remove.Visible = false;
@@ -289,6 +292,7 @@
             this.gridViewSuppliers.GridControl = this.gridControlSuppliers;
             this.gridViewSuppliers.Name = "gridViewSuppliers";
             this.gridViewSuppliers.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplaceHideCurrentRow;
+            this.gridViewSuppliers.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewSuppliers.OptionsEditForm.EditFormColumnCount = 2;
             this.gridViewSuppliers.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.GridViewSuppliers_ValidateRow);
             // 
