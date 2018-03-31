@@ -15,5 +15,10 @@ namespace IslahGroupInventory
             tsslUsername.Text = BranchInfo.Username;
             tsslBranchCode.Text = BranchInfo.BranchCode;
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
     }
 }

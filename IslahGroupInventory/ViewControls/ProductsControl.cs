@@ -52,7 +52,6 @@ namespace IslahGroupInventory.ViewControls
 
         private void ButtonAddProduct_Click(object sender, EventArgs e)
         {
-            // TODO: Validation of the Add Product
             string prodCode = textBoxProdCode.Text;
             string prodName = textBoxName.Text;
             string desc = textBoxDescription.Text;
@@ -62,23 +61,26 @@ namespace IslahGroupInventory.ViewControls
             string discount = textBoxDiscount.Text;
             string stock = textBoxStock.Text;
 
-            Product newProduct = new Product()
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                ProdCode = prodCode,
-                ProdName = prodName,
-                Description = desc,
-                SubCategory_Name = category,
-                Active = true,
-                SellingPrice = Convert.ToDecimal(sellPrice),
-                ReOrderPoint = Convert.ToInt16(rp),
-                Discount = Convert.ToDecimal(discount),
-                Stock = Convert.ToInt32(stock),
-                Branch_BranchId = BranchInfo.BranchId
-            };
-            dbContext.Products.InsertOnSubmit(newProduct);
-            dbContext.SubmitChanges();
-            LoadProductsGridView();
-            ClearProductAddInputFields();
+                Product newProduct = new Product()
+                {
+                    ProdCode = prodCode,
+                    ProdName = prodName,
+                    Description = desc,
+                    SubCategory_Name = category,
+                    Active = true,
+                    SellingPrice = Convert.ToDecimal(sellPrice),
+                    ReOrderPoint = Convert.ToInt16(rp),
+                    Discount = Convert.ToDecimal(discount),
+                    Stock = Convert.ToInt32(stock),
+                    Branch_BranchId = BranchInfo.BranchId
+                };
+                dbContext.Products.InsertOnSubmit(newProduct);
+                dbContext.SubmitChanges();
+                LoadProductsGridView();
+                ClearProductAddInputFields();
+            }
         }
 
         private void ClearProductAddInputFields()
@@ -172,6 +174,35 @@ namespace IslahGroupInventory.ViewControls
                 int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
                 if (stock <= order)
                     e.Appearance.BackColor = Color.Tomato;
+            }
+        }
+
+        private void CheckNullorEmpty(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                e.Cancel = true;
+                ProductsErrorProvider.SetError(textBox, "This field can not be empty!!!");
+            }
+            else
+            {
+                e.Cancel = false;
+                ProductsErrorProvider.SetError(textBox, null);
+            }
+        }
+
+        private void CheckNumber(object sender, KeyPressEventArgs e)
+        {
+            // Whole Number Check
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

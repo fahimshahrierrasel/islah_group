@@ -89,6 +89,7 @@
             this.colBranch_BranchId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSubCategory = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductsErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxAddProduct.SuspendLayout();
@@ -99,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl2
@@ -154,9 +156,9 @@
             // 
             this.buttonAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddProduct.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddProduct.Location = new System.Drawing.Point(261, 385);
+            this.buttonAddProduct.Location = new System.Drawing.Point(251, 385);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(90, 36);
+            this.buttonAddProduct.Size = new System.Drawing.Size(88, 36);
             this.buttonAddProduct.TabIndex = 35;
             this.buttonAddProduct.Text = "Add";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
@@ -167,8 +169,11 @@
             this.textBoxStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStock.Location = new System.Drawing.Point(119, 337);
             this.textBoxStock.Name = "textBoxStock";
-            this.textBoxStock.Size = new System.Drawing.Size(232, 26);
+            this.textBoxStock.Size = new System.Drawing.Size(220, 26);
             this.textBoxStock.TabIndex = 34;
+            this.textBoxStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
+            this.textBoxStock.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label8
             // 
@@ -185,8 +190,12 @@
             this.textBoxDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiscount.Location = new System.Drawing.Point(118, 300);
             this.textBoxDiscount.Name = "textBoxDiscount";
-            this.textBoxDiscount.Size = new System.Drawing.Size(232, 26);
+            this.textBoxDiscount.Size = new System.Drawing.Size(220, 26);
             this.textBoxDiscount.TabIndex = 32;
+            this.textBoxDiscount.Text = "0.00";
+            this.textBoxDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
+            this.textBoxDiscount.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label7
             // 
@@ -203,8 +212,12 @@
             this.textBoxRPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRPoint.Location = new System.Drawing.Point(118, 264);
             this.textBoxRPoint.Name = "textBoxRPoint";
-            this.textBoxRPoint.Size = new System.Drawing.Size(232, 26);
+            this.textBoxRPoint.Size = new System.Drawing.Size(220, 26);
             this.textBoxRPoint.TabIndex = 30;
+            this.textBoxRPoint.Text = "5";
+            this.textBoxRPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
+            this.textBoxRPoint.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label6
             // 
@@ -221,8 +234,11 @@
             this.textBoxSPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSPrice.Location = new System.Drawing.Point(118, 229);
             this.textBoxSPrice.Name = "textBoxSPrice";
-            this.textBoxSPrice.Size = new System.Drawing.Size(232, 26);
+            this.textBoxSPrice.Size = new System.Drawing.Size(220, 26);
             this.textBoxSPrice.TabIndex = 28;
+            this.textBoxSPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxSPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
+            this.textBoxSPrice.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label5
             // 
@@ -241,7 +257,7 @@
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(118, 194);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(232, 28);
+            this.comboBoxCategory.Size = new System.Drawing.Size(220, 28);
             this.comboBoxCategory.TabIndex = 26;
             this.comboBoxCategory.ValueMember = "Name";
             // 
@@ -261,8 +277,9 @@
             this.textBoxDescription.Location = new System.Drawing.Point(118, 105);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(232, 83);
+            this.textBoxDescription.Size = new System.Drawing.Size(220, 83);
             this.textBoxDescription.TabIndex = 24;
+            this.textBoxDescription.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label3
             // 
@@ -279,8 +296,9 @@
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxName.Location = new System.Drawing.Point(118, 73);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(232, 26);
+            this.textBoxName.Size = new System.Drawing.Size(220, 26);
             this.textBoxName.TabIndex = 22;
+            this.textBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label2
             // 
@@ -297,8 +315,9 @@
             this.textBoxProdCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProdCode.Location = new System.Drawing.Point(118, 41);
             this.textBoxProdCode.Name = "textBoxProdCode";
-            this.textBoxProdCode.Size = new System.Drawing.Size(232, 26);
+            this.textBoxProdCode.Size = new System.Drawing.Size(220, 26);
             this.textBoxProdCode.TabIndex = 20;
+            this.textBoxProdCode.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label1
             // 
@@ -386,6 +405,7 @@
             this.textBoxUPStock.Name = "textBoxUPStock";
             this.textBoxUPStock.Size = new System.Drawing.Size(232, 26);
             this.textBoxUPStock.TabIndex = 34;
+            this.textBoxUPStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
@@ -410,6 +430,7 @@
             this.textBoxUPDiscount.Name = "textBoxUPDiscount";
             this.textBoxUPDiscount.Size = new System.Drawing.Size(232, 26);
             this.textBoxUPDiscount.TabIndex = 32;
+            this.textBoxUPDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -434,6 +455,7 @@
             this.textBoxUPRPoint.Name = "textBoxUPRPoint";
             this.textBoxUPRPoint.Size = new System.Drawing.Size(232, 26);
             this.textBoxUPRPoint.TabIndex = 30;
+            this.textBoxUPRPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -458,6 +480,7 @@
             this.textBoxUPSPrice.Name = "textBoxUPSPrice";
             this.textBoxUPSPrice.Size = new System.Drawing.Size(232, 26);
             this.textBoxUPSPrice.TabIndex = 28;
+            this.textBoxUPSPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label12
             // 
@@ -773,6 +796,10 @@
             this.colSubCategory.FieldName = "SubCategory";
             this.colSubCategory.Name = "colSubCategory";
             // 
+            // ProductsErrorProvider
+            // 
+            this.ProductsErrorProvider.ContainerControl = this;
+            // 
             // ProductsControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -795,6 +822,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -860,5 +888,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBranch;
         private DevExpress.XtraGrid.Columns.GridColumn colSubCategory;
         private System.Windows.Forms.BindingSource productsBindingSource;
+        private System.Windows.Forms.ErrorProvider ProductsErrorProvider;
     }
 }
