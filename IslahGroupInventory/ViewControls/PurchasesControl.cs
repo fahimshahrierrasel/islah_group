@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
@@ -32,9 +28,27 @@ namespace IslahGroupInventory.ViewControls
             SetNextPurchaseCode();
         }
 
+        private void PurchasesControl_VisibleChanged(object sender, EventArgs e)
+        {
+            InitializeSupplierComboBox();
+            InitializePaymentComboBox();
+        }
+
+        private void ResetPurchase()
+        {
+            InitializePurchaseItemGridView();
+            comboBoxPaymentType.SelectedIndex = 0;
+            comboBoxPSupplier.SelectedIndex = 0;
+            textBoxPAmount.Text = "0.00";
+            textBoxPDue.Text = "0.00";
+            textBoxPTotal.Text = "0.00";
+            textBoxPurchaser.Text = String.Empty;
+            ClearAddProductInputFields();
+        }
+
         private void TabControlPurchases_Selected(object sender, TabControlEventArgs e)
         {
-            if(tabControlPurchases.SelectedTab == tabPagePurchaseList)
+            if (tabControlPurchases.SelectedTab == tabPagePurchaseList)
             {
                 LoadPurchasesList();
             }
@@ -52,14 +66,14 @@ namespace IslahGroupInventory.ViewControls
             purchaseItems = new DataTable();
             purchaseItems.Columns.Add("ProductCode", typeof(string));
             purchaseItems.Columns.Add("UnitPrice", typeof(decimal));
-            purchaseItems.Columns.Add("Quantity", typeof(decimal));
+            purchaseItems.Columns.Add("Quantity", typeof(int));
             purchaseItems.Columns.Add("TotalPrice", typeof(decimal));
             gridControlPurchaseItems.DataSource = purchaseItems;
         }
 
         private void SetNextPurchaseCode()
         {
-            textBoxPurchaseCode.Text = String.Format("PURCH{0:D5}", dbContext.GetNextSupplierCode());
+            textBoxPurchaseCode.Text = String.Format("PURCH{0:D5}", dbContext.GetNextPurchaseCode());
         }
 
         private void InitializeSupplierComboBox()
@@ -95,12 +109,20 @@ namespace IslahGroupInventory.ViewControls
                 dr[3] = price * quantity;
                 purchaseItems.Rows.Add(dr);
                 gridControlPurchaseItems.RefreshDataSource();
+                ClearAddProductInputFields();
             }
             else
             {
-                XtraMessageBox.Show("Qunatity should be number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("Add product information properly!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void ClearAddProductInputFields()
+        {
+            textBoxPPName.Text = String.Empty;
+            textBoxPPUPrice.Text = String.Empty;
+            textBoxPPQuantity.Text = String.Empty;
         }
 
         private void GridViewPurchaseItem_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -127,10 +149,10 @@ namespace IslahGroupInventory.ViewControls
         {
             GridSummaryItem summary = e.Info.SummaryItem;
             // Obtain the total summary's value. 
-            double summaryValue = Convert.ToDouble(summary.SummaryValue);
+            decimal summaryValue = Convert.ToDecimal(summary.SummaryValue);
             string summaryText = String.Format("{0:#.##}", summaryValue);
             textBoxPTotal.Text = summaryText;
-            double due = summaryValue - Convert.ToDouble(textBoxPAmount.Text);
+            decimal due = summaryValue - Convert.ToDecimal(textBoxPAmount.Text);
             textBoxPDue.Text = String.Format("{0:#.##}", due);
         }
 
@@ -146,47 +168,90 @@ namespace IslahGroupInventory.ViewControls
             decimal.TryParse(textBoxPAmount.Text, out decimal paidAmount);
             decimal.TryParse(textBoxPDue.Text, out decimal due);
 
-            Purchase purchase = new Purchase()
+            if (ValidateChildren(ValidationConstraints.Enabled) && purchaseItems.Rows.Count > 0)
             {
-                PurcCode = pCode,
-                PurcDate = pDate,
-                Supplier_SuppId = supplierId,
-                PaymentType_PType = paymentType,
-                PaymentDate = payDate,
-                Purchaser = purchaser,
-                Amount = paidAmount,
-                Due = due,
-                Branch_BranchId = BranchInfo.BranchId
-            };
-
-            dbContext.Purchases.InsertOnSubmit(purchase);
-            dbContext.SubmitChanges();
-
-            List<PurchaseItem> items = new List<PurchaseItem>();
-
-            foreach (DataRow item in purchaseItems.Rows)
-            {
-                PurchaseItem pItem = new PurchaseItem()
+                Purchase purchase = new Purchase()
                 {
-                    ItemName = item[0].ToString(),
-                    UnitPrice = Convert.ToDecimal(item[1]),
-                    Quantity = Convert.ToInt32(item[2]),
-                    Price = Convert.ToDecimal(item[3].ToString().Replace("$", String.Empty).Replace(",", String.Empty)),
-                    Purchase_PurcId = purchase.PurcId
+                    PurcCode = pCode,
+                    PurcDate = pDate,
+                    Supplier_SuppId = supplierId,
+                    PaymentType_PType = paymentType,
+                    PaymentDate = payDate,
+                    Purchaser = purchaser,
+                    Amount = paidAmount,
+                    Due = due,
+                    Branch_BranchId = BranchInfo.BranchId
                 };
-                items.Add(pItem);
+
+                dbContext.Purchases.InsertOnSubmit(purchase);
+                dbContext.SubmitChanges();
+
+                List<PurchaseItem> items = new List<PurchaseItem>();
+
+                foreach (DataRow item in purchaseItems.Rows)
+                {
+                    PurchaseItem pItem = new PurchaseItem()
+                    {
+                        ItemName = item[0].ToString(),
+                        UnitPrice = Convert.ToDecimal(item[1]),
+                        Quantity = Convert.ToInt32(item[2]),
+                        Price = Convert.ToDecimal(item[3].ToString().Replace("$", String.Empty).Replace(",", String.Empty)),
+                        Purchase_PurcId = purchase.PurcId
+                    };
+                    items.Add(pItem);
+                }
+                dbContext.PurchaseItems.InsertAllOnSubmit(items);
+                dbContext.SubmitChanges();
+                SetNextPurchaseCode();
+                ResetPurchase();
             }
-            dbContext.PurchaseItems.InsertAllOnSubmit(items);
-            dbContext.SubmitChanges();
-            SetNextPurchaseCode();
+            else
+            {
+                XtraMessageBox.Show("Add purchase information properly!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private void TextBoxPAmount_TextChanged(object sender, EventArgs e)
         {
             decimal.TryParse(textBoxPTotal.Text, out decimal total);
             decimal.TryParse(textBoxPAmount.Text, out decimal amount);
-            //decimal.TryParse(textBoxPDue.Text, out decimal due);
+
             textBoxPDue.Text = String.Format("{0:#.##}", (total - amount));
+        }
+
+        private void CheckNullorEmpty(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                e.Cancel = true;
+                PurchaseErrorProvider.SetError(textBox, "This field can not be empty!!!");
+            }
+            else
+            {
+                e.Cancel = false;
+                PurchaseErrorProvider.SetError(textBox, null);
+            }
+        }
+
+        private void CheckNumber(object sender, KeyPressEventArgs e)
+        {
+            // Whole Number Check
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ButtonDiscard_Click(object sender, EventArgs e)
+        {
+            ResetPurchase();
         }
     }
 }

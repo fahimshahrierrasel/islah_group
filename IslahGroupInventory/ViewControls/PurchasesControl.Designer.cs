@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControlPurchases = new System.Windows.Forms.TabControl();
             this.tabPageNewPurchase = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
+            this.ButtonDiscard = new System.Windows.Forms.Button();
             this.buttonPSubmit = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.textBoxPPName = new System.Windows.Forms.TextBox();
@@ -94,6 +94,7 @@
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPurchase_PurcId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPurchase = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PurchaseErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlPurchases.SuspendLayout();
             this.tabPageNewPurchase.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -111,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseItemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PurchaseErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlPurchases
@@ -128,7 +130,7 @@
             // 
             // tabPageNewPurchase
             // 
-            this.tabPageNewPurchase.Controls.Add(this.button12);
+            this.tabPageNewPurchase.Controls.Add(this.ButtonDiscard);
             this.tabPageNewPurchase.Controls.Add(this.buttonPSubmit);
             this.tabPageNewPurchase.Controls.Add(this.groupBox15);
             this.tabPageNewPurchase.Controls.Add(this.gridControlPurchaseItems);
@@ -141,14 +143,15 @@
             this.tabPageNewPurchase.Text = "New Purchase";
             this.tabPageNewPurchase.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // ButtonDiscard
             // 
-            this.button12.Location = new System.Drawing.Point(194, 535);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(94, 43);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Discard";
-            this.button12.UseVisualStyleBackColor = true;
+            this.ButtonDiscard.Location = new System.Drawing.Point(194, 535);
+            this.ButtonDiscard.Name = "ButtonDiscard";
+            this.ButtonDiscard.Size = new System.Drawing.Size(94, 43);
+            this.ButtonDiscard.TabIndex = 6;
+            this.ButtonDiscard.Text = "Discard";
+            this.ButtonDiscard.UseVisualStyleBackColor = true;
+            this.ButtonDiscard.Click += new System.EventHandler(this.ButtonDiscard_Click);
             // 
             // buttonPSubmit
             // 
@@ -191,6 +194,8 @@
             this.textBoxPPQuantity.Name = "textBoxPPQuantity";
             this.textBoxPPQuantity.Size = new System.Drawing.Size(260, 26);
             this.textBoxPPQuantity.TabIndex = 50;
+            this.textBoxPPQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPPQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label47
             // 
@@ -221,6 +226,8 @@
             this.textBoxPPUPrice.Name = "textBoxPPUPrice";
             this.textBoxPPUPrice.Size = new System.Drawing.Size(260, 26);
             this.textBoxPPUPrice.TabIndex = 49;
+            this.textBoxPPUPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPPUPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label45
             // 
@@ -357,7 +364,7 @@
             this.dtpPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPaymentDate.Location = new System.Drawing.Point(157, 169);
             this.dtpPaymentDate.Name = "dtpPaymentDate";
-            this.dtpPaymentDate.Size = new System.Drawing.Size(218, 29);
+            this.dtpPaymentDate.Size = new System.Drawing.Size(207, 29);
             this.dtpPaymentDate.TabIndex = 44;
             // 
             // label1
@@ -375,8 +382,9 @@
             this.textBoxPurchaser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPurchaser.Location = new System.Drawing.Point(157, 206);
             this.textBoxPurchaser.Name = "textBoxPurchaser";
-            this.textBoxPurchaser.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPurchaser.Size = new System.Drawing.Size(207, 26);
             this.textBoxPurchaser.TabIndex = 42;
+            this.textBoxPurchaser.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label46
             // 
@@ -394,7 +402,7 @@
             this.textBoxPDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPDue.Location = new System.Drawing.Point(157, 302);
             this.textBoxPDue.Name = "textBoxPDue";
-            this.textBoxPDue.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPDue.Size = new System.Drawing.Size(207, 26);
             this.textBoxPDue.TabIndex = 40;
             this.textBoxPDue.Text = "0.00";
             this.textBoxPDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -415,7 +423,7 @@
             this.comboBoxPSupplier.FormattingEnabled = true;
             this.comboBoxPSupplier.Location = new System.Drawing.Point(157, 101);
             this.comboBoxPSupplier.Name = "comboBoxPSupplier";
-            this.comboBoxPSupplier.Size = new System.Drawing.Size(218, 28);
+            this.comboBoxPSupplier.Size = new System.Drawing.Size(207, 28);
             this.comboBoxPSupplier.TabIndex = 38;
             // 
             // dtpPurchaseTime
@@ -424,7 +432,7 @@
             this.dtpPurchaseTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpPurchaseTime.Location = new System.Drawing.Point(157, 62);
             this.dtpPurchaseTime.Name = "dtpPurchaseTime";
-            this.dtpPurchaseTime.Size = new System.Drawing.Size(218, 29);
+            this.dtpPurchaseTime.Size = new System.Drawing.Size(207, 29);
             this.dtpPurchaseTime.TabIndex = 37;
             // 
             // textBoxPAmount
@@ -432,11 +440,12 @@
             this.textBoxPAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPAmount.Location = new System.Drawing.Point(157, 270);
             this.textBoxPAmount.Name = "textBoxPAmount";
-            this.textBoxPAmount.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPAmount.Size = new System.Drawing.Size(207, 26);
             this.textBoxPAmount.TabIndex = 30;
             this.textBoxPAmount.Text = "0.00";
             this.textBoxPAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxPAmount.TextChanged += new System.EventHandler(this.TextBoxPAmount_TextChanged);
+            this.textBoxPAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label39
             // 
@@ -454,7 +463,7 @@
             this.textBoxPTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPTotal.Location = new System.Drawing.Point(157, 238);
             this.textBoxPTotal.Name = "textBoxPTotal";
-            this.textBoxPTotal.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPTotal.Size = new System.Drawing.Size(207, 26);
             this.textBoxPTotal.TabIndex = 28;
             this.textBoxPTotal.Text = "0.00";
             this.textBoxPTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -476,7 +485,7 @@
             this.comboBoxPaymentType.FormattingEnabled = true;
             this.comboBoxPaymentType.Location = new System.Drawing.Point(157, 135);
             this.comboBoxPaymentType.Name = "comboBoxPaymentType";
-            this.comboBoxPaymentType.Size = new System.Drawing.Size(218, 28);
+            this.comboBoxPaymentType.Size = new System.Drawing.Size(207, 28);
             this.comboBoxPaymentType.TabIndex = 26;
             this.comboBoxPaymentType.ValueMember = "PType";
             // 
@@ -516,7 +525,7 @@
             this.textBoxPurchaseCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPurchaseCode.Location = new System.Drawing.Point(157, 28);
             this.textBoxPurchaseCode.Name = "textBoxPurchaseCode";
-            this.textBoxPurchaseCode.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPurchaseCode.Size = new System.Drawing.Size(207, 26);
             this.textBoxPurchaseCode.TabIndex = 20;
             // 
             // label44
@@ -591,6 +600,7 @@
             this.colSupplier});
             this.gridViewPurchases.GridControl = this.gridControlPurchases;
             this.gridViewPurchases.Name = "gridViewPurchases";
+            this.gridViewPurchases.OptionsDetail.EnableMasterViewMode = false;
             this.gridViewPurchases.OptionsView.ShowFooter = true;
             // 
             // colPurcId
@@ -600,7 +610,7 @@
             // 
             // colPurcCode
             // 
-            this.colPurcCode.Caption = "Code";
+            this.colPurcCode.Caption = "Purchase Code";
             this.colPurcCode.FieldName = "PurcCode";
             this.colPurcCode.Name = "colPurcCode";
             this.colPurcCode.OptionsColumn.AllowEdit = false;
@@ -766,6 +776,10 @@
             this.colPurchase.FieldName = "Purchase";
             this.colPurchase.Name = "colPurchase";
             // 
+            // PurchaseErrorProvider
+            // 
+            this.PurchaseErrorProvider.ContainerControl = this;
+            // 
             // PurchasesControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -773,6 +787,7 @@
             this.Name = "PurchasesControl";
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.PurchasesControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.PurchasesControl_VisibleChanged);
             this.tabControlPurchases.ResumeLayout(false);
             this.tabPageNewPurchase.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
@@ -792,6 +807,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseItemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PurchaseErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -800,7 +816,7 @@
 
         private System.Windows.Forms.TabControl tabControlPurchases;
         private System.Windows.Forms.TabPage tabPageNewPurchase;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button ButtonDiscard;
         private System.Windows.Forms.Button buttonPSubmit;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.TextBox textBoxPPName;
@@ -863,5 +879,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colPurchase_PurcId;
         private DevExpress.XtraGrid.Columns.GridColumn colPurchase;
+        private System.Windows.Forms.ErrorProvider PurchaseErrorProvider;
     }
 }
