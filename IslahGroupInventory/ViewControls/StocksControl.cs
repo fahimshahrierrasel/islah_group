@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
 
@@ -25,7 +21,11 @@ namespace IslahGroupInventory.ViewControls
             LoadStockProductGridView();
             LoadTotalProductCounter();
         }
-
+        private void StocksControl_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadStockProductGridView();
+            LoadTotalProductCounter();
+        }
         private void LoadStockProductGridView()
         {
             var products = from product in dbContext.Products
@@ -93,6 +93,20 @@ namespace IslahGroupInventory.ViewControls
                 int.TryParse(view.GetRowCellValue(e.RowHandle, "Stock").ToString(), out int stock);
                 if (stock <= order)
                     e.Appearance.BackColor = Color.Tomato;
+            }
+        }
+
+        private void CheckNumber(object sender, KeyPressEventArgs e)
+        {
+            // Whole Number Check
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

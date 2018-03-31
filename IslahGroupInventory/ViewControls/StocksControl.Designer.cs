@@ -97,6 +97,8 @@
             this.tbusNewStock.Name = "tbusNewStock";
             this.tbusNewStock.Size = new System.Drawing.Size(214, 26);
             this.tbusNewStock.TabIndex = 38;
+            this.tbusNewStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbusNewStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label19
             // 
@@ -141,6 +143,7 @@
             this.tbusCurrentStock.Name = "tbusCurrentStock";
             this.tbusCurrentStock.Size = new System.Drawing.Size(214, 26);
             this.tbusCurrentStock.TabIndex = 34;
+            this.tbusCurrentStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label20
             // 
@@ -217,6 +220,8 @@
             this.tbsAddStock.Name = "tbsAddStock";
             this.tbsAddStock.Size = new System.Drawing.Size(214, 26);
             this.tbsAddStock.TabIndex = 38;
+            this.tbsAddStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbsAddStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label18
             // 
@@ -261,6 +266,7 @@
             this.tbsCurrentStock.Name = "tbsCurrentStock";
             this.tbsCurrentStock.Size = new System.Drawing.Size(214, 26);
             this.tbsCurrentStock.TabIndex = 34;
+            this.tbsCurrentStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label17
             // 
@@ -438,6 +444,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.StocksControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.StocksControl_VisibleChanged);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
