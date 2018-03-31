@@ -41,32 +41,34 @@
             this.tsslBranchCode = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageRawMaterial = new System.Windows.Forms.TabPage();
-            this.rawMaterialControl1 = new IslahGroupInventory.ViewControls.RawMaterialControl();
             this.tabPageProcessing = new System.Windows.Forms.TabPage();
-            this.processingControl1 = new IslahGroupInventory.ViewControls.ProcessingControl();
             this.tabPageProducts = new System.Windows.Forms.TabPage();
-            this.productsControl1 = new IslahGroupInventory.ViewControls.ProductsControl();
             this.tabPageStocks = new System.Windows.Forms.TabPage();
-            this.stocksControl1 = new IslahGroupInventory.ViewControls.StocksControl();
             this.tabPagePurchase = new System.Windows.Forms.TabPage();
-            this.purchasesControl1 = new IslahGroupInventory.ViewControls.PurchasesControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
-            this.salesControl1 = new IslahGroupInventory.ViewControls.SalesControl();
             this.tabPageVocher = new System.Windows.Forms.TabPage();
-            this.vouchersControl1 = new IslahGroupInventory.ViewControls.VouchersControl();
             this.tabPageCustomer = new System.Windows.Forms.TabPage();
-            this.customersControl1 = new IslahGroupInventory.ViewControls.CustomersControl();
             this.tabPageSupplier = new System.Windows.Forms.TabPage();
-            this.suppliersControl1 = new IslahGroupInventory.ViewControls.SuppliersControl();
             this.tabPageBarcode = new System.Windows.Forms.TabPage();
-            this.barcodeControl1 = new IslahGroupInventory.ViewControls.BarcodeControl();
             this.tabPageWorker = new System.Windows.Forms.TabPage();
-            this.workersControl1 = new IslahGroupInventory.ViewControls.WorkersControl();
             this.tabPageWorks = new System.Windows.Forms.TabPage();
-            this.worksControl1 = new IslahGroupInventory.ViewControls.WorksControl();
             this.tabPageUser = new System.Windows.Forms.TabPage();
-            this.usersControl1 = new IslahGroupInventory.ViewControls.UsersControl();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
+            this.tabPageServices = new System.Windows.Forms.TabPage();
+            this.rawMaterialControl1 = new IslahGroupInventory.ViewControls.RawMaterialControl();
+            this.processingControl1 = new IslahGroupInventory.ViewControls.ProcessingControl();
+            this.productsControl1 = new IslahGroupInventory.ViewControls.ProductsControl();
+            this.stocksControl1 = new IslahGroupInventory.ViewControls.StocksControl();
+            this.purchasesControl1 = new IslahGroupInventory.ViewControls.PurchasesControl();
+            this.salesControl1 = new IslahGroupInventory.ViewControls.SalesControl();
+            this.vouchersControl1 = new IslahGroupInventory.ViewControls.VouchersControl();
+            this.customersControl1 = new IslahGroupInventory.ViewControls.CustomersControl();
+            this.suppliersControl1 = new IslahGroupInventory.ViewControls.SuppliersControl();
+            this.barcodeControl1 = new IslahGroupInventory.ViewControls.BarcodeControl();
+            this.workersControl1 = new IslahGroupInventory.ViewControls.WorkersControl();
+            this.worksControl1 = new IslahGroupInventory.ViewControls.WorksControl();
+            this.usersControl1 = new IslahGroupInventory.ViewControls.UsersControl();
+            this.servicesControl1 = new IslahGroupInventory.ViewControls.ServicesControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -83,6 +85,7 @@
             this.tabPageWorker.SuspendLayout();
             this.tabPageWorks.SuspendLayout();
             this.tabPageUser.SuspendLayout();
+            this.tabPageServices.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,6 +164,7 @@
             this.tabControlMain.Controls.Add(this.tabPageStocks);
             this.tabControlMain.Controls.Add(this.tabPagePurchase);
             this.tabControlMain.Controls.Add(this.tabPageSale);
+            this.tabControlMain.Controls.Add(this.tabPageServices);
             this.tabControlMain.Controls.Add(this.tabPageVocher);
             this.tabControlMain.Controls.Add(this.tabPageCustomer);
             this.tabControlMain.Controls.Add(this.tabPageSupplier);
@@ -188,14 +192,6 @@
             this.tabPageRawMaterial.Text = "Raw Material";
             this.tabPageRawMaterial.UseVisualStyleBackColor = true;
             // 
-            // rawMaterialControl1
-            // 
-            this.rawMaterialControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rawMaterialControl1.Location = new System.Drawing.Point(0, 0);
-            this.rawMaterialControl1.Name = "rawMaterialControl1";
-            this.rawMaterialControl1.Size = new System.Drawing.Size(1276, 622);
-            this.rawMaterialControl1.TabIndex = 0;
-            // 
             // tabPageProcessing
             // 
             this.tabPageProcessing.Controls.Add(this.processingControl1);
@@ -206,14 +202,6 @@
             this.tabPageProcessing.TabIndex = 10;
             this.tabPageProcessing.Text = "Processing";
             this.tabPageProcessing.UseVisualStyleBackColor = true;
-            // 
-            // processingControl1
-            // 
-            this.processingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.processingControl1.Location = new System.Drawing.Point(0, 0);
-            this.processingControl1.Name = "processingControl1";
-            this.processingControl1.Size = new System.Drawing.Size(1276, 622);
-            this.processingControl1.TabIndex = 0;
             // 
             // tabPageProducts
             // 
@@ -227,14 +215,6 @@
             this.tabPageProducts.Text = "Products";
             this.tabPageProducts.UseVisualStyleBackColor = true;
             // 
-            // productsControl1
-            // 
-            this.productsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productsControl1.Location = new System.Drawing.Point(3, 3);
-            this.productsControl1.Name = "productsControl1";
-            this.productsControl1.Size = new System.Drawing.Size(1270, 616);
-            this.productsControl1.TabIndex = 0;
-            // 
             // tabPageStocks
             // 
             this.tabPageStocks.Controls.Add(this.stocksControl1);
@@ -247,14 +227,6 @@
             this.tabPageStocks.Text = "Stocks";
             this.tabPageStocks.UseVisualStyleBackColor = true;
             // 
-            // stocksControl1
-            // 
-            this.stocksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stocksControl1.Location = new System.Drawing.Point(3, 3);
-            this.stocksControl1.Name = "stocksControl1";
-            this.stocksControl1.Size = new System.Drawing.Size(1270, 616);
-            this.stocksControl1.TabIndex = 0;
-            // 
             // tabPagePurchase
             // 
             this.tabPagePurchase.Controls.Add(this.purchasesControl1);
@@ -265,14 +237,6 @@
             this.tabPagePurchase.TabIndex = 2;
             this.tabPagePurchase.Text = "Purchases";
             this.tabPagePurchase.UseVisualStyleBackColor = true;
-            // 
-            // purchasesControl1
-            // 
-            this.purchasesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.purchasesControl1.Location = new System.Drawing.Point(0, 0);
-            this.purchasesControl1.Name = "purchasesControl1";
-            this.purchasesControl1.Size = new System.Drawing.Size(1276, 622);
-            this.purchasesControl1.TabIndex = 0;
             // 
             // tabPageSale
             // 
@@ -285,15 +249,6 @@
             this.tabPageSale.Text = "Sales";
             this.tabPageSale.UseVisualStyleBackColor = true;
             // 
-            // salesControl1
-            // 
-            this.salesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salesControl1.Location = new System.Drawing.Point(0, 0);
-            this.salesControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.salesControl1.Name = "salesControl1";
-            this.salesControl1.Size = new System.Drawing.Size(1276, 622);
-            this.salesControl1.TabIndex = 0;
-            // 
             // tabPageVocher
             // 
             this.tabPageVocher.Controls.Add(this.vouchersControl1);
@@ -304,14 +259,6 @@
             this.tabPageVocher.TabIndex = 4;
             this.tabPageVocher.Text = "Vouchers";
             this.tabPageVocher.UseVisualStyleBackColor = true;
-            // 
-            // vouchersControl1
-            // 
-            this.vouchersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vouchersControl1.Location = new System.Drawing.Point(0, 0);
-            this.vouchersControl1.Name = "vouchersControl1";
-            this.vouchersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.vouchersControl1.TabIndex = 0;
             // 
             // tabPageCustomer
             // 
@@ -324,15 +271,6 @@
             this.tabPageCustomer.Text = "Customers";
             this.tabPageCustomer.UseVisualStyleBackColor = true;
             // 
-            // customersControl1
-            // 
-            this.customersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customersControl1.Location = new System.Drawing.Point(0, 0);
-            this.customersControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.customersControl1.Name = "customersControl1";
-            this.customersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.customersControl1.TabIndex = 0;
-            // 
             // tabPageSupplier
             // 
             this.tabPageSupplier.Controls.Add(this.suppliersControl1);
@@ -343,14 +281,6 @@
             this.tabPageSupplier.TabIndex = 6;
             this.tabPageSupplier.Text = "Suppliers";
             this.tabPageSupplier.UseVisualStyleBackColor = true;
-            // 
-            // suppliersControl1
-            // 
-            this.suppliersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suppliersControl1.Location = new System.Drawing.Point(0, 0);
-            this.suppliersControl1.Name = "suppliersControl1";
-            this.suppliersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.suppliersControl1.TabIndex = 0;
             // 
             // tabPageBarcode
             // 
@@ -363,15 +293,6 @@
             this.tabPageBarcode.Text = "Barcode";
             this.tabPageBarcode.UseVisualStyleBackColor = true;
             // 
-            // barcodeControl1
-            // 
-            this.barcodeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.barcodeControl1.Location = new System.Drawing.Point(0, 0);
-            this.barcodeControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.barcodeControl1.Name = "barcodeControl1";
-            this.barcodeControl1.Size = new System.Drawing.Size(1276, 622);
-            this.barcodeControl1.TabIndex = 0;
-            // 
             // tabPageWorker
             // 
             this.tabPageWorker.Controls.Add(this.workersControl1);
@@ -382,14 +303,6 @@
             this.tabPageWorker.TabIndex = 11;
             this.tabPageWorker.Text = "Workers";
             this.tabPageWorker.UseVisualStyleBackColor = true;
-            // 
-            // workersControl1
-            // 
-            this.workersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workersControl1.Location = new System.Drawing.Point(0, 0);
-            this.workersControl1.Name = "workersControl1";
-            this.workersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.workersControl1.TabIndex = 0;
             // 
             // tabPageWorks
             // 
@@ -402,14 +315,6 @@
             this.tabPageWorks.Text = "Works";
             this.tabPageWorks.UseVisualStyleBackColor = true;
             // 
-            // worksControl1
-            // 
-            this.worksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.worksControl1.Location = new System.Drawing.Point(0, 0);
-            this.worksControl1.Name = "worksControl1";
-            this.worksControl1.Size = new System.Drawing.Size(1276, 622);
-            this.worksControl1.TabIndex = 0;
-            // 
             // tabPageUser
             // 
             this.tabPageUser.Controls.Add(this.usersControl1);
@@ -420,15 +325,6 @@
             this.tabPageUser.TabIndex = 7;
             this.tabPageUser.Text = "Users";
             this.tabPageUser.UseVisualStyleBackColor = true;
-            // 
-            // usersControl1
-            // 
-            this.usersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usersControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usersControl1.Location = new System.Drawing.Point(0, 0);
-            this.usersControl1.Name = "usersControl1";
-            this.usersControl1.Size = new System.Drawing.Size(1276, 622);
-            this.usersControl1.TabIndex = 0;
             // 
             // imageListTab
             // 
@@ -448,6 +344,141 @@
             this.imageListTab.Images.SetKeyName(11, "processing.png");
             this.imageListTab.Images.SetKeyName(12, "hammer.png");
             this.imageListTab.Images.SetKeyName(13, "builder.png");
+            // 
+            // tabPageServices
+            // 
+            this.tabPageServices.Controls.Add(this.servicesControl1);
+            this.tabPageServices.Location = new System.Drawing.Point(4, 39);
+            this.tabPageServices.Name = "tabPageServices";
+            this.tabPageServices.Size = new System.Drawing.Size(1276, 622);
+            this.tabPageServices.TabIndex = 13;
+            this.tabPageServices.Text = "Services";
+            this.tabPageServices.UseVisualStyleBackColor = true;
+            // 
+            // rawMaterialControl1
+            // 
+            this.rawMaterialControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rawMaterialControl1.Location = new System.Drawing.Point(0, 0);
+            this.rawMaterialControl1.Name = "rawMaterialControl1";
+            this.rawMaterialControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.rawMaterialControl1.Size = new System.Drawing.Size(1276, 622);
+            this.rawMaterialControl1.TabIndex = 0;
+            // 
+            // processingControl1
+            // 
+            this.processingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.processingControl1.Location = new System.Drawing.Point(0, 0);
+            this.processingControl1.Name = "processingControl1";
+            this.processingControl1.Size = new System.Drawing.Size(1276, 622);
+            this.processingControl1.TabIndex = 0;
+            // 
+            // productsControl1
+            // 
+            this.productsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productsControl1.Location = new System.Drawing.Point(3, 3);
+            this.productsControl1.Name = "productsControl1";
+            this.productsControl1.Size = new System.Drawing.Size(1270, 616);
+            this.productsControl1.TabIndex = 0;
+            // 
+            // stocksControl1
+            // 
+            this.stocksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stocksControl1.Location = new System.Drawing.Point(3, 3);
+            this.stocksControl1.Name = "stocksControl1";
+            this.stocksControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.stocksControl1.Size = new System.Drawing.Size(1270, 616);
+            this.stocksControl1.TabIndex = 0;
+            // 
+            // purchasesControl1
+            // 
+            this.purchasesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.purchasesControl1.Location = new System.Drawing.Point(0, 0);
+            this.purchasesControl1.Name = "purchasesControl1";
+            this.purchasesControl1.Size = new System.Drawing.Size(1276, 622);
+            this.purchasesControl1.TabIndex = 0;
+            // 
+            // salesControl1
+            // 
+            this.salesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salesControl1.Location = new System.Drawing.Point(0, 0);
+            this.salesControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.salesControl1.Name = "salesControl1";
+            this.salesControl1.Size = new System.Drawing.Size(1276, 622);
+            this.salesControl1.TabIndex = 0;
+            // 
+            // vouchersControl1
+            // 
+            this.vouchersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vouchersControl1.Location = new System.Drawing.Point(0, 0);
+            this.vouchersControl1.Name = "vouchersControl1";
+            this.vouchersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.vouchersControl1.TabIndex = 0;
+            // 
+            // customersControl1
+            // 
+            this.customersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customersControl1.Location = new System.Drawing.Point(0, 0);
+            this.customersControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.customersControl1.Name = "customersControl1";
+            this.customersControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.customersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.customersControl1.TabIndex = 0;
+            // 
+            // suppliersControl1
+            // 
+            this.suppliersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suppliersControl1.Location = new System.Drawing.Point(0, 0);
+            this.suppliersControl1.Name = "suppliersControl1";
+            this.suppliersControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.suppliersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.suppliersControl1.TabIndex = 0;
+            // 
+            // barcodeControl1
+            // 
+            this.barcodeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.barcodeControl1.Location = new System.Drawing.Point(0, 0);
+            this.barcodeControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.barcodeControl1.Name = "barcodeControl1";
+            this.barcodeControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.barcodeControl1.Size = new System.Drawing.Size(1276, 622);
+            this.barcodeControl1.TabIndex = 0;
+            // 
+            // workersControl1
+            // 
+            this.workersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workersControl1.Location = new System.Drawing.Point(0, 0);
+            this.workersControl1.Name = "workersControl1";
+            this.workersControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.workersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.workersControl1.TabIndex = 0;
+            // 
+            // worksControl1
+            // 
+            this.worksControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.worksControl1.Location = new System.Drawing.Point(0, 0);
+            this.worksControl1.Name = "worksControl1";
+            this.worksControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.worksControl1.Size = new System.Drawing.Size(1276, 622);
+            this.worksControl1.TabIndex = 0;
+            // 
+            // usersControl1
+            // 
+            this.usersControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usersControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersControl1.Location = new System.Drawing.Point(0, 0);
+            this.usersControl1.Name = "usersControl1";
+            this.usersControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.usersControl1.Size = new System.Drawing.Size(1276, 622);
+            this.usersControl1.TabIndex = 0;
+            // 
+            // servicesControl1
+            // 
+            this.servicesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.servicesControl1.Location = new System.Drawing.Point(0, 0);
+            this.servicesControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.servicesControl1.Name = "servicesControl1";
+            this.servicesControl1.Size = new System.Drawing.Size(1276, 622);
+            this.servicesControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -482,6 +513,7 @@
             this.tabPageWorker.ResumeLayout(false);
             this.tabPageWorks.ResumeLayout(false);
             this.tabPageUser.ResumeLayout(false);
+            this.tabPageServices.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,6 +558,8 @@
         private ViewControls.WorkersControl workersControl1;
         private ViewControls.WorksControl worksControl1;
         private ViewControls.RawMaterialControl rawMaterialControl1;
+        private System.Windows.Forms.TabPage tabPageServices;
+        private ViewControls.ServicesControl servicesControl1;
     }
 }
 

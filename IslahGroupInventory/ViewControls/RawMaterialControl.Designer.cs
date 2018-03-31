@@ -79,6 +79,7 @@
             this.colStock2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch_BranchId4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBranch4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.AddMaterialErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox21.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -88,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddMaterialErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox21
@@ -117,6 +119,7 @@
             this.textBoxRMSUAStock.TabIndex = 38;
             this.textBoxRMSUAStock.Text = "0";
             this.textBoxRMSUAStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxRMSUAStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
             // 
             // label55
             // 
@@ -226,7 +229,7 @@
             this.groupBox18.Controls.Add(this.label60);
             this.groupBox18.Controls.Add(this.textBoxIRMCode);
             this.groupBox18.Controls.Add(this.label61);
-            this.groupBox18.Location = new System.Drawing.Point(10, 6);
+            this.groupBox18.Location = new System.Drawing.Point(8, 6);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(357, 302);
             this.groupBox18.TabIndex = 1;
@@ -237,9 +240,9 @@
             // 
             this.buttonAddRawMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddRawMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddRawMaterial.Location = new System.Drawing.Point(260, 260);
+            this.buttonAddRawMaterial.Location = new System.Drawing.Point(251, 260);
             this.buttonAddRawMaterial.Name = "buttonAddRawMaterial";
-            this.buttonAddRawMaterial.Size = new System.Drawing.Size(90, 36);
+            this.buttonAddRawMaterial.Size = new System.Drawing.Size(88, 36);
             this.buttonAddRawMaterial.TabIndex = 35;
             this.buttonAddRawMaterial.Text = "Add";
             this.buttonAddRawMaterial.UseVisualStyleBackColor = true;
@@ -250,8 +253,12 @@
             this.textBoxIRMStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIRMStock.Location = new System.Drawing.Point(118, 226);
             this.textBoxIRMStock.Name = "textBoxIRMStock";
-            this.textBoxIRMStock.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMStock.Size = new System.Drawing.Size(221, 26);
             this.textBoxIRMStock.TabIndex = 34;
+            this.textBoxIRMStock.Text = "0";
+            this.textBoxIRMStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIRMStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
+            this.textBoxIRMStock.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmptyforAdd);
             // 
             // label54
             // 
@@ -268,8 +275,12 @@
             this.textBoxIRMRPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIRMRPoint.Location = new System.Drawing.Point(118, 194);
             this.textBoxIRMRPoint.Name = "textBoxIRMRPoint";
-            this.textBoxIRMRPoint.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMRPoint.Size = new System.Drawing.Size(221, 26);
             this.textBoxIRMRPoint.TabIndex = 30;
+            this.textBoxIRMRPoint.Text = "0";
+            this.textBoxIRMRPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIRMRPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
+            this.textBoxIRMRPoint.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmptyforAdd);
             // 
             // label56
             // 
@@ -287,8 +298,9 @@
             this.textBoxIRMDesc.Location = new System.Drawing.Point(118, 105);
             this.textBoxIRMDesc.Multiline = true;
             this.textBoxIRMDesc.Name = "textBoxIRMDesc";
-            this.textBoxIRMDesc.Size = new System.Drawing.Size(232, 83);
+            this.textBoxIRMDesc.Size = new System.Drawing.Size(221, 83);
             this.textBoxIRMDesc.TabIndex = 24;
+            this.textBoxIRMDesc.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmptyforAdd);
             // 
             // label59
             // 
@@ -305,8 +317,9 @@
             this.textBoxIRMName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIRMName.Location = new System.Drawing.Point(118, 73);
             this.textBoxIRMName.Name = "textBoxIRMName";
-            this.textBoxIRMName.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMName.Size = new System.Drawing.Size(221, 26);
             this.textBoxIRMName.TabIndex = 22;
+            this.textBoxIRMName.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmptyforAdd);
             // 
             // label60
             // 
@@ -324,7 +337,7 @@
             this.textBoxIRMCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxIRMCode.Location = new System.Drawing.Point(118, 41);
             this.textBoxIRMCode.Name = "textBoxIRMCode";
-            this.textBoxIRMCode.Size = new System.Drawing.Size(232, 26);
+            this.textBoxIRMCode.Size = new System.Drawing.Size(221, 26);
             this.textBoxIRMCode.TabIndex = 20;
             // 
             // label61
@@ -413,6 +426,7 @@
             this.textBoxRMUStock.Name = "textBoxRMUStock";
             this.textBoxRMUStock.Size = new System.Drawing.Size(232, 26);
             this.textBoxRMUStock.TabIndex = 34;
+            this.textBoxRMUStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
             // 
             // label62
             // 
@@ -431,6 +445,7 @@
             this.textBoxRMURPoint.Name = "textBoxRMURPoint";
             this.textBoxRMURPoint.Size = new System.Drawing.Size(232, 26);
             this.textBoxRMURPoint.TabIndex = 30;
+            this.textBoxRMURPoint.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
             // 
             // label64
             // 
@@ -613,6 +628,10 @@
             this.colBranch4.FieldName = "Branch";
             this.colBranch4.Name = "colBranch4";
             // 
+            // AddMaterialErrorProvider
+            // 
+            this.AddMaterialErrorProvider.ContainerControl = this;
+            // 
             // RawMaterialControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -636,6 +655,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rawMaterialGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rawProductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRawMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddMaterialErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,5 +712,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colBranch_BranchId4;
         private DevExpress.XtraGrid.Columns.GridColumn colBranch4;
         private System.Windows.Forms.BindingSource rawProductsBindingSource;
+        private System.Windows.Forms.ErrorProvider AddMaterialErrorProvider;
     }
 }

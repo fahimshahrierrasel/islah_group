@@ -5,11 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-/* Todo
- *   clear add material input fields
- *   clear update material input fields
- *   add material validation
- */
 
 namespace IslahGroupInventory.ViewControls
 {
@@ -52,22 +47,35 @@ namespace IslahGroupInventory.ViewControls
             string materialCode = textBoxIRMCode.Text;
             string materialName = textBoxIRMName.Text;
             string materialDesc = textBoxIRMDesc.Text;
-            string reorderPoint = textBoxIRMRPoint.Text;
-            string materialStock = textBoxIRMStock.Text;
+            Int16.TryParse(textBoxIRMRPoint.Text, out Int16 reorderPoint);
+            Int32.TryParse(textBoxIRMStock.Text, out int materialStock);
 
-            dbContext.RawProducts.InsertOnSubmit(new RawProduct()
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                RPCode = materialCode,
-                RPName = materialName,
-                Description = materialDesc,
-                ReOrderPoint = Convert.ToInt16(reorderPoint),
-                Stock = Convert.ToInt32(materialStock),
-                Active = true,
-                Branch_BranchId = BranchInfo.BranchId
-            });
-            dbContext.SubmitChanges();
-            SetNextRawProductCode();
-            InitializeRawMaterialGridView();
+                dbContext.RawProducts.InsertOnSubmit(new RawProduct()
+                {
+                    RPCode = materialCode,
+                    RPName = materialName,
+                    Description = materialDesc,
+                    ReOrderPoint = reorderPoint,
+                    Stock = materialStock,
+                    Active = true,
+                    Branch_BranchId = BranchInfo.BranchId
+                });
+                dbContext.SubmitChanges();
+                SetNextRawProductCode();
+                InitializeRawMaterialGridView();
+                ClearMaterialAddInputFields();
+            }
+        }
+
+        private void ClearMaterialAddInputFields()
+        {
+            String empty = String.Empty;
+            textBoxIRMName.Text = empty;
+            textBoxIRMDesc.Text = empty;
+            textBoxIRMRPoint.Text = empty;
+            textBoxIRMStock.Text = empty;
         }
 
         private void ButtonRMULoad_Click(object sender, EventArgs e)
@@ -86,20 +94,34 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
+        private void ClearMaterialUpdateInputFields()
+        {
+            String empty = String.Empty;
+            textBoxRMUCode.Text = empty;
+            textBoxRMUName.Text = empty;
+            textBoxRMUDesc.Text = empty;
+            textBoxRMURPoint.Text = empty;
+            textBoxRMUStock.Text = empty;
+            checkBoxRMUActive.Checked = false;
+        }
+
         private void ButtonRMU_Click(object sender, EventArgs e)
         {
-            // TODO: Raw Material Input Validation
             string rawMaterialCode = textBoxRMUCode.Text;
             var rawMaterial = dbContext.RawProducts.SingleOrDefault(p => p.RPCode == rawMaterialCode);
+            
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                rawMaterial.RPName = textBoxRMUName.Text;
+                rawMaterial.Description = textBoxRMUDesc.Text;
+                rawMaterial.ReOrderPoint = Convert.ToInt16(textBoxRMURPoint.Text);
+                rawMaterial.Stock = Convert.ToInt32(textBoxRMUStock.Text);
+                rawMaterial.Active = checkBoxRMUActive.Checked;
 
-            rawMaterial.RPName = textBoxRMUName.Text;
-            rawMaterial.Description = textBoxRMUDesc.Text;
-            rawMaterial.ReOrderPoint = Convert.ToInt16(textBoxRMURPoint.Text);
-            rawMaterial.Stock = Convert.ToInt32(textBoxRMUStock.Text);
-            rawMaterial.Active = checkBoxRMUActive.Checked;
-
-            dbContext.SubmitChanges();
-            InitializeRawMaterialGridView();
+                dbContext.SubmitChanges();
+                InitializeRawMaterialGridView();
+                ClearMaterialUpdateInputFields();
+            }
         }
 
         private void ButtonRMUStockLoad_Click(object sender, EventArgs e)
@@ -135,5 +157,28 @@ namespace IslahGroupInventory.ViewControls
             }
         }
 
+        private void CheckNullorEmptyforAdd(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                e.Cancel = true;
+                AddMaterialErrorProvider.SetError(textBox, "This field can not be empty!!!");
+            }
+            else
+            {
+                e.Cancel = false;
+                AddMaterialErrorProvider.SetError(textBox, null);
+            }
+        }
+
+        private void CheckWholeNumber(object sender, KeyPressEventArgs e)
+        {
+            // Whole Number Check
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

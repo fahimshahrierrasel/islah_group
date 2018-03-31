@@ -136,6 +136,12 @@
     <Compile Include="ViewControls\SalesControl.Designer.cs">
       <DependentUpon>SalesControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControls\ServicesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewControls\ServicesControl.Designer.cs">
+      <DependentUpon>ServicesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewControls\StocksControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\SalesControl.resx">
       <DependentUpon>SalesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewControls\ServicesControl.resx">
+      <DependentUpon>ServicesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewControls\StocksControl.resx">
       <DependentUpon>StocksControl.cs</DependentUpon>
