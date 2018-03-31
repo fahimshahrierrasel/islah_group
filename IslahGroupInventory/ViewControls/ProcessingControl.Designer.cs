@@ -65,6 +65,10 @@
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProcessing = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRawProduct = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProcessingErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.RMaterialId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RMaterialName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabControl6.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlProcessingItem)).BeginInit();
@@ -83,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.processingItemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl6
@@ -146,8 +151,13 @@
             // 
             // gridViewProcessingItem
             // 
+            this.gridViewProcessingItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.RMaterialId,
+            this.RMaterialName,
+            this.RQuantity});
             this.gridViewProcessingItem.GridControl = this.gridControlProcessingItem;
             this.gridViewProcessingItem.Name = "gridViewProcessingItem";
+            this.gridViewProcessingItem.OptionsView.ShowFooter = true;
             // 
             // groupBox26
             // 
@@ -171,7 +181,7 @@
             this.cbMaterialName.FormattingEnabled = true;
             this.cbMaterialName.Location = new System.Drawing.Point(115, 39);
             this.cbMaterialName.Name = "cbMaterialName";
-            this.cbMaterialName.Size = new System.Drawing.Size(256, 28);
+            this.cbMaterialName.Size = new System.Drawing.Size(243, 28);
             this.cbMaterialName.TabIndex = 49;
             this.cbMaterialName.ValueMember = "RPId";
             // 
@@ -184,8 +194,10 @@
             this.tbMaterialQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaterialQuantity.Location = new System.Drawing.Point(115, 73);
             this.tbMaterialQuantity.Name = "tbMaterialQuantity";
-            this.tbMaterialQuantity.Size = new System.Drawing.Size(256, 26);
+            this.tbMaterialQuantity.Size = new System.Drawing.Size(243, 26);
             this.tbMaterialQuantity.TabIndex = 47;
+            this.tbMaterialQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbMaterialQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckWholeNumber);
             // 
             // label92
             // 
@@ -201,9 +213,9 @@
             // 
             this.buttonAddMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddMaterial.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAddMaterial.Location = new System.Drawing.Point(253, 105);
+            this.buttonAddMaterial.Location = new System.Drawing.Point(242, 105);
             this.buttonAddMaterial.Name = "buttonAddMaterial";
-            this.buttonAddMaterial.Size = new System.Drawing.Size(118, 36);
+            this.buttonAddMaterial.Size = new System.Drawing.Size(116, 36);
             this.buttonAddMaterial.TabIndex = 45;
             this.buttonAddMaterial.Text = "Add Material";
             this.buttonAddMaterial.UseVisualStyleBackColor = true;
@@ -238,8 +250,9 @@
             this.tbProcessingDetails.Location = new System.Drawing.Point(97, 73);
             this.tbProcessingDetails.Multiline = true;
             this.tbProcessingDetails.Name = "tbProcessingDetails";
-            this.tbProcessingDetails.Size = new System.Drawing.Size(271, 116);
+            this.tbProcessingDetails.Size = new System.Drawing.Size(258, 116);
             this.tbProcessingDetails.TabIndex = 42;
+            this.tbProcessingDetails.Validating += new System.ComponentModel.CancelEventHandler(this.CheckNullorEmpty);
             // 
             // label70
             // 
@@ -257,7 +270,7 @@
             this.dtpProcessingDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpProcessingDate.Location = new System.Drawing.Point(98, 34);
             this.dtpProcessingDate.Name = "dtpProcessingDate";
-            this.dtpProcessingDate.Size = new System.Drawing.Size(270, 29);
+            this.dtpProcessingDate.Size = new System.Drawing.Size(257, 29);
             this.dtpProcessingDate.TabIndex = 37;
             // 
             // label90
@@ -324,6 +337,7 @@
             this.colBranch});
             this.gridViewProcessing.GridControl = this.gridControlProcessing;
             this.gridViewProcessing.Name = "gridViewProcessing";
+            this.gridViewProcessing.OptionsDetail.EnableMasterViewMode = false;
             // 
             // colProcessingID
             // 
@@ -389,6 +403,7 @@
             // 
             // colRawProduct_RPId
             // 
+            this.colRawProduct_RPId.Caption = "Raw Material Id";
             this.colRawProduct_RPId.FieldName = "RawProduct_RPId";
             this.colRawProduct_RPId.Name = "colRawProduct_RPId";
             this.colRawProduct_RPId.Visible = true;
@@ -410,6 +425,34 @@
             // 
             this.colRawProduct.FieldName = "RawProduct";
             this.colRawProduct.Name = "colRawProduct";
+            // 
+            // ProcessingErrorProvider
+            // 
+            this.ProcessingErrorProvider.ContainerControl = this;
+            // 
+            // RMaterialId
+            // 
+            this.RMaterialId.Caption = "Material Id";
+            this.RMaterialId.FieldName = "RMaterialId";
+            this.RMaterialId.Name = "RMaterialId";
+            // 
+            // RMaterialName
+            // 
+            this.RMaterialName.Caption = "Material Name";
+            this.RMaterialName.FieldName = "RMaterialName";
+            this.RMaterialName.Name = "RMaterialName";
+            this.RMaterialName.Visible = true;
+            this.RMaterialName.VisibleIndex = 0;
+            // 
+            // RQuantity
+            // 
+            this.RQuantity.Caption = "Quantity";
+            this.RQuantity.FieldName = "RQuantity";
+            this.RQuantity.Name = "RQuantity";
+            this.RQuantity.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "RQuantity", "Total ={0:0}")});
+            this.RQuantity.Visible = true;
+            this.RQuantity.VisibleIndex = 1;
             // 
             // ProcessingControl
             // 
@@ -438,6 +481,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.processingItemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,10 +503,6 @@
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.BindingSource rawProductsBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn RMaterialName;
-        private DevExpress.XtraGrid.Columns.GridColumn RQuantity;
-        private DevExpress.XtraGrid.Columns.GridColumn RMaterialId;
-        private DevExpress.XtraGrid.Columns.GridColumn RStock;
         private DevExpress.XtraGrid.GridControl gridControlProcessingItem;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewProcessingItem;
         private System.Windows.Forms.Button buttonDiscardProcessing;
@@ -484,5 +524,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colProcessing;
         private DevExpress.XtraGrid.Columns.GridColumn colRawProduct;
+        private System.Windows.Forms.ErrorProvider ProcessingErrorProvider;
+        private DevExpress.XtraGrid.Columns.GridColumn RMaterialId;
+        private DevExpress.XtraGrid.Columns.GridColumn RMaterialName;
+        private DevExpress.XtraGrid.Columns.GridColumn RQuantity;
     }
 }

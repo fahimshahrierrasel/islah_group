@@ -49,10 +49,6 @@ namespace IslahGroupInventory.ViewControls
             processingItems.Columns.Add("RQuantity");
 
             gridControlProcessingItem.DataSource = processingItems;
-
-            gridViewProcessingItem.Columns[0].Visible = false;
-            gridViewProcessingItem.Columns[1].Caption = "Material Name";
-            gridViewProcessingItem.Columns[2].Caption = "Quantity";
         }
 
         private void ButtonAddMaterial_Click(object sender, EventArgs e)
@@ -109,7 +105,7 @@ namespace IslahGroupInventory.ViewControls
             DateTime processingDate = dtpProcessingDate.Value;
             string details = tbProcessingDetails.Text;
 
-            if (!String.IsNullOrEmpty(details) && processingItems.Rows.Count > 0)
+            if (ValidateChildren(ValidationConstraints.Enabled) && processingItems.Rows.Count > 0)
             {
                 Processing processing = new Processing()
                 {
@@ -163,6 +159,29 @@ namespace IslahGroupInventory.ViewControls
             tbMaterialQuantity.Text = String.Empty;
             cbMaterialName.SelectedIndex = 0;
             InitializeProcessingItemGridView();
+        }
+
+        private void CheckNullorEmpty(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            if (string.IsNullOrEmpty(textBox.Text))
+            {
+                e.Cancel = true;
+                ProcessingErrorProvider.SetError(textBox, "This field can not be empty!!!");
+            }
+            else
+            {
+                e.Cancel = false;
+                ProcessingErrorProvider.SetError(textBox, null);
+            }
+        }
+        private void CheckWholeNumber(object sender, KeyPressEventArgs e)
+        {
+            // Whole Number Check
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
