@@ -290,6 +290,8 @@
             this.textBoxIQuantity.Name = "textBoxIQuantity";
             this.textBoxIQuantity.Size = new System.Drawing.Size(260, 26);
             this.textBoxIQuantity.TabIndex = 47;
+            this.textBoxIQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label63
             // 
@@ -422,6 +424,7 @@
             this.textBoxIAmount.TabIndex = 30;
             this.textBoxIAmount.Text = "0.00";
             this.textBoxIAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxIAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CheckNumber);
             // 
             // label73
             // 
@@ -580,14 +583,17 @@
             this.colPaymentType});
             this.gridViewInvoiceList.GridControl = this.gridControlInvoiceList;
             this.gridViewInvoiceList.Name = "gridViewInvoiceList";
+            this.gridViewInvoiceList.OptionsDetail.EnableMasterViewMode = false;
             // 
             // colInvcId
             // 
+            this.colInvcId.Caption = "Invoice Id";
             this.colInvcId.FieldName = "InvcId";
             this.colInvcId.Name = "colInvcId";
             // 
             // colInvcCode
             // 
+            this.colInvcCode.Caption = "Invoice Code";
             this.colInvcCode.FieldName = "InvcCode";
             this.colInvcCode.Name = "colInvcCode";
             this.colInvcCode.Visible = true;
@@ -595,6 +601,7 @@
             // 
             // colInvcDate
             // 
+            this.colInvcDate.Caption = "Date";
             this.colInvcDate.FieldName = "InvcDate";
             this.colInvcDate.Name = "colInvcDate";
             this.colInvcDate.Visible = true;
@@ -623,6 +630,7 @@
             // 
             // colCustomer_CustId
             // 
+            this.colCustomer_CustId.Caption = "Customer Id";
             this.colCustomer_CustId.FieldName = "Customer_CustId";
             this.colCustomer_CustId.Name = "colCustomer_CustId";
             this.colCustomer_CustId.Visible = true;
@@ -630,6 +638,7 @@
             // 
             // colPaymentType_PType
             // 
+            this.colPaymentType_PType.Caption = "Payment Type";
             this.colPaymentType_PType.FieldName = "PaymentType_PType";
             this.colPaymentType_PType.Name = "colPaymentType_PType";
             this.colPaymentType_PType.Visible = true;
@@ -691,6 +700,7 @@
             // 
             // colProduct_ProdId
             // 
+            this.colProduct_ProdId.Caption = "Product Id";
             this.colProduct_ProdId.FieldName = "Product_ProdId";
             this.colProduct_ProdId.Name = "colProduct_ProdId";
             this.colProduct_ProdId.Visible = true;
@@ -727,6 +737,7 @@
             this.Name = "SalesControl";
             this.Size = new System.Drawing.Size(1276, 622);
             this.Load += new System.EventHandler(this.SalesControl_Load);
+            this.VisibleChanged += new System.EventHandler(this.SalesControl_VisibleChanged);
             this.tabControl4.ResumeLayout(false);
             this.tabPageNewInvoice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSaleProducts)).EndInit();
